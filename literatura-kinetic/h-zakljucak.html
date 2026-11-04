@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/kin.css">
+<script>window.__STAR=(id,a,b)=>`<svg viewBox="-100 -100 200 200"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M0 -96 C10 -26 26 -10 96 0 C26 10 10 26 0 96 C-10 26 -26 10 -96 0 C-26 -10 -10 -26 0 -96Z" fill="url(#${id})"/></svg>`</script>
+<style>
+.head { position: absolute; left: 100px; right: 100px; top: 260px; }
+.head .serif { font-size: 84px; line-height: 1.05; }
+.head .sans { font-size: 92px; line-height: 1.02; }
+.head .cond { font-size: 190px; }
+.stepn { position: absolute; left: 100px; top: 250px; }
+
+.head { top: 300px; }
+.head .cond { font-size: 150px; }
+#tg { left: 340px; top: 1060px; }
+#tg svg { inset: 0; width: 400px; height: 400px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="grid"></div><div class="arc a1"></div><div class="arc a2"></div>
+  <div id="content">
+    <div class="brand">SEMINARSKI<b>EDU</b></div>
+
+    <div class="head" data-words="0.1" data-stagger="0.15" data-max="900">
+      <span class="ln serif">Kvalitetan rad</span>
+      <span class="ln sans">počinje</span>
+      <span class="ln cond">KVALITETNOM</span>
+      <span class="ln cond"><span class="goldt glow" data-at="0.75">LITERATUROM.</span></span>
+    </div>
+    <div class="lens" id="tg" style="width:400px;height:400px" data-pop="0.6"><svg viewBox="0 0 300 300" style="overflow:visible">
+     <ellipse cx="150" cy="282" rx="100" ry="12" fill="rgba(11,29,69,.18)"/>
+     <circle cx="150" cy="150" r="124" fill="#13297A"/><circle cx="150" cy="150" r="98" fill="#fff"/><circle cx="150" cy="150" r="72" fill="#13297A"/>
+     <circle cx="150" cy="150" r="46" fill="#fff"/><circle cx="150" cy="150" r="22" fill="#D4AF6A"/>
+     <g id="arrow"><path d="M150 150 L330 150" stroke="#0B1D45" stroke-width="8" stroke-linecap="round"/><path d="M300 150 l34 -20 l-6 20 l6 20z" fill="#D4AF6A"/>
+     <path d="M150 150 l22 -9 v18z" fill="#0B1D45"/></g>
+    </svg></div>
+    <div class="star " style="left:120px;top:1180px;width:130px;height:130px" data-float="0.9,10,0" data-pop="1.0"><script>document.currentScript.parentElement.innerHTML=window.__STAR("si","#2A43A8","#D4AF6A")</script></div>
+    <div class="star soft" style="left:840px;top:1500px;width:210px;height:210px" data-float="3.3,14,0"><script>document.currentScript.parentElement.innerHTML=window.__STAR("sj","#2A43A8","#D4AF6A")</script></div>
+
+  </div>
+  <canvas class="grain" id="grain"></canvas>
+</div>
+<script type="module">
+import { shot, seg, E, clamp } from './lib/kin.js';
+
+const arrow = document.getElementById('arrow'), tg = document.getElementById('tg');
+shot({ duration: 2.6, frame(t) {
+  const p = E.outCubic(seg(t, 1.05, 0.3));
+  arrow.style.transform = `translate(${(1 - p) * 700}px, ${(1 - p) * -120}px)`;
+  arrow.style.opacity = t < 1.05 ? 0 : 1;
+  const hit = seg(t, 1.35, 0.35), k = Math.sin(hit * Math.PI * 3) * (1 - hit);
+  tg.style.rotate = `${k * 4}deg`;
+}});
+
+</script>
+</body>
+</html>

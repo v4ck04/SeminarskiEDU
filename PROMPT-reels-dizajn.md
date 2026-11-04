@@ -44,3 +44,18 @@ Napravi premium, profesionalan Instagram Reels video za akademski edukativni bre
 - Bez nasumičnog teksta, pogrešno napisanih reči i lažnih akademskih referenci (primeri citata samo kao šablon: „Prezime, I. (Godina). Naslov...“).
 - Sav tekst čitljiv na telefonu (naslovi 80 px+, prateći tekst 44 px+).
 - Animacije teksta usklađene s ritmom muzike.
+
+---
+
+# Varijanta 2: kinetička tipografija (svetli „Did You Know?“ stil)
+
+Isti brend i struktura scena kao gore, ali:
+- **Pozadina:** svetlosiva (#ECEEF3) sa tankom mrežom (grid 72 px) i velikim blagim sivim lukovima.
+- **Tekst nosi video:** rečenica se gradi reč po reč (blur → oštro, blagi zoom). Fontovi se mešaju u svakoj sceni: Playfair Display *kurziv*, Montserrat ExtraBold i Anton (krupna VELIKA slova, navy) za ključnu reč.
+- **Brojevi koraka** „01–05“ su u Anton fontu, zlatni sa toplim sjajem. Brojač (npr. godina 1998 → 2024) se odbrojava uživo.
+- **Isprekidani okviri sa ručicama u uglovima** (kao selekcija u dizajn programu) za podstavke (npr. Knjige / Naučni časopisi).
+- **Ikone u isprekidanom krugu** koji se polako okreće (knjige, članak sa zlatnom kvačicom, baza podataka, navodnici, meta sa strelom). Oblik se pretvara u ikonu (morph).
+- **Hook:** navy bedž „Seminarski savet.“ se otvori iz linije, zlatna loptica padne na ugao, pa bedž proleti kroz kameru.
+- **Dekor:** navy-zlatne zvezdice sa 4 kraka koje lebde, neke zamućene.
+- **Tempo:** novi kadar na 2,5–4 s, prelazi brzim „whip“ klizanjem nagore sa blurom.
+- **Zvuk:** lagana moderna muzika (~112 BPM, marimba/pluck + mekani bubanj), pop na svakom bedžu i ikoni, tick na svakom okviru, whoosh na rezovima, udarac kad strela pogodi metu.

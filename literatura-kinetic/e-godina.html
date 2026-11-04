@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/kin.css">
+<script>window.__STAR=(id,a,b)=>`<svg viewBox="-100 -100 200 200"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M0 -96 C10 -26 26 -10 96 0 C26 10 10 26 0 96 C-10 26 -26 10 -96 0 C-26 -10 -10 -26 0 -96Z" fill="url(#${id})"/></svg>`</script>
+<style>
+.head { position: absolute; left: 100px; right: 100px; top: 260px; }
+.head .serif { font-size: 84px; line-height: 1.05; }
+.head .sans { font-size: 92px; line-height: 1.02; }
+.head .cond { font-size: 190px; }
+.stepn { position: absolute; left: 100px; top: 250px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="grid"></div><div class="arc a1"></div><div class="arc a2"></div>
+  <div id="content">
+    <div class="brand">SEMINARSKI<b>EDU</b></div>
+
+    <div class="stepn"><span class="num goldt glow" data-pop="0.08">03</span></div>
+    <div class="head" style="top:440px" data-words="0.3" data-stagger="0.14">
+      <span class="ln serif">Obrati pažnju</span>
+      <span class="ln sans">na godinu</span>
+      <span class="ln cond">IZDANJA</span>
+    </div>
+
+    <div class="lens" style="left:290px;top:920px;width:500px;height:500px" data-pop="0.9">
+      <div class="cond goldt glow" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:190px;background-clip:text" data-count="1998,2024,1.0,1.4">1998</div>
+    </div>
+    <div class="blk" style="top:1450px;text-align:center" data-words="1.9" data-stagger="0.11">
+      <span class="ln serif" style="font-size:54px">Za savremene teme koristi</span>
+      <span class="ln sans" style="font-size:60px">aktuelna istraživanja.</span>
+    </div><div class="star soft" style="left:840px;top:860px;width:190px;height:190px" data-float="1.0,12,0"><script>document.currentScript.parentElement.innerHTML=window.__STAR("sg","#2A43A8","#D4AF6A")</script></div>
+
+  </div>
+  <canvas class="grain" id="grain"></canvas>
+</div>
+<script type="module">
+import { shot, seg, E, clamp } from './lib/kin.js';
+
+shot({ duration: 3.6 });
+
+</script>
+</body>
+</html>

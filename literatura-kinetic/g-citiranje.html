@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/kin.css">
+<script>window.__STAR=(id,a,b)=>`<svg viewBox="-100 -100 200 200"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M0 -96 C10 -26 26 -10 96 0 C26 10 10 26 0 96 C-10 26 -26 10 -96 0 C-26 -10 -10 -26 0 -96Z" fill="url(#${id})"/></svg>`</script>
+<style>
+.head { position: absolute; left: 100px; right: 100px; top: 260px; }
+.head .serif { font-size: 84px; line-height: 1.05; }
+.head .sans { font-size: 92px; line-height: 1.02; }
+.head .cond { font-size: 190px; }
+.stepn { position: absolute; left: 100px; top: 250px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="grid"></div><div class="arc a1"></div><div class="arc a2"></div>
+  <div id="content">
+    <div class="brand">SEMINARSKI<b>EDU</b></div>
+
+    <div class="stepn"><span class="num goldt glow" data-pop="0.08">05</span></div>
+    <div class="head" style="top:440px" data-words="0.3" data-stagger="0.14">
+      <span class="ln serif">Pravilno citiraj</span>
+      <span class="ln sans">svaki</span>
+      <span class="ln cond">IZVOR</span>
+    </div>
+    <div class="lens" style="left:640px;top:560px;width:300px;height:300px" data-pop="0.55"><svg viewBox="0 0 300 300">
+     <defs><linearGradient id="qg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4D899"/><stop offset=".5" stop-color="#D4AF6A"/><stop offset="1" stop-color="#A8792E"/></linearGradient></defs>
+     <ellipse cx="150" cy="270" rx="100" ry="12" fill="rgba(11,29,69,.14)"/>
+     <rect x="46" y="40" width="208" height="214" rx="20" fill="#FFFFFF" stroke="#D3D8E3" stroke-width="3"/>
+     <text x="150" y="190" text-anchor="middle" font-family="Playfair Display" font-weight="700" font-size="230" fill="url(#qg)">„</text>
+     <path d="M84 214 h132" stroke="#13297A" stroke-width="8" stroke-linecap="round"/>
+    </svg></div><div style="position:absolute;left:60px;right:60px;top:1130px;display:flex;justify-content:center;gap:34px"><div class="tag" style="font-size:56px" data-in="1.10" data-dy="40"><i></i><i></i><i></i><i></i>APA</div><div class="tag" style="font-size:56px" data-in="1.35" data-dy="40"><i></i><i></i><i></i><i></i>Harvard</div><div class="tag" style="font-size:56px" data-in="1.60" data-dy="40"><i></i><i></i><i></i><i></i>Chicago</div></div><div class="blk" style="top:1310px;text-align:center" data-words="1.9" data-stagger="0.1">
+      <span class="ln serif" style="font-size:56px">ili stil koji zahteva fakultet.</span>
+    </div>
+
+  </div>
+  <canvas class="grain" id="grain"></canvas>
+</div>
+<script type="module">
+import { shot, seg, E, clamp } from './lib/kin.js';
+
+shot({ duration: 3.2 });
+
+</script>
+</body>
+</html>

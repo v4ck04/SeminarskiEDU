@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/kin.css">
+<script>window.__STAR=(id,a,b)=>`<svg viewBox="-100 -100 200 200"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M0 -96 C10 -26 26 -10 96 0 C26 10 10 26 0 96 C-10 26 -26 10 -96 0 C-26 -10 -10 -26 0 -96Z" fill="url(#${id})"/></svg>`</script>
+<style>
+.head { position: absolute; left: 100px; right: 100px; top: 260px; }
+.head .serif { font-size: 84px; line-height: 1.05; }
+.head .sans { font-size: 92px; line-height: 1.02; }
+.head .cond { font-size: 190px; }
+.stepn { position: absolute; left: 100px; top: 250px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="grid"></div><div class="arc a1"></div><div class="arc a2"></div>
+  <div id="content">
+    <div class="brand">SEMINARSKI<b>EDU</b></div>
+
+    <div class="stepn"><span class="num goldt glow" data-pop="0.08">04</span></div>
+    <div class="head" style="top:440px" data-words="0.3" data-stagger="0.14">
+      <span class="ln serif">Koristi proverene</span>
+      <span class="ln sans">akademske</span>
+      <span class="ln cond">BAZE</span>
+    </div>
+    <div class="lens" style="left:640px;top:560px;width:300px;height:300px" data-pop="0.6"><svg viewBox="0 0 300 300">
+     <defs><linearGradient id="dbg" x1="0" x2="1"><stop offset="0" stop-color="#0B1D45"/><stop offset=".45" stop-color="#2A43A8"/><stop offset="1" stop-color="#13297A"/></linearGradient></defs>
+     <ellipse cx="150" cy="276" rx="110" ry="12" fill="rgba(11,29,69,.18)"/>
+     <path d="M60 70 v160 a90 30 0 0 0 180 0 v-160" fill="url(#dbg)"/>
+     <path d="M60 123 a90 30 0 0 0 180 0 M60 176 a90 30 0 0 0 180 0" fill="none" stroke="#D4AF6A" stroke-width="6"/>
+     <ellipse cx="150" cy="70" rx="90" ry="30" fill="#3550B8"/><ellipse cx="150" cy="70" rx="90" ry="30" fill="none" stroke="#D4AF6A" stroke-width="6"/>
+     <circle cx="206" cy="150" r="7" fill="#F4D899"/><circle cx="206" cy="203" r="7" fill="#F4D899"/><circle cx="206" cy="256" r="7" fill="#F4D899"/>
+    </svg></div><div style="position:absolute;left:90px;right:90px;top:1110px;display:grid;grid-template-columns:1fr 1fr;gap:40px 30px;justify-items:center"><div class="tag" style="font-size:54px" data-in="1.20" data-dy="40"><i></i><i></i><i></i><i></i>Google Scholar</div><div class="tag" style="font-size:54px" data-in="1.50" data-dy="40"><i></i><i></i><i></i><i></i>PubMed</div><div class="tag" style="font-size:54px" data-in="1.80" data-dy="40"><i></i><i></i><i></i><i></i>DOAJ</div><div class="tag" style="font-size:54px" data-in="2.10" data-dy="40"><i></i><i></i><i></i><i></i>CORE</div></div><div class="star " style="left:120px;top:1480px;width:140px;height:140px" data-float="2.8,12,-10" data-pop="2.2"><script>document.currentScript.parentElement.innerHTML=window.__STAR("sh","#2A43A8","#D4AF6A")</script></div>
+
+  </div>
+  <canvas class="grain" id="grain"></canvas>
+</div>
+<script type="module">
+import { shot, seg, E, clamp } from './lib/kin.js';
+
+shot({ duration: 4.0 });
+
+</script>
+</body>
+</html>

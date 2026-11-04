@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/kin.css">
+<script>window.__STAR=(id,a,b)=>`<svg viewBox="-100 -100 200 200"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M0 -96 C10 -26 26 -10 96 0 C26 10 10 26 0 96 C-10 26 -26 10 -96 0 C-26 -10 -10 -26 0 -96Z" fill="url(#${id})"/></svg>`</script>
+<style>
+.head { position: absolute; left: 100px; right: 100px; top: 260px; }
+.head .serif { font-size: 84px; line-height: 1.05; }
+.head .sans { font-size: 92px; line-height: 1.02; }
+.head .cond { font-size: 190px; }
+.stepn { position: absolute; left: 100px; top: 250px; }
+
+.head { top: 300px; }
+.head .cond { font-size: 200px; margin: 6px 0 4px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="grid"></div><div class="arc a1"></div><div class="arc a2"></div>
+  <div id="content">
+    <div class="brand">SEMINARSKI<b>EDU</b></div>
+
+    <div class="head" data-words="0.12" data-stagger="0.16">
+      <span class="ln serif">Kako pravilno</span>
+      <span class="ln sans">izabrati</span>
+      <span class="ln cond"><span data-at="0.62">LITERATURU</span></span>
+      <span class="ln serif">za <span class="goldt" data-at="1.12">seminarski</span> <span data-at="1.26">rad?</span></span>
+    </div>
+    <div class="lens" style="left:350px;top:1080px;width:380px;height:380px" data-pop="1.55"><svg viewBox="0 0 300 300">
+     <defs><linearGradient id="bk1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2A43A8"/><stop offset="1" stop-color="#0B1D45"/></linearGradient>
+     <linearGradient id="bk2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#F1D28E"/><stop offset="1" stop-color="#B8893A"/></linearGradient>
+     <linearGradient id="bk3" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7C88A8"/><stop offset="1" stop-color="#3F4A68"/></linearGradient></defs>
+     <ellipse cx="150" cy="262" rx="120" ry="14" fill="rgba(11,29,69,.18)"/>
+     <rect x="40" y="196" width="220" height="56" rx="8" fill="url(#bk1)"/><rect x="52" y="204" width="200" height="12" rx="3" fill="#F6F1E4"/><rect x="40" y="228" width="220" height="5" fill="#D4AF6A"/>
+     <rect x="58" y="140" width="196" height="54" rx="8" fill="url(#bk2)" transform="rotate(-4 156 167)"/><rect x="68" y="150" width="176" height="10" rx="3" fill="#FFF8E8" transform="rotate(-4 156 167)"/>
+     <rect x="48" y="86" width="206" height="52" rx="8" fill="url(#bk3)" transform="rotate(3 151 112)"/><rect x="60" y="95" width="186" height="10" rx="3" fill="#F6F1E4" transform="rotate(3 151 112)"/><rect x="48" y="118" width="206" height="5" fill="#D4AF6A" transform="rotate(3 151 112)"/>
+     <path d="M96 30 h108 a10 10 0 0 1 10 10 v40 h-128 v-40 a10 10 0 0 1 10 -10z" fill="#FFFFFF" stroke="#C9CEDA" stroke-width="3"/>
+     <path d="M110 48 h80 M110 62 h56" stroke="#13297A" stroke-width="7" stroke-linecap="round"/>
+    </svg></div>
+    <div class="star " style="left:830px;top:1020px;width:150px;height:150px" data-float="0.4,12,8" data-pop="1.7"><script>document.currentScript.parentElement.innerHTML=window.__STAR("sc","#2A43A8","#D4AF6A")</script></div>
+    <div class="star soft" style="left:60px;top:1500px;width:230px;height:230px" data-float="3.7,16,-6"><script>document.currentScript.parentElement.innerHTML=window.__STAR("sd","#2A43A8","#D4AF6A")</script></div>
+
+  </div>
+  <canvas class="grain" id="grain"></canvas>
+</div>
+<script type="module">
+import { shot, seg, E, clamp } from './lib/kin.js';
+
+shot({ duration: 3.8 });
+
+</script>
+</body>
+</html>
