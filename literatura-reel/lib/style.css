@@ -1,0 +1,70 @@
+@import url("fonts.css");
+
+:root {
+  --navy: #0B1D45;
+  --navy-2: #13295E;
+  --navy-3: #1D3A80;
+  --navy-deep: #06112C;
+  --paper: #F3F5FA;
+  --white: #FFFFFF;
+  --ink: #0B1D45;
+  --line: #D6DCE8;
+  --grey: #8792AE;
+  --yellow: #FFD60A;
+  --red: #E63946;
+  --display: 'Montserrat', sans-serif;
+  --ui: 'Inter', sans-serif;
+  --serif: 'Tinos', serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1080px; height: 1920px; overflow: hidden; position: relative;
+  font-family: var(--display); -webkit-font-smoothing: antialiased;
+}
+
+/* backgrounds */
+.bg-navy { background: radial-gradient(1300px 1500px at 50% 38%, #18357A 0%, var(--navy) 52%, var(--navy-deep) 100%); }
+.bg-paper { background: radial-gradient(1300px 1500px at 50% 40%, #FFFFFF 0%, var(--paper) 60%, #E6EAF3 100%); }
+.dots { position: absolute; inset: -200px; pointer-events: none;
+  background-image: radial-gradient(rgba(11,29,69,.10) 2.2px, transparent 2.8px); background-size: 46px 46px; }
+.bg-navy .dots { background-image: radial-gradient(rgba(255,255,255,.07) 2.2px, transparent 2.8px); }
+
+.stage { position: absolute; inset: 0; overflow: hidden; }
+.cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+
+/* top scrim keeps headlines readable when the camera zooms in */
+.scrim { position: absolute; left: 0; right: 0; top: 0; height: 760px; z-index: 5; pointer-events: none;
+  background: linear-gradient(var(--navy) 0%, var(--navy) 60%, rgba(11,29,69,0) 100%); }
+.bg-paper .scrim { background: linear-gradient(#FBFCFE 0%, #FBFCFE 60%, rgba(251,252,254,0) 100%); }
+
+/* headlines */
+.head { position: absolute; left: 60px; right: 60px; top: 250px; z-index: 10; text-align: center; }
+.headline { margin: 0; font-weight: 900; font-size: 96px; line-height: 1.08; letter-spacing: -0.025em; color: #fff; }
+.bg-paper .headline { color: var(--ink); }
+.headline .ln { display: block; white-space: nowrap; }
+.w { display: inline-block; }
+.arr { display: inline-block; width: .9em; height: .62em; vertical-align: .02em; }
+.arr svg { width: 100%; height: 100%; display: block; }
+
+/* yellow marker under a word (paper scenes) */
+.mark { position: relative; z-index: 0; padding: 0 .1em; }
+.mark::before { content: ''; position: absolute; left: 0; right: 0; bottom: .04em; height: .44em; z-index: -1;
+  background: var(--yellow); border-radius: .08em; transform-origin: left center; transform: scaleX(var(--m, 0)); }
+
+/* yellow box behind a word (navy scenes): text turns navy as the box sweeps in */
+.box { position: relative; z-index: 0; padding: .02em .16em .04em;
+  color: color-mix(in srgb, var(--navy) calc(var(--m, 0) * 100%), #fff); }
+.box::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--yellow); border-radius: .12em;
+  transform-origin: left center; transform: scaleX(var(--m, 0)); }
+
+/* highlight ring on a UI value */
+.hlt { position: relative; }
+.hlt::after { content: ''; position: absolute; inset: -7px; border: 5px solid var(--yellow); border-radius: 10px;
+  background: rgba(255,214,10,.28); pointer-events: none;
+  opacity: var(--h, 0); transform: scale(calc(1.35 - .35 * var(--h, 0))); }
+
+/* emoji drawn as the Noto image so every renderer shows it */
+.emo { display: inline-block; width: 1.1em; height: 1.1em; vertical-align: -0.2em; }

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/lux.css">
+<link rel="stylesheet" href="lib/props.css">
+<style>
+  .shelf { position: absolute; left: -300px; width: 1900px; height: 360px; display: flex; align-items: flex-end; gap: 8px; padding: 0 20px; }
+  .shelf::after { content: ''; position: absolute; left: 0; right: 0; bottom: -34px; height: 34px;
+    background: linear-gradient(#3A2618, #1C120B); box-shadow: 0 30px 50px rgba(0,0,0,.7); }
+  .sp { position: relative; flex: none; border-radius: 4px 4px 2px 2px; box-shadow: inset -8px 0 14px rgba(0,0,0,.35), inset 6px 0 10px rgba(255,255,255,.06); }
+  .sp i { position: absolute; left: 14%; right: 14%; height: 4px; background: linear-gradient(90deg, #9C7A3C, #F3DDA4, #9C7A3C); border-radius: 2px; }
+  .sp b { position: absolute; left: 22%; right: 22%; top: 28%; bottom: 34%; border: 2px solid rgba(212,175,106,.55); border-radius: 3px; }
+  .wall { position: absolute; inset: 0; background: radial-gradient(900px 900px at 50% 60%, #1A2C5C, #0A1530 60%, #05070D); }
+  .warm { position: absolute; left: 140px; top: 640px; width: 800px; height: 1000px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(255,210,140,.18), rgba(255,210,140,0)); mix-blend-mode: screen; }
+  /* open journal in front */
+  #journal { left: 230px; top: 1290px; width: 620px; height: 400px; transform: rotate(-4deg); padding: 46px 50px; }
+  #journal .jt { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: .3em; color: #9C7A3C; margin-bottom: 22px; }
+  #journal .h { height: 20px; width: 80%; border-radius: 5px; background: #1B2233; margin-bottom: 14px; }
+  #journal .h2 { height: 20px; width: 55%; border-radius: 5px; background: #1B2233; margin-bottom: 30px; }
+  #journal .cols { display: flex; gap: 30px; }
+  #journal .cols > div { flex: 1; }
+  #journal .tline { height: 8px; margin-bottom: 13px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="stage">
+    <div class="cam" id="cam">
+      <div class="wall"></div>
+      <div class="shelf" id="sh1" style="top: 730px"></div>
+      <div class="shelf" id="sh2" style="top: 1170px"></div>
+      <div class="warm"></div>
+      <div class="sheet" id="journal">
+        <div class="jt">NAUČNI ČASOPIS</div>
+        <div class="h"></div><div class="h2"></div>
+        <div class="cols">
+          <div><div class="tline"></div><div class="tline"></div><div class="tline" style="width:80%"></div><div class="tline"></div><div class="tline" style="width:60%"></div><div class="tline"></div><div class="tline"></div><div class="tline" style="width:50%"></div></div>
+          <div><div class="tline"></div><div class="tline" style="width:90%"></div><div class="tline"></div><div class="tline"></div><div class="tline" style="width:70%"></div><div class="tline"></div><div class="tline" style="width:85%"></div><div class="tline"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas class="fx" id="fx"></canvas>
+  <div class="scrim"></div>
+  <div class="vignette"></div>
+  <canvas class="grain" id="grain"></canvas>
+  <div class="brand">SeminarskiEdu</div>
+  <div class="head">
+    <h1 class="title" data-words="0.35" data-stagger="0.08">
+      <span class="ln"><span class="w gold num" data-shine="0.6">01</span> <span class="w bar">|</span> Biraj stručne</span>
+      <span class="ln">i naučne izvore</span>
+    </h1>
+    <div class="rule" data-at="1.0" data-w="200"></div>
+    <p class="sub" data-words="1.25" data-stagger="0.05">
+      <span class="ln">Knjige, naučni časopisi</span>
+      <span class="ln">i akademske publikacije.</span>
+    </p>
+  </div>
+</div>
+<script type="module">
+import { shot, camera, E, rng } from './lib/lux.js';
+const cam = document.getElementById('cam'), journal = document.getElementById('journal');
+const COLORS = ['#13254F', '#4A1C22', '#1E3B33', '#2B2140', '#E7DCC2', '#0F1B38', '#5A2A1E', '#233D63', '#D9CBA8', '#1A1A22'];
+function fill(el, seed) {
+  const r = rng(seed);
+  for (let i = 0; i < 40; i++) {
+    const d = document.createElement('div'); d.className = 'sp';
+    const w = 38 + r() * 46, h = 230 + r() * 120, c = COLORS[Math.floor(r() * COLORS.length)];
+    d.style.width = w + 'px'; d.style.height = h + 'px';
+    d.style.background = `linear-gradient(90deg, ${c}, color-mix(in srgb, ${c} 70%, #fff) 45%, ${c})`;
+    const bands = r() < 0.7 ? 2 : 0;
+    for (let k = 0; k < bands; k++) { const b = document.createElement('i'); b.style.top = (k ? 82 : 10) + '%'; d.appendChild(b); }
+    if (r() < 0.35) d.appendChild(document.createElement('b'));
+    if (r() < 0.08) d.style.transform = 'rotate(-6deg) translateX(6px)';
+    el.appendChild(d);
+  }
+}
+shot({
+  duration: 5.5, fadeIn: 0.5, fadeOut: 0.5, dust: 40, seed: 21,
+  init() { fill(document.getElementById('sh1'), 5); fill(document.getElementById('sh2'), 9); },
+  frame(t) {
+    camera(cam, t, [
+      { t: 0, x: 600, y: 1150, s: 1.06, sy: 1150 },
+      { t: 5.5, x: 470, y: 1180, s: 1.12, sy: 1150, ease: E.linear },
+    ]);
+    const p = E.outCubic(Math.min(1, Math.max(0, (t - 0.6) / 1.2)));
+    journal.style.transform = `translateY(${(1 - p) * 120}px) rotate(${-4 + 2 * p}deg)`;
+    journal.style.opacity = p;
+  },
+});
+</script>
+</body>
+</html>

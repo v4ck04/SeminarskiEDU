@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/lux.css">
+<link rel="stylesheet" href="lib/props.css">
+<style>
+  .head { top: 300px; }
+  .title { font-size: 96px; }
+  #laptop { left: 160px; top: 760px; }
+  #book { left: 130px; top: 1130px; }
+  #nb { left: 820px; top: 1180px; transform: rotate(-8deg); }
+  #pen { left: 610px; top: 1560px; transform: rotate(-24deg); }
+  .doc { position: absolute; inset: 0; padding: 40px 70px; }
+  .doc .bar0 { height: 26px; margin: -40px -70px 34px; background: #E3E6EC; border-bottom: 1px solid #D0D4DC; }
+  .doc .h { height: 22px; width: 62%; margin: 0 auto 30px; border-radius: 6px; background: #1B2233; }
+  .doc .tline { height: 10px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="stage">
+    <div class="cam" id="cam">
+      <div class="lampglow" id="glow"></div>
+      <div class="desk"></div>
+      <div class="laptop" id="laptop">
+        <div class="lid"><div class="screen">
+          <div class="doc">
+            <div class="bar0"></div>
+            <div class="h"></div>
+            <div class="tline g" style="width:34%;margin:0 auto 34px"></div>
+            <div class="tline"></div><div class="tline"></div><div class="tline" style="width:88%"></div>
+            <div class="tline"></div><div class="tline" style="width:72%"></div>
+            <div class="tline d" style="width:40%;margin-top:30px"></div>
+            <div class="tline"></div><div class="tline"></div><div class="tline" style="width:64%"></div>
+          </div>
+        </div></div>
+        <div class="base"></div>
+      </div>
+      <div class="notebook" id="nb"><div class="emb">Beleške</div></div>
+      <div class="book" id="book">
+        <div class="cover"></div>
+        <div class="spread">
+          <div class="pg l">
+            <div class="tline" style="width:60%;height:14px;background:#6B5A3E;margin-bottom:30px"></div>
+            <div class="tline"></div><div class="tline"></div><div class="tline"></div><div class="tline" style="width:80%"></div>
+            <div class="tline"></div><div class="tline"></div><div class="tline" style="width:70%"></div><div class="tline"></div><div class="tline"></div>
+          </div>
+          <div class="pg r">
+            <div class="tline"></div><div class="tline"></div><div class="tline" style="width:90%"></div><div class="tline"></div>
+            <div class="tline"></div><div class="tline" style="width:55%"></div><div class="tline"></div><div class="tline"></div><div class="tline"></div><div class="tline" style="width:75%"></div>
+          </div>
+          <div class="gutter"></div>
+        </div>
+      </div>
+      <div class="pen" id="pen"></div>
+    </div>
+  </div>
+  <canvas class="fx" id="fx"></canvas>
+  <div class="scrim"></div>
+  <div class="vignette"></div>
+  <canvas class="grain" id="grain"></canvas>
+  <div class="brand" data-in="0.1">SeminarskiEdu</div>
+  <div class="head">
+    <h1 class="title" data-words="0.05" data-stagger="0.08" data-dur="0.8">
+      <span class="ln">Kako pravilno</span>
+      <span class="ln">izabrati <span class="w gold" data-shine="1.3">literaturu</span></span>
+      <span class="ln">za seminarski rad?</span>
+    </h1>
+    <div class="rule" data-at="1.4" data-w="260"></div>
+  </div>
+</div>
+<script type="module">
+import { shot, camera, E } from './lib/lux.js';
+const cam = document.getElementById('cam'), glow = document.getElementById('glow');
+shot({
+  duration: 4.5, dust: 45, seed: 11,
+  frame(t) {
+    camera(cam, t, [
+      { t: 0, x: 540, y: 1180, s: 1.0, sy: 1180 },
+      { t: 4.5, x: 540, y: 1200, s: 1.09, sy: 1180, ease: E.linear },
+    ]);
+    glow.style.opacity = 0.85 + 0.15 * Math.sin(t * 1.3);
+  },
+});
+</script>
+</body>
+</html>

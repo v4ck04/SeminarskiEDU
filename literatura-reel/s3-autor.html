@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/lux.css">
+<link rel="stylesheet" href="lib/props.css">
+<style>
+  #art { left: 130px; top: 790px; width: 820px; height: 1160px; padding: 64px 70px; transform: rotate(-1.5deg); filter: brightness(.93); }
+  .meta { display: flex; justify-content: space-between; font-family: var(--display); font-weight: 600; font-size: 17px;
+    letter-spacing: .22em; color: #8A93A6; border-bottom: 2px solid #E2DED3; padding-bottom: 18px; margin-bottom: 44px; }
+  .ttl { height: 30px; border-radius: 6px; background: #121A2C; margin-bottom: 16px; }
+  .row { display: flex; align-items: center; gap: 22px; margin: 0 0 40px; }
+  .lab { flex: none; width: 210px; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: .16em; color: #9C7A3C; }
+  .val { flex: 1; display: flex; gap: 12px; align-items: center; }
+  .val i { display: block; height: 14px; border-radius: 7px; background: #5B647A; }
+  .seal { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--gold); position: relative; flex: none; }
+  .seal::after { content: ''; position: absolute; left: 9px; top: 5px; width: 9px; height: 15px; border: solid var(--gold); border-width: 0 4px 4px 0; transform: rotate(45deg); }
+  .abs { margin-top: 46px; padding-top: 30px; border-top: 2px solid #E2DED3; }
+  .abs .lab { margin-bottom: 22px; }
+  .abs .tline { height: 10px; margin-bottom: 18px; background: #CDD1DA; }
+  .rows .hl::after { inset: -14px -20px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="stage">
+    <div class="cam" id="cam">
+      <div class="lampglow" style="left:-60px;top:500px"></div>
+      <div class="sheet" id="art">
+        <div class="meta"><span>NAUČNI ČLANAK</span><span>RECENZIRANO</span></div>
+        <div class="ttl" style="width:92%"></div>
+        <div class="ttl" style="width:68%;margin-bottom:50px"></div>
+        <div class="rows">
+          <div class="row hl" id="rA" data-at="1.5"><span class="lab">AUTOR</span><span class="val"><i style="width:300px"></i><span class="seal" id="k1"></span></span></div>
+          <div class="row hl" id="rB" data-at="2.2"><span class="lab">INSTITUCIJA</span><span class="val"><i style="width:380px"></i><span class="seal" id="k2"></span></span></div>
+          <div class="row hl" id="rC" data-at="2.9"><span class="lab">ČASOPIS</span><span class="val"><i style="width:260px"></i><span class="seal" id="k3"></span></span></div>
+          <div class="row"><span class="lab">DOI</span><span class="val"><i style="width:340px;background:#9AA2B4"></i></span></div>
+        </div>
+        <div class="abs">
+          <div class="lab">APSTRAKT</div>
+          <div class="tline"></div><div class="tline"></div><div class="tline" style="width:90%"></div><div class="tline"></div><div class="tline" style="width:75%"></div>
+          <div class="tline"></div><div class="tline" style="width:60%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas class="fx" id="fx"></canvas>
+  <div class="scrim"></div>
+  <div class="vignette"></div>
+  <canvas class="grain" id="grain"></canvas>
+  <div class="brand">SeminarskiEdu</div>
+  <div class="head">
+    <h1 class="title" data-words="0.3" data-stagger="0.08">
+      <span class="ln"><span class="w gold num" data-shine="0.55">02</span> <span class="w bar">|</span> Proveri autora</span>
+      <span class="ln">i kredibilitet</span>
+    </h1>
+    <div class="rule" data-at="0.95" data-w="200"></div>
+    <p class="sub" data-words="1.2" data-stagger="0.05">
+      <span class="ln">Proveri stručnost autora</span>
+      <span class="ln">i pouzdanost publikacije.</span>
+    </p>
+  </div>
+</div>
+<script type="module">
+import { shot, camera, measure, E, seg } from './lib/lux.js';
+const cam = document.getElementById('cam');
+let R;
+shot({
+  duration: 5.5, dust: 30, seed: 31,
+  init() { R = measure(cam, '.rows'); },
+  frame(t) {
+    camera(cam, t, [
+      { t: 0, x: 540, y: 1250, s: 1.0, sy: 1250 },
+      { t: 1.1, x: 540, y: 1250, s: 1.02, sy: 1250 },
+      { t: 2.6, x: R.x, y: R.y, s: 1.12, sy: 1160 },
+      { t: 5.5, x: R.x, y: R.y, s: 1.17, sy: 1160, ease: E.linear },
+    ]);
+    ['k1', 'k2', 'k3'].forEach((id, i) => {
+      const p = E.outBack(seg(t, 1.7 + i * 0.7, 0.4));
+      const k = document.getElementById(id);
+      k.style.transform = `scale(${p})`; k.style.opacity = Math.min(1, p * 2);
+    });
+  },
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/lux.css">
+<link rel="stylesheet" href="lib/props.css">
+<style>
+  #laptop { left: 160px; top: 800px; }
+  .app { position: absolute; inset: 0; background: linear-gradient(#F6F7FA, #ECEEF3); font-family: var(--ui); padding: 34px 40px; }
+  .search { display: flex; align-items: center; gap: 16px; height: 72px; padding: 0 24px; border-radius: 36px; background: #fff;
+    box-shadow: 0 6px 20px rgba(15,28,61,.12), 0 0 0 2px #D9DEE8; font-size: 28px; color: #1B2233; }
+  .search svg { width: 30px; height: 30px; flex: none; }
+  .caret { display: inline-block; width: 3px; height: 32px; background: #1B2233; vertical-align: -6px; margin-left: 2px; }
+  .res { margin-top: 30px; }
+  .res .r { margin-bottom: 22px; }
+  .res i { display: block; border-radius: 6px; }
+  .res .a { height: 13px; background: #23325E; margin-bottom: 9px; }
+  .res .b { height: 9px; background: #BFC5D2; margin-bottom: 7px; }
+  /* database tiles below the laptop */
+  .tiles { position: absolute; left: 90px; right: 90px; top: 1400px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; z-index: 7; }
+  .tile { height: 104px; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 14px;
+    background: linear-gradient(140deg, rgba(27,49,102,.92), rgba(10,21,48,.96)); border: 2px solid rgba(212,175,106,.75);
+    box-shadow: 0 20px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);
+    font-family: var(--display); font-weight: 700; font-size: 38px; color: #fff; letter-spacing: .01em; }
+  .tile .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 14px var(--gold); }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="stage">
+    <div class="cam" id="cam">
+      <div class="lampglow" style="left:-100px;top:600px"></div>
+      <div class="laptop" id="laptop">
+        <div class="lid"><div class="screen"><div class="app">
+          <div class="search">
+            <svg viewBox="0 0 30 30" fill="none" stroke="#9C7A3C" stroke-width="3.5" stroke-linecap="round"><circle cx="13" cy="13" r="9"/><path d="M20 20l7 7"/></svg>
+            <span id="q"></span><span class="caret" id="caret"></span>
+          </div>
+          <div class="res" id="res">
+            <div class="r"><i class="a" style="width:78%"></i><i class="b"></i><i class="b" style="width:70%"></i></div>
+            <div class="r"><i class="a" style="width:64%"></i><i class="b"></i><i class="b" style="width:82%"></i></div>
+            <div class="r"><i class="a" style="width:72%"></i><i class="b" style="width:90%"></i></div>
+          </div>
+        </div></div></div>
+        <div class="base"></div>
+      </div>
+    </div>
+  </div>
+  <canvas class="fx" id="fx"></canvas>
+  <div class="scrim"></div>
+  <div class="vignette"></div>
+  <div class="tiles">
+    <div class="tile" data-in="1.9" data-dy="50"><span class="dot"></span>Google Scholar</div>
+    <div class="tile" data-in="2.15" data-dy="50"><span class="dot"></span>PubMed</div>
+    <div class="tile" data-in="2.4" data-dy="50"><span class="dot"></span>DOAJ</div>
+    <div class="tile" data-in="2.65" data-dy="50"><span class="dot"></span>CORE</div>
+  </div>
+  <canvas class="grain" id="grain"></canvas>
+  <div class="brand">SeminarskiEdu</div>
+  <div class="head">
+    <h1 class="title" data-words="0.3" data-stagger="0.08">
+      <span class="ln"><span class="w gold num" data-shine="0.55">04</span> <span class="w bar">|</span> Koristi proverene</span>
+      <span class="ln">akademske baze</span>
+    </h1>
+    <div class="rule" data-at="0.95" data-w="200"></div>
+    <p class="sub" data-words="1.2" data-stagger="0.06">
+      <span class="ln">Google Scholar, PubMed, DOAJ i CORE.</span>
+    </p>
+  </div>
+</div>
+<script type="module">
+import { shot, camera, E, seg } from './lib/lux.js';
+const cam = document.getElementById('cam'), q = document.getElementById('q'), caret = document.getElementById('caret');
+const res = document.getElementById('res');
+const QUERY = 'metodologija istraživanja';
+shot({
+  duration: 5.5, dust: 30, seed: 51,
+  frame(t) {
+    camera(cam, t, [
+      { t: 0, x: 540, y: 1050, s: 1.0, sy: 1060 },
+      { t: 5.5, x: 540, y: 1000, s: 1.08, sy: 1060, ease: E.linear },
+    ]);
+    q.textContent = QUERY.slice(0, Math.round(QUERY.length * seg(t, 0.5, 1.2)));
+    caret.style.opacity = t < 1.8 || Math.floor(t * 2.4) % 2 === 0 ? 1 : 0;
+    const r = E.outCubic(seg(t, 1.8, 0.6));
+    res.style.opacity = r; res.style.transform = `translateY(${(1 - r) * 20}px)`;
+  },
+});
+</script>
+</body>
+</html>
