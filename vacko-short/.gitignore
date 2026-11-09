@@ -1,0 +1,3 @@
+# render scratch (stills, review strips, chunk files, logs)
+out/
+node_modules/
