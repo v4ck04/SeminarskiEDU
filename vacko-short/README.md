@@ -24,13 +24,9 @@ ručno iscrtani krugovi i strelice. Sve je u brend bojama: navy `#101827`, emera
 | 0:31–0:35 | 5 · Brend | BUILD BETTER / **MONEY HABITS** | Zlatni i emerald novčići dolete i slože se u VACKO znak; blesak na 0:33,95 |
 | 0:35–0:40 | 5 · Logo | **VACKO** · SMART MONEY. SMARTER FUTURE. | Logo + slogan, završni kadar (dovoljno mirno za poslednju rečenicu / CTA) |
 
-### Predlog engleskog VO teksta (opciono, uklapa se u tajming)
+### VO skripta
 
-- **0:00** Why do most people stay broke? Payday hits — and the money’s already gone.
-- **0:05** Shopping. Food delivery. Subscriptions. Impulse buys. Credit card payments. It’s not always how much you earn…
-- **0:12** …it’s how you manage your money. Income goes up — but spending rises with it, so savings barely move.
-- **0:20** So spend smarter. Save consistently — even small amounts add up. And track your money, so you always know where it goes.
-- **0:31** Build better money habits. VACKO — smart money, smarter future.
+Engleska VO skripta je u **[`VO-script.md`](VO-script.md)**: tabela sa startom svake rečenice i čist tekst za AI voice alat.
 
 ### Gde staviti titlove
 
