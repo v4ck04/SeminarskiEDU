@@ -2,6 +2,7 @@ import React from "react";
 import { Composition, getInputProps } from "remotion";
 import { NewtonShort, NEWTON_FRAMES } from "./videos/newton/Newton";
 import { ReadShort, READ_FRAMES } from "./videos/read/Read";
+import { JensenShort, JENSEN_FRAMES } from "./videos/jensen/Jensen";
 
 /** look checks: frame k of NewtonPreview shows story frame frames[k] (inputProps { frames: [...] }) */
 const Preview: React.FC = () => {
@@ -11,6 +12,7 @@ const Preview: React.FC = () => {
 const PreviewInner: React.FC<{ frames: number[] }> = ({ frames }) => {
   return <NewtonShort at={frames} />;
 };
+const JensenPreview: React.FC = () => { const p = getInputProps() as { frames?: number[]; clean?: boolean }; return <JensenShort at={p.frames ?? [0]} clean={p.clean} />; };
 const ReadPreview: React.FC = () => { const p = getInputProps() as { frames?: number[]; clean?: boolean }; return <ReadShort at={p.frames ?? [0]} clean={p.clean} />; };
 
 export const RemotionRoot: React.FC = () => {
@@ -19,6 +21,8 @@ export const RemotionRoot: React.FC = () => {
     <>
       <Composition id="NewtonShort" component={NewtonShort} durationInFrames={NEWTON_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="NewtonPreview" component={Preview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
+      <Composition id="JensenShort" component={JensenShort} durationInFrames={JENSEN_FRAMES} fps={30} width={1080} height={1920} />
+      <Composition id="JensenPreview" component={JensenPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="ReadShort" component={ReadShort} durationInFrames={READ_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="ReadPreview" component={ReadPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
     </>
