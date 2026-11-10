@@ -11,7 +11,7 @@ const Preview: React.FC = () => {
 const PreviewInner: React.FC<{ frames: number[] }> = ({ frames }) => {
   return <NewtonShort at={frames} />;
 };
-const ReadPreview: React.FC = () => <ReadShort at={(getInputProps() as { frames?: number[] }).frames ?? [0]} />;
+const ReadPreview: React.FC = () => { const p = getInputProps() as { frames?: number[]; clean?: boolean }; return <ReadShort at={p.frames ?? [0]} clean={p.clean} />; };
 
 export const RemotionRoot: React.FC = () => {
   const n = ((getInputProps() as { frames?: number[] }).frames ?? [0]).length;

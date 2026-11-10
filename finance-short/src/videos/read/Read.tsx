@@ -144,7 +144,7 @@ const Hook: React.FC<{ f: number }> = ({ f }) => {
   );
 };
 
-export const ReadShort: React.FC<{ at?: number[] }> = ({ at }) => {
+export const ReadShort: React.FC<{ at?: number[]; clean?: boolean }> = ({ at, clean }) => {
   const k = useCurrentFrame(), f = at ? at[Math.min(k, at.length - 1)] : k;
   const kit = useKit();
   if (!kit) return null;
@@ -154,8 +154,8 @@ export const ReadShort: React.FC<{ at?: number[] }> = ({ at }) => {
     <AbsoluteFill style={{ background: "#cfe3f2" }}>
       {layersAt(f).map((l, i) => <ShotView key={i ? "over" : "base"} id={l.id} kit={kit} alpha={l.alpha} f={f} />)}
       {flash > 0 && <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} />}
-      <Hook f={f} />
-      <Captions f={f} />
+      {!clean && <Hook f={f} />}
+      {!clean && <Captions f={f} />}
     </AbsoluteFill>
   );
 };
