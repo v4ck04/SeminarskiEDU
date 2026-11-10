@@ -14,7 +14,7 @@ const inputProps = { frames, post: JSON.parse(post) };
 fs.mkdirSync(outDir, { recursive: true });
 const t0 = Date.now();
 const serveUrl = process.env.SERVE || await bundle({ entryPoint: path.resolve("src/index.ts"), publicDir: path.resolve("public") });
-const composition = await selectComposition({ serveUrl, id: "NewtonPreview", browserExecutable, chromiumOptions, inputProps, timeoutInMilliseconds: 900000 });
+const composition = await selectComposition({ serveUrl, id: process.env.COMP || "NewtonPreview", browserExecutable, chromiumOptions, inputProps, timeoutInMilliseconds: 900000 });
 await renderFrames({ composition, serveUrl, outputDir: outDir, imageFormat: "jpeg", jpegQuality: 85, inputProps, browserExecutable, chromiumOptions,
   concurrency: 1, timeoutInMilliseconds: 900000, scale: Number(process.env.SCALE || 0.5),
   onBrowserLog: (l) => { if (l.type === "error") console.log("[err]", l.text.slice(0, 400)); },
