@@ -372,8 +372,8 @@ export const SCENES2: Record<string, Scene> = {
           <Flag cx={sx(1929.67)} cy={sy(381)} label="381" sub="SEPT 1929" color={GREEN} s={1} dx={150} len={10} />
           <Flag cx={sx(1932.52)} cy={sy(41)} label="41" sub="JULY 1932" color={p.acc} s={pop(c.f, a + 72, 10)} len={90} />
         </>}</Chart>
-        <T x={1560} y={470} size={260} color={p.acc} ls={-8} s={pop(c.f, e8, 12)}>−89%</T>
-        <T x={1560} y={650} size={44} color={p.ink} ls={3} op={fade(c.f, e8 + 10)}>FROM THE PEAK</T>
+        <T x={1580} y={480} size={196} color={p.acc} ls={-6} s={pop(c.f, e8, 12)}>−89%</T>
+        <T x={1580} y={620} size={44} color={p.ink} ls={3} op={fade(c.f, e8 + 10)}>FROM THE PEAK</T>
       </>
     );
   },

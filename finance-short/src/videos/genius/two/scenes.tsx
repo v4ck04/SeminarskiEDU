@@ -46,7 +46,7 @@ export const Mistake = (pal: Pal, num: number, name: string, icon: (c: Ctx, s: n
       <Bg p={PALS.pattern} f={c.f} />
       <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 26, background: pal.bg }} />
       <T x={960} y={250 + 30 * (1 - slide(c.f, a))} size={74} color={TEAL} ls={8} op={fade(c.f, a, 8)}>{`MISTAKE #${num}`}</T>
-      <T x={840} y={560} a="c" size={name.length > 16 ? 124 : 168} color="#fff" s={s} w={1100} lh={1.0} ls={-2}>{name}</T>
+      <T x={840} y={560} a="c" size={name.length > 16 ? 124 : name.length > 12 ? 136 : 168} color="#fff" s={s} w={1100} lh={1.0} ls={-2}>{name}</T>
       {icon(c, pop(c.f, b + 6, 12))}
       <div style={{ position: "absolute", left: 360, top: 860, height: 12, width: 1200 * out3((c.f - b - 4) / 18), background: GOLD, borderRadius: 6 }} />
       {[1, 2, 3, 4].map((i) => <div key={i} style={{ position: "absolute", left: 786 + i * 58, top: 930, width: 40, height: 40, borderRadius: 20, background: i <= num ? RED : "rgba(255,255,255,0.16)", transform: `scale(${i === num ? pop(c.f, b + 10, 10) : 1})` }} />)}

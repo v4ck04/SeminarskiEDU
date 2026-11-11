@@ -174,10 +174,10 @@ Isaac Newton, Mark Twain, America's top economist and two Nobel Prize winners al
 0:00 You are not smarter than Isaac Newton
 0:27 1. The physicist: Isaac Newton, 1720
 2:24 2. The writer: Mark Twain
-4:18 3. The economist: Irving Fisher, 1929
+4:19 3. The economist: Irving Fisher, 1929
 6:16 4. The Nobel winners: Long-Term Capital, 1998
-8:24 The pattern: the same 4 mistakes
-9:19 The janitor who avoided all four
+8:25 The pattern: the same 4 mistakes
+9:20 The janitor who avoided all four
 
 Sources: A. Odlyzko, "Isaac Newton and the perils of the financial South Sea" (Physics Today, 2020); R. Lowenstein, "When Genius Failed"; Wikipedia (South Sea Company, Mark Twain, Paige Compositor, Irving Fisher, Long-Term Capital Management, Ronald Read).
 
@@ -189,4 +189,8 @@ This video is for education, not financial advice.
 **Tags:** isaac newton south sea bubble, mark twain bankruptcy, paige compositor, irving fisher 1929, permanently high plateau, long term capital management, ltcm, when genius failed, ronald read, investing mistakes, leverage explained, diversification, stock market history, 1929 crash, money stories, vacko money, investing for beginners, personal finance
 
 **Subtitles:** upload `4-geniuses.en.srt`.
+
+**Files:** `4-geniuses.mp4` is the master (1920x1080, 10:52, about 168 MB; built by `assemble.sh`, not kept in git because GitHub
+refuses files over 100 MB). `4-geniuses-web.mp4` is the same film at a lower bitrate (under 100 MB) and is the copy kept in git.
+Upload the master when you have it; the web copy is good enough if you don't. Thumbnail: `thumbnail.jpg`.
 

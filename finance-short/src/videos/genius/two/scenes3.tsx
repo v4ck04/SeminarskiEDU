@@ -93,7 +93,7 @@ export const SCENES3: Record<string, Scene> = {
         <T x={590} y={640} size={150} color="#fff" op={fade(c.f, bo)}>×</T>
         {Array.from({ length: 11 }, (_, i) => i < n ? <div key={i} style={{ position: "absolute", left: 760, top: 820 - i * 62, width: 520, height: 56, background: i % 2 ? "#8f97a8" : "#a5acbb", border: `5px solid ${INK}`, boxSizing: "border-box", borderRadius: 8, transform: `scale(${pop(c.f, bo + i * 2.7, 8)})` }} /> : null)}
         <T x={1020} y={930} size={44} color="#fff" ls={2} op={fade(c.f, bo + 10)}>BORROWED MONEY</T>
-        <T x={1640} y={420} size={92} color={GOLD} s={pop(c.f, lo + 4, 12)}>{"=\nFORTUNES"}</T>
+        <T x={1600} y={420} size={84} color={GOLD} s={pop(c.f, lo + 4, 12)}>{"=\nFORTUNES"}</T>
       </>
     );
   },
@@ -321,7 +321,7 @@ export const SCENES3: Record<string, Scene> = {
             <Box x={x} y={y} w={800} h={300} bg={on ? "rgba(43,217,168,0.16)" : "rgba(255,255,255,0.08)"} bd={on ? TEAL : "rgba(255,255,255,0.2)"} bw={on ? 8 : 5} r={32} s={on ? 1.03 : 1} shadow={false} />
             <MisIcon k={MIS[i][0]} x={x - 280} y={y} w={150} />
             <T x={x - 180} y={y - 86} a="l" size={36} color={TEAL} ls={3}>{MIS[i][1]}</T>
-            <T x={x - 180} y={y + 24} a="l" size={i === 2 ? 60 : 46} color="#fff" op={seen ? 1 : 0.0} lh={1.15}>{MIS[i][2]}</T>
+            <T x={x - 180} y={y + 24} a="l" size={i >= 2 ? 54 : 40} color="#fff" op={seen ? 1 : 0.0} lh={1.15}>{MIS[i][2]}</T>
           </React.Fragment>); })}
       </>
     );
@@ -352,7 +352,7 @@ export const SCENES3: Record<string, Scene> = {
           <React.Fragment key={i}>
             <Box x={x} y={560} w={500} h={640} bg="#FBF9F0" s={s} rot={[-2, 1.5, -1][i]} />
             {k === "bf" ? <Fx k="bf" cw={320} ch={200} draw={fxBreakfast} x={x} y={470} w={380} s={s} /> : <Ico n={k} x={x} y={470} w={340} c={k === "car" ? "#5f9aa0" : "#c9ccd2"} c2="#cfe6ea" s={s} />}
-            <T x={x} y={760} size={40} color={p.ink} ls={1} op={fade(c.f, cs[i] + 6)} lh={1.15}>{label}</T>
+            <T x={x} y={760} size={34} color={p.ink} ls={1} op={fade(c.f, cs[i] + 6)} lh={1.2}>{label}</T>
           </React.Fragment>); })}
       </>
     );
