@@ -5,3 +5,5 @@ audio/mix.wav
 parts/
 # the full-quality master (168 MB) is over GitHub's 100 MB limit; assemble.sh rebuilds it, 4-geniuses-web.mp4 is the copy kept here
 4-geniuses.mp4
+audio/bed.wav
+shorts/tmp/

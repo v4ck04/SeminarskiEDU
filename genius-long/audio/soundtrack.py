@@ -554,6 +554,8 @@ def main():
     # the end card (no voice): let the music come up
     e0 = ns(TIMING["total"] / FPS - 0.5)
     mus[:, e0:] *= np.minimum(dbg(5.0), 1 + (dbg(5.0) - 1) * np.arange(N - e0) / ns(1.0))[None, :]
+    if os.environ.get("STEMS"):   # music + effects at their mix level (pre-master), for re-cuts such as Shorts
+        write_wav(os.path.join(HERE, "bed.wav"), mus + fx)
     mix = voice + mus + fx
     mix = limiter(mix * dbg(-14.0 - integrated(mix)), -1.2)
     mix = limiter(mix * dbg(-14.0 - integrated(mix)), -1.2)
