@@ -10,7 +10,7 @@ const YOUNG: Outfit = { jacket: "#8a5a3c", pants: "#4a4036", boots: "#3a2a22", h
 export const Stamp: React.FC<{ t: string; col?: string; x: number; y: number; w: number; s: number; rot?: number }> = ({ t, col = "#d42f2f", x, y, w, s, rot = 0 }) =>
   <Fx k={"stamp" + t + col} cw={520} ch={200} draw={(q) => fxStamp(q, t, col)} x={x} y={y} w={w} s={s} rot={rot} />;
 export const Badge: React.FC<{ t: string; bg?: string; fg?: string; x: number; y: number; w: number; s: number }> = ({ t, bg = "#0B1E3A", fg = GOLD, x, y, w, s }) =>
-  <Fx k={"badge" + t + bg + fg} cw={560} ch={200} draw={(q) => fxBadge(q, t, bg, fg)} x={x} y={y} w={w} s={s} />;
+  <Box x={x} y={y} w={w} h={w * 0.27} bg={bg} r={w * 0.135} s={s}><T x={w / 2 - 6} y={w * 0.135 - 6} size={Math.min(w * 0.17, (w * 1.42) / t.length)} color={fg} ls={1}>{t}</T></Box>;
 /** an arrow from (x0, y) to (x1, y) that grows with u */
 export const Arrow: React.FC<{ x0: number; x1: number; y: number; u: number; col?: string }> = ({ x0, x1, y, u, col = INK }) => (u <= 0 ? null : (
   <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>
@@ -29,7 +29,7 @@ const DOW30: Pt[] = [[1929.67, 381], [1929.87, 199], [1930.29, 294], [1930.95, 1
 
 export const SCENES2: Record<string, Scene> = {
   // ================= 2 · TWAIN =================
-  t0: Title(PALS.twain, "2", "THE WRITER", "Mark Twain · Hartford, 1880", (c) => <Char {...TW} x={1580} y={1010} h={820} f={c.f} expr="smile" s={pop(c.f, 8, 14)} />),
+  t0: Title(PALS.twain, "2", "THE WRITER", "Mark Twain · Hartford, 1880", (c) => <Char {...TW} x={1660} y={1010} h={820} f={c.f} expr="smile" s={pop(c.f, 8, 14)} />),
   t2: (c) => {
     const p = PALS.twain, wr = c.c("writing") - 4, iv = c.c("inventions") - 4;
     return (
@@ -58,8 +58,8 @@ export const SCENES2: Record<string, Scene> = {
         <Box x={1120} y={540} w={420} h={420} bg={rev ? "#FBF6E9" : "#8a6a4a"} s={pop(c.f, of, 12) * (rev ? 0.9 + 0.1 * pop(c.f, te, 10) : 1)} />
         {!rev && <Fx k="q" cw={300} ch={300} draw={fxQuestion} x={1120} y={540} w={240} s={pop(c.f, of + 4, 12)} />}
         {rev && <Ico n="phone" x={1120} y={540} w={340} c="#8a5a3c" s={pop(c.f, te, 12)} />}
-        <Fx k="paper" cw={220} ch={280} draw={(q) => fxPaper(q, 0)} x={800} y={520} w={150} s={pop(c.f, of + 10, 12)} rot={-10} />
-        <T x={800} y={660} size={36} color={p.ink} ls={2} op={fade(c.f, of + 14)}>STOCK OFFER</T>
+        <Fx k="paper" cw={220} ch={280} draw={(q) => fxPaper(q, 0)} x={770} y={500} w={150} s={pop(c.f, of + 10, 12)} rot={-10} />
+        <T x={770} y={640} size={36} color={p.ink} ls={2} op={fade(c.f, of + 14)}>STOCK OFFER</T>
         <Stamp t="NO" x={1120} y={520} w={470} s={rev ? 0 : pop(c.f, no, 9)} rot={-6} />
         <T x={1120} y={830} size={64} color={p.acc} s={pop(c.f, te + 4, 12)}>THE TELEPHONE</T>
         <Stamp t="HE SAID NO" x={1560} y={330} w={420} s={pop(c.f, te + 12, 10)} rot={8} />
@@ -224,7 +224,7 @@ export const SCENES2: Record<string, Scene> = {
   t13: Mistake(PALS.twain, 2, "ALL YOUR EGGS\nIN ONE BASKET", (c, s) => <Fx k="basket" cw={320} ch={260} draw={fxBasket} x={1540} y={560} w={420} s={s} />),
 
   // ================= 3 · FISHER =================
-  f0: Title(PALS.fisher, "3", "THE ECONOMIST", "Irving Fisher · New York, 1929", (c) => <Char {...FI} x={1580} y={1010} h={820} f={c.f} expr="smile_closed" s={pop(c.f, 8, 14)} />),
+  f0: Title(PALS.fisher, "3", "THE ECONOMIST", "Irving Fisher · New York, 1929", (c) => <Char {...FI} x={1690} y={1010} h={820} f={c.f} expr="smile_closed" s={pop(c.f, 8, 14)} />),
   f1: (c) => {
     const p = PALS.fisher, ex = c.c("experts") - 6, th = c.c("this") - 4;
     return (
@@ -284,7 +284,7 @@ export const SCENES2: Record<string, Scene> = {
         <T x={1150} y={640} size={64} color={p.acc} op={fade(c.f, bo + 14)}>{"BORROWED\nMONEY"}</T>
         <T x={960} y={210} size={170} color={p.ink} ls={6} s={pop(c.f, le, 12)}>LEVERAGE</T>
         <div style={{ position: "absolute", left: 560, top: 300, height: 14, width: 800 * out3((c.f - le - 6) / 14), background: p.acc, borderRadius: 7 }} />
-        <Badge t="10% DOWN" x={1640} y={520} w={480} s={pop(c.f, te, 12)} bg={p.acc2} fg="#fff" />
+        <Badge t="10% DOWN" x={1640} y={520} w={460} s={pop(c.f, te, 12)} bg={p.acc2} fg="#fff" />
         <T x={1640} y={650} size={36} wt={800} color={p.ink} op={0.8 * fade(c.f, te + 8)}>{"was enough to buy\nstocks in the 1920s"}</T>
       </>
     );
@@ -296,6 +296,7 @@ export const SCENES2: Record<string, Scene> = {
         <div style={{ position: "absolute", left: x - 110, top: base - (90 + own) * K * g, width: 220, height: 90 * K * g, background: "#c9ccd2", border: `7px solid ${INK}`, boxSizing: "border-box", borderRadius: "14px 14px 0 0" }} />
         {own > 0 && <div style={{ position: "absolute", left: x - 110, top: base - own * K * g, width: 220, height: own * K * g, background: ownCol, border: `7px solid ${INK}`, boxSizing: "border-box" }} />}
         <T x={x} y={base - (90 * K) / 2 - own * K} size={38} color={INK} op={fade(c.f, a + 10)}>{"BORROWED\n$90"}</T>
+        <T x={x} y={own > 0 ? base - (own * K) / 2 : base - 30} size={own >= 20 ? 38 : 30} color={own > 0 ? "#fff" : RED} op={fade(c.f, a + 12)}>{"YOURS $" + own}</T>
         <T x={x} y={950} size={40} color={p.ink} ls={1} op={fade(c.f, a + 4)}>{label}</T>
       </>); };
     return (
@@ -303,15 +304,13 @@ export const SCENES2: Record<string, Scene> = {
         <Bg p={p} f={c.f} />
         <Head c={c} p={p} y={120} size={70}>How leverage works</Head>
         <div style={{ position: "absolute", left: 160, right: 160, top: base, height: 7, background: p.ink, opacity: 0.6 }} />
-        {Bar(420, 10, ni, "YOU BUY $100 OF STOCK", GREEN, c.f >= ni)}
-        <div style={{ position: "absolute", left: 310, top: base - 10 * K * out3((c.f - te) / 12), width: 220, height: 10 * K * out3((c.f - te) / 12), background: GREEN, border: `7px solid ${INK}`, boxSizing: "border-box", opacity: c.f < ni ? 1 : 0 }} />
-        <T x={170} y={base - 24} a="l" size={40} color={GREEN} s={pop(c.f, te, 10)}>YOURS $10</T>
-        {Bar(1020, 20, ri, "STOCK +10%  →  $110", GREEN, c.f >= ri)}
-        <T x={1210} y={base - 48} a="l" size={44} color={GREEN} s={pop(c.f, ri + 12, 10)}>$20</T>
-        <T x={1020} y={250} size={110} color={GREEN} s={pop(c.f, db, 12)}>×2</T>
+        {Bar(560, 10, ni, "YOU BUY $100 OF STOCK", GREEN, c.f >= ni)}
+        <div style={{ position: "absolute", left: 450, top: base - 10 * K * out3((c.f - te) / 12), width: 220, height: 10 * K * out3((c.f - te) / 12), background: GREEN, border: `7px solid ${INK}`, boxSizing: "border-box", opacity: c.f < ni ? 1 : 0 }} />
+        <T x={425} y={base - 24} a="r" size={40} color={GREEN} s={c.f < ni ? pop(c.f, te, 10) : 0}>YOURS $10</T>
+        {Bar(1080, 20, ri, "STOCK +10%  →  $110", GREEN, c.f >= ri)}
+        <T x={1080} y={250} size={110} color={GREEN} s={pop(c.f, db, 12)}>×2</T>
         {Bar(1560, 0, fa, "STOCK −10%  →  $90", RED, c.f >= fa)}
         <T x={1560} y={250} size={110} color={p.acc} s={pop(c.f, lo, 12)}>−100%</T>
-        <T x={1750} y={base - 40} a="l" size={44} color={p.acc} s={pop(c.f, fa + 12, 10)}>$0</T>
       </>
     );
   },
@@ -384,7 +383,7 @@ export const SCENES2: Record<string, Scene> = {
       <>
         <Bg p={p} f={c.f} floor={FLOOR} />
         <T x={620} y={200} size={130} color={c.f > go ? p.acc : p.ink} ls={-3}>{"$" + fmt(count(c.f, 0, go + 6, 10000000, 0))}</T>
-        <Stamp t="IN DEBT" x={620} y={360} w={460} s={pop(c.f, de, 9)} rot={-5} />
+        <Stamp t="IN DEBT" x={900} y={340} w={440} s={pop(c.f, de, 9)} rot={-5} />
         <Shadow x={420} y={FLOOR} w={250} /><Char {...FI} x={420} y={FLOOR} h={560} f={c.f} expr="sad" prop={c.f < si + 20 ? "pockets" : "bag"} headTilt={-3} />
         <Shadow x={800} y={FLOOR} w={230} op={0.2 * fade(c.f, si)} /><Char o={townsfolk(1)} ok="tf1" id={41} x={800} y={FLOOR} h={520} f={c.f} expr="stern" s={pop(c.f, si, 12)} flip />
         <T x={800} y={950} size={34} color={p.ink} ls={2} op={fade(c.f, si + 6)}>SISTER-IN-LAW</T>
@@ -405,7 +404,7 @@ export const SCENES2: Record<string, Scene> = {
           <div style={{ position: "absolute", inset: 22, border: `5px solid ${GOLD}`, borderRadius: 8 }} />
           <T x={214} y={210} size={74} color={GOLD} ls={2}>DEBT</T><T x={214} y={300} size={58} color={GOLD} ls={1}>DEFLATION</T><T x={214} y={450} size={34} wt={800} color="#fff" ls={3}>IRVING FISHER</T>
         </Box>
-        <Badge t="STILL USED TODAY" x={1600} y={260} w={520} s={pop(c.f, to, 12)} bg="#0B1E3A" fg={TEAL} />
+        <Badge t="STILL USED TODAY" x={1560} y={190} w={600} s={pop(c.f, to, 12)} bg="#0B1E3A" fg={TEAL} />
         <T x={1420} y={920} size={44} wt={800} color={p.acc} op={fade(c.f, li)}>He just had to live through it first.</T>
       </>
     );

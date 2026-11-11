@@ -5,12 +5,15 @@ import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { BEATS, TOTAL, beatAt, ctxOf, PALS, Bg, T } from "./two/kit";
 import { SCENES as S1, Chip } from "./two/scenes";
 import { SCENES2 } from "./two/scenes2";
-const SCENES = { ...S1, ...SCENES2 };
+import { SCENES3 } from "./two/scenes3";
+const SCENES = { ...S1, ...SCENES2, ...SCENES3 };
 
-export const GENIUS2D_FRAMES = TOTAL;
+/** the end card holds for 8 s after the voice (room for the end screen) */
+export const END_HOLD = 240;
+export const GENIUS2D_FRAMES = TOTAL + END_HOLD;
 export const Genius2D: React.FC<{ at?: number[] }> = ({ at }) => {
   const k = useCurrentFrame(), gf = at ? at[Math.min(k, at.length - 1)] : k;
-  const b = beatAt(gf);
+  const b = beatAt(Math.min(gf, TOTAL - 1));
   if (b.mode !== "2d") return <AbsoluteFill style={{ background: "#000" }} />;
   const c = ctxOf(b, gf), scene = SCENES[b.id], pal = PALS[b.ch] ?? PALS.hook;
   return (

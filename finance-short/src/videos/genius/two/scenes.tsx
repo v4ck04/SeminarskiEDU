@@ -32,7 +32,7 @@ export const Title = (pal: Pal, num: string, title: string, sub: string, who: (c
     <Bg p={pal} f={c.f} />
     <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 1920 * 0.6 * out3(c.f / 14), background: pal.dark ? "rgba(255,255,255,0.05)" : "rgba(36,23,38,0.06)" }} />
     {num && <T x={250} y={520} size={520} color={pal.acc} op={fade(c.f, 0, 6)} s={0.6 + 0.4 * pop(c.f, 0, 12)}>{num}</T>}
-    <T x={num ? 470 : 170} y={470 + 40 * (1 - slide(c.f, 4))} a="l" size={130} color={pal.ink} op={fade(c.f, 4, 8)} ls={-2}>{title}</T>
+    <T x={num ? 470 : 170} y={470 + 40 * (1 - slide(c.f, 4))} a="l" size={title.length > 14 ? 96 : 124} color={pal.ink} op={fade(c.f, 4, 8)} ls={-2}>{title}</T>
     <div style={{ position: "absolute", left: num ? 476 : 176, top: 566, height: 10, width: 560 * out3((c.f - 10) / 16), background: pal.acc2, borderRadius: 5 }} />
     <T x={num ? 474 : 174} y={640} a="l" size={58} wt={800} color={pal.ink} op={0.85 * fade(c.f, 14, 8)} ls={0}>{sub}</T>
     {who(c)}
@@ -126,7 +126,7 @@ export const SCENES: Record<string, Scene> = {
   },
 
   // ================= 1 · NEWTON =================
-  n0: Title(PALS.newton, "1", "THE PHYSICIST", "Isaac Newton · London, 1720", (c) => <Char {...NW} x={1580} y={1010} h={820} f={c.f} expr="smile" s={pop(c.f, 8, 14)} />),
+  n0: Title(PALS.newton, "1", "THE PHYSICIST", "Isaac Newton · London, 1720", (c) => <Char {...NW} x={1660} y={1010} h={820} f={c.f} expr="smile" s={pop(c.f, 8, 14)} />),
   n2: (c) => {
     const p = PALS.newton, ss = c.c("south") - 4, xs = [260, 610, 960, 1310, 1660];
     return (

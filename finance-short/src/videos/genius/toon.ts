@@ -1417,7 +1417,7 @@ export const fxStamp = (p: Pen, text: string, col = "#d42f2f") => {
   p.poly(rrect(20, 34, 500, 166, 18), "#ffffff", 0);
   p.stroke([...rrect(26, 40, 494, 160, 14), [480, 40]], 12, col);
   p.rot = null;
-  const g = p.g; g.save(); g.translate(260, 100); g.rotate(rad(-7)); label(p, text, 0, 4, text.length > 8 ? 70 : 88, col, 0); g.restore();
+  const g = p.g; g.save(); g.translate(260, 100); g.rotate(rad(-7)); label(p, text, 0, 4, Math.min(88, Math.floor(740 / text.length)), col, 0); g.restore();
 };
 /** a closed book standing up, on a 220 x 280 canvas */
 export const fxBook = (p: Pen, col = "#b5343c") => {

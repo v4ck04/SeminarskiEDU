@@ -1,4 +1,5 @@
 voice/*.log
 __pycache__/
 audio/stem_*.wav
+audio/mix.wav
 parts/
