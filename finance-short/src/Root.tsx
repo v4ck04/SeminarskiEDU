@@ -5,6 +5,7 @@ import { ReadShort, READ_FRAMES } from "./videos/read/Read";
 import { JensenShort, JENSEN_FRAMES } from "./videos/jensen/Jensen";
 import { Genius3D, GENIUS3D_FRAMES } from "./videos/genius/Genius3D";
 import { Genius2D, GENIUS2D_FRAMES } from "./videos/genius/Genius2D";
+import { GeniusThumb } from "./videos/genius/two/thumb";
 
 /** look checks: frame k of NewtonPreview shows story frame frames[k] (inputProps { frames: [...] }) */
 const Preview: React.FC = () => {
@@ -30,6 +31,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Genius3D" component={Genius3D} durationInFrames={GENIUS3D_FRAMES} fps={30} width={1920} height={1080} />
       <Composition id="Genius3DPreview" component={Genius3DPreview} durationInFrames={Math.max(1, n)} fps={30} width={1920} height={1080} />
       <Composition id="Genius2D" component={Genius2D} durationInFrames={GENIUS2D_FRAMES} fps={30} width={1920} height={1080} />
+      <Composition id="GeniusThumb" component={GeniusThumb} durationInFrames={1} fps={30} width={1920} height={1080} />
       <Composition id="Genius2DPreview" component={Genius2DPreview} durationInFrames={Math.max(1, n)} fps={30} width={1920} height={1080} />
       <Composition id="ReadShort" component={ReadShort} durationInFrames={READ_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="ReadPreview" component={ReadPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
