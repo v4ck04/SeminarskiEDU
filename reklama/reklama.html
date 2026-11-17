@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../literatura-reel/lib/fonts.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1080px; height: var(--h); overflow: hidden; position: relative; font-family: Inter, sans-serif; color: #fff;
+    background: radial-gradient(1200px 1400px at 50% 38%, #18306A 0%, #0A1530 50%, #05070D 100%); }
+  canvas { position: absolute; inset: 0; }
+  .vig { position: absolute; inset: 0; background: radial-gradient(1000px 1500px at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.5) 100%); }
+  .c { position: absolute; left: 70px; right: 70px; text-align: center; }
+  .brand { font-family: 'Playfair Display'; font-weight: 600; font-size: 36px; color: #D4AF6A; letter-spacing: .04em; }
+  .brand::before, .brand::after { content: ''; display: inline-block; width: 54px; height: 2px; background: #D4AF6A; opacity: .6; vertical-align: .3em; margin: 0 20px; }
+  .badge { display: inline-block; font-family: Montserrat; font-weight: 800; font-size: 34px; letter-spacing: .28em; color: #0A1530; padding: 16px 30px 16px 40px;
+    border-radius: 999px; background: linear-gradient(100deg, #B8924C, #F3DDA4 50%, #C9A25B); box-shadow: 0 12px 40px rgba(212,175,106,.35); }
+  h1 { font-family: 'Playfair Display'; font-weight: 700; font-size: 104px; line-height: 1.06; letter-spacing: -0.01em; text-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  .gold { background: linear-gradient(100deg, #A9843F, #E2BC6E 40%, #F7E6B5 52%, #D4AF6A 70%, #A9843F); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 42px; line-height: 1.4; color: #C9CFDD; font-weight: 500; }
+  .card { display: inline-block; text-align: left; padding: 40px 54px; border-radius: 28px; background: rgba(255,255,255,.04); border: 2px solid rgba(212,175,106,.35); }
+  .card div { font-size: 42px; font-weight: 500; margin: 12px 0; white-space: nowrap; color: #E7EAF2; }
+  .card div::before { content: ''; display: inline-block; width: 28px; height: 28px; margin-right: 22px; vertical-align: -3px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #FFF1C9, #D4AF6A 55%, #9C7A3C); }
+  .price { display: inline-flex; align-items: center; gap: 40px; padding: 30px 60px; border-radius: 34px;
+    background: linear-gradient(160deg, rgba(212,175,106,.16), rgba(212,175,106,.04)); border: 3px solid #D4AF6A; box-shadow: 0 24px 70px rgba(0,0,0,.45), 0 0 60px rgba(212,175,106,.15); }
+  .old { font-family: Montserrat; font-weight: 600; font-size: 56px; color: #8C95AD; position: relative; white-space: nowrap; }
+  .old::after { content: ''; position: absolute; left: -8px; right: -8px; top: 52%; height: 6px; background: #E25B5B; border-radius: 3px; transform: rotate(-8deg); }
+  .new { font-family: 'Playfair Display'; font-weight: 700; font-size: 150px; line-height: 1; white-space: nowrap; }
+  .new small { font-family: Montserrat; font-size: 50px; font-weight: 700; margin-left: 10px; }
+  .lab { font-family: Montserrat; font-weight: 700; font-size: 28px; letter-spacing: .3em; color: #D4AF6A; margin-bottom: 18px; }
+  .pill { display: inline-block; padding: 26px 60px; border-radius: 999px; background: linear-gradient(100deg, #B8924C, #F3DDA4 50%, #C9A25B); color: #0A1530;
+    font-family: Montserrat; font-weight: 800; font-size: 48px; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+  .handle { font-family: Montserrat; font-weight: 700; font-size: 38px; letter-spacing: .06em; color: #D4AF6A; }
+</style>
+</head>
+<body>
+<canvas id="dust" width="1080" height="1920"></canvas>
+<div class="vig"></div>
+<div id="L"></div>
+<script>
+const f = new URLSearchParams(location.search).get('f') || 'story';
+const H = f === 'story' ? 1920 : 1350;
+document.body.style.setProperty('--h', H + 'px');
+// layout tops for story (9:16, safe zone 250..1580) and feed (4:5)
+const Y = f === 'story'
+  ? { brand: 260, badge: 350, h1: 450, sub: 690, card: 775, price: 1075, pill: 1390, handle: 1515 }
+  : { brand: 50, badge: 120, h1: 205, sub: 0, card: 0, price: 520, pill: 1100, handle: 1225 };
+const card = `<div class="card"><div>Izbor literature i citiranje</div><div>Struktura i formatiranje</div><div>Dogovor oko teme i roka</div></div>`;
+document.getElementById('L').innerHTML = `
+  <div class="c brand" style="top:${Y.brand}px">SeminarskiEdu</div>
+  <div class="c" style="top:${Y.badge}px"><span class="badge">AKCIJA −20%</span></div>
+  <div class="c" style="top:${Y.h1}px"><h1>Seminarski rad<br><span class="gold">bez stresa</span></h1></div>
+  ${Y.sub ? `<div class="c sub" style="top:${Y.sub}px">Stručna pomoć za studente</div>` : ''}
+  ${Y.card ? `<div class="c" style="top:${Y.card}px">${card}</div>` : `<div class="c sub" style="top:440px">Literatura · Struktura · Citiranje</div>`}
+  <div class="c" style="top:${Y.price}px"><div class="lab">AKCIJSKA CENA</div>
+    <div class="price"><span class="old">1.500 din</span><span class="new gold">1.200<small>din</small></span></div></div>
+  ${f === 'feed' ? `<div class="c" style="top:815px">${card.replace('class="card"', 'class="card" style="padding:26px 46px"')}</div>` : ''}
+  <div class="c" style="top:${Y.pill}px"><span class="pill">Piši nam u DM 📩</span></div>
+  <div class="c" style="top:${Y.handle}px"><span class="handle">@seminarski_edu</span></div>`;
+if (f === 'feed') { document.querySelector('.card[style]').querySelectorAll('div').forEach(d => d.style.fontSize = '36px'); }
+function rng(s){ return () => { s |= 0; s = (s + 0x6D2B79F5) | 0; let x = Math.imul(s ^ (s >>> 15), 1 | s); x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x; return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+const r = rng(19), cv = document.getElementById('dust'); cv.height = H; const c = cv.getContext('2d'); c.globalCompositeOperation = 'lighter';
+for (let i = 0; i < 90; i++) { const x = r()*1080, y = r()*H, z = .3 + r()*.7, big = r() < .12, rad = big ? 10 + 24*z : 4 + 7*z;
+  const g = c.createRadialGradient(x, y, 0, x, y, rad); g.addColorStop(0, `rgba(247,226,170,${(big ? .1 : .5) * z})`); g.addColorStop(1, 'rgba(212,175,106,0)');
+  c.fillStyle = g; c.beginPath(); c.arc(x, y, rad, 0, 6.283); c.fill(); }
+</script>
+</body>
+</html>
