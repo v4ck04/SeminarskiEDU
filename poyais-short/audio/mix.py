@@ -256,6 +256,11 @@ sfx(ding(Q, 3136), fr(1461), 0.4, 0.0, "selling Poyais again")
 for k in range(10):
     sfx(S.stroll_step(Q, 0.4), fr(1518) + k * 0.3, 0.3, -0.1 * k)
 CUES.append((fr(1513), "walks free"))
+# the like & subscribe pop-up (Subscribe.tsx): whoosh in, two taps, whoosh out
+sfx(S.whoosh(0.35, Q, peak=0.3), fr(1550), 0.3, 0.0, "subscribe pop-up in")
+sfx(pop_small(Q), fr(1574), 0.55, -0.3, "like tap"); sfx(ding(Q, 3136), fr(1575), 0.25, -0.3)
+sfx(pop_small(Q), fr(1596), 0.55, 0.3, "subscribe tap"); sfx(ding(Q, 2637), fr(1597), 0.3, 0.3)
+sfx(S.whoosh(0.3, Q, peak=0.3), fr(1636), 0.25, 0.0)
 
 # =============================================================== mix
 def limiter(x, ceil_db=-1.2, look=0.004, rel=0.08):

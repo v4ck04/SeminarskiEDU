@@ -19,3 +19,6 @@ integrated -14.16 LUFS, true peak -1.50 dBTP, length 55.000 s
 |  42.93 | 1288 | nicer pictures |
 |  48.70 | 1461 | selling Poyais again |
 |  50.43 | 1513 | walks free |
+|  51.67 | 1550 | subscribe pop-up in |
+|  52.47 | 1574 | like tap |
+|  53.20 | 1596 | subscribe tap |

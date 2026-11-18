@@ -11,6 +11,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
 import { AbsoluteFill, Audio, continueRender, delayRender, getInputProps, staticFile, useCurrentFrame } from "remotion";
 import { Captions } from "./Captions";
+import { Subscribe } from "./Subscribe";
 import { useFontsReady } from "./fonts";
 import { ThreeCanvas } from "@remotion/three";
 import { useThree } from "@react-three/fiber";
@@ -117,6 +118,7 @@ export const PoyaisShort: React.FC<{ at?: number[] }> = ({ at }) => {
       {layersAt(f).map((l, i) => <ShotView key={i ? "over" : "base"} id={l.id} kit={kit} alpha={l.alpha} f={f} />)}
       {flash > 0 && <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} />}
       {(getInputProps() as { caps?: boolean }).caps !== false && <Captions f={f} />}
+      <Subscribe f={f} />
       {!at && <Audio src={staticFile("poyais/mix.wav")} />}
     </AbsoluteFill>
   );
