@@ -87,9 +87,9 @@ const P = (text) => new Paragraph({
 });
 
 const tocEntries = [];
-function H1(text) {
+function H1(text, newPage = false) {
   tocEntries.push({ level: 1, text });
-  return new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(text)] });
+  return new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: newPage, children: [new TextRun(text)] });
 }
 function H2(text) {
   tocEntries.push({ level: 2, text });
@@ -163,7 +163,7 @@ for (const b of telo) {
 }
 
 // Literatura (bez fusnota), numerisana lista
-bodyChildren.push(H1("LITERATURA"));
+bodyChildren.push(H1("LITERATURA", true));
 literatura.forEach((t) => bodyChildren.push(new Paragraph({
   numbering: { reference: "lit", level: 0 },
   alignment: AlignmentType.LEFT,
@@ -204,7 +204,8 @@ const potpisi = new Table({
 
 const naslovna = [
   C(meta.fakultet[0], { bold: true }),
-  C(meta.fakultet[1], { bold: true, after: 240 }),
+  C(meta.fakultet[1], { bold: true }),
+  C(meta.fakultet[2], { bold: true, after: 240 }),
   C(meta.predmet),
   C("Seminarski rad", { before: 3600, size: 28, after: 120 }),
   C(meta.naslov, { bold: true, size: 32 }),

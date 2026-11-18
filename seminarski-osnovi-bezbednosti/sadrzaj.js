@@ -2,7 +2,7 @@
 // Oznake: *kurziv*, [[fn:izvor|strana]] = fusnota (uvek na kraju rečenice).
 
 const meta = {
-  fakultet: ["FAKULTET ZA PRAVNE I POSLOVNE STUDIJE", "DR LAZAR VRKATIĆ"],
+  fakultet: ["FAKULTET ZA PRAVNE I POSLOVNE STUDIJE", "DR LAZAR VRKATIĆ", "NIŠ"],
   predmet: "Predmet: Osnovi bezbednosti",
   naslov: "RANJIVOST ZAJEDNICE I POSLEDICE OPASNOSTI PRIRODNOG POREKLA",
   mentor: "prof. dr Marijan Đurovski",

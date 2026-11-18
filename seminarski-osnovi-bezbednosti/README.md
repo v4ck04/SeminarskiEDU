@@ -1,6 +1,6 @@
 # Seminarski rad: Ranjivost zajednice i posledice opasnosti prirodnog porekla
 
-Predmet: Osnovi bezbednosti. Student: Anđela Denić, 27332. Mentor: prof. dr Marijan Đurovski. Mesto i godina: Niš, 2026.
+Predmet: Osnovi bezbednosti. Student: Anđela Denić, 27332. Mentor: prof. dr Marijan Đurovski. Fakultet: Fakultet za pravne i poslovne studije dr Lazar Vrkatić, Niš. Mesto i godina: Niš, 2026.
 
 - `Seminarski_rad_Ranjivost_zajednice_Andjela_Denic.docx`: rad za predaju (MS Word).
 - `Seminarski_rad_Ranjivost_zajednice_Andjela_Denic_pregled.pdf`: pregled preloma (LibreOffice).
@@ -13,7 +13,7 @@ Osnovni udžbenik (Stajić, Lj.: *Osnovi bezbednosti*, Policijska akademija, Beo
 
 ## Format (prema uputstvu FLV)
 
-A4, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovi TNR 14 bold, centrirano, velika slova; podnaslovi TNR 12 bold, centrirano. Naslovna strana i sadržaj nisu numerisani. Izvori su u fusnotama na dnu strane, broj fusnote je na kraju rečenice. Strane reči su u kurzivu, a strana imena su u srpskoj transkripciji sa originalom u zagradi. Ukupno 15 strana (naslovna, sadržaj i 13 numerisanih), 12 jedinica literature i 3 tabele.
+A4, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovi TNR 14 bold, centrirano, velika slova; podnaslovi TNR 12 bold, centrirano. Naslovna strana i sadržaj nisu numerisani, a literatura počinje na posebnoj strani. Izvori su u fusnotama na dnu strane, broj fusnote je na kraju rečenice. Strane reči su u kurzivu, a strana imena su u srpskoj transkripciji sa originalom u zagradi. Ukupno 15 strana (naslovna, sadržaj i 13 numerisanih), 12 jedinica literature i 3 tabele.
 
 ## Provera izvora
 
