@@ -123,7 +123,7 @@ export const J1: V3 = [10.0, D0, 25.0], J3: V3 = [10.95, D0, 25.15], LEND: V3 = 
 export const LEND3: V3 = [15.95, D0, 25.2];
 export const BOARD13: V3 = [12.3, D0, 26.15];             // the board as seen behind the first man at sunset                 // the lender offering the third man a loan
 export const BAR2: V3 = [14.15, D0, 25.1], BAR3: V3 = [17.55, D0, 25.1];
-export const CROWD: V3[] = [[13.9, D0, 25.75], [14.5, D0, 26.05], [15.6, D0, 26.05], [16.2, D0, 25.75]];
+export const CROWD: V3[] = [[13.55, D0, 25.8], [14.05, D0, 26.1], [15.95, D0, 26.1], [16.45, D0, 25.8]];
 export const ROW: V3[] = [[8.0, D0, 25.0], [9.45, D0, 25.2], [10.9, D0, 25.0], [12.35, D0, 25.2], [13.8, D0, 25.0]];
 /** the lender walking in (shot 11) and down the row collecting (shot 15) */
 export const lenderInX = (f: number) => 7.4 + (LEND[0] - 7.4) * smooth((f - 965) / 36);
