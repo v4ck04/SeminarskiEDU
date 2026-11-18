@@ -1,14 +1,13 @@
 # Seminarski rad: Ishrana i dijabetes
 
-VZŠ „Visan“, Beograd. Predmet: Ishrana i dijetetika. Student: Aleksandra Đurić, 75-II.
+VZŠ „Visan“, Beograd. Predmet: Ishrana i dijetetika. Student: Aleksandra Đurić, 75-II. Mentor: Prof. dr Snežana Pakić.
 
 - `Aleksandra Djuric - Ishrana i dijabetes.docx`: rad u Word formatu.
 - `Aleksandra Djuric - Ishrana i dijabetes.pdf`: rad u PDF formatu (Vodič preporučuje PDF za predaju).
 
 ## Pre predaje
 
-1. Upisati mentora na naslovnoj strani (zvanje, titula, ime i prezime; označeno žutom bojom).
-2. Naslov mejla prema Vodiču: `Ishrana i dijetetika, Aleksandra Djuric, 75-II, Ishrana i dijabetes`.
+Naslov mejla prema Vodiču: `Ishrana i dijetetika, Aleksandra Djuric, 75-II, Ishrana i dijabetes`.
 
 ## Format (prema Vodiču VZŠ „Visan“)
 
