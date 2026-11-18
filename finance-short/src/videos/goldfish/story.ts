@@ -118,11 +118,12 @@ const add = (a: V3, b: V3): V3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const sat = (c: V3): V3 => [c[0], c[1] + SEAT, c[2] - 0.12];
 export const P1S = sat(CRATES[0]), P3S = sat(CRATES[1]);
 // staging points for this episode
-export const BOARD: V3 = [12.6, D0, 26.9];                  // the market price board on its post (card base)
+export const BOARD: V3 = [15.0, D0, 26.5];                  // the market price board on its post (card base)
 export const J1: V3 = [10.0, D0, 25.0], J3: V3 = [10.95, D0, 25.15], LEND: V3 = [9.05, D0, 25.15];
-export const LEND3: V3 = [15.75, D0, 25.2];                 // the lender offering the third man a loan
+export const LEND3: V3 = [15.95, D0, 25.2];
+export const BOARD13: V3 = [12.3, D0, 26.15];             // the board as seen behind the first man at sunset                 // the lender offering the third man a loan
 export const BAR2: V3 = [14.15, D0, 25.1], BAR3: V3 = [17.55, D0, 25.1];
-export const CROWD: V3[] = [[11.5, D0, 25.75], [12.1, D0, 26.05], [13.25, D0, 26.05], [13.85, D0, 25.75]];
+export const CROWD: V3[] = [[13.9, D0, 25.75], [14.5, D0, 26.05], [15.6, D0, 26.05], [16.2, D0, 25.75]];
 export const ROW: V3[] = [[8.0, D0, 25.0], [9.45, D0, 25.2], [10.9, D0, 25.0], [12.35, D0, 25.2], [13.8, D0, 25.0]];
 /** the lender walking in (shot 11) and down the row collecting (shot 15) */
 export const lenderInX = (f: number) => 7.4 + (LEND[0] - 7.4) * smooth((f - 965) / 36);
@@ -130,19 +131,21 @@ export const collectX = (f: number) => 7.0 + 7.4 * clamp01((f - 1420) / 165);
 export const COLLECTZ = 24.45;
 
 const H = (p: V3, d: V3) => add(p, d);
-const S1a = (f: number) => dolly(H(BOARD, [0.25, 1.35, -4.3]), H(BOARD, [0, 1.3, 0]), pushK(f, 0, 0.0026, 0.007, 20), { fov: 40 });
+const S1a = (f: number) => dolly(H(BOARD, [0.25, 1.35, -5.4]), H(BOARD, [0, 1.3, 0]), pushK(f, 0, 0.0018, 0.004, 20), { fov: 40 });
 const S2a = (f: number) => dolly(H(P1S, [0.3, 1.2, -3.2]), H(P1S, [0.2, 0.85, 0]), pushK(f, 112, 0.003), { fov: 42 });
 const S3a = (f: number) => dolly(H(P3S, [0.3, 1.2, -3.0]), H(P3S, [0.15, 0.85, 0]), pushK(f, 157, 0.003), { fov: 42, roll: 0.02 });
 const S4a = (f: number) => dolly(H(P3, [-0.85, 1.45, -3.1]), H(P3, [-0.3, 1.55, 0]), pushK(f, 201, 0.003), { fov: 42, roll: 0.03 });
 const S5a = (f: number) => dolly([4, D0 + 15, 2], [13.0, D0 + 0.6, 26.0], pushK(f, 255, 0.0016), { fov: 46 });
-const S5b = (f: number) => dolly([12.3, D0 + 1.7, 20.3], [12.6, D0 + 1.2, 26.0], pushK(f, 300, 0.0018), { fov: 50 });
+const S5b = (f: number) => dolly([14.7, D0 + 1.7, 20.3], [15.0, D0 + 1.2, 26.0], pushK(f, 300, 0.0018), { fov: 50 });
 const S6a = (f: number) => dolly([9.55, D0 + 1.4, 20.9], [9.5, D0 + 1.05, 25.1], pushK(f, 398, 0.0018, 0.005, 20), { fov: 44 });
 const S7a = (f: number) => dolly(H(P2, [0.05, 1.3, -3.6]), H(P2, [0.0, 1.05, 0]), pushK(f, 578, 0.003), { fov: 44 });
-const S8a = (f: number) => dolly([16.6, D0 + 1.3, 20.7], [16.65, D0 + 1.05, 25.2], pushK(f, 663, 0.002), { fov: 46 });
-const S9a = (f: number) => dolly(H(BOARD, [0.0, 1.3, -3.9]), H(BOARD, [0, 1.25, 0]), pushK(f, 800, 0.003, 0.01, 20), { fov: 40 });
+const S8a = (f: number) => dolly([16.4, D0 + 1.3, 20.5], [16.45, D0 + 1.05, 25.2], pushK(f, 663, 0.002), { fov: 46 });
+const S9a = (f: number) => dolly(H(BOARD, [0.0, 1.3, -5.2]), H(BOARD, [0, 1.25, 0]), pushK(f, 800, 0.0022, 0.008, 20), { fov: 40 });
+const S10a = (f: number) => dolly(H(P2, [0.05, 1.3, -3.6]), H(P2, [0.0, 1.05, 0]), pushK(f, 873, 0.003), { fov: 44 });
+const S10b = (f: number) => dolly(H(P3S, [0.3, 1.2, -3.0]), H(P3S, [0.15, 0.85, 0]), pushK(f, 908, 0.003), { fov: 42, roll: 0.02 });
 const S11a = (f: number) => dolly([9.55, D0 + 1.4, 20.9], [9.5, D0 + 1.1, 25.1], pushK(f, 958, 0.0022), { fov: 44 });
 const S12a = (f: number) => dolly([10.0, D0 + 1.45, 19.9], [10.0, D0 + 1.05, 25.1], pushK(f, 1056, 0.0018), { fov: 48 });
-const S13a = (f: number) => dolly(H(P1S, [0.75, 1.3, -4.2]), H(P1S, [0.75, 0.95, 0.5]), pushK(f, 1208, 0.0022), { fov: 46 });
+const S13a = (f: number) => dolly(H(P1S, [0.75, 1.3, -5.0]), H(P1S, [0.75, 0.95, 0.5]), pushK(f, 1208, 0.0022), { fov: 48 });
 const S14a = (f: number) => dolly(H(P1S, [0.2, 1.15, -2.6]), H(P1S, [0.1, 0.9, 0]), pushK(f, 1342, 0.003), { fov: 42 });
 const S14b = (f: number) => dolly(H(LEND, [0.3, 1.3, -3.1]), H(LEND, [0.3, 1.0, 0]), pushK(f, 1380, 0.003, 0.008, 16), { fov: 44, roll: -0.03 });
 const S15a = (f: number) => dolly([5.2, D0 + 2.3, 19.6], [12.9, D0 + 0.8, 25.1], pushK(f, 1410, 0.0018), { fov: 50 });
@@ -159,7 +162,7 @@ export const CAMS: Record<number, Key[]> = {
   7: [{ f: 578, s: S7a }],
   8: [{ f: 663, s: S8a }],
   9: [{ f: 800, s: S9a }],
-  10: [{ f: 873, s: S7a }, { f: 908, cut: true, s: S3a }],
+  10: [{ f: 873, s: S10a }, { f: 908, cut: true, s: S10b }],
   11: [{ f: 958, s: S11a }],
   12: [{ f: 1056, s: S12a }],
   13: [{ f: 1208, s: S13a }],
@@ -202,7 +205,7 @@ export const DOF: Dof[] = [
   { f: 157, cInf: 13, focus: eyesAt(P3S, 1.2) },
   { f: 201, cInf: 15, focus: eyesAt(P3) },
   { f: 255, cInf: 0 },
-  { f: 300, dur: 30, cInf: 6, focus: () => [12.6, D0 + 1.5, 25.8] },
+  { f: 300, dur: 30, cInf: 6, focus: () => [15.0, D0 + 1.5, 25.8] },
   { f: 398, cInf: 9, focus: () => [9.5, D0 + 1.4, 25.1] },
   { f: 578, cInf: 12, focus: eyesAt(P2) },
   { f: 663, cInf: 9, focus: () => [16.6, D0 + 1.4, 25.2] },

@@ -684,7 +684,7 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.dot(hx, hy, 5.5 * u);
     } else if (Array.isArray(prop) && prop[0] === "gold") {
       const n = Math.max(1, Math.round(prop[1]));
-      for (let i = 0; i < n; i++) drawGold(p, hx + (i - (n - 1) / 2) * 13 * u, hy - 32 * u, 56 * u, rad(-90 + (i - (n - 1) / 2) * 22), u);
+      for (let i = 0; i < n; i++) drawGold(p, hx + (i - (n - 1) / 2) * 15 * u, hy - 38 * u, 68 * u, rad(-90 + (i - (n - 1) / 2) * 22), u);
       p.dot(hx, hy, 5.5 * u);
     } else if (Array.isArray(prop) && prop[0] === "fish") {
       const n = Math.max(1, Math.round(prop[1]));

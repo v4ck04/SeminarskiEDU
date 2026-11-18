@@ -9,7 +9,7 @@ import {
   townsfolk, Outfit, FrontOpts, SideOpts, ROD_TIP, BASKET_HOLES, BASKET_HAND, KB,
 } from "./toon";
 import {
-  FPS, D0, SHOTS, V3, clamp01, smooth, P1, P2, P3, P1S, P3S, WATER_Y, BOARD, J1, J3, LEND, LEND3, BAR2, BAR3, CROWD, ROW,
+  FPS, D0, SHOTS, V3, clamp01, smooth, P1, P2, P3, P1S, P3S, WATER_Y, BOARD, BOARD13, J1, J3, LEND, LEND3, BAR2, BAR3, CROWD, ROW,
   lenderInX, collectX, COLLECTZ,
 } from "./story";
 import { NOINK } from "./ink";
@@ -287,8 +287,8 @@ const WL: Who = { i: 30, o: LENDER, okey: "lender" };
 const ROWW: Who[] = [...TOWN, { i: 24, o: townsfolk(6), okey: "t4" }];
 const gold = (n: number): FrontOpts["prop"] => (n > 0 ? ["gold", n] : null);
 /** the price board on its post: n baskets per golden fish, trend 1 / -1, or a question mark */
-const board = (out: Stage, n: number, trend: number, ask = false) =>
-  fxCard(out, `price${n}|${trend}|${ask}`, 520, 640, (pp) => fxPrice(pp, n, trend, ask), [BOARD[0], D0 + 0.953, BOARD[2]], 1.55, 1.907);
+const board = (out: Stage, n: number, trend: number, ask = false, at: V3 = BOARD) =>
+  fxCard(out, `price${n}|${trend}|${ask}`, 520, 640, (pp) => fxPrice(pp, n, trend, ask), [at[0], D0 + 0.953, at[2]], 1.55, 1.907);
 const boardPt = (cam: CamInfo, x: number, y: number): V3 => cardPt(cam, [BOARD[0], D0 + 0.953, BOARD[2]], 520, 640, 1.55, 1.907, x, y);
 const goldCard = (out: Stage, at: V3, f: number, w = 0.6, rot = 0) => { const k = q((f / 30) % 1, 12); fxCard(out, `gold${k}`, 300, 200, (pp) => fxGold(pp, k), at, w, w * 2 / 3, rot); };
 /** a small heap of full baskets standing on the boards (the twenty borrowed baskets) */
@@ -367,7 +367,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 13) {
     // maybe the price comes back, maybe it doesn't; he will never find out
     stand(out, cam, W1, P1S, { mode: "sit", expr: f < 1300 ? "sad" : "pained", look: f < 1250 ? 1 : 0, headTilt: f > 1300 ? -8 : 0 }, t);
-    board(out, 4, 0, true);
+    board(out, 4, 0, true, BOARD13);
   } else if (id === 14) {
     if (f < 1380) stand(out, cam, W1, P1S, { mode: "sit", expr: "sad", look: 0, headTilt: -6 }, t);
     else { stand(out, cam, WL, LEND, { mode: "stand", expr: "grin", look: 0, prop: hold(1, 0) }, t); heap(out, [LEND[0] + 0.85, D0, LEND[2] + 0.1]); }
@@ -384,7 +384,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 16) {
     // prices fall for everyone; only borrowed money makes you sell at the bottom
     stand(out, cam, W3, P3S, { mode: "sit", expr: f < 1680 ? "smile" : "smile_closed", prop: gold(4), look: 0 }, t);
-    barrel(out, BAR3, 0.9);
+    barrel(out, [P3S[0] + 0.85, D0, 25.45], 0.9);
     stand(out, cam, W1, P1, { mode: "stand", expr: "sad", look: 0 }, t);
     stand(out, cam, W2, P2, { mode: "stand", expr: "smile", look: 0 }, t);
     barrel(out, BAR2, 0.7);
