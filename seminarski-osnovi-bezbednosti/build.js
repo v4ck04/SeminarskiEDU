@@ -6,7 +6,7 @@ const {
   Document, Packer, Paragraph, TextRun, FootnoteReferenceRun, AlignmentType,
   HeadingLevel, Table, TableRow, TableCell, WidthType, BorderStyle, ShadingType,
   Footer, PageNumber, TabStopType, LevelFormat, SectionType, VerticalAlign,
-  NumberFormat, ImageRun,
+  NumberFormat,
 } = require("docx");
 const { meta, izvori, telo, literatura, dopuna } = require("./sadrzaj.js");
 
@@ -203,24 +203,15 @@ const potpisi = new Table({
 });
 
 const naslovna = [
-  // Logo fakulteta (sadrži naziv fakulteta), ispod njega sedište
-  new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { before: 0, after: 60 },
-    children: [new ImageRun({
-      type: "png",
-      data: fs.readFileSync(path.join(__dirname, "logo-flv.png")),
-      transformation: { width: 416, height: 85 },
-      altText: { title: "Logo FLV", description: "Fakultet za pravne i poslovne studije dr Lazar Vrkatić", name: "logo-flv" },
-    })],
-  }),
+  C(meta.fakultet[0], { bold: true }),
+  C(meta.fakultet[1], { bold: true }),
   C(meta.fakultet[2], { bold: true, after: 240 }),
   C(meta.predmet),
-  C("Seminarski rad", { before: 3200, size: 28, after: 120 }),
+  C("Seminarski rad", { before: 3600, size: 28, after: 120 }),
   C(meta.naslov, { bold: true, size: 32 }),
-  new Paragraph({ spacing: { before: 2600, after: 0 }, children: [] }),
+  new Paragraph({ spacing: { before: 3000, after: 0 }, children: [] }),
   potpisi,
-  C(meta.mestoGodina, { before: 2800 }),
+  C(meta.mestoGodina, { before: 3400 }),
 ];
 
 // ---------- sadržaj ----------
