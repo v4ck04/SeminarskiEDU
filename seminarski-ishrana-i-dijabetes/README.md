@@ -8,12 +8,11 @@ VZŠ „Visan“, Beograd. Predmet: Ishrana i dijetetika. Student: Aleksandra Đ
 ## Pre predaje
 
 1. Upisati mentora na naslovnoj strani (zvanje, titula, ime i prezime; označeno žutom bojom).
-2. Ubaciti logo škole: sačuvati ga kao `logo-visan.png` u ovom folderu i ponovo napraviti dokument.
-3. Naslov mejla prema Vodiču: `Ishrana i dijetetika, Aleksandra Djuric, 75-II, Ishrana i dijabetes`.
+2. Naslov mejla prema Vodiču: `Ishrana i dijetetika, Aleksandra Djuric, 75-II, Ishrana i dijabetes`.
 
 ## Format (prema Vodiču VZŠ „Visan“)
 
-Ćirilica, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovna strana i sadržaj nisu numerisani; numeracija počinje od Uvoda, u donjem desnom uglu. Slika ima naziv i izvor ispod (12 pt i 11 pt, kurziv), a tabela naziv iznad i izvor ispod. Citiranje je u obliku (Autor, godina), a literatura je navedena azbučnim redom, u originalnom pismu. Rad je pisan u trećem licu. Ukupno 9 strana, 10 izvora, 1 slika i 1 tabela.
+Logo škole (`logo-visan.png`) je na naslovnoj strani. Ćirilica, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovna strana i sadržaj nisu numerisani; numeracija počinje od Uvoda, u donjem desnom uglu. Slika ima naziv i izvor ispod (12 pt i 11 pt, kurziv), a tabela naziv iznad i izvor ispod. Citiranje je u obliku (Autor, godina), a literatura je navedena azbučnim redom, u originalnom pismu. Rad je pisan u trećem licu. Ukupno 9 strana, 10 izvora, 1 slika i 1 tabela.
 
 ## Provera izvora
 
