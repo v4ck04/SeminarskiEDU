@@ -2,7 +2,7 @@
 
 BAPUSS, predmet Menadžment kvaliteta. Student: Veljko Pavlović, 1B1/0057/25. Mentor: Prof. dr Zorana Antić.
 
-Format po Uputstvu za izradu seminarskih radova (BAPUSS): A4, margine 2,5 cm, prored 1, Times New Roman 12, izvori u fusnotama, literatura po abecednom redu, izvori ispod slika i tabela fontom 10. Ukupno 13 strana, 16 izvora, 1 slika i 4 tabele.
+Format po Uputstvu za izradu seminarskih radova (BAPUSS): A4, margine 2,5 cm, prored 1, Times New Roman 12, izvori u fusnotama, literatura po abecednom redu, izvori ispod slika i tabela fontom 10. Ukupno 15 strana, 16 izvora, 4 slike i 4 tabele.
 
 ## Predaja
 
@@ -29,3 +29,10 @@ Faza 2 (istraživanje na terenu) je, po dogovoru, zamenjena analizom javno dostu
 | Zakon o zaštiti potrošača, Sl. glasnik RS 35/2026 | Pun tekst (paragraf.rs); čl. 63, 100–103 |
 | App Store (Srbija), Google Play | Stranice aplikacije, 18.11.2026 (ocena, broj ocena, prikazane recenzije) |
 | Trustpilot (wolt.com) | Stranica profila, 18.11.2026 (zbirna ocena, raspodela, prikazane recenzije) |
+
+## Slike
+
+- Slika 1 (`slika_tok.png`): tok usluge i učesnici – crtež autora (`dijagrami.py`).
+- Slika 2 (`slika1.png`): prosečne ocene na tri platforme (`slika1.py`).
+- Slika 3 (`slika2.png`): tri recenzije sa App Store-a (Srbija), snimak ekrana 18.11.2026; korisnička imena i promotivni kod uklonjeni.
+- Slika 4 (`slika_ishikawa.png`): dijagram uzroka i posledice za zakašnjelu ili hladnu porudžbinu (`dijagrami.py`).
