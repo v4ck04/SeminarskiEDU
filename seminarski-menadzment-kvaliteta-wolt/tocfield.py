@@ -27,6 +27,8 @@ zout = zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED)
 for item in zin.infolist():
     if item.filename.endswith('/'): continue
     data = xml.encode('utf-8') if item.filename == 'word/document.xml' else zin.read(item.filename)
+    if item.filename == 'word/footnotes.xml':
+        data = re.sub(rb'<w:highlightCs[^>]*/>', b'', data)
     zout.writestr(item, data)
 zout.close()
 print('TOC polje:', len(paras), 'stavki')

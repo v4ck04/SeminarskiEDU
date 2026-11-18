@@ -2,12 +2,11 @@
 
 BAPUSS, predmet Menadžment kvaliteta. Student: Veljko Pavlović, 1B1/0057/25. Mentor: Prof. dr Zorana Antić.
 
-**Status: NACRT.** Format je privremen (Times New Roman 12, prored 1,5, margine 2,5 cm) dok ne stigne uputstvo škole.
+Format po Uputstvu za izradu seminarskih radova (BAPUSS): A4, margine 2,5 cm, prored 1, Times New Roman 12, izvori u fusnotama, literatura po abecednom redu, izvori ispod slika i tabela fontom 10. Ukupno 13 strana, 15 izvora, 1 slika i 4 tabele.
 
 ## Šta još treba
 
-1. Uputstvo škole za seminarski rad (format, naslovna strana, citiranje).
-2. Podaci o udžbeniku iz koga je obrazac „Mini projekat“ (autor, naslov, izdavač, mesto, godina); u Uvodu i literaturi označeno žutom bojom.
+Podaci o udžbeniku iz koga je obrazac „Mini projekat“ (autor, naslov, izdavač, mesto, godina) – označeno žutom bojom u prvoj fusnoti, fusnoti u metodologiji i u literaturi.
 
 ## Struktura (po obrascu „Mini projekat“ iz udžbenika, str. 301–304)
 
@@ -19,13 +18,13 @@ Faza 2 (istraživanje na terenu) je, po dogovoru, zamenjena analizom javno dostu
 
 | Izvor | Kako je provereno |
 |---|---|
-| ISO 9000:2015 | Pun tekst (law.resource.org); tačke 2.3 i 3.6.2 |
+| ISO 9000:2015 | Pun tekst (law.resource.org); tačke 2.3, 3.6.2, 3.6.4, 3.6.9, 3.9.2, 3.9.3, 3.12.2, 3.12.3 |
 | Parasuraman et al. (1985) | Apstrakt i metapodaci (Crossref, Semantic Scholar) |
 | Parasuraman et al. (1988), SERVQUAL | Metapodaci (više nezavisnih kataloga), dimenzije i broj tvrdnji |
-| Ray et al. (2019); Kapoor & Vij (2018) | Apstrakti i metapodaci |
+| Ray et al. (2019); Kapoor & Vij (2018); Koay et al. (2022); Suhartanto et al. (2019) | Apstrakti i metapodaci (Crossref, Semantic Scholar) |
 | Wolt (2022), saopštenje o DoorDash-u | Pun tekst (press.wolt.com) |
-| Wolt (2025), uslovi korišćenja za Srbiju (ažurirano 30.06.2025) | Pun tekst; tačke 5.4, 6, 7.4, 10.1, 14.2–14.4 |
+| Wolt (2025), uslovi korišćenja za Srbiju (ažurirano 30.06.2025) | Pun tekst; tačke 1, 3.2, 5.4, 6, 7.4, 7.5, 10.1, 14.2–14.4 |
 | Wolt (2026), Wolt+ Srbija | Pun tekst stranice |
-| Zakon o zaštiti potrošača, Sl. glasnik RS 35/2026 | Pun tekst (paragraf.rs); čl. 63, 101–103 |
+| Zakon o zaštiti potrošača, Sl. glasnik RS 35/2026 | Pun tekst (paragraf.rs); čl. 63, 100–103 |
 | App Store (Srbija), Google Play | Stranice aplikacije, 18.11.2026 (ocena, broj ocena, prikazane recenzije) |
 | Trustpilot (wolt.com) | Stranica profila, 18.11.2026 (zbirna ocena, raspodela, prikazane recenzije) |
