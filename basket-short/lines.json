@@ -1,0 +1,17 @@
+[
+ {"id": "hook", "gap": 0.25, "text": "Why do some people earn more every year, and still have nothing?"},
+ {"id": "basket", "gap": 0.45, "text": "One basket explains it."},
+ {"id": "set", "gap": 0.35, "text": "Three men fish the same river. Every evening, each one carries home one full basket."},
+ {"id": "boat", "gap": 0.3, "text": "The first man wants a new boat. Not next year. Now. So he borrows."},
+ {"id": "hole", "gap": 0.3, "text": "And every loan cuts a little hole in his basket."},
+ {"id": "half", "gap": 0.3, "text": "He leaves the river with a full basket, and gets home with half."},
+ {"id": "work", "gap": 0.3, "text": "So he fishes longer. Borrows again to cover the gap. More holes."},
+ {"id": "care", "gap": 0.4, "text": "The holes don't care how hard he works."},
+ {"id": "p2", "gap": 0.35, "text": "The second man borrows nothing. Every night, one fish goes into a barrel. Slow. Safe. Boring."},
+ {"id": "p3", "gap": 0.2, "text": "The third man saves too. But when his barrel is full, he walks over to the first man."},
+ {"id": "ask", "gap": 0.4, "text": "Need another loan?"},
+ {"id": "twist", "gap": 0.3, "text": "Now every fish that falls through those holes lands in his basket."},
+ {"id": "more", "gap": 0.4, "text": "Soon he has a basket under every hole in town."},
+ {"id": "lesson", "gap": 0.45, "text": "One paid the interest. One avoided it. One collected it."},
+ {"id": "end", "gap": 0.0, "text": "So if your basket has holes, someone is holding the basket underneath."}
+]
