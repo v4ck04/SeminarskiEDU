@@ -315,13 +315,13 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     pop(out, onCard(cam, MG, 0, 1.9), f, 256, 0.9);
     if (f >= 277) {
       const k = f < 318 ? 0 : f < 353 ? 1 : f < 390 ? 2 : 3, s = scale01(f, 277, 6);
-      fxCard(out, `dream${k}`, 600, 520, (pp) => fxDream(pp, k), onCard(cam, MG, -0.78, 2.4), 1.25 * s, 1.08 * s);
-      for (const g of [318, 353, 390]) pop(out, onCard(cam, MG, -0.78, 2.4), f, g, 0.8, "#ffffff");
+      fxCard(out, `dream${k}`, 600, 520, (pp) => fxDream(pp, k), onCard(cam, MG, -0.42, 2.45), 1.1 * s, 0.95 * s);
+      for (const g of [318, 353, 390]) pop(out, onCard(cam, MG, -0.42, 2.45), f, g, 0.8, "#ffffff");
     }
     crowd(TOWN, (k) => (f > 330 ? (k % 2 ? "shock" : "grin") : "smile"));
   } else if (id === 4) {
     stand(out, cam, WM, MG, { mode: "stand", expr: f < 502 ? "smile" : f < 540 ? "grin" : "whistle", wave: 1, look: 0 }, t);
-    if (f >= 429) held(out, cam, MG, "book", 400, 520, fxBook, 0.55, scale01(f, 429, 5));
+    if (f >= 429) held(out, cam, MG, "book", 400, 520, fxBook, 0.46, scale01(f, 429, 5));
     pop(out, raised(cam, MG), f, 429, 0.8);
   } else if (id === 5) {
     const bags = f >= 736;
@@ -352,7 +352,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 11) {
     const nice = f >= 1288 ? 1 : 0;
     stand(out, cam, WM, MG, { mode: "stand", expr: nice ? "grin" : "smile", wave: 1, look: 0 }, t);
-    held(out, cam, MG, `photo${nice}`, 460, 400, (pp) => fxPhoto(pp, nice), 0.8);
+    held(out, cam, MG, `photo${nice}`, 460, 400, (pp) => fxPhoto(pp, nice), 0.7);
     pop(out, raised(cam, MG), f, 1288, 1.0);
     const gone = [1321, 1328, 1335, 1342];
     crowd(TOWN, (k) => (f >= gone[k] ? "grin" : "nervous"));
