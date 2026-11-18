@@ -76,7 +76,7 @@ function table(def) {
 // ---------- текст ----------
 const body = [];
 for (const b of telo) {
-  if (b.h1) body.push(H1(b.h1));
+  if (b.h1) body.push(H1(b.h1, !!b.newPage));
   else if (b.h2) body.push(H2(b.h2));
   else if (b.p) body.push(P(b.p));
   else if (b.list) b.list.forEach((t) => body.push(LI(t)));

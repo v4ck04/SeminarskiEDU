@@ -9,7 +9,7 @@ Naslov mejla prema Vodiču: `Ishrana i dijetetika, Aleksandra Djuric, 75-II, Ent
 
 ## Format (prema Vodiču VZŠ „Visan“)
 
-Logo škole na naslovnoj strani. Ćirilica, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovna strana i sadržaj nisu numerisani; numeracija od Uvoda, dole desno. Slika i tabela sa nazivom i izvorom. Citiranje (Autor, godina), literatura azbučnim redom u originalnom pismu, rad u trećem licu. Ukupno 9 strana, 13 izvora, 1 slika i 1 tabela.
+Logo škole na naslovnoj strani. Ćirilica, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovna strana i sadržaj nisu numerisani; numeracija od Uvoda, dole desno. Zaključak i literatura počinju na posebnoj strani. Slika i tabela sa nazivom i izvorom. Citiranje (Autor, godina), literatura azbučnim redom u originalnom pismu, rad u trećem licu. Ukupno 9 strana, 13 izvora, 1 slika i 1 tabela.
 
 ## Provera izvora
 
