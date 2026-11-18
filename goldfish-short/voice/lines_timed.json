@@ -1,0 +1,92 @@
+[
+ {
+  "id": "hook",
+  "start": 0.15,
+  "end": 3.564,
+  "text": "Bitcoin has lost almost half its value since its record a year ago."
+ },
+ {
+  "id": "hook2",
+  "start": 3.764,
+  "end": 6.511,
+  "text": "Some people lost everything. Others didn't even blink."
+ },
+ {
+  "id": "gold",
+  "start": 6.812,
+  "end": 8.12,
+  "text": "One golden fish explains it."
+ },
+ {
+  "id": "set",
+  "start": 8.57,
+  "end": 13.046,
+  "text": "In the river town, everyone wants the new golden fish. And every week, its price goes up."
+ },
+ {
+  "id": "p1",
+  "start": 13.396,
+  "end": 19.081,
+  "text": "The first man wants to get rich fast. So he borrows twenty baskets of fish, and buys golden fish at the top."
+ },
+ {
+  "id": "p2",
+  "start": 19.381,
+  "end": 21.94,
+  "text": "The second man thinks it's a silly fish. He buys none."
+ },
+ {
+  "id": "p3",
+  "start": 22.24,
+  "end": 26.499,
+  "text": "The third man buys just one. With fish he can afford to lose. And he borrows nothing."
+ },
+ {
+  "id": "crash",
+  "start": 26.899,
+  "end": 28.825,
+  "text": "Then, one morning, the price falls by half."
+ },
+ {
+  "id": "calm",
+  "start": 29.275,
+  "end": 31.815,
+  "text": "The second man laughs. The third man shrugs, and waits."
+ },
+ {
+  "id": "door",
+  "start": 32.165,
+  "end": 35.048,
+  "text": "But the first man's lender is at the door. Pay me back. Today."
+ },
+ {
+  "id": "sell",
+  "start": 35.398,
+  "end": 40.281,
+  "text": "His golden fish are worth half. So he sells every single one, at the bottom, to the third man."
+ },
+ {
+  "id": "know",
+  "start": 40.631,
+  "end": 44.397,
+  "text": "Maybe the price comes back. Maybe it doesn't. The first man will never find out."
+ },
+ {
+  "id": "lesson",
+  "start": 44.847,
+  "end": 46.757,
+  "text": "The crash didn't ruin him. The loan did."
+ },
+ {
+  "id": "fact",
+  "start": 47.157,
+  "end": 52.913,
+  "text": "On November thirteenth, one point six billion dollars of borrowed crypto bets were force-sold in a single day."
+ },
+ {
+  "id": "end",
+  "start": 53.313,
+  "end": 57.049,
+  "text": "Prices fall for everyone. Only borrowed money makes you sell at the bottom."
+ }
+]
