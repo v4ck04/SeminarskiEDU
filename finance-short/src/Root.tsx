@@ -11,6 +11,7 @@ import { Tenk2D, TENK2D_FRAMES } from "./videos/tenk/Tenk2D";
 import { NetShort, NET_FRAMES } from "./videos/net/Net";
 import { BasketShort, BASKET_FRAMES } from "./videos/basket/Basket";
 import { GoldfishShort, GOLDFISH_FRAMES } from "./videos/goldfish/Goldfish";
+import { PoyaisShort, POYAIS_FRAMES } from "./videos/poyais/Poyais";
 
 /** look checks: frame k of NewtonPreview shows story frame frames[k] (inputProps { frames: [...] }) */
 const Preview: React.FC = () => {
@@ -47,6 +48,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Genius2D" component={Genius2D} durationInFrames={GENIUS2D_FRAMES} fps={30} width={1920} height={1080} />
       <Composition id="GeniusThumb" component={GeniusThumb} durationInFrames={1} fps={30} width={1920} height={1080} />
       <Composition id="Genius2DPreview" component={Genius2DPreview} durationInFrames={Math.max(1, n)} fps={30} width={1920} height={1080} />
+      <Composition id="PoyaisShort" component={PoyaisShort} durationInFrames={POYAIS_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="GoldfishShort" component={GoldfishShort} durationInFrames={GOLDFISH_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="GoldfishPreview" component={GoldfishPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="BasketShort" component={BasketShort} durationInFrames={BASKET_FRAMES} fps={30} width={1080} height={1920} />
