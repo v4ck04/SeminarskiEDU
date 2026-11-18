@@ -1,19 +1,19 @@
 # Seminarski rad: Ranjivost zajednice i posledice opasnosti prirodnog porekla
 
-Predmet: Osnovi bezbednosti (FLV, Novi Sad). Student: Anđela Denić, 27332. Mentor: prof. Marijan Đurovski.
+Predmet: Osnovi bezbednosti. Student: Anđela Denić, 27332. Mentor: prof. dr Marijan Đurovski. Mesto i godina: Niš, 2026.
 
 - `Seminarski_rad_Ranjivost_zajednice_Andjela_Denic.docx`: rad za predaju (MS Word).
 - `Seminarski_rad_Ranjivost_zajednice_Andjela_Denic_pregled.pdf`: pregled preloma (LibreOffice).
 
 ## Pre predaje
 
-1. Upisati osnovni udžbenik iz predmeta (stavka 12 u literaturi, označena žutom bojom).
-2. Proveriti titulu mentora (sada: „prof.“) i godinu na naslovnoj strani (sada: 2026).
-3. U Word-u kliknuti na sadržaj i pritisnuti F9 (Update Field) ako se brojevi strana razlikuju.
+U Word-u kliknuti na sadržaj i pritisnuti F9 (Update Field) ako se brojevi strana razlikuju.
+
+Osnovni udžbenik (Stajić, Lj.: *Osnovi bezbednosti*, Policijska akademija, Beograd, 2004) naveden je u literaturi. U tekstu nije citiran jer sadržaj knjige i brojevi strana nisu bili dostupni za proveru.
 
 ## Format (prema uputstvu FLV)
 
-A4, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovi TNR 14 bold, centrirano, velika slova; podnaslovi TNR 12 bold, centrirano. Naslovna strana i sadržaj nisu numerisani. Izvori su u fusnotama na dnu strane, broj fusnote je na kraju rečenice. Strane reči su u kurzivu, a strana imena su u srpskoj transkripciji sa originalom u zagradi. Ukupno 15 strana (naslovna, sadržaj i 13 numerisanih), 11 proverenih izvora i 3 tabele.
+A4, Times New Roman 12, prored 1,5, margine 2,5 cm, obostrano poravnanje. Naslovi TNR 14 bold, centrirano, velika slova; podnaslovi TNR 12 bold, centrirano. Naslovna strana i sadržaj nisu numerisani. Izvori su u fusnotama na dnu strane, broj fusnote je na kraju rečenice. Strane reči su u kurzivu, a strana imena su u srpskoj transkripciji sa originalom u zagradi. Ukupno 15 strana (naslovna, sadržaj i 13 numerisanih), 12 jedinica literature i 3 tabele.
 
 ## Provera izvora
 
@@ -32,6 +32,7 @@ Svaki citat i podatak proveren je u originalnom dokumentu, sa brojem strane:
 | Trgovčević i dr. (2020) | Apstrakt i Crossref; str. 1 |
 | Vlada RS, *Serbia Floods 2014* | Pun tekst (EK); stranice navedene uz svaki podatak |
 | Zakon, Sl. glasnik RS 87/2018 | Pun tekst; čl. 1, 2, 3, 5, 29 |
+| Stajić, *Osnovi bezbednosti* (2004) | Bibliografski podaci potvrđeni u dva nezavisna navoda (Vojno delo, 2012; spisak literature u udžbeniku iz 2024); u tekstu nije citiran |
 
 Napomena: smrtni ishodi navedeni su prema proceni potreba (34, od toga 13 usled utapanja). Kasniji izvori navode veće brojke.
 

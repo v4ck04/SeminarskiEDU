@@ -170,7 +170,7 @@ literatura.forEach((t) => bodyChildren.push(new Paragraph({
   spacing: { line: 240, after: 100 },
   children: inlineRuns(t),
 })));
-bodyChildren.push(new Paragraph({
+if (dopuna) bodyChildren.push(new Paragraph({
   numbering: { reference: "lit", level: 0 },
   alignment: AlignmentType.LEFT,
   spacing: { line: 240, after: 100 },
@@ -204,8 +204,7 @@ const potpisi = new Table({
 
 const naslovna = [
   C(meta.fakultet[0], { bold: true }),
-  C(meta.fakultet[1], { bold: true }),
-  C(meta.fakultet[2], { bold: true, after: 240 }),
+  C(meta.fakultet[1], { bold: true, after: 240 }),
   C(meta.predmet),
   C("Seminarski rad", { before: 3600, size: 28, after: 120 }),
   C(meta.naslov, { bold: true, size: 32 }),

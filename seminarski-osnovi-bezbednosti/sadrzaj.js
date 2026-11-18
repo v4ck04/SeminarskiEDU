@@ -2,12 +2,12 @@
 // Oznake: *kurziv*, [[fn:izvor|strana]] = fusnota (uvek na kraju rečenice).
 
 const meta = {
-  fakultet: ["FAKULTET ZA PRAVNE I POSLOVNE STUDIJE", "DR LAZAR VRKATIĆ", "NOVI SAD"],
+  fakultet: ["FAKULTET ZA PRAVNE I POSLOVNE STUDIJE", "DR LAZAR VRKATIĆ"],
   predmet: "Predmet: Osnovi bezbednosti",
   naslov: "RANJIVOST ZAJEDNICE I POSLEDICE OPASNOSTI PRIRODNOG POREKLA",
-  mentor: "prof. Marijan Đurovski",
+  mentor: "prof. dr Marijan Đurovski",
   student: "Anđela Denić, 27332",
-  mestoGodina: "Novi Sad, 2026.",
+  mestoGodina: "Niš, 2026.",
 };
 
 // Izvori: puni oblik za prvo navođenje, kratki za kasnija.
@@ -183,6 +183,7 @@ const literatura = [
   "Cutter, S. L., Boruff, B. J., Shirley, W. L.: *Social Vulnerability to Environmental Hazards*, Social Science Quarterly, Vol. 84, No. 2, 2003, str. 242–261, DOI: 10.1111/1540-6237.8402002.",
   "Cvetković, V.: *Strah i poplave u Srbiji: spremnost građana za reagovanje na prirodne katastrofe*, Zbornik Matice srpske za društvene nauke, br. 155–156, Matica srpska, Novi Sad, 2016, str. 303–324, DOI: 10.2298/ZMSDN1656303C.",
   "Cvetković, V.: *Spremnost građana za reagovanje u prirodnim katastrofama izazvanim poplavama u Srbiji*, Vojno delo, god. 69, br. 1, Beograd, 2017, str. 153–190, DOI: 10.5937/vojdelo1701153C.",
+  "Stajić, Lj.: *Osnovi bezbednosti*, Policijska akademija, Beograd, 2004.",
   "Trgovčević, F., Stupar, A., Ivanović, M., Susman, R.: *Toward Flood Resilience in Serbia: The Challenges of an (Un)Sustainable Policy*, Sustainability, Vol. 12, No. 17, 2020, članak 7228, DOI: 10.3390/su12177228.",
   "United Nations General Assembly: *Report of the open-ended intergovernmental expert working group on indicators and terminology relating to disaster risk reduction*, A/71/644, United Nations, New York, 2016, dostupno na: https://www.preventionweb.net/files/50683_oiewgreportenglish.pdf (pristupljeno 17.11.2026).",
   "UNISDR: *Sendai Framework for Disaster Risk Reduction 2015–2030*, United Nations Office for Disaster Risk Reduction, Geneva, 2015, dostupno na: https://www.preventionweb.net/files/43291_sendaiframeworkfordrren.pdf (pristupljeno 17.11.2026).",
@@ -191,7 +192,7 @@ const literatura = [
   "*Zakon o smanjenju rizika od katastrofa i upravljanju vanrednim situacijama*, „Službeni glasnik RS“, br. 87/2018.",
 ];
 
-// Stavka koju student mora sam da dopuni (bice istaknuta zutom bojom).
-const dopuna = "[DOPUNITI: osnovni udžbenik iz predmeta Osnovi bezbednosti, u obliku: Prezime, I.: *Naslov udžbenika*, izdavač, mesto, godina.]";
+// Sve stavke literature su potvrđene; nema stavki za dopunu.
+const dopuna = null;
 
 module.exports = { meta, izvori, telo, literatura, dopuna };
