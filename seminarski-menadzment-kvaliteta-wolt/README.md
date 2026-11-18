@@ -2,11 +2,11 @@
 
 BAPUSS, predmet Menadžment kvaliteta. Student: Veljko Pavlović, 1B1/0057/25. Mentor: Prof. dr Zorana Antić.
 
-Format po Uputstvu za izradu seminarskih radova (BAPUSS): A4, margine 2,5 cm, prored 1, Times New Roman 12, izvori u fusnotama, literatura po abecednom redu, izvori ispod slika i tabela fontom 10. Ukupno 13 strana, 15 izvora, 1 slika i 4 tabele.
+Format po Uputstvu za izradu seminarskih radova (BAPUSS): A4, margine 2,5 cm, prored 1, Times New Roman 12, izvori u fusnotama, literatura po abecednom redu, izvori ispod slika i tabela fontom 10. Ukupno 13 strana, 16 izvora, 1 slika i 4 tabele.
 
-## Šta još treba
+## Predaja
 
-Podaci o udžbeniku iz koga je obrazac „Mini projekat“ (autor, naslov, izdavač, mesto, godina) – označeno žutom bojom u prvoj fusnoti, fusnoti u metodologiji i u literaturi.
+Prema obaveštenju na stranici predmeta: rad se predaje u terminu konsultacija, najkasnije 14. januara 2027. (14–16.30 h, kabinet 240), a odobreni radovi se prezentuju na vežbama najkasnije 15. i 16. januara 2027.
 
 ## Struktura (po obrascu „Mini projekat“ iz udžbenika, str. 301–304)
 
@@ -18,6 +18,7 @@ Faza 2 (istraživanje na terenu) je, po dogovoru, zamenjena analizom javno dostu
 
 | Izvor | Kako je provereno |
 |---|---|
+| Antić, Z. (2022), Menadžment kvaliteta, BAPUSS | Obavezna literatura na zvaničnoj stranici predmeta (bpa.edu.rs, šk. 2026/27); obrazac str. 301–304 |
 | ISO 9000:2015 | Pun tekst (law.resource.org); tačke 2.3, 3.6.2, 3.6.4, 3.6.9, 3.9.2, 3.9.3, 3.12.2, 3.12.3 |
 | Parasuraman et al. (1985) | Apstrakt i metapodaci (Crossref, Semantic Scholar) |
 | Parasuraman et al. (1988), SERVQUAL | Metapodaci (više nezavisnih kataloga), dimenzije i broj tvrdnji |

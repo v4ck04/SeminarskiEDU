@@ -16,8 +16,8 @@ const meta = {
 // Формат према Упутству: презиме, прво слово имена, (година), назив дела, издавач, место, страна.
 const izvori = {
   udzbenik: {
-    full: "[ДОПУНИТИ: Презиме, И. (година), *Менаџмент квалитета*, издавач, место], стр. {p}.",
-    short: "[ДОПУНИТИ: Презиме (година)], стр. {p}.",
+    full: "Антић, З. (2022), *Менаџмент квалитета*, Београдска академија пословних и уметничких струковних студија, Београд, стр. {p}.",
+    short: "Антић, З. (2022), стр. {p}.",
   },
   iso: {
     full: "ISO (2015), *ISO 9000:2015 Quality management systems – Fundamentals and vocabulary*, International Organization for Standardization, Geneva, стр. {p}.",
@@ -271,6 +271,7 @@ const telo = [
 
 // Литература по абецедном реду (ћирилички наслов сврстан према латиничном еквиваленту).
 const literatura = [
+  "Антић, З. (2022), *Менаџмент квалитета*, Београдска академија пословних и уметничких струковних студија, Београд.",
   "App Store (2026), Wolt Delivery: Food and more, Apple App Store (Србија), https://apps.apple.com/rs/app/wolt-delivery-food-and-more/id943905271 (18.11.2026).",
   "Google Play (2026), Wolt dostava: Hrana i drugo, Google Play, https://play.google.com/store/apps/details?id=com.wolt.android (18.11.2026).",
   "ISO (2015), *ISO 9000:2015 Quality management systems – Fundamentals and vocabulary*, International Organization for Standardization, Geneva.",
@@ -287,6 +288,6 @@ const literatura = [
   "Закон о заштити потрошача, „Службени гласник РС“, бр. 35/2026.",
 ];
 
-const dopuna = "[ДОПУНИТИ: Презиме, И. (година), *Менаџмент квалитета*, издавач, место – уџбеник из кога је образац „Мини пројекат“]";
+const dopuna = null;
 
 module.exports = { meta, izvori, telo, literatura, dopuna };
