@@ -36,3 +36,17 @@ Faza 2 (istraživanje na terenu) je, po dogovoru, zamenjena analizom javno dostu
 - Slika 2 (`slika1.png`): prosečne ocene na tri platforme (`slika1.py`).
 - Slika 3 (`slika2.png`): tri recenzije sa App Store-a (Srbija), snimak ekrana 18.11.2026; korisnička imena i promotivni kod uklonjeni.
 - Slika 4 (`slika_ishikawa.png`): dijagram uzroka i posledice za zakašnjelu ili hladnu porudžbinu (`dijagrami.py`).
+
+## Презентација (10 слајдова)
+
+- `Veljko Pavlovic - Wolt prezentacija.pptx` – PowerPoint, са белешкама за излагање испод сваког слајда
+- `Veljko Pavlovic - Wolt prezentacija.pdf` – иста презентација као PDF (10 страна)
+- `prezentacija.js` – скрипта која гради презентацију (pptxgenjs); подаци и извори исти као у раду
+
+Поновна израда:
+
+```bash
+NODE_PATH=<node_modules са pptxgenjs, react-icons, react-dom, sharp, jszip> \
+  node prezentacija.js "Veljko Pavlovic - Wolt prezentacija.pptx" <pptx-skill>/scripts/apply_theme.js
+LANG=sr_RS.UTF-8 soffice --headless --convert-to pdf "Veljko Pavlovic - Wolt prezentacija.pptx"
+```
