@@ -39,14 +39,34 @@ Faza 2 (istraživanje na terenu) je, po dogovoru, zamenjena analizom javno dostu
 
 ## Презентација (10 слајдова)
 
+Урађена у Canva шаблону „White and Black Modern Financial Report“ (PPTX извоз из Canva-е који је послао корисник).
+Слајдови одговарају на питања из обрасца мини пројекта:
+
+| Слајд | Садржај |
+|---|---|
+| 1 | Насловни слајд |
+| 2 | Увод: предмет, циљ, извори података |
+| 3 | Фаза 1: 1а, 1б, 1в |
+| 4 | Фаза 2: 2а (оцене корисника, графикон) |
+| 5 | Фаза 2: 2б, 2в (тачност информација, рецензија) |
+| 6 | Фаза 2: 2г (процена по моделу SERVQUAL) |
+| 7 | Фаза 3: 3а, 3б (табела поређења) |
+| 8 | Фаза 3: 3в (усаглашеност и рекламације) |
+| 9 | Фаза 4: Ишикава дијаграм и корективне мере |
+| 10 | Закључак и захвалница |
+
 - `Veljko Pavlovic - Wolt prezentacija.pptx` – PowerPoint, са белешкама за излагање испод сваког слајда
 - `Veljko Pavlovic - Wolt prezentacija.pdf` – иста презентација као PDF (10 страна)
-- `prezentacija.js` – скрипта која гради презентацију (pptxgenjs); подаци и извори исти као у раду
+- `prezentacija_slike.py`, `prezentacija_ikone.js` – припрема слика (графикон, исечци рецензија, иконе) у директоријум `assets/`
+- `prezentacija_sablon.py` – попуњава шаблон, мења фонт у Inter (Canva фонтови из шаблона немају ћирилицу) и ређа слајдове
 
-Поновна израда:
+Поновна израда (из радног директоријума у коме је `assets/`):
 
 ```bash
-NODE_PATH=<node_modules са pptxgenjs, react-icons, react-dom, sharp, jszip> \
-  node prezentacija.js "Veljko Pavlovic - Wolt prezentacija.pptx" <pptx-skill>/scripts/apply_theme.js
+python3 prezentacija_slike.py 1.9398 1.9151
+NODE_PATH=<node_modules са react, react-dom, react-icons, sharp> node prezentacija_ikone.js
+python3 prezentacija_sablon.py <sablon.pptx> assets "Veljko Pavlovic - Wolt prezentacija.pptx"
 LANG=sr_RS.UTF-8 soffice --headless --convert-to pdf "Veljko Pavlovic - Wolt prezentacija.pptx"
 ```
+
+PDF садржи уграђен фонт Inter. Ако се PPTX отвара на рачунару без фонта Inter (бесплатан, Google Fonts), PowerPoint ће га заменити сличним фонтом.
