@@ -75,3 +75,4 @@ PDF садржи уграђен фонт Inter. Ако се PPTX отвара н
 
 - `Veljko Pavlovic - Beleske za odbranu.pdf` – текст за сваки слајд, бројеви, појмови и могућа питања са одговорима (9 страна, A4); извоз документа https://claude.ai/artifact/Nc6WMrwnkgc56ELN4KEzih
 - `Veljko Pavlovic - Sta reci na svakom slajdu.pdf` – само текст за излагање по слајдовима (2 стране, A4), без имена аутора
+- `Veljko Pavlovic - Mini projekat obrazac.pdf` – попуњен образац мини пројекта из уџбеника (стр. 301–304), одговори из рада у оквирима (9 страна, A4); прави га `obrazac_html.py` (HTML) и штампа Chromium
