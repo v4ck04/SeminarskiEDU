@@ -1497,12 +1497,16 @@ export const fxSkyline = (p: Pen, mode: number, frame: boolean) => {
 export const fxMansion = (p: Pen) => {
   lin2(p, 0, 1000, "#5e93d9", "#cfe3f5");
   p.poly([[0, 700], [1200, 700], [1200, 1000], [0, 1000]], "#6cb862", 0);
-  p.poly([[160, 720], [160, 360], [1040, 360], [1040, 720]], "#f6f1e6", 8);
-  p.poly([[120, 370], [600, 170], [1080, 370]], "#3a3f4c", 8);
-  for (let i = 0; i < 6; i++) p.poly([[300 + i * 120, 720], [300 + i * 120, 400], [330 + i * 120, 400], [330 + i * 120, 720]], "#ffffff", 5);
-  for (const x of [190, 950]) for (const y of [420, 560]) p.poly([[x, y], [x + 60, y], [x + 60, y + 90], [x, y + 90]], "#9fc7ea", 5);
-  p.poly([[560, 720], [560, 560], [640, 560], [640, 720]], "#6b4524", 5);
-  for (const x of [80, 1120]) { p.ell(x, 640, 70, 120, "#3f8f4a", 5); }
+  p.g.save(); p.g.translate(600, 700); p.g.scale(0.42, 0.42); p.g.translate(-600, -720); mansionBody(new Pen(p.g)); p.g.restore();
+  for (const x of [330, 870]) { p.ell(x, 640, 40, 80, "#3f8f4a", 5); }
+};
+const mansionBody = (p: Pen) => {
+  p.ol = 18;
+  p.poly([[160, 720], [160, 360], [1040, 360], [1040, 720]], "#f6f1e6");
+  p.poly([[120, 370], [600, 170], [1080, 370]], "#3a3f4c");
+  for (let i = 0; i < 6; i++) p.poly([[300 + i * 120, 720], [300 + i * 120, 400], [330 + i * 120, 400], [330 + i * 120, 720]], "#ffffff");
+  for (const x of [190, 950]) for (const y of [420, 560]) p.poly([[x, y], [x + 60, y], [x + 60, y + 90], [x, y + 90]], "#9fc7ea");
+  p.poly([[560, 720], [560, 560], [640, 560], [640, 720]], "#6b4524");
 };
 /** a red sports car on a 760 x 300 canvas */
 export const fxCar = (p: Pen) => {
@@ -1553,13 +1557,15 @@ export const fxPhone = (p: Pen, t: number, ringing: boolean) => {
 export const fxScreens = (p: Pen, u: number) => {
   for (let k = 0; k < 3; k++) {
     const x0 = 20 + k * 360;
+    p.g.save(); p.g.translate(0, 150);
     p.poly(rrect(x0, 20, x0 + 340, 300, 14), "#141016", 6);
     p.poly([[x0 + 14, 34], [x0 + 326, 34], [x0 + 326, 286], [x0 + 14, 286]], "#0b1220", 0);
     const pts: P2[] = [];
     for (let i = 0; i <= 30; i++) { const s = i / 30, drop = s < 0.4 ? 0 : Math.min(1, (s - 0.4) / 0.6) * u; pts.push([x0 + 24 + s * 290, 90 + 20 * Math.sin(i * 1.7 + k) * (1 - drop) + 170 * drop + 8 * Math.sin(i * 3.1)]); }
     p.stroke(pts, 7, u > 0.15 ? "#ff3b3b" : "#2fe07a");
     p.stroke([[x0 + 170, 300], [x0 + 170, 330]], 10, "#141016");
+    p.g.restore();
   }
   const g = p.g; g.font = "900 120px 'Inter Display', Inter, sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
-  g.lineWidth = 12; g.strokeStyle = "#141016"; g.strokeText(`-${Math.round(87 * u)}%`, 550, 460); g.fillStyle = "#ff3b3b"; g.fillText(`-${Math.round(87 * u)}%`, 550, 460);
+  g.lineWidth = 12; g.strokeStyle = "#141016"; g.strokeText(`-${Math.round(87 * u)}%`, 550, 85); g.fillStyle = "#ff3b3b"; g.fillText(`-${Math.round(87 * u)}%`, 550, 85);
 };
