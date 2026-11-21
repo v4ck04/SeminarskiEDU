@@ -1,0 +1,2309 @@
+{
+  "version": 7,
+  "updated_at": "2026-11-21T22:28:00+00:00",
+  "n_videos": 3,
+  "videos": [
+    "the-ancient-jar-that-warned-an-empire-53119a",
+    "the-difference-between-rich-and-poor-503075",
+    "the-job-nobody-wants-in-japan-3769b4"
+  ],
+  "features": {
+    "duration": {
+      "kind": "numeric",
+      "section": "Storytelling structure",
+      "label": "video length",
+      "format": "{:.0f}s",
+      "median": 64.9331,
+      "mean": 66.261,
+      "min": 60.591,
+      "max": 73.259,
+      "std": 5.2562,
+      "iqr": [
+        62.7621,
+        69.096
+      ],
+      "n": 3,
+      "confidence": 1.0,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 64.9331,
+        "the-difference-between-rich-and-poor-503075": 73.259,
+        "the-job-nobody-wants-in-japan-3769b4": 60.591
+      }
+    },
+    "words_per_sentence": {
+      "kind": "numeric",
+      "section": "Storytelling structure",
+      "label": "words per sentence",
+      "format": "{:.1f}",
+      "median": 10.68,
+      "mean": 10.7767,
+      "min": 8.47,
+      "max": 13.18,
+      "std": 1.9241,
+      "iqr": [
+        9.575,
+        11.93
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 10.68,
+        "the-difference-between-rich-and-poor-503075": 8.47,
+        "the-job-nobody-wants-in-japan-3769b4": 13.18
+      }
+    },
+    "numbers_per_10s": {
+      "kind": "numeric",
+      "section": "Storytelling structure",
+      "label": "numbers/statistics per 10 s",
+      "format": "{:.1f}",
+      "median": 0.62,
+      "mean": 0.6933,
+      "min": 0.5,
+      "max": 0.96,
+      "std": 0.1948,
+      "iqr": [
+        0.56,
+        0.79
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.62,
+        "the-difference-between-rich-and-poor-503075": 0.96,
+        "the-job-nobody-wants-in-japan-3769b4": 0.5
+      }
+    },
+    "hook_duration": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "hook sentence length",
+      "format": "{:.1f}s",
+      "median": 4.22,
+      "mean": 4.0867,
+      "min": 3.06,
+      "max": 4.98,
+      "std": 0.7895,
+      "iqr": [
+        3.64,
+        4.6
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 4.98,
+        "the-difference-between-rich-and-poor-503075": 3.06,
+        "the-job-nobody-wants-in-japan-3769b4": 4.22
+      }
+    },
+    "hook_words": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "hook word count",
+      "format": "{:.0f} words",
+      "median": 13.0,
+      "mean": 14.6667,
+      "min": 12.0,
+      "max": 19.0,
+      "std": 3.0912,
+      "iqr": [
+        12.5,
+        16.0
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 19.0,
+        "the-difference-between-rich-and-poor-503075": 12.0,
+        "the-job-nobody-wants-in-japan-3769b4": 13.0
+      }
+    },
+    "time_to_first_word": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "time to first spoken word",
+      "format": "{:.2f}s",
+      "median": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 3,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0
+      }
+    },
+    "hook_cuts_per_s": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "cuts per second in the first 3 s",
+      "format": "{:.2f}/s",
+      "median": 0.3333,
+      "mean": 0.3333,
+      "min": 0.3333,
+      "max": 0.3333,
+      "std": 0.0,
+      "iqr": [
+        0.3333,
+        0.3333
+      ],
+      "n": 3,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.3333,
+        "the-difference-between-rich-and-poor-503075": 0.3333,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3333
+      }
+    },
+    "wpm": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "narration pace",
+      "format": "{:.0f} wpm",
+      "median": 256.6,
+      "mean": 254.3333,
+      "min": 245.5,
+      "max": 260.9,
+      "std": 6.4881,
+      "iqr": [
+        251.05,
+        258.75
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 245.5,
+        "the-difference-between-rich-and-poor-503075": 260.9,
+        "the-job-nobody-wants-in-japan-3769b4": 256.6
+      }
+    },
+    "speech_ratio": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "share of runtime with speech",
+      "format": "{:.0%}",
+      "median": 0.865,
+      "mean": 0.8493,
+      "min": 0.798,
+      "max": 0.885,
+      "std": 0.0372,
+      "iqr": [
+        0.8315,
+        0.875
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.885,
+        "the-difference-between-rich-and-poor-503075": 0.798,
+        "the-job-nobody-wants-in-japan-3769b4": 0.865
+      }
+    },
+    "pause_median": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "median pause",
+      "format": "{:.2f}s",
+      "median": 0.25,
+      "mean": 0.27,
+      "min": 0.23,
+      "max": 0.33,
+      "std": 0.0432,
+      "iqr": [
+        0.24,
+        0.29
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.23,
+        "the-difference-between-rich-and-poor-503075": 0.33,
+        "the-job-nobody-wants-in-japan-3769b4": 0.25
+      }
+    },
+    "pauses_per_min": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "pauses per minute of speech",
+      "format": "{:.0f}",
+      "median": 34.36,
+      "mean": 36.97,
+      "min": 32.39,
+      "max": 44.16,
+      "std": 5.1473,
+      "iqr": [
+        33.375,
+        39.26
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 32.39,
+        "the-difference-between-rich-and-poor-503075": 44.16,
+        "the-job-nobody-wants-in-japan-3769b4": 34.36
+      }
+    },
+    "shot_len_median": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "median shot length",
+      "format": "{:.2f}s",
+      "median": 2.45,
+      "mean": 2.45,
+      "min": 2.233,
+      "max": 2.667,
+      "std": 0.1772,
+      "iqr": [
+        2.3415,
+        2.5585
+      ],
+      "n": 3,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 2.233,
+        "the-difference-between-rich-and-poor-503075": 2.45,
+        "the-job-nobody-wants-in-japan-3769b4": 2.667
+      }
+    },
+    "cuts_per_min": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts per minute",
+      "format": "{:.0f}",
+      "median": 19.8049,
+      "mean": 19.727,
+      "min": 17.1993,
+      "max": 22.1767,
+      "std": 2.0328,
+      "iqr": [
+        18.5021,
+        20.9908
+      ],
+      "n": 3,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 22.1767,
+        "the-difference-between-rich-and-poor-503075": 17.1993,
+        "the-job-nobody-wants-in-japan-3769b4": 19.8049
+      }
+    },
+    "shot_len_cv": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "shot-length variation (CV)",
+      "format": "{:.2f}",
+      "median": 0.7062,
+      "mean": 0.7677,
+      "min": 0.5107,
+      "max": 1.0863,
+      "std": 0.239,
+      "iqr": [
+        0.6085,
+        0.8962
+      ],
+      "n": 3,
+      "confidence": 0.72,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.7062,
+        "the-difference-between-rich-and-poor-503075": 1.0863,
+        "the-job-nobody-wants-in-japan-3769b4": 0.5107
+      }
+    },
+    "pace_change_ratio": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "2nd-half / 1st-half shot length",
+      "format": "{:.2f}",
+      "median": 1.0896,
+      "mean": 1.0859,
+      "min": 0.8202,
+      "max": 1.3479,
+      "std": 0.2154,
+      "iqr": [
+        0.9549,
+        1.2188
+      ],
+      "n": 3,
+      "confidence": 0.64,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.0896,
+        "the-difference-between-rich-and-poor-503075": 0.8202,
+        "the-job-nobody-wants-in-japan-3769b4": 1.3479
+      }
+    },
+    "cut_word_alignment": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts on word boundaries",
+      "format": "{:.0%}",
+      "median": 0.917,
+      "mean": 0.8447,
+      "min": 0.667,
+      "max": 0.95,
+      "std": 0.1263,
+      "iqr": [
+        0.792,
+        0.9335
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.917,
+        "the-difference-between-rich-and-poor-503075": 0.667,
+        "the-job-nobody-wants-in-japan-3769b4": 0.95
+      }
+    },
+    "cut_sentence_alignment": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts on sentence boundaries",
+      "format": "{:.0%}",
+      "median": 0.619,
+      "mean": 0.5787,
+      "min": 0.45,
+      "max": 0.667,
+      "std": 0.0931,
+      "iqr": [
+        0.5345,
+        0.643
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.667,
+        "the-difference-between-rich-and-poor-503075": 0.619,
+        "the-job-nobody-wants-in-japan-3769b4": 0.45
+      }
+    },
+    "cuts_per_sentence": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts per narrated sentence",
+      "format": "{:.1f}",
+      "median": 1.09,
+      "mean": 0.99,
+      "min": 0.7,
+      "max": 1.18,
+      "std": 0.2083,
+      "iqr": [
+        0.895,
+        1.135
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.09,
+        "the-difference-between-rich-and-poor-503075": 0.7,
+        "the-job-nobody-wants-in-japan-3769b4": 1.18
+      }
+    },
+    "caption_coverage": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption coverage",
+      "format": "{:.0%}",
+      "median": 0.758,
+      "mean": 0.7027,
+      "min": 0.512,
+      "max": 0.838,
+      "std": 0.1387,
+      "iqr": [
+        0.635,
+        0.798
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.838,
+        "the-difference-between-rich-and-poor-503075": 0.758,
+        "the-job-nobody-wants-in-japan-3769b4": 0.512
+      }
+    },
+    "caption_y": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption vertical position (0=top)",
+      "format": "{:.2f}",
+      "median": 0.7047,
+      "mean": 0.7039,
+      "min": 0.7022,
+      "max": 0.7047,
+      "std": 0.0012,
+      "iqr": [
+        0.7035,
+        0.7047
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.7047,
+        "the-difference-between-rich-and-poor-503075": 0.7022,
+        "the-job-nobody-wants-in-japan-3769b4": 0.7047
+      }
+    },
+    "caption_text_h": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption letter height (frame fraction)",
+      "format": "{:.3f}",
+      "median": 0.0219,
+      "mean": 0.0219,
+      "min": 0.0219,
+      "max": 0.0219,
+      "std": 0.0,
+      "iqr": [
+        0.0219,
+        0.0219
+      ],
+      "n": 3,
+      "confidence": 0.77,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0219,
+        "the-difference-between-rich-and-poor-503075": 0.0219,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0219
+      }
+    },
+    "caption_words": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "words per caption",
+      "format": "{:.1f}",
+      "median": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "std": 0.0,
+      "iqr": [
+        1.0,
+        1.0
+      ],
+      "n": 3,
+      "confidence": 0.81,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.0,
+        "the-difference-between-rich-and-poor-503075": 1.0,
+        "the-job-nobody-wants-in-japan-3769b4": 1.0
+      }
+    },
+    "caption_words_p80": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "words per caption (80th percentile)",
+      "format": "{:.1f}",
+      "median": 2.0,
+      "mean": 2.0,
+      "min": 2.0,
+      "max": 2.0,
+      "std": 0.0,
+      "iqr": [
+        2.0,
+        2.0
+      ],
+      "n": 3,
+      "confidence": 0.81,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 2.0,
+        "the-difference-between-rich-and-poor-503075": 2.0,
+        "the-job-nobody-wants-in-japan-3769b4": 2.0
+      }
+    },
+    "caption_lines": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "lines per caption",
+      "format": "{:.1f}",
+      "median": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "std": 0.0,
+      "iqr": [
+        1.0,
+        1.0
+      ],
+      "n": 3,
+      "confidence": 0.68,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.0,
+        "the-difference-between-rich-and-poor-503075": 1.0,
+        "the-job-nobody-wants-in-japan-3769b4": 1.0
+      }
+    },
+    "caption_duration": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption on-screen time",
+      "format": "{:.2f}s",
+      "median": 0.3,
+      "mean": 0.3,
+      "min": 0.3,
+      "max": 0.3,
+      "std": 0.0,
+      "iqr": [
+        0.3,
+        0.3
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.3,
+        "the-difference-between-rich-and-poor-503075": 0.3,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3
+      }
+    },
+    "caption_highlight_share": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "captions with highlighted words",
+      "format": "{:.0%}",
+      "median": 0.152,
+      "mean": 0.13,
+      "min": 0.049,
+      "max": 0.189,
+      "std": 0.0592,
+      "iqr": [
+        0.1005,
+        0.1705
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.049,
+        "the-difference-between-rich-and-poor-503075": 0.152,
+        "the-job-nobody-wants-in-japan-3769b4": 0.189
+      }
+    },
+    "caption_outline_share": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "captions with dark outline",
+      "format": "{:.0%}",
+      "median": 0.872,
+      "mean": 0.8447,
+      "min": 0.778,
+      "max": 0.884,
+      "std": 0.0474,
+      "iqr": [
+        0.825,
+        0.878
+      ],
+      "n": 3,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.872,
+        "the-difference-between-rich-and-poor-503075": 0.778,
+        "the-job-nobody-wants-in-japan-3769b4": 0.884
+      }
+    },
+    "caption_outline_frac": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "outline thickness (frame-width fraction)",
+      "format": "{:.4f}",
+      "median": 0.0074,
+      "mean": 0.0063,
+      "min": 0.0042,
+      "max": 0.0074,
+      "std": 0.0015,
+      "iqr": [
+        0.0058,
+        0.0074
+      ],
+      "n": 3,
+      "confidence": 0.59,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0074,
+        "the-difference-between-rich-and-poor-503075": 0.0042,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0074
+      }
+    },
+    "caption_caps_share": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "ALL CAPS likelihood",
+      "format": "{:.0%}",
+      "median": 0.134,
+      "mean": 0.1417,
+      "min": 0.072,
+      "max": 0.219,
+      "std": 0.0603,
+      "iqr": [
+        0.103,
+        0.1765
+      ],
+      "n": 3,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.134,
+        "the-difference-between-rich-and-poor-503075": 0.219,
+        "the-job-nobody-wants-in-japan-3769b4": 0.072
+      }
+    },
+    "caption_stroke_ratio": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "stroke/height ratio (weight)",
+      "format": "{:.2f}",
+      "median": 0.3221,
+      "mean": 0.3177,
+      "min": 0.2791,
+      "max": 0.3518,
+      "std": 0.0298,
+      "iqr": [
+        0.3006,
+        0.3369
+      ],
+      "n": 3,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.3221,
+        "the-difference-between-rich-and-poor-503075": 0.2791,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3518
+      }
+    },
+    "caption_char_aspect": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "letter width/height",
+      "format": "{:.2f}",
+      "median": 0.8579,
+      "mean": 0.8524,
+      "min": 0.8342,
+      "max": 0.8651,
+      "std": 0.0132,
+      "iqr": [
+        0.846,
+        0.8615
+      ],
+      "n": 3,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.8579,
+        "the-difference-between-rich-and-poor-503075": 0.8342,
+        "the-job-nobody-wants-in-japan-3769b4": 0.8651
+      }
+    },
+    "transition_share_cut": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "hard cuts",
+      "format": "{:.0%}",
+      "median": 0.55,
+      "mean": 0.471,
+      "min": 0.2917,
+      "max": 0.5714,
+      "std": 0.1271,
+      "iqr": [
+        0.4209,
+        0.5607
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.2917,
+        "the-difference-between-rich-and-poor-503075": 0.5714,
+        "the-job-nobody-wants-in-japan-3769b4": 0.55
+      }
+    },
+    "transition_share_dissolve": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "dissolves",
+      "format": "{:.0%}",
+      "median": 0.3333,
+      "mean": 0.3917,
+      "min": 0.3,
+      "max": 0.5417,
+      "std": 0.107,
+      "iqr": [
+        0.3166,
+        0.4375
+      ],
+      "n": 3,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.5417,
+        "the-difference-between-rich-and-poor-503075": 0.3333,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3
+      }
+    },
+    "transition_share_flash": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "flash transitions",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 3,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0
+      }
+    },
+    "transition_share_dip_black": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "dips to black",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 3,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0
+      }
+    },
+    "transition_share_whip_or_blur": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "whip/blur transitions",
+      "format": "{:.0%}",
+      "median": 0.05,
+      "mean": 0.0623,
+      "min": 0.0417,
+      "max": 0.0952,
+      "std": 0.0235,
+      "iqr": [
+        0.0459,
+        0.0726
+      ],
+      "n": 3,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0417,
+        "the-difference-between-rich-and-poor-503075": 0.0952,
+        "the-job-nobody-wants-in-japan-3769b4": 0.05
+      }
+    },
+    "transition_share_zoom_transition": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "zoom transitions",
+      "format": "{:.0%}",
+      "median": 0.1,
+      "mean": 0.075,
+      "min": 0.0,
+      "max": 0.125,
+      "std": 0.054,
+      "iqr": [
+        0.05,
+        0.1125
+      ],
+      "n": 3,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.125,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.1
+      }
+    },
+    "motion_share_zoom_in": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "zoom-in shots",
+      "format": "{:.0%}",
+      "median": 0.6,
+      "mean": 0.5607,
+      "min": 0.435,
+      "max": 0.647,
+      "std": 0.0909,
+      "iqr": [
+        0.5175,
+        0.6235
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.435,
+        "the-difference-between-rich-and-poor-503075": 0.647,
+        "the-job-nobody-wants-in-japan-3769b4": 0.6
+      }
+    },
+    "motion_share_zoom_out": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "zoom-out shots",
+      "format": "{:.0%}",
+      "median": 0.2,
+      "mean": 0.1977,
+      "min": 0.176,
+      "max": 0.217,
+      "std": 0.0168,
+      "iqr": [
+        0.188,
+        0.2085
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.217,
+        "the-difference-between-rich-and-poor-503075": 0.176,
+        "the-job-nobody-wants-in-japan-3769b4": 0.2
+      }
+    },
+    "motion_share_pan_left": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-left shots",
+      "format": "{:.0%}",
+      "median": 0.043,
+      "mean": 0.034,
+      "min": 0.0,
+      "max": 0.059,
+      "std": 0.0249,
+      "iqr": [
+        0.0215,
+        0.051
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.043,
+        "the-difference-between-rich-and-poor-503075": 0.059,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0
+      }
+    },
+    "motion_share_pan_right": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-right shots",
+      "format": "{:.0%}",
+      "median": 0.087,
+      "mean": 0.0987,
+      "min": 0.059,
+      "max": 0.15,
+      "std": 0.0381,
+      "iqr": [
+        0.073,
+        0.1185
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.087,
+        "the-difference-between-rich-and-poor-503075": 0.059,
+        "the-job-nobody-wants-in-japan-3769b4": 0.15
+      }
+    },
+    "motion_share_pan_up": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-up shots",
+      "format": "{:.0%}",
+      "median": 0.05,
+      "mean": 0.0457,
+      "min": 0.0,
+      "max": 0.087,
+      "std": 0.0356,
+      "iqr": [
+        0.025,
+        0.0685
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.087,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.05
+      }
+    },
+    "motion_share_pan_down": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-down shots",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0143,
+      "min": 0.0,
+      "max": 0.043,
+      "std": 0.0203,
+      "iqr": [
+        0.0,
+        0.0215
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.043,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0
+      }
+    },
+    "motion_share_static": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "static shots",
+      "format": "{:.0%}",
+      "median": 0.059,
+      "mean": 0.0487,
+      "min": 0.0,
+      "max": 0.087,
+      "std": 0.0363,
+      "iqr": [
+        0.0295,
+        0.073
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.087,
+        "the-difference-between-rich-and-poor-503075": 0.059,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0
+      }
+    },
+    "moving_shot_share": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "shots with camera/zoom movement",
+      "format": "{:.0%}",
+      "median": 0.941,
+      "mean": 0.9513,
+      "min": 0.913,
+      "max": 1.0,
+      "std": 0.0363,
+      "iqr": [
+        0.927,
+        0.9705
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.913,
+        "the-difference-between-rich-and-poor-503075": 0.941,
+        "the-job-nobody-wants-in-japan-3769b4": 1.0
+      }
+    },
+    "zoom_rate_median": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "zoom speed",
+      "format": "{:.1%}/s",
+      "median": 0.1259,
+      "mean": 0.1869,
+      "min": 0.1205,
+      "max": 0.3143,
+      "std": 0.0901,
+      "iqr": [
+        0.1232,
+        0.2201
+      ],
+      "n": 3,
+      "confidence": 0.55,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.1205,
+        "the-difference-between-rich-and-poor-503075": 0.1259,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3143
+      }
+    },
+    "shake_share": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "shots with shake",
+      "format": "{:.0%}",
+      "median": 0.2,
+      "mean": 0.2423,
+      "min": 0.174,
+      "max": 0.353,
+      "std": 0.079,
+      "iqr": [
+        0.187,
+        0.2765
+      ],
+      "n": 3,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.174,
+        "the-difference-between-rich-and-poor-503075": 0.353,
+        "the-job-nobody-wants-in-japan-3769b4": 0.2
+      }
+    },
+    "animated_still_share": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "animated still images (Ken Burns)",
+      "format": "{:.0%}",
+      "median": 0.13,
+      "mean": 0.155,
+      "min": 0.1,
+      "max": 0.235,
+      "std": 0.0579,
+      "iqr": [
+        0.115,
+        0.1825
+      ],
+      "n": 3,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.13,
+        "the-difference-between-rich-and-poor-503075": 0.235,
+        "the-job-nobody-wants-in-japan-3769b4": 0.1
+      }
+    },
+    "brightness": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "brightness (L)",
+      "format": "{:.2f}",
+      "median": 0.5802,
+      "mean": 0.5487,
+      "min": 0.4305,
+      "max": 0.6355,
+      "std": 0.0866,
+      "iqr": [
+        0.5053,
+        0.6079
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.4305,
+        "the-difference-between-rich-and-poor-503075": 0.6355,
+        "the-job-nobody-wants-in-japan-3769b4": 0.5802
+      }
+    },
+    "contrast": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "contrast (L std)",
+      "format": "{:.3f}",
+      "median": 0.1993,
+      "mean": 0.1925,
+      "min": 0.178,
+      "max": 0.2001,
+      "std": 0.0102,
+      "iqr": [
+        0.1886,
+        0.1997
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.178,
+        "the-difference-between-rich-and-poor-503075": 0.2001,
+        "the-job-nobody-wants-in-japan-3769b4": 0.1993
+      }
+    },
+    "saturation": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "saturation",
+      "format": "{:.2f}",
+      "median": 0.4079,
+      "mean": 0.4193,
+      "min": 0.4042,
+      "max": 0.4458,
+      "std": 0.0188,
+      "iqr": [
+        0.4061,
+        0.4268
+      ],
+      "n": 3,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.4079,
+        "the-difference-between-rich-and-poor-503075": 0.4458,
+        "the-job-nobody-wants-in-japan-3769b4": 0.4042
+      }
+    },
+    "colorfulness": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "colourfulness",
+      "format": "{:.0f}",
+      "median": 70.6956,
+      "mean": 69.106,
+      "min": 59.6634,
+      "max": 76.959,
+      "std": 7.1498,
+      "iqr": [
+        65.1795,
+        73.8273
+      ],
+      "n": 3,
+      "confidence": 0.65,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 59.6634,
+        "the-difference-between-rich-and-poor-503075": 70.6956,
+        "the-job-nobody-wants-in-japan-3769b4": 76.959
+      }
+    },
+    "warmth": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "warmth (Lab b*)",
+      "format": "{:+.1f}",
+      "median": 5.8077,
+      "mean": 0.6712,
+      "min": -11.4529,
+      "max": 7.6588,
+      "std": 8.6063,
+      "iqr": [
+        -2.8226,
+        6.7332
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 7.6588,
+        "the-difference-between-rich-and-poor-503075": 5.8077,
+        "the-job-nobody-wants-in-japan-3769b4": -11.4529
+      }
+    },
+    "face_frame_share": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "frames with faces",
+      "format": "{:.0%}",
+      "median": 0.205,
+      "mean": 0.1537,
+      "min": 0.038,
+      "max": 0.218,
+      "std": 0.082,
+      "iqr": [
+        0.1215,
+        0.2115
+      ],
+      "n": 3,
+      "confidence": 0.55,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.038,
+        "the-difference-between-rich-and-poor-503075": 0.218,
+        "the-job-nobody-wants-in-japan-3769b4": 0.205
+      }
+    },
+    "lufs": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "integrated loudness",
+      "format": "{:.1f} LUFS",
+      "median": -14.06,
+      "mean": -14.06,
+      "min": -14.1,
+      "max": -14.02,
+      "std": 0.0327,
+      "iqr": [
+        -14.08,
+        -14.04
+      ],
+      "n": 3,
+      "confidence": 0.95,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": -14.02,
+        "the-difference-between-rich-and-poor-503075": -14.1,
+        "the-job-nobody-wants-in-japan-3769b4": -14.06
+      }
+    },
+    "true_peak": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "true peak",
+      "format": "{:.1f} dBTP",
+      "median": -2.08,
+      "mean": -1.7567,
+      "min": -2.16,
+      "max": -1.03,
+      "std": 0.5149,
+      "iqr": [
+        -2.12,
+        -1.555
+      ],
+      "n": 3,
+      "confidence": 0.95,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": -2.16,
+        "the-difference-between-rich-and-poor-503075": -1.03,
+        "the-job-nobody-wants-in-japan-3769b4": -2.08
+      }
+    },
+    "sfx_per_min": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "effect-like events per minute",
+      "format": "{:.0f}",
+      "median": 49.02,
+      "mean": 50.9967,
+      "min": 33.59,
+      "max": 70.38,
+      "std": 15.0844,
+      "iqr": [
+        41.305,
+        59.7
+      ],
+      "n": 3,
+      "confidence": 0.35,
+      "consistent": true,
+      "status": "uncertain",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 49.02,
+        "the-difference-between-rich-and-poor-503075": 33.59,
+        "the-job-nobody-wants-in-japan-3769b4": 70.38
+      }
+    },
+    "cuts_with_sfx_share": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "cuts with an effect",
+      "format": "{:.0%}",
+      "median": 0.143,
+      "mean": 0.2587,
+      "min": 0.083,
+      "max": 0.55,
+      "std": 0.2075,
+      "iqr": [
+        0.113,
+        0.3465
+      ],
+      "n": 3,
+      "confidence": 0.35,
+      "consistent": true,
+      "status": "uncertain",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.083,
+        "the-difference-between-rich-and-poor-503075": 0.143,
+        "the-job-nobody-wants-in-japan-3769b4": 0.55
+      }
+    },
+    "bed_below_speech_db": {
+      "kind": "numeric",
+      "section": "Music characteristics",
+      "label": "background bed below speech",
+      "format": "{:.0f} dB",
+      "median": 12.7,
+      "mean": 12.6,
+      "min": 10.7,
+      "max": 14.4,
+      "std": 1.5122,
+      "iqr": [
+        11.7,
+        13.55
+      ],
+      "n": 3,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": 14.4,
+        "the-difference-between-rich-and-poor-503075": 12.7,
+        "the-job-nobody-wants-in-japan-3769b4": 10.7
+      }
+    },
+    "layout": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "frame layout",
+      "mode": "full_bleed",
+      "share": 1.0,
+      "counts": {
+        "full_bleed": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "full_bleed",
+        "the-difference-between-rich-and-poor-503075": "full_bleed",
+        "the-job-nobody-wants-in-japan-3769b4": "full_bleed"
+      }
+    },
+    "temperature": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "colour temperature",
+      "mode": "warm",
+      "share": 0.333,
+      "counts": {
+        "warm": 1,
+        "neutral": 1,
+        "cool": 1
+      },
+      "n": 3,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "warm",
+        "the-difference-between-rich-and-poor-503075": "neutral",
+        "the-job-nobody-wants-in-japan-3769b4": "cool"
+      }
+    },
+    "teal_orange": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "teal/orange split tone",
+      "mode": "False",
+      "share": 0.667,
+      "counts": {
+        "False": 2,
+        "True": 1
+      },
+      "n": 3,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-job-nobody-wants-in-japan-3769b4": true
+      }
+    },
+    "vignette_likely": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "vignette",
+      "mode": "False",
+      "share": 1.0,
+      "counts": {
+        "False": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-job-nobody-wants-in-japan-3769b4": false
+      }
+    },
+    "dominant_motion": {
+      "kind": "categorical",
+      "section": "Camera movement",
+      "label": "most common camera move",
+      "mode": "zoom_in",
+      "share": 1.0,
+      "counts": {
+        "zoom_in": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "zoom_in",
+        "the-difference-between-rich-and-poor-503075": "zoom_in",
+        "the-job-nobody-wants-in-japan-3769b4": "zoom_in"
+      }
+    },
+    "caption_zone": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption zone",
+      "mode": "lower_middle",
+      "share": 1.0,
+      "counts": {
+        "lower_middle": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "lower_middle",
+        "the-difference-between-rich-and-poor-503075": "lower_middle",
+        "the-job-nobody-wants-in-japan-3769b4": "lower_middle"
+      }
+    },
+    "caption_fill_color": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption text colour",
+      "mode": "white",
+      "share": 1.0,
+      "counts": {
+        "white": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "white",
+        "the-difference-between-rich-and-poor-503075": "white",
+        "the-job-nobody-wants-in-japan-3769b4": "white"
+      }
+    },
+    "caption_fill_hex": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption text colour (hex)",
+      "mode": "#FFFEFF",
+      "share": 0.333,
+      "counts": {
+        "#FFFEFF": 1,
+        "#FDFAFD": 1,
+        "#FFFFFF": 1
+      },
+      "n": 3,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "#FFFEFF",
+        "the-difference-between-rich-and-poor-503075": "#FDFAFD",
+        "the-job-nobody-wants-in-japan-3769b4": "#FFFFFF"
+      }
+    },
+    "caption_highlight_color": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "highlight colour",
+      "mode": "orange",
+      "share": 0.333,
+      "counts": {
+        "orange": 1,
+        "green": 1
+      },
+      "n": 2,
+      "status": "occasional",
+      "values": {
+        "the-difference-between-rich-and-poor-503075": "orange",
+        "the-job-nobody-wants-in-japan-3769b4": "green"
+      }
+    },
+    "caption_highlight_hex": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "highlight colour (hex)",
+      "mode": "#CF9135",
+      "share": 0.333,
+      "counts": {
+        "#CF9135": 1,
+        "#8EC28B": 1
+      },
+      "n": 2,
+      "status": "occasional",
+      "values": {
+        "the-difference-between-rich-and-poor-503075": "#CF9135",
+        "the-job-nobody-wants-in-japan-3769b4": "#8EC28B"
+      }
+    },
+    "caption_highlight_mode": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "highlight style",
+      "mode": "emphasis",
+      "share": 0.667,
+      "counts": {
+        "none": 1,
+        "emphasis": 2
+      },
+      "n": 3,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "none",
+        "the-difference-between-rich-and-poor-503075": "emphasis",
+        "the-job-nobody-wants-in-japan-3769b4": "emphasis"
+      }
+    },
+    "caption_shadow": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "drop shadow",
+      "mode": "True",
+      "share": 1.0,
+      "counts": {
+        "True": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": true,
+        "the-difference-between-rich-and-poor-503075": true,
+        "the-job-nobody-wants-in-japan-3769b4": true
+      }
+    },
+    "caption_boxed": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption background box",
+      "mode": "False",
+      "share": 1.0,
+      "counts": {
+        "False": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-job-nobody-wants-in-japan-3769b4": false
+      }
+    },
+    "caption_weight_class": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "letter weight",
+      "mode": "heavy/black",
+      "share": 1.0,
+      "counts": {
+        "heavy/black": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "heavy/black",
+        "the-difference-between-rich-and-poor-503075": "heavy/black",
+        "the-job-nobody-wants-in-japan-3769b4": "heavy/black"
+      }
+    },
+    "caption_width_class": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "letter width",
+      "mode": "wide",
+      "share": 1.0,
+      "counts": {
+        "wide": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "wide",
+        "the-difference-between-rich-and-poor-503075": "wide",
+        "the-job-nobody-wants-in-japan-3769b4": "wide"
+      }
+    },
+    "caption_animation": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption onset animation",
+      "mode": "none",
+      "share": 1.0,
+      "counts": {
+        "none": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "none",
+        "the-difference-between-rich-and-poor-503075": "none",
+        "the-job-nobody-wants-in-japan-3769b4": "none"
+      }
+    },
+    "music_likely": {
+      "kind": "categorical",
+      "section": "Music characteristics",
+      "label": "music bed under narration",
+      "mode": "True",
+      "share": 1.0,
+      "counts": {
+        "True": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": true,
+        "the-difference-between-rich-and-poor-503075": true,
+        "the-job-nobody-wants-in-japan-3769b4": true
+      }
+    },
+    "ending_cta": {
+      "kind": "categorical",
+      "section": "Ending patterns",
+      "label": "ends with a call to action",
+      "mode": "False",
+      "share": 1.0,
+      "counts": {
+        "False": 3
+      },
+      "n": 3,
+      "status": "frequent",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-job-nobody-wants-in-japan-3769b4": false
+      }
+    },
+    "footage_type": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "footage type (reviewed)",
+      "mode": "original 3D cartoon animation",
+      "share": 0.667,
+      "counts": {
+        "original 3D cartoon animation": 2
+      },
+      "n": 2,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "original 3D cartoon animation",
+        "the-difference-between-rich-and-poor-503075": "original 3D cartoon animation"
+      }
+    },
+    "caption_case": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption letter case (reviewed)",
+      "mode": "sentence case",
+      "share": 0.667,
+      "counts": {
+        "sentence case": 2
+      },
+      "n": 2,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "sentence case",
+        "the-difference-between-rich-and-poor-503075": "sentence case"
+      }
+    },
+    "overlay_graphics": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "overlay graphics (reviewed)",
+      "mode": "none (text lives inside the scene)",
+      "share": 0.667,
+      "counts": {
+        "none (text lives inside the scene)": 2
+      },
+      "n": 2,
+      "status": "occasional",
+      "values": {
+        "the-ancient-jar-that-warned-an-empire-53119a": "none (text lives inside the scene)",
+        "the-difference-between-rich-and-poor-503075": "none (text lives inside the scene)"
+      }
+    },
+    "hook_features:superlative/extreme claim": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses superlative/extreme claim",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a"
+      ]
+    },
+    "hook_features:curiosity gap": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses curiosity gap",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ]
+    },
+    "hook_features:question": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses question",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ]
+    },
+    "hook_features:contrarian/negation": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses contrarian/negation",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-job-nobody-wants-in-japan-3769b4"
+      ]
+    },
+    "ending_types:reveal/twist": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending reveal/twist",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a"
+      ]
+    },
+    "ending_types:abrupt end right after last word": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending abrupt end right after last word",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a"
+      ]
+    },
+    "ending_types:loops back to the opening": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending loops back to the opening",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ]
+    },
+    "ending_types:statement/conclusion": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending statement/conclusion",
+      "share": 0.333,
+      "n": 1,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-job-nobody-wants-in-japan-3769b4"
+      ]
+    },
+    "transitions_present:whip_or_blur": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses whip or blur",
+      "share": 1.0,
+      "n": 3,
+      "of": 3,
+      "status": "frequent",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-job-nobody-wants-in-japan-3769b4"
+      ]
+    },
+    "transitions_present:cut": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses cut",
+      "share": 1.0,
+      "n": 3,
+      "of": 3,
+      "status": "frequent",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-job-nobody-wants-in-japan-3769b4"
+      ]
+    },
+    "transitions_present:dissolve": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses dissolve",
+      "share": 1.0,
+      "n": 3,
+      "of": 3,
+      "status": "frequent",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-job-nobody-wants-in-japan-3769b4"
+      ]
+    },
+    "transitions_present:zoom_transition": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses zoom transition",
+      "share": 0.667,
+      "n": 2,
+      "of": 3,
+      "status": "occasional",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-job-nobody-wants-in-japan-3769b4"
+      ]
+    }
+  },
+  "production": {
+    "editing.target_shot_seconds": {
+      "value": 2.45,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "shot_len_median"
+      ],
+      "confidence": 0.8
+    },
+    "editing.motion_mix": {
+      "value": {
+        "zoom_in": 0.561,
+        "zoom_out": 0.198,
+        "pan_left": 0.034,
+        "pan_right": 0.099,
+        "pan_up": 0.046,
+        "pan_down": 0.014,
+        "static": 0.049
+      },
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "motion_share_zoom_in",
+        "motion_share_zoom_out",
+        "motion_share_pan_left",
+        "motion_share_pan_right",
+        "motion_share_pan_up",
+        "motion_share_pan_down",
+        "motion_share_static"
+      ],
+      "confidence": 0.6
+    },
+    "editing.motion_intensity": {
+      "value": 0.3,
+      "status": "occasional",
+      "n_videos": 3,
+      "source": [
+        "zoom_rate_median",
+        "shot_len_median"
+      ],
+      "confidence": 0.68
+    },
+    "editing.shake_amount": {
+      "value": 0.0,
+      "status": "occasional",
+      "n_videos": 3,
+      "source": [
+        "shake_share"
+      ],
+      "confidence": 0.45
+    },
+    "transitions.mix": {
+      "value": {
+        "cut": 0.471,
+        "crossfade": 0.392,
+        "flash": 0.0,
+        "dip_black": 0.0,
+        "whip": 0.062,
+        "zoom": 0.075
+      },
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "transition_share_cut",
+        "transition_share_dissolve",
+        "transition_share_flash",
+        "transition_share_dip_black",
+        "transition_share_whip_or_blur",
+        "transition_share_zoom_transition"
+      ],
+      "confidence": 0.53
+    },
+    "captions.position_y": {
+      "value": 0.705,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_y"
+      ],
+      "confidence": 0.85
+    },
+    "captions.max_words": {
+      "value": 2,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_words_p80"
+      ],
+      "confidence": 0.81
+    },
+    "captions.uppercase": {
+      "value": false,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_caps_share"
+      ],
+      "confidence": 0.5
+    },
+    "captions.outline_width": {
+      "value": 8,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_outline_frac",
+        "caption_outline_share"
+      ],
+      "confidence": 0.72
+    },
+    "captions.primary_color": {
+      "value": "#FFFFFF",
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_fill_color"
+      ],
+      "confidence": 0.5
+    },
+    "captions.highlight_mode": {
+      "value": "emphasis",
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_highlight_share"
+      ],
+      "confidence": 0.85,
+      "note": "15% of reference captions contain a coloured word"
+    },
+    "captions.highlight_color": {
+      "value": "#CF9135",
+      "status": "occasional",
+      "n_videos": 2,
+      "source": [
+        "caption_highlight_color"
+      ],
+      "confidence": 0.5
+    },
+    "captions.shadow": {
+      "value": 3,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_shadow"
+      ],
+      "confidence": 0.5
+    },
+    "captions.animation": {
+      "value": "none",
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_animation"
+      ],
+      "confidence": 0.5
+    },
+    "captions.font": {
+      "value": "Poppins ExtraBold",
+      "status": "occasional",
+      "n_videos": 3,
+      "source": [
+        "caption_stroke_ratio",
+        "caption_char_aspect"
+      ],
+      "confidence": 0.45,
+      "note": "closest bundled font by measured weight/width - not an identification of the reference font"
+    },
+    "captions.font_file": {
+      "value": "Poppins-ExtraBold.ttf",
+      "status": "occasional",
+      "n_videos": 3,
+      "source": [
+        "caption_stroke_ratio",
+        "caption_char_aspect"
+      ],
+      "confidence": 0.45,
+      "note": "closest bundled font by measured weight/width - not an identification of the reference font"
+    },
+    "captions.font_size": {
+      "value": 131,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "caption_text_h",
+        "caption_caps_share"
+      ],
+      "confidence": 0.64,
+      "note": "letter height matched for Poppins-Black.ttf (lower case)"
+    },
+    "color.target_saturation": {
+      "value": 0.408,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "saturation"
+      ],
+      "confidence": 0.7
+    },
+    "color.target_contrast": {
+      "value": 0.199,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "contrast"
+      ],
+      "confidence": 0.7
+    },
+    "color.vignette": {
+      "value": 0.0,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "vignette_likely"
+      ],
+      "confidence": 0.5
+    },
+    "audio.target_lufs": {
+      "value": -14.1,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "lufs"
+      ],
+      "confidence": 0.95
+    },
+    "audio.music_enabled": {
+      "value": true,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "music_likely"
+      ],
+      "confidence": 0.5
+    },
+    "audio.music_db_below_voice": {
+      "value": 12.7,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "bed_below_speech_db"
+      ],
+      "confidence": 0.6
+    },
+    "audio.sfx_on_cuts_prob": {
+      "value": 0.14,
+      "status": "uncertain",
+      "n_videos": 3,
+      "source": [
+        "cuts_with_sfx_share"
+      ],
+      "confidence": 0.35
+    },
+    "voice.target_wpm": {
+      "value": 257,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "wpm"
+      ],
+      "confidence": 0.85
+    },
+    "voice.sentence_pause_s": {
+      "value": 0.25,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "pause_median"
+      ],
+      "confidence": 0.85
+    },
+    "story.hook_max_seconds": {
+      "value": 5.1,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "hook_duration"
+      ],
+      "confidence": 0.7
+    },
+    "story.target_duration_s": {
+      "value": 65,
+      "status": "frequent",
+      "n_videos": 3,
+      "source": [
+        "duration"
+      ],
+      "confidence": 1.0
+    }
+  },
+  "differences": [
+    "shot-length variation (CV): shot-length variation (CV): 0.71 (0.51-1.09, varies; 3 video(s), conf 0.72)",
+    "zoom speed: zoom speed: 12.6%/s (12.0%/s-31.4%/s, varies; 3 video(s), conf 0.55)",
+    "brightness (L): brightness (L): 0.58 (0.43-0.64, varies; 3 video(s), conf 0.7)",
+    "warmth (Lab b*): warmth (Lab b*): +5.8 (-11.5-+7.7, varies; 3 video(s), conf 0.6)"
+  ],
+  "reviewed_notes": [
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: medieval palace, army, city gate; key prop (bronze dragon jar with frogs) recurs throughout.",
+      "confidence": "high",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Close-up inserts on the key prop (dragon mouth, frog) alternate with wide establishing shots (palace hall, army, city).",
+      "confidence": "medium",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Time-of-day lighting tells the story: warm sunset, blue moonlit night, orange dust cloud for the earthquake.",
+      "confidence": "medium",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Historical mystery told as a mini-story; the final sentence is the reveal (the earthquake) and the video ends right after it.",
+      "confidence": "medium",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style; an economics explainer told through a metaphor (eggs and chickens) with diagrams drawn inside the scene (chalkboard '2 = egg').",
+      "confidence": "high",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Transitions",
+      "description": "Visible dissolves between scenes (ghosted double images) and heavy horizontal motion blur on fast camera moves.",
+      "confidence": "high",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Story text appears as in-scene signs ('UNFAIR!', 'BOO!', 'WE WANT EGGS') rather than overlay graphics.",
+      "confidence": "medium",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Question hook, metaphor-driven explanation, and an ending that loops back to the three groups named at the start.",
+      "confidence": "medium",
+      "video": "the-difference-between-rich-and-poor-503075"
+    }
+  ],
+  "content_hash": "23088d9d63c11980"
+}

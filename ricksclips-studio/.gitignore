@@ -39,3 +39,6 @@ logs/*
 *.wav
 *.mp3
 !assets/**/*.wav
+
+# transcripts quote the reference creators narration - keep them local
+training/analysis/*.transcript.json

@@ -1,0 +1,49 @@
+{
+  "observations": [
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "description": "Original 3D cartoon animation in the same character style: medieval palace, army, city gate; key prop (bronze dragon jar with frogs) recurs throughout.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg, all 25 shots"
+    },
+    {
+      "category": "motion",
+      "description": "Close-up inserts on the key prop (dragon mouth, frog) alternate with wide establishing shots (palace hall, army, city).",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #1, #7, #8, #22"
+    },
+    {
+      "category": "color",
+      "description": "Time-of-day lighting tells the story: warm sunset, blue moonlit night, orange dust cloud for the earthquake.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #12-#21"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg and contact_captions.jpg, all shots"
+    },
+    {
+      "category": "subtitles",
+      "feature": "font_category",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "evidence": "contact_captions.jpg glyph shapes"
+    },
+    {
+      "category": "story",
+      "description": "Historical mystery told as a mini-story; the final sentence is the reveal (the earthquake) and the video ends right after it.",
+      "confidence": "medium",
+      "evidence": "transcript ending"
+    }
+  ],
+  "categorical": {
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)"
+  },
+  "updated_at": "2026-11-21T22:28:00+00:00"
+}

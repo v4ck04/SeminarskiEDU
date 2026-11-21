@@ -18,7 +18,7 @@ CONTRARIAN = re.compile(r"\b(isn't|wasn't|aren't|don't|doesn't|myth|wrong|lie|ac
 IMPERATIVE = re.compile(r"^(imagine|look|watch|stop|listen|think|picture|meet|this is|here's|wait)\b", re.I)
 SECOND_PERSON = re.compile(r"\b(you|your|you're)\b", re.I)
 CTA = re.compile(r"\b(follow|subscribe|like|comment|share|part \d|part two|let me know|link)\b", re.I)
-REVEAL = re.compile(r"\b(but|turns out|actually|in fact|the answer|the truth|the reason|that's why|which means)\b", re.I)
+REVEAL = re.compile(r"\b(but|turns out|actually|in fact|the answer|the truth|the reason|that's why|which means|meant|means|was really|it was)\b", re.I)
 INTENSITY = re.compile(r"\b(insane|crazy|terrifying|incredible|shocking|unbelievable|massive|huge|impossible|scary|wild|mind|bizarre)\w*", re.I)
 NUMBER = re.compile(r"\b\d[\d,.]*\b|\b(one|two|three|four|five|six|seven|eight|nine|ten|hundred|thousand|million|billion|trillion)\b", re.I)
 

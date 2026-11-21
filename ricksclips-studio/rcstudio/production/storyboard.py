@@ -91,7 +91,7 @@ def build(script: dict, settings: dict, slug: str, timing: dict | None = None) -
     durs = tr.get("durations", {})
 
     scenes: list[dict] = []
-    prev_motion = None
+    prev_motion = prev2_motion = None
     for bi, (b, (a, e)) in enumerate(zip(beats, spans)):
         visuals = [b["visual"]] + list(b.get("extra_shots", []))
         span = max(0.01, e - a)
@@ -112,8 +112,9 @@ def build(script: dict, settings: dict, slug: str, timing: dict | None = None) -
             if first_scene and ed.get("hook_punch_in", True):
                 motion = "punch_in"
             else:
-                motion = _weighted(rng, mix, exclude=prev_motion if rng.random() < 0.8 else None)
-            prev_motion = motion
+                # follow the learned mix; only avoid three identical moves in a row
+                motion = _weighted(rng, mix, exclude=prev_motion if prev_motion == prev2_motion else None)
+            prev2_motion, prev_motion = prev_motion, motion
             dur = s1 - s0
             intensity = float(ed.get("motion_intensity", 0.08)) * min(1.6, max(0.6, dur / target))
             if motion == "punch_in":

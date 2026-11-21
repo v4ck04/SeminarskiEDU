@@ -131,3 +131,28 @@ def test_explicit_global_feedback_applies_immediately(workspace):
     feedback.improve()
     s, _ = resolve_production_settings()
     assert s["editing"]["target_shot_seconds"] < 2.2
+
+
+def test_caption_derivations_follow_measurements(workspace):
+    from rcstudio.style import profile
+    reps = []
+    for v in ("a", "b", "c"):
+        r = fake_report(v, caps=False)
+        r["metrics"].update({"caption_words": 1.0, "caption_words_p80": 2.0, "caption_highlight_share": 0.15,
+                             "caption_text_h": 0.022})
+        r["metrics_confidence"].update({k: 0.8 for k in ("caption_words", "caption_words_p80", "caption_highlight_share",
+                                                          "caption_text_h")})
+        r["categorical"].update({"ending_cta": False, "footage_type": "original 3D cartoon animation"})
+        reps.append(r)
+    write_reports(reps)
+    prod = profile.rebuild(quiet=True)["production"]
+    assert prod["captions.max_words"]["value"] == 2                  # upper bound from the 80th percentile
+    assert prod["captions.highlight_mode"]["value"] == "emphasis"    # sparse coloured words
+    assert prod["captions.uppercase"]["value"] is False
+    lower = prod["captions.font_size"]["value"]
+    assert 100 <= lower <= 160 and prod["captions.font_size"]["status"] == "frequent"
+    feats = profile.load_reports()
+    from rcstudio.production.script import style_brief
+    from rcstudio.config import resolve_production_settings
+    brief = style_brief(resolve_production_settings()[0])
+    assert "cartoon animation" in brief and "call to action" in brief

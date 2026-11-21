@@ -29,7 +29,11 @@ def available_providers() -> list[str]:
     return out
 
 
+LAST_ERRORS: list[str] = []
+
+
 def transcribe(path: str | Path, cfg: dict) -> dict | None:
+    LAST_ERRORS.clear()
     want = (cfg or {}).get("provider", "auto")
     if want == "none":
         return None
@@ -50,6 +54,7 @@ def transcribe(path: str | Path, cfg: dict) -> dict | None:
             errors.append(f"{p}: {e}")
     if errors:
         _log.info("no transcript: %s", "; ".join(errors))
+        LAST_ERRORS.extend(errors)
     return None
 
 
@@ -58,7 +63,10 @@ def _faster_whisper(path, cfg) -> dict:
     device = cfg.get("device", "auto")
     model = WhisperModel(cfg.get("faster_whisper_model", "small"), device=device,
                          compute_type="int8" if device in ("cpu", "auto") else "float16")
-    segments, info = model.transcribe(str(path), language=cfg.get("language"), word_timestamps=True,
+    # decode with FFmpeg ourselves (16 kHz mono float32): avoids faster-whisper's PyAV decoder,
+    # whose arguments are not compatible with every PyAV release
+    audio = ffmpeg.decode_audio(path, sr=16000, mono=True)
+    segments, info = model.transcribe(audio, language=cfg.get("language"), word_timestamps=True,
                                       vad_filter=True)
     segs, words = [], []
     for s in segments:

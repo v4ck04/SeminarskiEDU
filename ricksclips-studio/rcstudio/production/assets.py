@@ -284,8 +284,9 @@ class OpenAIImages:
 
     def generate(self, description: str, dest: Path) -> Candidate:
         cfg = load_settings().get("assets", {}).get("openai_images", {})
-        prompt = (f"{description}. Vertical 9:16 composition, photorealistic, cinematic lighting, "
-                  "no text, no logos, no watermarks, no real people's likeness.")
+        style = cfg.get("style") or "photorealistic, cinematic lighting"
+        prompt = (f"{description}. Vertical 9:16 composition, {style}, "
+                  "no text, no logos, no watermarks, no real people's likeness, no existing cartoon characters.")
         r = requests.post("https://api.openai.com/v1/images/generations", timeout=180,
                           headers={"Authorization": f"Bearer {env_key('OPENAI_API_KEY')}"},
                           json={"model": cfg.get("model", "gpt-image-1"), "prompt": prompt, "n": 1,

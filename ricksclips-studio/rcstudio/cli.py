@@ -28,12 +28,13 @@ def cmd_analyze(args) -> int:
     from .analysis import pipeline
     if args.file:
         rep = pipeline.analyze_video(args.file, force=args.force, transcribe_mode=args.transcribe,
-                                     use_vision=True if args.vision else None)
+                                     use_vision=True if args.vision else None, retranscribe=args.retranscribe)
         from .style import profile
         profile.rebuild(event="analyze", videos=[rep["video"]["id"]])
     else:
         pipeline.analyze_all(Path(args.input) if args.input else None, force=args.force,
-                             transcribe_mode=args.transcribe, use_vision=True if args.vision else None)
+                             transcribe_mode=args.transcribe, use_vision=True if args.vision else None,
+                             retranscribe=args.retranscribe)
     say("Review the learned style in training/style-profile.md", level="step")
     return 0
 
@@ -322,6 +323,7 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--input", help="folder with reference videos (default training/input)")
     s.add_argument("--file", help="analyse a single video file")
     s.add_argument("--force", action="store_true", help="re-analyse videos that were already analysed")
+    s.add_argument("--retranscribe", action="store_true", help="redo speech transcription (otherwise cached)")
     s.add_argument("--transcribe", choices=["auto", "faster-whisper", "openai", "none"], help="transcription provider")
     s.add_argument("--vision", action="store_true", help="visual AI review of contact sheets via the Claude API")
     s.set_defaults(func=cmd_analyze)

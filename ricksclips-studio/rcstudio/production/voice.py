@@ -110,7 +110,7 @@ def _whisper_words(path: Path) -> list[dict] | None:
         global _WM
         if "_WM" not in globals():
             _WM = WhisperModel("base", device="auto", compute_type="int8")
-        segs, _ = _WM.transcribe(str(path), word_timestamps=True)
+        segs, _ = _WM.transcribe(ffmpeg.decode_audio(path, sr=16000, mono=True), word_timestamps=True)
         return [{"word": w.word.strip(), "start": w.start, "end": w.end} for s in segs for w in (s.words or [])]
     except Exception as e:  # alignment is optional
         _log.info("whisper alignment unavailable: %s", e)
@@ -126,11 +126,55 @@ def _pitch_filter(semitones: float) -> str | None:
     return f"asetrate={int(SR * r)},aresample={SR},atempo={1 / r:.5f}"
 
 
+def _tempo_filter(factor: float) -> str | None:
+    if abs(factor - 1.0) < 0.01:
+        return None
+    parts, f = [], factor
+    while f > 2.0:          # atempo accepts 0.5..2.0 per instance
+        parts.append("atempo=2.0")
+        f /= 2.0
+    parts.append(f"atempo={f:.4f}")
+    return ",".join(parts)
+
+
+def measure_wpm(words: int, x: np.ndarray) -> float:
+    a, b = _speech_bounds(x, -40.0)
+    dur = max(0.2, (b - a) / SR)
+    return words / dur * 60.0
+
+
+def resolve_speed(prov, vset: dict, sample: str, sdir: Path) -> tuple[float, str]:
+    """Speed so the voice matches the target pace (learned from the references).
+
+    The provider's natural pace is measured once on a sample sentence; the user's
+    `voice.speed` preference multiplies the result."""
+    base = float(vset.get("speed", 1.0))
+    target = vset.get("target_wpm")
+    if not vset.get("match_pace", True) or not target or not sample.strip():
+        return base, ""
+    from ..utils import read_json
+    cal_path = sdir / "pace-calibration.json"
+    cal = read_json(cal_path, {}) or {}
+    key = prov.describe()
+    if key not in cal:
+        tmp = sdir / "pace_probe.wav"
+        res = prov.synthesize(sample, tmp, speed=1.0)
+        cal[key] = round(measure_wpm(len(sample.split()), _load(tmp)), 1)
+        tmp.unlink(missing_ok=True)
+        write_json(cal_path, cal)
+    natural = cal[key]
+    wanted = float(target) / max(60.0, natural)
+    factor = max(0.8, min(1.6, wanted))        # beyond ~1.6x time-stretching sounds unnatural
+    note = f"pace matched: natural {natural:.0f} wpm -> target {float(target):.0f} wpm"
+    if factor < wanted - 0.01:
+        note += f" (capped at {factor:.1f}x - expect ~{natural * factor:.0f} wpm; pick a faster voice to get closer)"
+    return round(base * factor, 3), note
+
+
 def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_name: str | None = None,
              force: bool = False) -> dict:
     prov = tts.get_provider(provider_name, voice_cfg)
     vset = settings["voice"]
-    speed = float(vset.get("speed", 1.0))
     pitch = float(voice_cfg.get("pitch_semitones", 0.0))
     pron = dict(voice_cfg.get("pronunciations", {}))
     for p in script.get("pronunciations", []):
@@ -139,7 +183,13 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
     vdir = paths.project_dirs(slug)["voice"]
     sdir = vdir / "sentences"
     sdir.mkdir(parents=True, exist_ok=True)
-    say(f"Voice: {prov.describe()} ({prov.quality}), speed {speed:.2f}")
+    first = next((s for b in script["beats"] for s in split_sentences(b["text"])), "")
+    speed, pace = resolve_speed(prov, vset, apply_pronunciations(first, pron), sdir)
+    native = min(speed, getattr(prov, "max_speed", 2.0))
+    post = speed / native
+    say(f"Voice: {prov.describe()} ({prov.quality}), speed {speed:.2f}"
+        + (f" ({native:.2f} native x {post:.2f} time-stretch)" if post > 1.01 else "")
+        + (f" - {pace}" if pace else ""))
 
     lead = float(vset.get("lead_in_s", 0.12))
     sent_pause = float(vset.get("sentence_pause_s", 0.2))
@@ -154,7 +204,7 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
         sents = split_sentences(b["text"])
         for si, sent in enumerate(sents):
             spoken = apply_pronunciations(sent, pron)
-            key = text_hash(prov.describe(), voice_cfg.get(prov.name, {}), spoken, speed, pitch)
+            key = text_hash(prov.describe(), voice_cfg.get(prov.name, {}), spoken, round(speed, 3), pitch)
             wav = sdir / f"s{idx:03d}_{key}.wav"
             words_src = "provider"
             meta_path = wav.with_suffix(".json")
@@ -166,12 +216,12 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
             else:
                 say(f"  sentence {idx + 1}: {sent[:70]}")
                 raw = sdir / f"raw_{idx:03d}.wav"
-                res = prov.synthesize(spoken, raw, speed=speed)
+                res = prov.synthesize(spoken, raw, speed=native)
                 x = _load(raw)
-                pf = _pitch_filter(pitch)
-                if pf:
-                    tmp = sdir / f"pitch_{idx:03d}.wav"
-                    ffmpeg.ffmpeg(["-y", "-v", "error", "-i", str(raw), "-af", pf, "-ar", str(SR), str(tmp)])
+                chain = [f for f in (_pitch_filter(pitch), _tempo_filter(post)) if f]
+                if chain:
+                    tmp = sdir / f"post_{idx:03d}.wav"
+                    ffmpeg.ffmpeg(["-y", "-v", "error", "-i", str(raw), "-af", ",".join(chain), "-ar", str(SR), str(tmp)])
                     x = _load(tmp)
                     tmp.unlink(missing_ok=True)
                 # trim leading/trailing silence (keep 30 ms)
@@ -185,8 +235,9 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
                 original = sent.split()
                 local_words = None
                 if res.words:
-                    w2 = [{"word": w["word"], "start": max(0.0, w["start"] - shift), "end": max(0.0, w["end"] - shift)}
-                          for w in res.words]
+                    # provider timings are at native speed; time-stretching scales them by 1/post
+                    w2 = [{"word": w["word"], "start": max(0.0, w["start"] / post - shift),
+                           "end": max(0.0, w["end"] / post - shift)} for w in res.words]
                     local_words = align_words(original, w2)
                 if local_words is None and voice_cfg.get("align_with_whisper", "auto") != "off":
                     ww = _whisper_words(wav)
@@ -219,8 +270,11 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
     narration = np.concatenate(pieces)
     out = vdir / "narration.wav"
     ffmpeg.write_wav(out, narration, SR)
+    total_words = sum(len(x["words"]) for x in sentences)
+    speech_s = sum(x["end"] - x["start"] for x in sentences)
     timing = {"slug": slug, "provider": prov.describe(), "provider_quality": prov.quality,
               "created_at": now_iso(), "sample_rate": SR, "speed": speed, "pitch_semitones": pitch,
+              "pace_wpm": round(total_words / max(0.1, speech_s) * 60, 1), "pace_note": pace,
               "duration": round(len(narration) / SR, 3), "narration_file": str(out.relative_to(paths.root())),
               "sentences": sentences, "source": "voice"}
     write_json(vdir / "timing.json", timing)

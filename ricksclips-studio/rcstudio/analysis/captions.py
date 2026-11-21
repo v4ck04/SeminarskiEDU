@@ -451,4 +451,5 @@ def attach_spoken_words(caps: dict, words: list[dict]) -> None:
             counts.append(n)
     if counts:
         caps["words_per_caption_spoken"] = float(np.median(counts))
+        caps["words_per_caption_p80"] = float(np.percentile(counts, 80))
         caps["caption_word_sync"] = round(len(counts) / max(1, len(caps["segments"])), 3)

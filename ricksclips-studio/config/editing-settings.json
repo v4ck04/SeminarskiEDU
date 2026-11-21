@@ -107,7 +107,8 @@
     "sentence_pause_s": 0.2,
     "beat_pause_s": 0.3,
     "hook_pause_s": 0.35,
-    "lead_in_s": 0.12
+    "lead_in_s": 0.12,
+    "match_pace": true
   },
   "story": {
     "hook_max_seconds": 3.5,

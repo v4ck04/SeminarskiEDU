@@ -212,6 +212,10 @@ def build(vid: dict, info: dict, scenes: dict, motions: list[dict], motion_sum: 
               cconf * (0.95 if caps.get("words_per_caption_spoken") else 0.7), f"opencv:caption-detector + {src}")
         m("caption_words", wpc, cconf * (0.95 if caps.get("words_per_caption_spoken") else 0.7))
         m("caption_lines", caps["lines_median"], cconf * 0.8)
+        p80 = caps.get("words_per_caption_p80") or float(np.percentile(
+            [sg["words_est"] for sg in caps["segments"]], 80)) if caps.get("segments") else None
+        if p80:
+            m("caption_words_p80", p80, cconf * (0.95 if caps.get("words_per_caption_p80") else 0.7))
         o.add("subtitles", "color", f"{caps['fill_color']} text ({caps['fill_hex']})", cconf, "opencv:caption-detector")
         cats["caption_fill_color"] = caps["fill_color"]
         cats["caption_fill_hex"] = caps["fill_hex"]
@@ -329,6 +333,7 @@ def build(vid: dict, info: dict, scenes: dict, motions: list[dict], motion_sum: 
         en = story["ending"]
         o.add("story", "ending", f"ending: \"{en['text']}\" - {', '.join(en['types'])}", 0.55, "transcript + text rules")
         cats["ending_types"] = en["types"]
+        cats["ending_cta"] = "call to action" in en["types"]
         m("words_per_sentence", story["words_per_sentence"], 0.7)
         m("numbers_per_10s", story["numbers_per_10s"], 0.6)
         prog = story["progression"]
@@ -366,9 +371,11 @@ def build(vid: dict, info: dict, scenes: dict, motions: list[dict], motion_sum: 
         "color": color,
         "captions": caps,
         "audio": audio,
+        # full text stays in <id>.transcript.json (git-ignored); the report keeps only counts
         "transcript": {"available": bool(transcript), "provider": (transcript or {}).get("provider"),
-                       "text": (transcript or {}).get("text")},
-        "story": story,
+                       "words": len((transcript or {}).get("words", [])), "language": (transcript or {}).get("language")},
+        # sentence-by-sentence text stays in the git-ignored transcript; keep only structure here
+        "story": {k: v for k, v in story.items() if k != "sentences"},
         "frames": sheets,
         "vision": vision,
         "metrics": metrics,

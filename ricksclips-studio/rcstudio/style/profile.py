@@ -49,6 +49,7 @@ NUMERIC = {
     "caption_y": ("Subtitle design", "caption vertical position (0=top)", "{:.2f}", "abs", 0.06),
     "caption_text_h": ("Subtitle design", "caption letter height (frame fraction)", "{:.3f}", "abs", 0.008),
     "caption_words": ("Subtitle design", "words per caption", "{:.1f}", "abs", 1.0),
+    "caption_words_p80": ("Subtitle design", "words per caption (80th percentile)", "{:.1f}", "abs", 1.0),
     "caption_lines": ("Subtitle design", "lines per caption", "{:.1f}", "abs", 0.6),
     "caption_duration": ("Subtitle design", "caption on-screen time", "{:.2f}s", "rel", 0.4),
     "caption_highlight_share": ("Subtitle design", "captions with highlighted words", "{:.0%}", "abs", 0.25),
@@ -105,6 +106,10 @@ CATEGORICAL = {
     "caption_width_class": ("Subtitle design", "letter width"),
     "caption_animation": ("Subtitle design", "caption onset animation"),
     "music_likely": ("Music characteristics", "music bed under narration"),
+    "ending_cta": ("Ending patterns", "ends with a call to action"),
+    "footage_type": ("Visual composition", "footage type (reviewed)"),
+    "caption_case": ("Subtitle design", "caption letter case (reviewed)"),
+    "overlay_graphics": ("Visual composition", "overlay graphics (reviewed)"),
 }
 LIST_FEATURES = {
     "hook_features": ("Hook patterns", "hook uses"),
@@ -179,7 +184,7 @@ def aggregate(reports: list[dict]) -> dict:
         mode = max(counts, key=counts.get)
         share = counts[mode] / max(1, n_total)
         feats[key] = {"kind": "categorical", "section": section, "label": label, "mode": mode,
-                      "share": round(share, 3), "counts": counts, "n": len(vals),
+                      "share": round(share, 3), "counts": counts, "n": len(vals), "of": n_total,
                       "status": _cat_status(share, n_total, cfg), "values": vals}
     for key, (section, label) in LIST_FEATURES.items():
         per_item: dict = {}
@@ -218,7 +223,7 @@ def describe(key: str, f: dict) -> str:
         cons = "consistent" if f["consistent"] and f["n"] > 1 else ("varies" if f["n"] > 1 else "")
         return f"{f['label']}: {core} ({rng}{', ' + cons if cons else ''}; {f['n']} video(s), conf {f['confidence']})"
     if f["kind"] == "categorical":
-        return f"{f['label']}: {f['mode']} ({f['counts'][f['mode']]}/{sum(f['counts'].values())} videos)"
+        return f"{f['label']}: {f['mode']} ({f['counts'][f['mode']]}/{f.get('of') or sum(f['counts'].values())} videos)"
     return f"{f['label']} ({f['n']}/{f.get('of', f['n'])} videos)"
 
 
@@ -285,7 +290,10 @@ def derive_production(feats: dict) -> dict:
             put("transitions.mix", {k: round(v / tot, 3) for k, v in mix.items()}, *tkeys)
     if g("caption_y") is not None:
         put("captions.position_y", round(float(np.clip(g("caption_y"), 0.25, 0.78)), 3), "caption_y")
-    if g("caption_words") is not None:
+    # max_words is an upper bound for chunking, so it follows the high end of the distribution
+    if g("caption_words_p80") is not None:
+        put("captions.max_words", int(np.clip(round(g("caption_words_p80")), 1, 6)), "caption_words_p80")
+    elif g("caption_words") is not None:
         put("captions.max_words", int(np.clip(round(g("caption_words")), 1, 6)), "caption_words")
     if g("caption_caps_share") is not None:
         put("captions.uppercase", bool(g("caption_caps_share") > 0.6), "caption_caps_share")
@@ -308,7 +316,14 @@ def derive_production(feats: dict) -> dict:
         hexv = "#FFFFFF" if feats["caption_fill_color"]["mode"] == "white" else mean_hex("caption_fill_color", "caption_fill_hex")
         if hexv:
             put("captions.primary_color", hexv, "caption_fill_color")
-    if "caption_highlight_mode" in feats:
+    # highlight style from how often a coloured word appears (measured consistently per caption)
+    if g("caption_highlight_share") is not None:
+        share = g("caption_highlight_share")
+        moving = feats.get("caption_highlight_mode", {}).get("mode") == "active_word"
+        mode = "none" if share < 0.08 else ("active_word" if share > 0.5 and moving else "emphasis")
+        put("captions.highlight_mode", mode, "caption_highlight_share",
+            note=f"{share:.0%} of reference captions contain a coloured word")
+    elif "caption_highlight_mode" in feats:
         put("captions.highlight_mode", feats["caption_highlight_mode"]["mode"], "caption_highlight_mode")
     hl = mean_hex("caption_highlight_color", "caption_highlight_hex")
     if hl:
@@ -332,10 +347,18 @@ def derive_production(feats: dict) -> dict:
             note = "closest bundled font by measured weight/width - not an identification of the reference font"
             put("captions.font", font[0], "caption_stroke_ratio", "caption_char_aspect", note=note)
             put("captions.font_file", font[1], "caption_stroke_ratio", "caption_char_aspect", note=note)
-            if g("caption_text_h") is not None:
-                size = font_size_for_height(font[1], g("caption_text_h"))
-                if size:
-                    put("captions.font_size", size, "caption_text_h", "caption_stroke_ratio")
+    if g("caption_text_h") is not None:
+        # size for the font that will actually be used: the suggested one only if it is applied
+        from ..config import load_editing_defaults
+        allow_occ = bool(load_settings().get("style_learning", {}).get("apply_occasional_params", False))
+        ff = prod.get("captions.font_file")
+        use_suggested = ff and (ff["status"] == "frequent" or (allow_occ and ff["status"] == "occasional"))
+        font_file = ff["value"] if use_suggested else load_editing_defaults()["captions"].get("font_file", "Poppins-Black.ttf")
+        upper = (g("caption_caps_share") or 0) > 0.5
+        size = font_size_for_height(font_file, g("caption_text_h"), upper)
+        if size:
+            put("captions.font_size", size, "caption_text_h", "caption_caps_share",
+                note=f"letter height matched for {font_file} ({'upper' if upper else 'lower'} case)")
     if g("saturation") is not None:
         put("color.target_saturation", round(g("saturation"), 3), "saturation")
     if g("contrast") is not None:
@@ -351,7 +374,7 @@ def derive_production(feats: dict) -> dict:
     if g("cuts_with_sfx_share") is not None:
         put("audio.sfx_on_cuts_prob", round(float(np.clip(g("cuts_with_sfx_share"), 0, 1)), 2), "cuts_with_sfx_share")
     if g("wpm") is not None:
-        put("voice.target_wpm", int(round(np.clip(g("wpm"), 110, 230))), "wpm")
+        put("voice.target_wpm", int(round(np.clip(g("wpm"), 110, 280))), "wpm")
     if g("pause_median") is not None:
         put("voice.sentence_pause_s", round(float(np.clip(g("pause_median"), 0.08, 0.8)), 2), "pause_median")
     if g("hook_duration") is not None:
@@ -361,11 +384,12 @@ def derive_production(feats: dict) -> dict:
     return prod
 
 
-def font_size_for_height(font_file: str, text_h_frac: float) -> int | None:
-    """ASS font size whose rendered letter height matches the measured fraction."""
+def font_size_for_height(font_file: str, text_h_frac: float, upper: bool = True) -> int | None:
+    """ASS font size whose rendered letter height matches the measured fraction.
+    Lower-case captions are measured by their x-height, so calibrate with the same case."""
     try:
         from ..production.subtitles import font_height_ratio
-        ratio = font_height_ratio(font_file)
+        ratio = font_height_ratio(font_file, upper)
     except Exception as e:  # rendering unavailable - use a typical value
         _log.debug("font calibration unavailable: %s", e)
         ratio = 0.5

@@ -35,6 +35,30 @@ class Report:
         return "PASS"
 
 
+def _caption_edges(region: np.ndarray, colors_bgr: list[tuple[int, int, int]]) -> int:
+    """Pixels close to a caption colour (fill/highlight) that touch very dark outline pixels."""
+    reg = region.astype(np.int16)
+    fill = np.zeros(region.shape[:2], np.uint8)
+    for c in colors_bgr:
+        fill |= (np.abs(reg - np.array(c, np.int16)).max(axis=2) < 60).astype(np.uint8)
+    fill = cv2.morphologyEx(fill, cv2.MORPH_OPEN, np.ones((2, 2), np.uint8))
+    near_dark = cv2.dilate((region.max(axis=2) < 50).astype(np.uint8), np.ones((3, 3), np.uint8), iterations=2)
+    return int((fill & near_dark).sum())
+
+
+def _band_has_outlined_text(img: np.ndarray, y: float, colors_bgr: list[tuple[int, int, int]] | None = None) -> bool:
+    """Targeted check: caption-coloured, dark-outlined edges in the caption band clearly exceed a
+    background band of the same height above it."""
+    colors_bgr = colors_bgr or [(255, 255, 255)]
+    H = img.shape[0]
+    half = int(0.035 * H)
+    yc = int(y * H)
+    band = img[max(0, yc - half): yc + half]
+    ref = img[max(0, yc - 4 * half): max(1, yc - 2 * half)]
+    e, r = _caption_edges(band, colors_bgr), _caption_edges(ref, colors_bgr)
+    return e >= max(12, 2.5 * r + 6)
+
+
 def _env(x: np.ndarray, hop: int) -> np.ndarray:
     k = len(x) // hop
     return np.sqrt(np.mean(x[: k * hop].reshape(k, hop) ** 2, axis=1) + 1e-12)
@@ -177,6 +201,8 @@ def run(slug: str, video: Path, final: bool, settings: dict) -> dict:
         # visible in the rendered frames
         from ..analysis.captions import detect_frame
         from ..analysis.frames import extract_frame
+        from ..utils import hex_to_bgr
+        cap_colors = [hex_to_bgr(st.get("primary_color") or "#FFFFFF"), hex_to_bgr(st.get("highlight_color") or "#FFD400")]
         sample = cl[:: max(1, len(cl) // 8)][:8]
         hits = 0
         tmp = (d["export"] if final else d["preview"]) / "qc_frames"
@@ -187,7 +213,7 @@ def run(slug: str, video: Path, final: bool, settings: dict) -> dict:
                 continue
             img = cv2.imread(str(p))
             dets = detect_frame(img)
-            if any(abs(dd["cy"] - y) < 0.1 for dd in dets):
+            if any(abs(dd["cy"] - y) < 0.1 for dd in dets) or _band_has_outlined_text(img, y, cap_colors):
                 hits += 1
         share = hits / max(1, len(sample))
         r.add("captions visible in picture", "pass" if share >= 0.75 else "warn",

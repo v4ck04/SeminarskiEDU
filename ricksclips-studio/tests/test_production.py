@@ -322,3 +322,48 @@ def test_reject_and_generator_review_flow(workspace):
     e = man["scenes"][0]
     assert e["status"] == "user" and e["generator"] == "starfield" and e["file"] is None
     assert len(man["rejected"]) == 2
+
+
+def test_pace_matching_reaches_target_wpm(workspace, synthetic_tts):
+    """The learned pace (e.g. 257 wpm) must be reached even if the voice speaks slower by default."""
+    from rcstudio.config import load_voice_settings
+    from rcstudio.production import project, script, voice
+    project.create("t", "pace")
+    s = script.normalize(json.loads(SAMPLE_SCRIPT.read_text()))
+    st = settings()
+    st["voice"].update({"target_wpm": 185, "match_pace": True, "speed": 1.0})
+    timing = voice.generate("pace", s, st, load_voice_settings(), provider_name=synthetic_tts)
+    assert timing["speed"] > 1.05 and "capped" not in timing["pace_note"]
+    assert timing["pace_wpm"] == pytest.approx(185, rel=0.15)
+    st["voice"]["match_pace"] = False
+    slow = voice.generate("pace", s, st, load_voice_settings(), provider_name=synthetic_tts)
+    assert slow["speed"] == 1.0 and slow["duration"] > timing["duration"] * 1.05
+
+
+def test_qc_caption_band_check_detects_presence_and_absence(workspace):
+    import cv2
+    from rcstudio.production.generators import create
+    from rcstudio.production.qc import _band_has_outlined_text
+    from rcstudio.production.subtitles import to_ass
+    shutil.copy(paths.fonts_dir() / "Poppins-Black.ttf", workspace / "Poppins-Black.ttf")
+    for gen in ("grid", "waves", "starfield", "gradient_flow"):
+        bg = create(gen, 540, 960, 3).frame(1.0)
+        assert not _band_has_outlined_text(bg, 0.7), gen               # no caption -> must not pass
+        cv2.imwrite(str(workspace / "bg.png"), bg)
+        words = [{"word": "it", "start": 0, "end": 1}]
+        cap = {"font_size": 131, "effective_font_size": 131, "position_y": 0.7, "animation": "none",
+               "highlight_mode": "none", "uppercase": False, "outline_width": 8, "shadow": 3}
+        (workspace / "c.ass").write_text(to_ass([{"words": words, "start": 0, "end": 2, "emphasis": []}], cap, "Poppins Black"))
+        ffmpeg.ffmpeg(["-y", "-v", "error", "-loop", "1", "-i", "bg.png", "-vf", "subtitles=c.ass:fontsdir=.",
+                       "-frames:v", "1", "out.png"], cwd=workspace)
+        assert _band_has_outlined_text(cv2.imread(str(workspace / "out.png")), 0.7), gen
+
+
+def test_storyboard_follows_dominant_motion(workspace):
+    from rcstudio.production import script, storyboard
+    st = settings()
+    st["editing"]["motion_mix"] = {"zoom_in": 0.6, "zoom_out": 0.2, "pan_right": 0.2}
+    s = script.normalize(json.loads(SAMPLE_SCRIPT.read_text()))
+    moves = [x["motion"]["type"] for x in storyboard.build(s, st, "m")["scenes"][1:]]
+    assert moves.count("zoom_in") >= len(moves) * 0.35
+    assert not any(a == b == c for a, b, c in zip(moves, moves[1:], moves[2:]))   # never 3 identical in a row

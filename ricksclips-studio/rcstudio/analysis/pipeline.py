@@ -28,7 +28,7 @@ def list_inputs(input_dir: Path | None = None) -> list[Path]:
 
 
 def analyze_video(path: str | Path, force: bool = False, transcribe_mode: str | None = None,
-                  use_vision: bool | None = None) -> dict:
+                  use_vision: bool | None = None, retranscribe: bool = False) -> dict:
     path = Path(path).resolve()
     if not path.exists():
         raise StudioError(f"Video not found: {path}")
@@ -66,12 +66,14 @@ def analyze_video(path: str | Path, force: bool = False, transcribe_mode: str | 
     if transcribe_mode:
         tcfg["provider"] = transcribe_mode
     tr_path = paths.analysis_dir() / f"{vid}.transcript.json"
-    tr = read_json(tr_path) if tr_path.exists() and not force else None
+    tr = read_json(tr_path) if tr_path.exists() and not retranscribe and transcribe_mode != "none" else None
     if tr is None:
         tr = transcribe.transcribe(path, tcfg)
         if tr:
             write_json(tr_path, tr)
     say(f"   transcript: {tr['provider'] + ', ' + str(len(tr['words'])) + ' words' if tr else 'not available (speech metrics use lower-confidence estimates)'}")
+    if not tr and transcribe.LAST_ERRORS:
+        say(f"   transcription failed: {'; '.join(transcribe.LAST_ERRORS)[:300]}", level="warn")
     words = tr.get("words") if tr else None
 
     say("4/7 analysing audio...")
@@ -114,7 +116,7 @@ def analyze_video(path: str | Path, force: bool = False, transcribe_mode: str | 
 
 
 def analyze_all(input_dir: Path | None = None, force: bool = False, transcribe_mode: str | None = None,
-                use_vision: bool | None = None, rebuild_profile: bool = True) -> list[dict]:
+                use_vision: bool | None = None, rebuild_profile: bool = True, retranscribe: bool = False) -> list[dict]:
     vids = list_inputs(input_dir)
     if not vids:
         raise StudioError(f"No reference videos found in {input_dir or paths.training_input()}. "
@@ -123,7 +125,8 @@ def analyze_all(input_dir: Path | None = None, force: bool = False, transcribe_m
     reports, failed = [], []
     for p in vids:
         try:
-            reports.append(analyze_video(p, force=force, transcribe_mode=transcribe_mode, use_vision=use_vision))
+            reports.append(analyze_video(p, force=force, transcribe_mode=transcribe_mode, use_vision=use_vision,
+                                         retranscribe=retranscribe))
         except StudioError as e:
             say(f"{p.name}: {e}", level="fail")
             failed.append(p.name)

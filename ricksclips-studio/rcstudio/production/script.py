@@ -312,6 +312,18 @@ def style_brief(settings: dict) -> str:
         lines.append(f"Reference sentences average {feats['words_per_sentence']['median']:.0f} words.")
     if "cuts_per_sentence" in feats:
         lines.append(f"About {feats['cuts_per_sentence']['median']:.1f} visual cuts per sentence - plan extra_shots for long beats.")
+    reviewed = {k: f for k, f in feats.items() if k in ("footage_type", "overlay_graphics", "caption_case")
+                and f.get("status") == "frequent"}
+    if "footage_type" in reviewed:
+        lines.append(f"Reference visuals are {reviewed['footage_type']['mode']}. This pipeline cannot animate characters: "
+                     "plan visuals that read well as stills with camera motion (AI illustrations in an original style, "
+                     "your own animation clips in production/footage/library/, or matching stock) - never copy the "
+                     "reference channel's characters.")
+    if "overlay_graphics" in reviewed:
+        lines.append(f"Overlay graphics in the references: {reviewed['overlay_graphics']['mode']} - use text_card sparingly.")
+    endings = feats.get("ending_cta")
+    if endings and endings.get("status") == "frequent" and endings.get("mode") == "False":
+        lines.append("References never end with a call to action - end on the payoff line.")
     if st.get("hook_intensity", 1.0) > 1.05:
         lines.append("Feedback asked for a stronger opening: lead with the most surprising concrete fact, no warm-up.")
     return "\n".join(f"- {l}" for l in lines)

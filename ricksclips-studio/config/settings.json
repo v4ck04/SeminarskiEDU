@@ -45,7 +45,15 @@
     "max_sentence_words": 28
   },
   "assets": {
-    "providers": ["library", "generated", "pexels", "pixabay", "nasa", "wikimedia", "openai_images"],
+    "providers": [
+      "library",
+      "generated",
+      "pexels",
+      "pixabay",
+      "nasa",
+      "wikimedia",
+      "openai_images"
+    ],
     "allowed_licenses": [
       "original",
       "user-provided",
@@ -65,7 +73,9 @@
       "enabled": false,
       "model": "gpt-image-1",
       "size": "1024x1536",
-      "quality": "medium"
+      "quality": "medium",
+      "style": "stylized 3D cartoon illustration with original simple characters, vibrant colours, soft cinematic lighting, clean shapes",
+      "_note": "The references use original 3D cartoon animation. AI illustrations in an original style are the closest automatic option; enable this only if you accept OpenAI image costs and terms."
     },
     "http_user_agent": "RickClipsStudio/1.0 (local video production tool)"
   },

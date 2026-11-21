@@ -212,20 +212,23 @@ def _calib_file() -> Path:
     return paths.training_dir() / "font-calibration.json"
 
 
-def font_metrics(font_file: str) -> dict:
-    """Render the font with libass and measure it with the analyzer's caption detector."""
+def font_metrics(font_file: str, upper: bool = True) -> dict:
+    """Render the font with libass and measure it with the analyzer's caption detector.
+    `upper` selects ALL-CAPS or lower-case sample text (lower case is measured by x-height)."""
     from ..analysis.captions import detect_frame
     cache = read_json(_calib_file(), {}) or {}
-    if font_file in cache:
-        return cache[font_file]
+    key = font_file if upper else f"{font_file}|lower"
+    if key in cache:
+        return cache[key]
     fam = font_family(font_file)
     with tempfile.TemporaryDirectory() as td:
         tdp = Path(td)
         shutil.copy(paths.fonts_dir() / font_file, tdp / font_file)
         cap = {"font_size": 100, "effective_font_size": 100, "outline_width": 6, "shadow": 0, "position_y": 0.5,
-               "animation": "none", "highlight_mode": "none", "uppercase": True, "max_chars_per_line": 40,
+               "animation": "none", "highlight_mode": "none", "uppercase": upper, "max_chars_per_line": 40,
                "safe_area": {"left": 0.05, "right": 0.05}}
-        words = [{"word": w, "start": 0.0, "end": 1.0} for w in "MYSTERY SIGNAL FOUND".split()]
+        sample = "MYSTERY SIGNAL FOUND" if upper else "the secret was hidden"
+        words = [{"word": w, "start": 0.0, "end": 1.0} for w in sample.split()]
         ass = to_ass([{"words": words, "start": 0.0, "end": 2.0, "emphasis": []}], cap, fam)
         (tdp / "c.ass").write_text(ass, encoding="utf-8")
         ffmpeg.ffmpeg(["-y", "-v", "error", "-f", "lavfi", "-i", "color=c=0x303030:s=1080x1920:d=1",
@@ -237,13 +240,13 @@ def font_metrics(font_file: str) -> dict:
     d = max(dets, key=lambda x: x["w"])
     m = {"family": fam, "height_ratio": round(d["text_h"] * PLAY_H / 100.0, 4),
          "stroke_ratio": round(d["stroke_ratio"], 4), "char_aspect": round(d["char_aspect"], 4)}
-    cache[font_file] = m
+    cache[key] = m
     write_json(_calib_file(), cache)
     return m
 
 
-def font_height_ratio(font_file: str) -> float:
-    return font_metrics(font_file)["height_ratio"]
+def font_height_ratio(font_file: str, upper: bool = True) -> float:
+    return font_metrics(font_file, upper)["height_ratio"]
 
 
 def closest_font(stroke_ratio: float, char_aspect: float) -> tuple[str, str, dict]:

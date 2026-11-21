@@ -191,7 +191,11 @@ def analyze(path: str, info: dict, cut_times: list[float], words: list[dict] | N
     win = int(0.5 / hop_s)
     for i in range(win, n - 2):
         base = np.median(sub[i - win:i])
-        if sub[i] - base > 12 and sub[i] > -45 and sub[i] >= sub[i + 1] - 1 and sub[i] > sub[i - 1] + 3:
+        rise = sub[i] - base
+        # a voiced syllable raises the low band and the speech band together; an impact is
+        # low-frequency dominated, so its low-band rise must clearly exceed the speech-band rise
+        speech_rise = speech_band[i] - np.median(speech_band[i - win:i])
+        if rise > 12 and rise - speech_rise > 8 and sub[i] > -45 and sub[i] >= sub[i + 1] - 1 and sub[i] > sub[i - 1] + 3:
             events.append({"time": round(i * hop_s, 3), "type": "impact/boom", "confidence": 0.4})
     # whooshes: noise-like, high-band-dominant bursts 0.15-1.2 s
     hb_rel = high - speech_band

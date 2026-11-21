@@ -1,0 +1,62 @@
+{
+  "observations": [
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "description": "Original 3D cartoon animation, not stock footage: recurring round-headed characters with dot eyes and thin limbs in detailed isometric office sets.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg, all 21 shots"
+    },
+    {
+      "category": "motion",
+      "description": "Virtual 3D camera moves: push-ins, top-down and low angles, face close-ups; perspective changes rather than flat 2D zooms.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #3, #7, #8, #14"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg and contact_captions.jpg, all shots"
+    },
+    {
+      "category": "subtitles",
+      "feature": "font_category",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "evidence": "contact_captions.jpg glyph shapes"
+    },
+    {
+      "category": "overlays",
+      "description": "No overlay graphics, stickers or progress bar; text appears inside the scene (door sign, calendar, FIRE button).",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #0, #2, #11"
+    },
+    {
+      "category": "transitions",
+      "description": "Calendar-page overlay with a crossfade signals time passing.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #11",
+      "timestamp": 28.7
+    },
+    {
+      "category": "color",
+      "description": "Bright, saturated cartoon palette (blues/greens); a night skyline marks a time jump.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #14"
+    },
+    {
+      "category": "story",
+      "description": "Hook states a paradox in one sentence, then escalates with concrete consequences; narration runs continuously over constant visual changes.",
+      "confidence": "medium",
+      "evidence": "transcript + contact_timeline.jpg"
+    }
+  ],
+  "categorical": {
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)"
+  },
+  "updated_at": "2026-11-21T22:28:00+00:00"
+}

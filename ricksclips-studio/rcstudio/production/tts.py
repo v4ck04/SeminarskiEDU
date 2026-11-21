@@ -61,6 +61,7 @@ class Provider:
     name = "base"
     quality = ""
     word_timings = False
+    max_speed = 2.0
 
     def __init__(self, cfg: dict):
         self.cfg = cfg or {}
@@ -77,6 +78,7 @@ class Provider:
 
 class ElevenLabs(Provider):
     name, quality, word_timings = "elevenlabs", "premium neural (paid)", True
+    max_speed = 1.2   # API limit; faster pacing is reached with a time-stretch afterwards
 
     def status(self):
         if not env_key("ELEVENLABS_API_KEY"):
