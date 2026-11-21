@@ -1,0 +1,117 @@
+{
+  "_comment": "Default editing parameters. Values learned in training/style-profile.json and repeated feedback in training/preferences.json override these at production time. Run `python studio.py status --settings` to see the resolved values and where each one came from.",
+  "editing": {
+    "target_shot_seconds": 2.2,
+    "min_shot_seconds": 0.8,
+    "max_shot_seconds": 4.5,
+    "motion_mix": {
+      "zoom_in": 0.4,
+      "zoom_out": 0.2,
+      "pan_left": 0.1,
+      "pan_right": 0.1,
+      "pan_up": 0.05,
+      "pan_down": 0.05,
+      "static": 0.1
+    },
+    "motion_intensity": 0.08,
+    "hook_punch_in": true,
+    "punch_in_amount": 0.12,
+    "shake_amount": 0.0,
+    "end_padding_s": 0.6,
+    "horizontal_footage_layout": "cover",
+    "normalize_sources": true
+  },
+  "transitions": {
+    "mix": {
+      "cut": 0.75,
+      "crossfade": 0.1,
+      "whip": 0.06,
+      "zoom": 0.04,
+      "flash": 0.03,
+      "dip_black": 0.02
+    },
+    "only_at_beat_boundaries": true,
+    "durations": {
+      "crossfade": 0.3,
+      "whip": 0.28,
+      "zoom": 0.3,
+      "flash": 0.2,
+      "dip_black": 0.4
+    },
+    "fancy_scale": 1.0
+  },
+  "captions": {
+    "font": "Poppins Black",
+    "font_file": "Poppins-Black.ttf",
+    "font_size": 118,
+    "font_scale": 1.0,
+    "uppercase": true,
+    "primary_color": "#FFFFFF",
+    "highlight_color": "#FFD400",
+    "outline_color": "#000000",
+    "outline_width": 8,
+    "shadow": 3,
+    "shadow_color": "#000000",
+    "position_y": 0.62,
+    "max_words": 3,
+    "max_chars_per_line": 16,
+    "max_lines": 2,
+    "animation": "pop",
+    "highlight_mode": "active_word",
+    "min_duration_s": 0.3,
+    "hold_s": 0.12,
+    "letter_spacing": 0,
+    "safe_area": {
+      "top": 0.12,
+      "bottom": 0.22,
+      "left": 0.06,
+      "right": 0.12
+    }
+  },
+  "color": {
+    "saturation": 1.08,
+    "contrast": 1.05,
+    "brightness": 0.0,
+    "gamma": 1.0,
+    "warmth": 0.0,
+    "vignette": 0.0,
+    "target_saturation": null,
+    "target_contrast": null
+  },
+  "audio": {
+    "target_lufs": -14.0,
+    "true_peak_db": -1.0,
+    "music_enabled": true,
+    "music_db_below_voice": 16.0,
+    "ducking_db": 6.0,
+    "music_fade_in_s": 0.8,
+    "music_fade_out_s": 1.5,
+    "sfx_enabled": true,
+    "sfx_on_cuts_prob": 0.25,
+    "sfx_gain_db": -9.0,
+    "hook_impact": true
+  },
+  "visuals": {
+    "palette": [
+      "#070B1F",
+      "#2B1660",
+      "#7A2E8E",
+      "#F0A35E"
+    ],
+    "default_generator": "gradient_flow",
+    "grain": 0.0
+  },
+  "voice": {
+    "target_wpm": 165,
+    "speed": 1.0,
+    "sentence_pause_s": 0.2,
+    "beat_pause_s": 0.3,
+    "hook_pause_s": 0.35,
+    "lead_in_s": 0.12
+  },
+  "story": {
+    "hook_max_seconds": 3.5,
+    "target_duration_s": 40,
+    "hook_intensity": 1.0
+  }
+}

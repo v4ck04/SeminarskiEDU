@@ -1,0 +1,5 @@
+# Optional extras. Install only what you need:
+#   python -m pip install -r requirements-optional.txt
+anthropic>=2.0         # Claude API: automatic script writing + visual analysis outside Claude Code
+faster-whisper>=1.0    # local speech transcription of reference videos (word timestamps)
+pytesseract>=0.3.10    # OCR for burned-in captions (also install Tesseract-OCR for Windows)

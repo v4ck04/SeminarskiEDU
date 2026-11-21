@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "ffmpeg": {
+    "ffmpeg_path": "",
+    "ffprobe_path": ""
+  },
+  "analysis": {
+    "analysis_width": 270,
+    "max_analysis_fps": 30,
+    "caption_sample_fps": 10,
+    "caption_width": 540,
+    "color_sample_fps": 2,
+    "contact_sheet_columns": 6,
+    "max_extracted_frames": 60,
+    "transcription": {
+      "provider": "auto",
+      "faster_whisper_model": "small",
+      "device": "auto",
+      "language": null,
+      "openai_model": "whisper-1"
+    },
+    "vision": {
+      "provider": "none",
+      "model": "claude-opus-5-5"
+    },
+    "ocr": {
+      "enabled": "auto"
+    }
+  },
+  "style_learning": {
+    "min_videos_for_frequent": 3,
+    "frequent_share": 0.7,
+    "occasional_share": 0.3,
+    "apply_occasional_params": false
+  },
+  "script": {
+    "provider": "auto",
+    "model": "claude-opus-5-5",
+    "effort": "high",
+    "research": true,
+    "variants": 1,
+    "language": "en",
+    "default_target_duration_s": 40,
+    "max_hook_words": 18,
+    "max_sentence_words": 28
+  },
+  "assets": {
+    "providers": ["library", "generated", "pexels", "pixabay", "nasa", "wikimedia", "openai_images"],
+    "allowed_licenses": [
+      "original",
+      "user-provided",
+      "pexels license",
+      "pixabay content license",
+      "public domain",
+      "cc0",
+      "cc by",
+      "cc by-sa",
+      "ai-generated"
+    ],
+    "min_relevance": 0.34,
+    "max_download_mb": 250,
+    "candidates_per_query": 12,
+    "placeholder_label": true,
+    "openai_images": {
+      "enabled": false,
+      "model": "gpt-image-1",
+      "size": "1024x1536",
+      "quality": "medium"
+    },
+    "http_user_agent": "RickClipsStudio/1.0 (local video production tool)"
+  },
+  "export": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "video_codec": "libx264",
+    "crf": 18,
+    "preset": "medium",
+    "pix_fmt": "yuv420p",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "audio_sample_rate": 48000,
+    "max_duration_s": 180,
+    "recommended_max_duration_s": 60,
+    "preview": {
+      "width": 540,
+      "height": 960,
+      "crf": 30,
+      "preset": "veryfast",
+      "watermark": true
+    }
+  },
+  "workflow": {
+    "require_script_approval": true,
+    "require_preview_approval": true,
+    "allow_placeholders_in_final": false
+  },
+  "feedback": {
+    "repeat_threshold": 2
+  },
+  "logging": {
+    "level": "INFO"
+  }
+}

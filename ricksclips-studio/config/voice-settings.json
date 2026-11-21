@@ -1,0 +1,51 @@
+{
+  "provider": "auto",
+  "provider_priority": [
+    "elevenlabs",
+    "openai",
+    "edge",
+    "pyttsx3",
+    "flite"
+  ],
+  "pitch_semitones": 0.0,
+  "trim_silence": true,
+  "align_with_whisper": "auto",
+  "elevenlabs": {
+    "voice_id": "",
+    "model_id": "eleven_multilingual_v2",
+    "output_format": "mp3_44100_128",
+    "stability": 0.45,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+  },
+  "openai": {
+    "model": "gpt-4o-mini-tts",
+    "voice": "onyx",
+    "instructions": "Curious, energetic documentary narrator. Natural conversational pacing, clear diction, no exaggerated hype."
+  },
+  "edge": {
+    "voice": "en-US-AndrewNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "pyttsx3": {
+    "voice_name_contains": "",
+    "rate_wpm": 180
+  },
+  "flite": {
+    "voice": "slt"
+  },
+  "pronunciations": {
+    "Oumuamua": "oh moo ah moo ah",
+    "'Oumuamua": "oh moo ah moo ah",
+    "SETI": "setty"
+  },
+  "processing": {
+    "highpass_hz": 70,
+    "deesser": true,
+    "compressor": true,
+    "target_lufs": -16
+  },
+  "_comment": "Provider configuration. Pacing (speed, pauses, target words/min) lives in editing-settings.json -> voice, so it can be learned from references and adjusted by feedback."
+}

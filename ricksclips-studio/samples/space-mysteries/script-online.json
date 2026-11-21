@@ -1,0 +1,194 @@
+{
+  "title": "3 Space Mysteries Nobody Has Solved",
+  "topic": "The most mysterious discoveries in space",
+  "angle": "Real, unexplained observations - a signal, a visitor, and the missing 95% of the universe",
+  "target_duration_s": 40,
+  "music_mood": "mysterious",
+  "beats": [
+    {
+      "id": 1,
+      "role": "hook",
+      "text": "This 72-second signal from space still has no confirmed explanation.",
+      "visual": {
+        "type": "image",
+        "query": "radio telescope",
+        "description": "a large radio telescope dish",
+        "generator": "",
+        "on_screen_text": ""
+      },
+      "extra_shots": [
+        {
+          "type": "generated",
+          "query": "",
+          "description": "seventy-two seconds",
+          "generator": "text_card",
+          "on_screen_text": "72 SECONDS"
+        }
+      ],
+      "emphasis": [
+        "72-second"
+      ],
+      "sfx": "impact"
+    },
+    {
+      "id": 2,
+      "role": "body",
+      "text": "A radio telescope caught it in 1977. The astronomer who spotted it simply wrote: Wow. It has never been detected again.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "a radio signal waveform rising and fading",
+        "generator": "waves",
+        "on_screen_text": ""
+      },
+      "extra_shots": [
+        {
+          "type": "generated",
+          "query": "",
+          "description": "the word Wow written next to the signal",
+          "generator": "text_card",
+          "on_screen_text": "WOW!"
+        }
+      ],
+      "emphasis": [
+        "Wow"
+      ],
+      "sfx": "auto"
+    },
+    {
+      "id": 3,
+      "role": "body",
+      "text": "In 2017, an object from another star system shot straight through our solar system.",
+      "visual": {
+        "type": "image",
+        "query": "Oumuamua",
+        "description": "artist's impression of the interstellar object 'Oumuamua",
+        "generator": "",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "another"
+      ],
+      "sfx": "whoosh"
+    },
+    {
+      "id": 4,
+      "role": "body",
+      "text": "Astronomers named it Oumuamua, and it sped up in a way gravity alone could not explain.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "dust and debris drifting in space",
+        "generator": "particles",
+        "on_screen_text": ""
+      },
+      "extra_shots": [
+        {
+          "type": "generated",
+          "query": "",
+          "description": "the interstellar object Oumuamua",
+          "generator": "text_card",
+          "on_screen_text": "'OUMUAMUA"
+        }
+      ],
+      "emphasis": [
+        "gravity"
+      ],
+      "sfx": "auto"
+    },
+    {
+      "id": 5,
+      "role": "body",
+      "text": "Then there are fast radio bursts: flashes lasting a few milliseconds, arriving from distant galaxies. Some of them even repeat.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "radio flashes from far away",
+        "generator": "grid",
+        "on_screen_text": ""
+      },
+      "extra_shots": [
+        {
+          "type": "image",
+          "query": "galaxy hubble",
+          "description": "a distant galaxy photographed by Hubble",
+          "generator": "",
+          "on_screen_text": ""
+        }
+      ],
+      "emphasis": [
+        "milliseconds",
+        "repeat"
+      ],
+      "sfx": "auto"
+    },
+    {
+      "id": 6,
+      "role": "body",
+      "text": "And everything made of normal matter, every star, planet and person, adds up to only about five percent of the universe.",
+      "visual": {
+        "type": "image",
+        "query": "earth from space",
+        "description": "Earth seen from space",
+        "generator": "",
+        "on_screen_text": ""
+      },
+      "extra_shots": [
+        {
+          "type": "generated",
+          "query": "",
+          "description": "only five percent",
+          "generator": "text_card",
+          "on_screen_text": "5%"
+        }
+      ],
+      "emphasis": [
+        "five"
+      ],
+      "sfx": "auto"
+    },
+    {
+      "id": 7,
+      "role": "ending",
+      "text": "The other ninety-five percent? We still don't know what it is.",
+      "visual": {
+        "type": "image",
+        "query": "hubble deep field",
+        "description": "Hubble deep field full of galaxies",
+        "generator": "",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "don't"
+      ],
+      "sfx": "riser"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Wow! signal detected by Ohio State's Big Ear radio telescope on 15 Aug 1977; Jerry Ehman wrote 'Wow!' on the printout; 72-second observation window; never detected again",
+      "source": "https://en.wikipedia.org/wiki/Wow!_signal ; Big Ear Radio Observatory archive (bigear.org)"
+    },
+    {
+      "claim": "'Oumuamua (1I/2017 U1) discovered Oct 2017, first known interstellar object; showed non-gravitational acceleration",
+      "source": "Micheli et al. 2018, Nature 559:223-226 ; https://science.nasa.gov/solar-system/comets/oumuamua/"
+    },
+    {
+      "claim": "Fast radio bursts last milliseconds, mostly originate in other galaxies, some repeat",
+      "source": "https://en.wikipedia.org/wiki/Fast_radio_burst ; CHIME/FRB Collaboration publications"
+    },
+    {
+      "claim": "Normal (baryonic) matter is about 5% of the universe; the rest is dark matter (~27%) and dark energy (~68%) whose nature is unknown",
+      "source": "https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy/ ; Planck 2018 results"
+    }
+  ],
+  "pronunciations": [
+    {
+      "word": "Oumuamua",
+      "say_as": "oh moo ah moo ah"
+    }
+  ],
+  "notes": "Sample project that sources public-domain NASA images / Wikimedia Commons where possible."
+}

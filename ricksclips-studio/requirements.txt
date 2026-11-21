@@ -1,0 +1,12 @@
+# Core dependencies - everything the offline editing pipeline needs.
+# Install: python -m pip install -r requirements.txt
+numpy>=1.26
+opencv-python-headless>=4.9
+Pillow>=10.0
+requests>=2.31
+python-dotenv>=1.0
+# Text-to-speech providers that need no paid account:
+edge-tts>=7.0          # free Microsoft neural voices (online)
+pyttsx3>=2.90          # offline Windows SAPI5 voices
+# Tests
+pytest>=8.0
