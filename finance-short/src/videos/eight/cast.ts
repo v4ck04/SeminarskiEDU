@@ -6,7 +6,7 @@
 import * as THREE from "three";
 import {
   Pen, bodyFront, bodySide, fxBurst, fxShadow, fxContact, fxStrip, fxQ, fxStars, fxCoin, KID, PARENT,
-  townsfolk, Outfit, FrontOpts, SideOpts, fxBankCard, fxEnvelope, fxBadge8, fxDrop, fxAnger, fxHeart, fxWeed, fxBill, fxCheque,
+  townsfolk, Outfit, FrontOpts, SideOpts, fxBankCard, fxEnvelope, fxBadge8, fxDrop, fxHeart, fxWeed, fxBill, fxCheque,
 } from "./toon";
 import {
   FPS, D0, SHOTS, V3, clamp01, TL, MGR, MGR5, MGR14, TOWER, CY, CARD_H, COLLAPSE, towerN, MONITORS, STAMP, TRAY, BOARD, BOSS3, FRAME8,
@@ -256,6 +256,7 @@ const stampK = (f: number, hits: number[]) => {
 };
 const card = (out: Stage, at: V3, s: number, kind = 0, rot = 0) => fxCard(out, `bankcard${kind}`, 400, 260, (pp) => fxBankCard(pp, kind), at, 0.34 * s, 0.221 * s, rot);
 const envelope = (out: Stage, at: V3, s: number, gold = false, open = false, rot = 0) => fxCard(out, `env${gold ? 1 : 0}${open ? 1 : 0}`, 440, 300, (pp) => fxEnvelope(pp, gold, open), at, 0.4 * s, 0.273 * s, rot);
+
 const towerTop = (f: number): V3 => [TOWER[0], TOWER[1] + towerN(f) * CARD_H + 0.05, TOWER[2]];
 
 const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
@@ -279,7 +280,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 4) {
     // the manager taps the board; the tellers straighten up; each gets a number
     st(WMGR, MGR, { mode: "stand", expr: f < 419 ? "stern" : "grin", wave: f >= 410 && f < 440 ? q(f < 419 ? 0.4 + (f - 410) * 0.07 : 1 - 0.4 * clamp01((f - 419) / 6), 8) : f >= 440 ? 0.7 : undefined, look: 0 });
-    pop(out, [BOARD.x1 - 0.2, D0 + 2.6, BOARD.z - 0.15], f, 419, 0.55, "#ffffff");
+    pop(out, toward(cam, raised(cam, MGR), 0.1), f, 419, 0.55, "#ffffff");
     TEL.forEach((w, k) => {
       const up = f >= 455 + 2 * k;
       st(w, TL[k], { mode: "stand", expr: up ? (k % 2 ? "nervous" : "neutral") : "smile_closed", look: 0, tilt: up ? 0 : (k % 2 ? 6 : -6) }, false, up ? 1.0 : 0.97);
@@ -298,9 +299,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     if (got) held(out, cam, TL[1], "env10", 440, 300, (pp) => fxEnvelope(pp, true), 0.42, scale01(f, 521, 4));
     pop(out, raised(cam, TL[1]), f, 521, 0.7);
     st(TEL[2], TL[2], { mode: "stand", expr: glare ? "nervous" : "neutral", look: glare ? 0 : -0.5 }, false, glare ? 0.96 : 1);
-    if (f >= 542) fxCard(out, "drop", 120, 170, fxDrop, onCard(cam, TL[2], -0.3, 1.95 - 0.08 * clamp01((f - 542) / 30)), 0.12, 0.17);
-    if (f >= 540) fxCard(out, "anger", 180, 180, fxAnger, onCard(cam, MGR5, 0.32, 2.35), 0.24 * scale01(f, 540, 4), 0.24 * scale01(f, 540, 4));
-    pop(out, onCard(cam, MGR5, 0.32, 2.35), f, 540, 0.4, "#ffffff");
+    if (f >= 542) fxCard(out, "drop", 120, 170, fxDrop, toward(cam, onCard(cam, TL[2], -0.32, 1.62 - 0.1 * clamp01((f - 542) / 30)), 0.05), 0.15, 0.21);
     st(TEL[0], TL[0], { mode: "stand", expr: "neutral", look: 0 });
     st(TEL[3], TL[3], { mode: "stand", expr: "neutral", look: 0 });
   } else if (id === 6) {
@@ -315,12 +314,12 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     // cards into envelopes on the tray; the monitor asks for a PIN, then an email
     st(TEL[0], TL[0], { mode: "stand", expr: "whistle", wave: f >= 694 ? 0.9 : undefined, look: 0.3 });
     const drops = [698, 712, 726, 740, 754];
-    const hand = raised(cam, TL[0]), env: V3 = [TRAY[0], CY + 0.2, TRAY[2] - 0.12];
+    const hand = raised(cam, TL[0]), env: V3 = [TRAY[0], CY + 0.24, TRAY[2] - 0.14];
     const cur = drops.find((d) => f >= d - 8 && f < d + 4);
     const hc = toward(cam, [hand[0], hand[1] - 0.08, hand[2]], 0.06);
     if (f >= 694 && cur !== undefined && f < cur) card(out, hc, 0.9, 0, -0.2);
     for (const d of drops) if (f >= d && f < d + 5) card(out, arcP(hc, env, (f - d) / 5, 0.12), 0.9, 0, -0.2 - (f - d) * 0.3);
-    envelope(out, env, 0.95, false, true);
+    envelope(out, env, 1.3, false, true);
     for (const d of drops) pop(out, env, f, d + 5, 0.32, "#ffffff");
     pop(out, [MONITORS[0][0], CY + 0.62, MONITORS[0][2] - 0.1], f, 728, 0.45, "#ffffff");
     pop(out, [MONITORS[0][0], CY + 0.62, MONITORS[0][2] - 0.1], f, 754, 0.45, "#ffffff");
@@ -410,7 +409,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     const bp: V3 = [42.0, D0, 32.4], fence = f >= 1646;
     st(WBOSS, bp, { mode: "stand", expr: fence ? "shock" : f >= 1590 ? "nervous" : "neutral", prop: f >= 1590 ? "present" : null, look: 0 });
     if (f >= 1590) { const s = scale01(f, 1590, 6); fxCard(out, "cheque", 1000, 460, fxCheque, toward(cam, onCard(cam, bp, 0, 0.88), 0.12), 1.65 * s, 0.76 * s); }
-    pop(out, toward(cam, onCard(cam, bp, 0, 0.9), 0.14), f, 1590, 1.6);
+    pop(out, toward(cam, onCard(cam, bp, 0.55, 0.7), 0.14), f, 1590, 0.8);
     st(INSP[0], [40.75, D0, 32.75], { mode: "stand", expr: "stern", prop: "paper", wave: 0.5, look: 0 }, true);
     st(INSP[1], [43.25, D0, 32.75], { mode: "stand", expr: "stern", prop: "paper", wave: 0.5, look: 0 });
   } else if (id === 16) {

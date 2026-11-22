@@ -376,7 +376,8 @@ export class World {
     sh.add(boxGeo(V(x0, y0, zb - wt), V(x1, y0 + h, zb), 2), brk);
     sh.add(boxGeo(V(x0, y0, zf), V(x0 + wt, y0 + h, zb), 2), brk);
     sh.add(boxGeo(V(x1 - wt, y0, zf), V(x1, y0 + h, zb), 2), brk);
-    sh.add(boxGeo(V(x0 - 0.05, y0 + h, zf - 0.05), V(x1 + 0.05, y0 + h + 0.25, zb + 0.05), 2), M.cope);       // roof slab
+    sh.add(boxGeo(V(x0 - 0.05, y0 + h, zf - 0.05), V(x1 + 0.05, y0 + h + 0.25, zb + 0.05), 2, true), M.cope); // roof slab (closed below)
+    sh.add(quad(V(x0, y0 + h - 0.21, zf), V(x1, y0 + h - 0.21, zf), V(x1, y0 + h - 0.21, zb), V(x0, y0 + h - 0.21, zb)), lam("ceiling", () => ({ color: "#f3e6cc" }))); // lobby ceiling
     sh.add(boxGeo(V(x0 - 0.3, y0 + h - 0.55, zf - 0.3), V(x1 + 0.3, y0 + h - 0.2, zb + 0.3)), stone);           // cornice
     sh.add(boxGeo(V(x0, y0 + h + 0.25, zf), V(x1, y0 + h + 0.7, zf + 0.3)), stone);                             // parapet
     sh.add(boxGeo(V(x0 - 0.08, y0, zf - 0.08), V(x1 + 0.08, y0 + 0.55, zb + 0.08), 2), M.cope);               // plinth

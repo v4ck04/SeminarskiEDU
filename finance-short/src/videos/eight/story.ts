@@ -37,14 +37,14 @@ export const CY = COUNTER.y;
 /** tellers behind the counter, in screen order from the lobby (screen right = -x when looking +z) */
 export const TL: V3[] = [[46.1, D0, 44.9], [43.8, D0, 44.9], [41.5, D0, 44.9], [39.2, D0, 44.9]];
 export const BOARD = { x0: 40.8, x1: 44.6, y0: D0 + 1.55, y1: D0 + 3.45, z: IN.z1 };
-export const MGR: V3 = [45.2, D0, 49.3];         // the branch manager, beside the chalkboard
+export const MGR: V3 = [44.95, D0, 49.35];        // the branch manager, beside the chalkboard
 export const MGR5: V3 = [42.65, D0, 46.3];       // ... behind the tellers (bonus / glare)
 export const MGR14: V3 = [42.7, D0, 48.55];      // ... hugging his number in front of the board
 export const TOWER: V3 = [40.05, CY, 43.7];      // the card tower on the counter, beside the stamping teller (TL[3])
 export const MONITORS: V3[] = [[46.85, CY, 43.75], [44.55, CY, 43.75], [42.25, CY, 43.75]];
 export const STAMP: V3 = [38.85, CY, 43.7];       // ink pad + forms of the stamping teller
 export const TRAY: V3 = [45.45, CY, 43.7];       // the envelope tray of the first teller
-export const CAL: V3 = [46.9, D0 + 2.55, IN.z1 - 0.03]; // wall calendar
+export const CAL: V3 = [38.25, D0 + 2.75, IN.z1 - 0.03]; // wall calendar
 // the boss's panelled corner (behind the counter, left end of the lobby seen from the street side)
 export const BOSS3: V3 = [35.95, D0, 46.95];
 export const FRAME8: V3 = [IN.x0 + 0.04, D0 + 2.45, 47.65]; // framed 8 on the side wall
@@ -57,8 +57,8 @@ export const DOOR: V3 = [42.0, D0 + 0.45, 36.45];
 export const HOUSE = { x: 60.0, z: 40.5, w: 7, d: 8, h: 8.4 };            // the porch house, front at z 36.5
 export const MAT: V3 = [60.0, D0, 35.55];                                // doormat in front of its door step
 export const GARDEN = { x0: 69.2, x1: 72.4, z0: -69.4, z1: -67.6 };       // vegetable patch (near bank park)
-export const KIDP: V3 = [70.15, D0, -67.0];
-export const PARENTP: V3 = [71.65, D0, -66.6];
+export const KIDP: V3 = [70.3, D0, -66.95];
+export const PARENTP: V3 = [71.4, D0, -66.55];
 export const WATER_Y = 0.04;
 // legacy names the shared world code reads
 export const TREE: V3 = [70.2, D0, -74.8];
@@ -157,29 +157,30 @@ export const WALK: { x0: number; z: number; v: number }[] = [
 ];
 export const walkX = (f: number, k: number) => WALK[k].x0 + WALK[k].v * (f - 140) / FPS;
 
-const C1 = (f: number) => dolly([40.0, D0 + 1.5, 41.0], [39.85, D0 + 1.2, 44.4], pushK(f, 0, 0.0016, 0.004, 20), { fov: 48 });
+const C1 = (f: number) => dolly([39.55, D0 + 1.3, 40.9], [39.45, D0 + 1.15, 44.4], pushK(f, 0, 0.0016, 0.004, 20), { fov: 50 });
 const C2a = (f: number) => dolly([43.2, D0 + 4.2, 6.0], [42.0, D0 + 4.9, 36.0], pushK(f, 140, 0.0009), { fov: 50 });
 const C2b = (f: number) => dolly([42.25, D0 + 7.0, 26.2], EIGHT, pushK(f, 216, 0.0016, 0.006, 16), { fov: 40 });
 const C3 = (f: number) => dolly([40.4, D0 + 1.6, 47.0], [35.0, D0 + 1.75, 47.15], pushK(f, 274, 0.0018, 0.005, 16), { fov: 44, roll: -0.03 });
-const C4a = (f: number) => dolly([43.75, D0 + 1.6, 45.3], [44.6, D0 + 1.6, 50.0], pushK(f, 396, 0.002, 0.006, 16), { fov: 50 });
-const C4 = (f: number) => dolly([42.75, D0 + 2.0, 37.6], [42.75, D0 + 2.15, 47.6], pushK(f, 452, 0.0015, 0.005, 20), { fov: 50 });
-const C5 = (f: number) => { const x = ease([[497, 43.15], [535, 43.15], [552, 42.55]], f); return dolly([x, D0 + 1.7, 39.6], [x, D0 + 1.6, 45.4], pushK(f, 497, 0.0018), { fov: 50 }); };
+const C4a = (f: number) => dolly([43.1, D0 + 1.7, 45.4], [42.7, D0 + 2.35, 50.0], pushK(f, 396, 0.0015), { fov: 52 });
+const C4b = (f: number) => dolly([43.85, D0 + 1.6, 45.4], [44.35, D0 + 1.8, 50.0], pushK(f, 404, 0.002, 0.006, 16), { fov: 52 });
+const C4 = (f: number) => dolly([42.65, D0 + 1.45, 40.0], [42.65, D0 + 1.65, 45.0], pushK(f, 452, 0.0015, 0.005, 20), { fov: 54 });
+const C5 = (f: number) => dolly([42.75, D0 + 1.65, 39.4], [42.7, D0 + 1.6, 45.4], pushK(f, 497, 0.0016, 0.005, 16), { fov: 56 });
 const C6 = (f: number) => dolly([43.6, D0 + 1.65, 38.0], [43.9, D0 + 1.3, 43.4], pushK(f, 583, 0.0016), { fov: 52, roll: 0.03 });
-const C7 = (f: number) => dolly([45.95, D0 + 1.5, 40.8], [45.95, D0 + 1.2, 44.0], pushK(f, 690, 0.002, 0.006, 16), { fov: 56 });
+const C7 = (f: number) => dolly([46.2, D0 + 1.45, 40.6], [46.15, D0 + 1.25, 44.0], pushK(f, 690, 0.0018, 0.005, 16), { fov: 60 });
 const C8 = (f: number) => dolly([60.35, D0 + 1.4, 32.1], [60.0, D0 + 1.0, 36.0], pushK(f, 772, 0.002, 0.006, 18), { fov: 46 });
 const C9 = (f: number) => dolly([40.75, D0 + 0.95, 39.5], [40.15, D0 + 2.0, 44.2], pushK(f, 830, 0.0022), { fov: 54, roll: -0.04 });
 const C10 = (f: number) => dolly([41.9, D0 + 2.4, 37.25], [41.45, D0 + 1.45, 44.0], pushK(f, 912, 0.0012, 0.006, 16), { fov: 58 });
 const C11 = (f: number) => dolly([41.6, D0 + 1.35, 30.4], [42.0, D0 + 1.55, 35.4], pushK(f, 1040, 0.0014), { fov: 50 });
 const C12 = (f: number) => dolly([60.4, D0 + 1.45, 32.0], [60.0, D0 + 1.15, 36.0], pushK(f, 1112, 0.0014, 0.005, 16), { fov: 46 });
-const C13 = (f: number) => dolly([71.0, D0 + 1.75, -62.3], [70.9, D0 + 0.85, -67.4], pushK(f, 1288, 0.0015), { fov: 46 });
+const C13 = (f: number) => dolly([70.8, D0 + 2.3, -62.2], [70.75, D0 + 0.7, -67.3], pushK(f, 1288, 0.0012), { fov: 50 });
 const C14 = (f: number) => dolly(H(MGR14, [0.35, 1.6, -3.4]), H(MGR14, [0.1, 1.55, 0]), pushK(f, 1421, 0.0018, 0.005, 20), { fov: 44 });
 const C15a = (f: number) => dolly([42.3, D0 + 1.3, 25.6], [42.0, D0 + 1.25, 33.6], pushK(f, 1557, 0.0016, 0.005, 18), { fov: 50 });
 const C15b = (f: number) => dolly([45.0, D0 + 8.5, 14.0], [42.0, D0 + 3.0, 40.0], pushK(f, 1655, 0.0012), { fov: 50 });
 const C16a = (f: number) => dolly([42.6, D0 + 1.6, 26.8], [42.0, D0 + 3.4, 34.0], pushK(f, 1703, 0.0014), { fov: 52 });
-const C16b = (f: number) => dolly([44.5, D0 + 13.0, 8.0], [42.0, D0 + 4.0, 38.0], pushK(f, 1745, 0.0008), { fov: 52 });
+const C16b = (f: number) => dolly([44.0, D0 + 9.0, 13.5], [42.0, D0 + 4.6, 38.0], pushK(f, 1745, 0.0008), { fov: 52 });
 
 export const CAMS: Record<number, Key[]> = {
-  1: [{ f: 0, s: C1 }], 2: [{ f: 140, s: C2a }, { f: 214, dur: 40, s: C2b }], 3: [{ f: 274, s: C3 }], 4: [{ f: 396, s: C4a }, { f: 452, cut: true, s: C4 }],
+  1: [{ f: 0, s: C1 }], 2: [{ f: 140, s: C2a }, { f: 214, dur: 40, s: C2b }], 3: [{ f: 274, s: C3 }], 4: [{ f: 396, s: C4a }, { f: 403, dur: 16, s: C4b }, { f: 452, cut: true, s: C4 }],
   5: [{ f: 497, s: C5 }], 6: [{ f: 583, s: C6 }], 7: [{ f: 690, s: C7 }], 8: [{ f: 772, s: C8 }], 9: [{ f: 830, s: C9 }],
   10: [{ f: 912, s: C10 }], 11: [{ f: 1040, s: C11 }], 12: [{ f: 1112, s: C12 }], 13: [{ f: 1284, s: C13 }], 14: [{ f: 1417, s: C14 }],
   15: [{ f: 1557, s: C15a }, { f: 1655, dur: 40, s: C15b }], 16: [{ f: 1697, s: C16a }, { f: 1745, dur: 90, s: C16b }],

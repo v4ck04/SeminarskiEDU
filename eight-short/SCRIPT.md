@@ -1,8 +1,9 @@
-# The Bank That Wanted Eight of Everything — script, sources and posting (v1, for approval)
+# The Bank That Wanted Eight of Everything — script, sources, production and posting
 
 A true-story short for **Vacko | Money Stories**, made with the `cartoon-3d-short` skill: Wells Fargo's
 "eight products per customer" sales goal and the fake-accounts scandal (2011-2016, settled 2016-2020).
-Vertical, ~55 s at ~3.7 words/s (202 words), no captions, English, one steady voice.
+Vertical 1080x1920, 30 fps, 61.5 s (1845 frames), 202 words, English, one steady voice (Kokoro am_fenrir, 1.22).
+Approved by the user on 22 Nov 2026; word captions burned in as in the other episodes (`{"caps":false}` renders without them).
 
 ## Why this story, now
 - Shorts about **incentives that backfired** are breaking out right now (vidIQ outliers, 22 Nov 2026): the Hanoi
@@ -63,18 +64,49 @@ Vertical, ~55 s at ~3.7 words/s (202 words), no captions, English, one steady vo
 
 The shot notes never repeat what the voice says; every joke is a sourced fact (eight/great, the fees).
 The characters, bank and town are our own; nothing is taken from the reference channel.
+Subtitles for upload: `eight.en.srt`.
 
 ## Checked with RickClips Studio
 `studio script eight-of-everything`: 202 words, ~59 s at the pace learned from the 8 references, 14 beats,
 hook 16 words (learned limit 18 / 4.7 s), **no overlap with any reference transcript**, no filler, every claim
 sourced. Ending lands the payoff and stops (no call to action), as in all 8 references.
 
-## Production (after approval — the skill's pipeline)
-1. Voice: same narrator as the other shorts (am_fenrir, 1.22), then `words.json` word timings, hand-fixed.
-2. Copy `templates/bridge/` (or the latest short) to `finance-short/src/videos/eight/`, register `EightShort`.
-3. World: bank interior (counters, chalkboard, card tower), street with the bank, a garden for the analogy.
-4. Sound: event table → synthesized SFX (stamps, cards, cash register, fence) + score; mix music +3 dB, SFX −6 dB.
-5. Stills → verifier → final 2K render (`--scale 1.3333`), `short_qa.py`, deliver.
+## Production (done)
+- **Voice:** `tools/tts.py` (Kokoro ONNX, am_fenrir, speed 1.22) -> `voice/voice.wav` (61.0 s); `tools/align.py`
+  (faster-whisper) -> `voice/words.json`, 203 words mapped onto the script. A check without the script prompt heard
+  every word as written (only number formatting differed: "8", "2016", "5300").
+- **Film:** `finance-short/src/videos/eight/` (composition `EightShort`, preview `EightPreview`), started from the
+  Poyais episode's look values (ink, lens, grade, two-tone shading).
+  - `story.ts`: 16 shots timed to the words, cameras, lens, the card tower, the fence.
+  - `world.ts`: the bank and its lobby, the porch, the garden, the instanced card tower, the rising fence.
+  - `cast.ts`: who stands where in every shot.
+  - `toon.ts`: new props and drawings (stamp, box, slate, cheque, cards, envelopes, badge, weed, fee bill).
+  - Town: the river town of the other episodes without the Tower; no Wells Fargo logo anywhere, the frieze says
+    BANK. The lobby banner quotes the bank's real 1999 slogan "Going for Gr-eight".
+- **Sound:** `audio/mix.py` -> `audio/mix.wav` + `finance-short/public/eight/mix.wav`, cue list `audio/cues.md`.
+  - An original score (fingerpicked guitar, glockenspiel, pads) and synthesized SFX on the picture's cues.
+  - Same mix as the other episodes: music -12 LU and SFX -15 LU under the voice, music ducked 3 dB under words.
+  - Master -14.2 LUFS, true peak -1.5 dBTP, exactly 61.500 s.
+  - Measured, not listened to: voice 10.7 dB over the bed during words (Poyais: 11.3 dB).
+- **Checks:** 7 rounds of stills, then a separate verifier read a 43-frame contact sheet; its fixes are in. Sheets in
+  `stills-r5.jpg`; frame-by-frame QA in `finance-short/out/eight/qa/` after the render.
+- **Render (here):** 1080x1920 with software WebGL (about 3.3 s per frame on 4 CPU cores),
+  then `bash eight-short/finalize.sh` (join, mux, `short_qa.py`).
+
+## Render in 2K on your laptop (cmd, drive D, GPU)
+```
+cd /d D:\Projekti\SeminarskiEDU
+git pull
+cd finance-short
+npm install
+set TEMP=D:\remotion-tmp
+set TMP=D:\remotion-tmp
+npx remotion render src/index.ts EightShort D:\Videi\the-bank-that-wanted-eight-2k.mp4 --codec h264 --crf 16 --scale 1.3333333333333333 --gl=angle
+```
+The soundtrack is inside the composition, so this one command gives the finished 1440x2560 file.
+Options: `--props "{\"caps\":false}"` without captions, `--concurrency 1` if the laptop runs out of memory,
+`--gl=swangle` if the picture is black. Use the full `1.3333333333333333`: `1.3333` gives a non-integer height
+and Remotion refuses it.
 
 ## Posting
 **Title:** The Bank That Wanted Eight of Everything

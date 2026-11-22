@@ -111,7 +111,7 @@ motif(W("fake"), ["E5", None, "C5"], 0.2, 0.32)
 for i, n in enumerate(chord("C", 3) + [m("C5")]):
     guitar(n, T_SET - 0.06 + i * 0.03, 0.55, 0.1, 1.8)
 arp(T_SET + 0.1, W("Why", line="great"), ["C", "F", "G", "C"], 0.42, step=0.26)
-motif(W("eight", line="set"), EIGHT, 0.14, 0.5)
+motif(W("eight", line="set"), EIGHT, 0.14, 0.38)
 # why eight: question turn, then the rhyme lands on a bright chord
 arp(W("Why", line="great"), W("eight", 1, "great"), ["F", "G"], 0.36, step=0.28)
 pad("C", W("eight", 1, "great"), W("Every", line="goal"), 0.26, att=0.2)
@@ -145,7 +145,7 @@ arp(W("Luckily"), W("Unluckily") - 0.1, ["C", "F"], 0.38, step=0.26)
 glk(m("E6"), W("brand"), 0.4)
 for i, n in enumerate(["C5", "B4", "A#4", "A4"]):
     put(I.pluck(F(m(n)), 0.5, R, 0.5, bright=0.6, pos=0.12), W("Unluckily") + 0.25 + i * 0.18, 0.8, 0.2)
-low(m("F1"), W("fees"), 0.8, 1.2)
+low(m("F1"), W("fees") + 0.35, 0.5, 1.2)
 # why: calm, plain
 arp(W("Why", line="why"), W("When", line="rule") - 0.1, ["F", "C", "G", "Am"], 0.32, step=0.34)
 glk(m("A5"), W("planting"), 0.32)
@@ -153,7 +153,7 @@ arp(W("When", line="rule"), W("The", line="pay") - 0.1, ["Am", "F", "C", "G"], 0
 # consequence: serious, low, the fence clangs ride on it
 pad("Dm", W("The", line="pay"), W("So", line="end"), 0.3, att=0.3, octave=2)
 for w in (W("three", line="pay"), W("banned")):
-    low(m("D1"), w, 0.8, 1.2)
+    low(m("D1"), w, 0.5, 1.2)
 # the end: the fanfare again, slow and resolved, last chord rings out
 arp(W("So", line="end"), DUR - 1.2, ["F", "G", "C"], 0.32, step=0.36)
 motif(W("eight", line="end"), ["C5", "E5", "G5"], 0.2, 0.42)
@@ -240,7 +240,7 @@ def clatter(r, dur=1.3):
 
 def thud(r, f0=70):
     t = tt(0.5)
-    return np.sin(phase(f0 * (1 + 0.6 * np.exp(-t / 0.02)))) * np.exp(-t / 0.12) * 0.9 + lp(r.standard_normal(len(t)), 400) * np.exp(-t / 0.05) * 0.3
+    return fades(np.sin(phase(f0 * (1 + 0.6 * np.exp(-t / 0.02)))) * np.exp(-t / 0.12) * 0.9 + lp(r.standard_normal(len(t)), 400) * np.exp(-t / 0.05) * 0.3, 0.002, 0.05)
 
 
 def unroll(dur, r):
@@ -293,7 +293,7 @@ for f0 in (140, 274, 396, 497, 583, 690, 772, 830, 912, 1040, 1112, 1288, 1421, 
     sfx(swish(Q, 0.3), fr(f0) - 0.1, 0.22, Q.uniform(-0.4, 0.4))
 # 1 the hook: stamps; a card ticks onto the tower
 for h in (6, 24, 42, 58, 74, 90, 106, 122, 136):
-    sfx(stamp(Q), fr(h), 0.7, -0.15)
+    sfx(stamp(Q), fr(h), 0.42, -0.15)
 CUES.append((fr(6), "stamps (nine)"))
 for h in (30, 64, 98, 130):
     sfx(tick(Q), fr(h), 0.5, 0.2)
@@ -338,7 +338,7 @@ for k in range(9):
 for k in range(2):
     for j in range(6):
         sfx(S.stroll_step(Q, 0.5), fr(912 + 6 * k) + j * 0.5, 0.3, -0.5 + 0.2 * k)
-sfx(thud(Q, 48), fr(968), 0.9, 0.0); sfx(clatter(Q), fr(968), 0.9, 0.0, "the card tower bursts")
+sfx(thud(Q, 48), fr(968), 0.6, 0.0); sfx(clatter(Q), fr(968), 0.65, 0.0, "the card tower bursts")
 # 11 fired: slow steps down the steps
 for k in range(3):
     for j in range(7):
@@ -348,7 +348,7 @@ CUES.append((fr(1052), "tellers walk out with boxes"))
 sfx(tear(Q), fr(1152), 0.5, 0.2, "envelope torn open")
 sfx(ding(Q, 3520), fr(1160), 0.45, 0.2); sfx(ding(Q, 4186), fr(1168), 0.25, 0.2)
 sfx(unroll(1.8, Q), fr(1206), 0.6, 0.1, "the bill unrolls")
-sfx(thud(Q, 80), fr(1262), 0.6, 0.0, "fees")
+sfx(thud(Q, 80), fr(1262), 0.38, 0.0, "fees")
 # 13 the garden
 sfx(plop(Q, 300), fr(1318), 0.6, -0.2, "weed pulled")
 sfx(S.clink(Q, 2900), fr(1344), 0.6, -0.1, "coin"); sfx(ding(Q, 3951), fr(1344), 0.25, -0.1)
@@ -360,7 +360,7 @@ for k in range(5):
 # 15 the cheque; the fence clangs up all around
 sfx(S.whoosh(0.4, Q, peak=0.3), fr(1584), 0.35, 0.0); sfx(ding(Q, 2637), fr(1590), 0.5, 0.0, "the cheque")
 for k in range(10):
-    sfx(clank(Q), fr(1646) + 0.055 * k * k ** 0.3, 0.55 * (1 - 0.06 * k), -0.5 + 0.11 * k)
+    sfx(clank(Q), fr(1646) + 0.055 * k * k ** 0.3, 0.32 * (1 - 0.06 * k), -0.5 + 0.11 * k)
 CUES.append((fr(1646), "the fence slams up"))
 # 16 the crane up: a soft wind swell
 sfx(S.whoosh(2.4, Q, peak=0.5, f_lo=200, f_hi=1200), fr(1745), 0.25, 0.0, "crane up")

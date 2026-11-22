@@ -1,6 +1,6 @@
 # Sound cues: The Bank That Wanted Eight of Everything
 
-integrated -14.16 LUFS, true peak -1.50 dBTP, length 61.500 s
+integrated -14.17 LUFS, true peak -1.50 dBTP, length 61.500 s
 
 | time (s) | frame | cue |
 |---|---|---|
