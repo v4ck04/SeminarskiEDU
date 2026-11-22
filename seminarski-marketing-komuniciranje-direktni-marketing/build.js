@@ -148,7 +148,6 @@ const naslovna = [
   para([plain(meta.skola[0], { bold: true, size: 26 })]),
   para([plain(meta.skola[1], { bold: true, size: 26 })], { after: 120 }),
   para([plain(meta.odsek, { bold: true, size: 22, sc: true })], { after: 240 }),
-  para([plain("Студијски програм: "), plain(meta.program, { u: true })], { after: 0 }),
   para([plain("Семинарски рад из предмета: "), plain(meta.predmet)], { before: 4200 }),
   para([plain("Тема: "), plain(meta.tema, { u: true, bold: true })], { before: 120 }),
   new Paragraph({ spacing: { before: 3600, after: 0 }, children: [] }),
