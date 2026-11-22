@@ -191,7 +191,8 @@ def words_of(text: str) -> list[str]:
 
 
 def normalize_word(w: str) -> str:
-    return re.sub(r"[^a-z0-9']", "", w.lower())
+    w = w.lower().replace("\u2019", "'").replace("\u2018", "'")
+    return re.sub(r"[^a-z0-9']", "", w)
 
 
 def split_sentences(text: str) -> list[str]:

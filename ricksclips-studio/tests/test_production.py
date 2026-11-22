@@ -367,3 +367,37 @@ def test_storyboard_follows_dominant_motion(workspace):
     moves = [x["motion"]["type"] for x in storyboard.build(s, st, "m")["scenes"][1:]]
     assert moves.count("zoom_in") >= len(moves) * 0.35
     assert not any(a == b == c for a, b, c in zip(moves, moves[1:], moves[2:]))   # never 3 identical in a row
+
+
+def test_generators_respect_project_palette():
+    """Composite generators must use the project palette, not the default one."""
+    from rcstudio.production.generators import create
+    red = ["#050000", "#300000", "#A00000", "#FF2000"]
+    for name in ("particles", "text_card", "gradient_flow", "signal", "screen"):
+        f = create(name, 270, 480, 2, red, text="2040").frame(1.0).astype(float)
+        b, g, r = f[..., 0].mean(), f[..., 1].mean(), f[..., 2].mean()
+        assert r >= b and r >= g, (name, r, g, b)
+
+
+def test_radio_voice_fx_is_band_limited():
+    from rcstudio.production.voice import SR, radio_fx
+    rng = np.random.default_rng(0)
+    x = rng.normal(0, 0.2, SR).astype(np.float32)
+    y = radio_fx(x)
+    spec = np.abs(np.fft.rfft(y))
+    f = np.fft.rfftfreq(len(y), 1 / SR)
+    inband = spec[(f > 800) & (f < 2500)].mean()
+    assert spec[f < 120].mean() < inband * 0.1 and spec[f > 8000].mean() < inband * 0.1
+
+
+def test_script_fiction_flag_and_beat_transition(workspace):
+    from rcstudio.production import script, storyboard
+    s = script.normalize(json.loads(SAMPLE_SCRIPT.read_text()))
+    s["sources"] = []
+    assert any("no sources" in w for w in script.validate(s, settings(), app())["warnings"])
+    s["fiction"] = True
+    assert not any("no sources" in w for w in script.validate(s, settings(), app())["warnings"])
+    s["beats"][3]["transition"] = "dip_black"
+    sb = storyboard.build(s, settings(), "fx")
+    first_of_beat = next(x for x in sb["scenes"] if x["beat_id"] == s["beats"][3]["id"])
+    assert first_of_beat["transition_in"]["type"] == "dip_black" and first_of_beat["transition_in"]["duration"] > 0

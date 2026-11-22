@@ -36,11 +36,25 @@
   - `footage` - stock video. `query` = 2-5 concrete, searchable nouns ("radio telescope dish night").
   - `image` - still photo/illustration (NASA, Wikimedia, Pexels photos); animated with zoom/pan.
   - `generated` - procedural, original: `starfield`, `planet`, `gradient_flow`, `particles`, `grid`,
-    `waves`, `text_card` (needs `on_screen_text`, short: 1-3 words such as "72 SECONDS").
+    `waves`, `text_card` (needs `on_screen_text`, short: 1-3 words such as "72 SECONDS"),
+    `screen` (a dark monitor/clock with glowing monospace `on_screen_text` - the references put text
+    inside the scene, on screens and signs, so prefer this over `text_card`), `signal` (oscilloscope
+    trace - radio, recordings, transmissions), `static` (analogue radio/TV noise).
 - `extra_shots`: more visuals for long beats. Plan about one shot per learned shot length
   (`STYLE-BRIEF.md` gives cuts per sentence).
 - `description`: what the viewer should see - used for placeholders and AI image prompts.
 - Text cards are placed in the upper third so they never collide with the captions.
+
+## Per-beat sound and transitions
+- `voice_fx`: `"radio"` for quoted recordings, phone calls or transmissions (narrow-band, saturated,
+  slight hiss); `"none"` otherwise. Put quotes that need the effect in their own beat.
+- `transition`: `"auto"` follows the learned mix; force `"dip_black"` (power cut, time skip), `"flash"`,
+  `"crossfade"`, `"whip"`, `"zoom"` or `"cut"` for a dramatic moment.
+- `sfx` also offers `static` (radio static burst) and `powerdown` (electric power failing).
+- `music_mood` also offers `eerie` (slow, dissonant, no drums) for horror/mystery fiction.
+- `fiction: true` marks an invented story: no factual sources are required (never use it for real claims).
+- `overrides` (optional) carries a per-video look into the project, e.g.
+  `{"visuals": {"palette": ["#04060A", "#10202C", "#5A0F18", "#FF4136"]}}` (background, mid, accent, highlight).
 
 ## `script.json` schema
 
@@ -50,7 +64,8 @@
   "topic": "The most mysterious discoveries in space",
   "angle": "Real, unexplained observations",
   "target_duration_s": 40,
-  "music_mood": "mysterious",            // mysterious | epic | upbeat | tense | calm | inspiring
+  "music_mood": "mysterious",            // mysterious | epic | upbeat | tense | calm | inspiring | eerie
+  "fiction": false,                       // true only for invented stories
   "beats": [
     {
       "id": 1,
@@ -63,7 +78,9 @@
          "generator": "text_card", "on_screen_text": "72 SECONDS"}
       ],
       "emphasis": ["72-second"],         // words highlighted in captions (must appear in text)
-      "sfx": "impact"                     // auto | none | whoosh | impact | riser | pop | ding
+      "sfx": "impact",                    // auto | none | whoosh | impact | riser | pop | ding | static | powerdown
+      "voice_fx": "none",                 // none | radio
+      "transition": "auto"                // auto | cut | crossfade | dip_black | flash | whip | zoom
     }
   ],
   "sources": [{"claim": "The Wow! signal lasted 72 seconds", "source": "https://..."}],

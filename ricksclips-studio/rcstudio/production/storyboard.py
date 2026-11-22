@@ -121,10 +121,13 @@ def build(script: dict, settings: dict, slug: str, timing: dict | None = None) -
                 intensity = float(ed.get("punch_in_amount", 0.12))
             # transition into this scene
             ttype = "cut"
-            if not first_scene and (beat_start or not tr.get("only_at_beat_boundaries", True)) and fancy_p > 0:
+            forced = b.get("transition", "auto")
+            if not first_scene and beat_start and forced != "auto":
+                ttype = forced                      # the script chose this transition for dramatic effect
+            elif not first_scene and (beat_start or not tr.get("only_at_beat_boundaries", True)) and fancy_p > 0:
                 if rng.random() < fancy_p:
                     ttype = _weighted(rng, {t: tmix.get(t, 0) for t in FANCY})
-            tdur = float(durs.get(ttype, 0.0)) if ttype != "cut" else 0.0
+            tdur = float(durs.get(ttype, 0.3)) if ttype != "cut" else 0.0
             # sound effects
             sfx = []
             if au.get("sfx_enabled", True):

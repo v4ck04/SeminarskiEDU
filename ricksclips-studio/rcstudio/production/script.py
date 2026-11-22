@@ -23,9 +23,11 @@ from . import project as projmod
 
 _log = log.get("script")
 
-GENERATORS = ["starfield", "planet", "gradient_flow", "particles", "grid", "waves", "text_card"]
-SFX_CHOICES = ["auto", "none", "whoosh", "impact", "riser", "pop", "ding"]
-MOODS = ["mysterious", "epic", "upbeat", "tense", "calm", "inspiring"]
+GENERATORS = ["starfield", "planet", "gradient_flow", "particles", "grid", "waves", "text_card", "screen", "signal", "static"]
+SFX_CHOICES = ["auto", "none", "whoosh", "impact", "riser", "pop", "ding", "static", "powerdown"]
+VOICE_FX = ["none", "radio"]
+TRANSITIONS = ["auto", "cut", "crossfade", "dip_black", "flash", "whip", "zoom"]
+MOODS = ["mysterious", "epic", "upbeat", "tense", "calm", "inspiring", "eerie"]
 FILLER = ["in this video", "let's dive in", "without further ado", "make sure to subscribe", "basically",
           "so yeah", "hey guys", "today we're going to", "stay tuned", "smash that like", "let's get started",
           "you won't believe", "as you can see"]
@@ -54,8 +56,10 @@ BEAT_SCHEMA = {
         "extra_shots": {"type": "array", "items": VISUAL_SCHEMA},
         "emphasis": {"type": "array", "items": {"type": "string"}},
         "sfx": {"type": "string", "enum": SFX_CHOICES},
+        "voice_fx": {"type": "string", "enum": VOICE_FX, "description": "radio = quoted recording/phone voice"},
+        "transition": {"type": "string", "enum": TRANSITIONS, "description": "transition into this beat; auto = learned mix"},
     },
-    "required": ["id", "role", "text", "visual", "extra_shots", "emphasis", "sfx"],
+    "required": ["id", "role", "text", "visual", "extra_shots", "emphasis", "sfx", "voice_fx", "transition"],
     "additionalProperties": False,
 }
 SCRIPT_SCHEMA = {
@@ -76,9 +80,10 @@ SCRIPT_SCHEMA = {
             "properties": {"word": {"type": "string"}, "say_as": {"type": "string"}},
             "required": ["word", "say_as"], "additionalProperties": False}},
         "notes": {"type": "string"},
+        "fiction": {"type": "boolean", "description": "true for invented stories (no factual sources needed)"},
     },
     "required": ["title", "topic", "angle", "target_duration_s", "music_mood", "beats", "sources",
-                 "pronunciations", "notes"],
+                 "pronunciations", "notes", "fiction"],
     "additionalProperties": False,
 }
 VARIANTS_SCHEMA = {"type": "object", "properties": {"variants": {"type": "array", "items": SCRIPT_SCHEMA}},
@@ -104,6 +109,7 @@ def normalize(s: dict) -> dict:
     s.setdefault("music_mood", "mysterious")
     s.setdefault("sources", [])
     s.setdefault("notes", "")
+    s.setdefault("fiction", False)
     pr = s.get("pronunciations") or []
     if isinstance(pr, dict):
         pr = [{"word": k, "say_as": v} for k, v in pr.items()]
@@ -113,6 +119,8 @@ def normalize(s: dict) -> dict:
         b.setdefault("role", "hook" if i == 0 else "ending" if i == len(s["beats"]) - 1 else "body")
         b.setdefault("emphasis", [])
         b.setdefault("sfx", "auto")
+        b.setdefault("voice_fx", "none")
+        b.setdefault("transition", "auto")
         b.setdefault("extra_shots", [])
         v = b.setdefault("visual", {})
         v.setdefault("type", "generated")
@@ -194,12 +202,16 @@ def validate(script: dict, settings: dict, app_settings: dict) -> dict:
             elif shot["type"] == "generated":
                 if shot["generator"] not in GENERATORS:
                     errors.append(f"beat {b['id']}: generated visual needs generator in {GENERATORS}")
-                if shot["generator"] == "text_card" and not shot.get("on_screen_text"):
-                    errors.append(f"beat {b['id']}: text_card needs on_screen_text")
+                if shot["generator"] in ("text_card", "screen") and not shot.get("on_screen_text"):
+                    errors.append(f"beat {b['id']}: {shot['generator']} needs on_screen_text")
             elif not shot.get("query", "").strip():
                 errors.append(f"beat {b['id']}: {shot['type']} visual needs a search query")
         if b.get("sfx", "auto") not in SFX_CHOICES:
             errors.append(f"beat {b['id']}: sfx must be one of {SFX_CHOICES}")
+        if b.get("voice_fx", "none") not in VOICE_FX:
+            errors.append(f"beat {b['id']}: voice_fx must be one of {VOICE_FX}")
+        if b.get("transition", "auto") not in TRANSITIONS:
+            errors.append(f"beat {b['id']}: transition must be one of {TRANSITIONS}")
         for sent in split_sentences(b.get("text", "")):
             n = len(sent.split())
             if n > int(scfg.get("max_sentence_words", 28)):
@@ -233,7 +245,7 @@ def validate(script: dict, settings: dict, app_settings: dict) -> dict:
         warnings.append(f"estimated {est:.0f}s is far below the {target:.0f}s target (fine if the story is complete - never pad)")
     claims = [x for x in split_sentences(text) if NUMBER_WORDS.search(x) or CLAIM_WORDS.search(x)]
     real_sources = [x for x in s.get("sources", []) if x.get("source", "").strip()]
-    if claims and not real_sources:
+    if claims and not real_sources and not s.get("fiction"):
         warnings.append(f"{len(claims)} factual-sounding sentence(s) but no sources listed - add sources for every claim")
     grams = _reference_ngrams()
     if grams:
@@ -252,14 +264,16 @@ def validate(script: dict, settings: dict, app_settings: dict) -> dict:
     return {"errors": errors, "warnings": warnings,
             "stats": {"words": len(text.split()), "beats": len(beats), "estimated_duration_s": round(est, 1),
                       "target_duration_s": target, "sentences": len(split_sentences(text)),
-                      "factual_sentences": len(claims), "sources": len(real_sources)}}
+                      "factual_sentences": 0 if s.get("fiction") else len(claims), "sources": len(real_sources),
+                      "fiction": bool(s.get("fiction"))}}
 
 
 def to_markdown(script: dict, val: dict | None = None) -> str:
     s = normalize(script)
     md = [f"# {s.get('title') or '(untitled)'}", "",
           f"- **Topic:** {s.get('topic', '')}", f"- **Angle:** {s.get('angle', '')}",
-          f"- **Target:** {s.get('target_duration_s')}s, music mood: {s.get('music_mood')}"]
+          f"- **Target:** {s.get('target_duration_s')}s, music mood: {s.get('music_mood')}"
+          + (" - **fiction** (no factual sources required)" if s.get("fiction") else "")]
     if val:
         st = val["stats"]
         md.append(f"- **Estimate:** {st['estimated_duration_s']}s, {st['words']} words, {st['beats']} beats")
@@ -267,13 +281,17 @@ def to_markdown(script: dict, val: dict | None = None) -> str:
     for b in s["beats"]:
         md.append(f"**{b['id']}. [{b['role']}]** {b['text']}")
         md.append("")
-    md += ["## Beat plan", "", "| # | Role | Narration | Visual | SFX |", "|---|---|---|---|---|"]
+    md += ["## Beat plan", "", "| # | Role | Narration | Visual | SFX | Voice | Transition in |",
+           "|---|---|---|---|---|---|---|"]
     for b in s["beats"]:
         v = b["visual"]
         vis = f"{v['type']}: {v['generator'] or v['query']} - {v['description']}"
+        if v.get("on_screen_text"):
+            vis += f" [on screen: {v['on_screen_text']}]"
         if b.get("extra_shots"):
             vis += f" (+{len(b['extra_shots'])} shots)"
-        md.append(f"| {b['id']} | {b['role']} | {b['text']} | {vis} | {b.get('sfx')} |")
+        md.append(f"| {b['id']} | {b['role']} | {b['text']} | {vis} | {b.get('sfx')} | {b.get('voice_fx', 'none')} | "
+                  f"{b.get('transition', 'auto')} |")
     md += ["", "## Sources", ""]
     md += [f"- {x['claim']} - {x['source']}" for x in s.get("sources", []) if x.get("source")] or ["_none listed_"]
     if val:

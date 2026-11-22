@@ -16,7 +16,7 @@ from .. import ffmpeg, paths
 from ..utils import read_json
 
 SR = 48000
-SFX_TYPES = ["whoosh", "impact", "riser", "pop", "ding"]
+SFX_TYPES = ["whoosh", "impact", "riser", "pop", "ding", "static", "powerdown"]
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -96,7 +96,34 @@ def ding(rng, dur: float = 1.6) -> np.ndarray:
     return _norm(_stereo(x * (1 - np.exp(-t * 400))), -6)
 
 
-SFX_FUNCS = {"whoosh": whoosh, "impact": impact, "riser": riser, "pop": pop, "ding": ding}
+def static(rng, dur: float = 0.8) -> np.ndarray:
+    """Radio static burst: band-limited hiss with crackle."""
+    n = int(dur * SR)
+    t = np.linspace(0, 1, n)
+    x = _band_sweep(rng.normal(0, 1, n), np.full(n, 2500.0), 1.6)
+    crack = np.zeros(n)
+    idx = rng.integers(0, n, int(dur * 90))
+    crack[idx] = rng.uniform(-1, 1, len(idx))
+    crack = np.convolve(crack, np.exp(-np.arange(60) / 8), mode="same")
+    env = np.minimum(1, t / 0.03) * (0.55 + 0.45 * rng.random(n) ** 3) * np.exp(-t * 1.5)
+    return _norm(_stereo((x + 0.8 * crack) * env, 0.0), -6)
+
+
+def powerdown(rng, dur: float = 1.6) -> np.ndarray:
+    """Electrical power-down: falling hum and tone with a closing click."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    f = 30 + 420 * np.exp(-t * 2.8)
+    tone = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * 0.25 + np.sin(2 * np.pi * np.cumsum(f) / SR)
+    hum = np.sin(2 * np.pi * 60 * t) * 0.4
+    env = np.exp(-t * 2.2)
+    x = (tone + hum) * env
+    x[:int(0.01 * SR)] += rng.normal(0, 0.8, int(0.01 * SR))
+    return _norm(_stereo(x), -5)
+
+
+SFX_FUNCS = {"whoosh": whoosh, "impact": impact, "riser": riser, "pop": pop, "ding": ding,
+             "static": static, "powerdown": powerdown}
 
 
 def sfx_file(kind: str, variant: int = 0) -> tuple[Path, dict]:
@@ -125,6 +152,7 @@ MOODS = {
     "tense":      ("E", "minor", 96, [0, 0, 5, 4], 1, {"arp": 0.2, "drums": "ticks", "pulse": True}),
     "calm":       ("F", "major", 70, [0, 2, 5, 3], 2, {"arp": 0.4, "drums": None, "pulse": False}),
     "inspiring":  ("G", "major", 84, [3, 0, 4, 5], 1, {"arp": 0.7, "drums": "soft", "pulse": False}),
+    "eerie":      ("C#", "minor", 58, [0, 1, 5, 4], 2, {"arp": 0.15, "drums": None, "pulse": False}),
 }
 SCALES = {"minor": [0, 2, 3, 5, 7, 8, 10], "major": [0, 2, 4, 5, 7, 9, 11]}
 

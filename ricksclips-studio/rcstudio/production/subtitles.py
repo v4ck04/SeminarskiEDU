@@ -249,10 +249,15 @@ def font_height_ratio(font_file: str, upper: bool = True) -> float:
     return font_metrics(font_file, upper)["height_ratio"]
 
 
+NON_CAPTION_FONTS = {"VT323-Regular.ttf"}   # retro screen font, used by the 'screen' generator only
+
+
 def closest_font(stroke_ratio: float, char_aspect: float) -> tuple[str, str, dict]:
     """Bundled font whose measured weight/width is closest to the reference captions."""
     best = None
     for f in sorted(paths.fonts_dir().glob("*.ttf")):
+        if f.name in NON_CAPTION_FONTS:
+            continue
         try:
             m = font_metrics(f.name)
         except Exception as e:

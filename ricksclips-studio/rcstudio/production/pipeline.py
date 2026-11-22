@@ -40,6 +40,10 @@ def stage_script(proj: dict, script_file: str | None = None, generate: bool | No
     if script_file:
         data = json.loads(Path(script_file).read_text(encoding="utf-8"))
         data.setdefault("topic", proj["topic"])
+        if isinstance(data.get("overrides"), dict):      # per-video look (e.g. palette) travels with the script
+            from ..config import deep_merge
+            proj["overrides"] = deep_merge(proj.get("overrides") or {}, data["overrides"])
+            projmod.save(proj)
         val = scriptmod.write_outputs(slug, data, settings, app, note=f"imported from {script_file}")
     elif scriptmod.script_path(slug).exists() and not generate:
         val = scriptmod.write_outputs(slug, scriptmod.load(slug), settings, app, note="re-validated")

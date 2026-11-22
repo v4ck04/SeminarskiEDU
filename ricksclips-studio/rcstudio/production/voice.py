@@ -22,6 +22,13 @@ _log = log.get("voice")
 SR = tts.SR
 
 
+def tts_clean(text: str) -> str:
+    """Typographic quotes/ellipses confuse some TTS engines; captions keep the original text."""
+    t = text.replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", "").replace("\u201d", "")
+    t = t.replace("\u2026", ",").replace("...", ",").replace('"', "")
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def apply_pronunciations(sentence: str, pron: dict[str, str]) -> str:
     out = sentence
     for word, say_as in sorted(pron.items(), key=lambda kv: -len(kv[0])):
@@ -126,6 +133,25 @@ def _pitch_filter(semitones: float) -> str | None:
     return f"asetrate={int(SR * r)},aresample={SR},atempo={1 / r:.5f}"
 
 
+def radio_fx(x: np.ndarray, seed: int = 0) -> np.ndarray:
+    """Old radio / recording sound: narrow band (350-3200 Hz), soft saturation, a little hiss."""
+    if x.size == 0:
+        return x
+    n = len(x)
+    f = np.fft.rfftfreq(n, 1.0 / SR)
+    f[0] = 1.0
+    gain = 1.0 / (1.0 + (350.0 / f) ** 4) / (1.0 + (f / 3200.0) ** 4)
+    y = np.fft.irfft(np.fft.rfft(x) * gain, n)
+    peak = float(np.max(np.abs(y))) or 1.0
+    y = np.tanh(2.8 * y / peak) / np.tanh(2.8) * peak
+    y = np.fft.irfft(np.fft.rfft(y) * gain, n)      # band-limit again: saturation creates out-of-band harmonics
+    rng = np.random.default_rng(seed)
+    hiss = np.fft.irfft(np.fft.rfft(rng.normal(0, 1, n)) * gain, n)
+    rms = float(np.sqrt(np.mean(y ** 2))) or 1e-4
+    y = y + hiss / (float(np.std(hiss)) or 1.0) * rms * 0.06
+    return y.astype(np.float32)
+
+
 def _tempo_filter(factor: float) -> str | None:
     if abs(factor - 1.0) < 0.01:
         return None
@@ -184,7 +210,7 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
     sdir = vdir / "sentences"
     sdir.mkdir(parents=True, exist_ok=True)
     first = next((s for b in script["beats"] for s in split_sentences(b["text"])), "")
-    speed, pace = resolve_speed(prov, vset, apply_pronunciations(first, pron), sdir)
+    speed, pace = resolve_speed(prov, vset, tts_clean(apply_pronunciations(first, pron)), sdir)
     native = min(speed, getattr(prov, "max_speed", 2.0))
     post = speed / native
     say(f"Voice: {prov.describe()} ({prov.quality}), speed {speed:.2f}"
@@ -203,8 +229,9 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
     for bi, b in enumerate(beats):
         sents = split_sentences(b["text"])
         for si, sent in enumerate(sents):
-            spoken = apply_pronunciations(sent, pron)
-            key = text_hash(prov.describe(), voice_cfg.get(prov.name, {}), spoken, round(speed, 3), pitch)
+            spoken = tts_clean(apply_pronunciations(sent, pron))
+            fx = b.get("voice_fx", "none")
+            key = text_hash(prov.describe(), voice_cfg.get(prov.name, {}), spoken, round(speed, 3), pitch, fx)
             wav = sdir / f"s{idx:03d}_{key}.wav"
             words_src = "provider"
             meta_path = wav.with_suffix(".json")
@@ -224,6 +251,8 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
                     ffmpeg.ffmpeg(["-y", "-v", "error", "-i", str(raw), "-af", ",".join(chain), "-ar", str(SR), str(tmp)])
                     x = _load(tmp)
                     tmp.unlink(missing_ok=True)
+                if fx == "radio":
+                    x = radio_fx(x, seed=idx)
                 # trim leading/trailing silence (keep 30 ms)
                 a, e = _speech_bounds(x, -45.0)
                 pad = int(0.03 * SR)
@@ -255,7 +284,7 @@ def generate(slug: str, script: dict, settings: dict, voice_cfg: dict, provider_
                 "start": round(t, 3), "end": round(t + dur, 3), "file": str(wav.relative_to(paths.root())),
                 "words": [{"word": w["word"], "start": round(t + w["start"], 3), "end": round(t + min(w["end"], dur), 3)}
                           for w in local_words],
-                "words_source": words_src,
+                "words_source": words_src, "voice_fx": fx,
             })
             pieces.append(x.astype(np.float32))
             t += dur

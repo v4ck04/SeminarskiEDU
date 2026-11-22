@@ -17,7 +17,7 @@ from PIL import Image, ImageDraw, ImageFont
 from .. import paths
 from ..utils import hex_to_bgr
 
-NAMES = ["starfield", "planet", "gradient_flow", "particles", "grid", "waves", "text_card", "placeholder"]
+NAMES = ["starfield", "planet", "gradient_flow", "particles", "grid", "waves", "text_card", "screen", "signal", "static", "placeholder"]
 
 
 def _palette(pal: list[str] | None) -> list[np.ndarray]:
@@ -175,13 +175,15 @@ class Particles(Generator):
     def setup(self):
         self.bg = GradientFlow(self.w // 2, self.h // 2, int(self.rng.integers(1e6)), None)
         self.bg.pal = [p * 0.45 for p in self.pal]
+        self.bg.setup()      # rebuild the blobs with the project palette (setup ran with the default one)
         self.n = 70
         self.x = self.rng.uniform(0, self.w // 2, self.n)
         self.y = self.rng.uniform(0, self.h // 2, self.n)
         self.r = self.rng.uniform(3, 22, self.n)
         self.v = self.rng.uniform(4, 20, self.n)
         self.a = self.rng.uniform(0.15, 0.6, self.n)
-        self.col = [self.pal[int(i) % len(self.pal)] * 0.5 + 127 for i in self.rng.integers(1, 4, self.n)]
+        # muted, palette-derived dust (bright pastel orbs looked like a fantasy scene, not dust)
+        self.col = [self.pal[int(i) % len(self.pal)] * 0.45 + 55 for i in self.rng.integers(1, 4, self.n)]
 
     def frame(self, t):
         base = self.bg.frame(t).astype(np.float32)
@@ -242,6 +244,7 @@ class TextCard(Generator):
     def setup(self):
         self.bg = GradientFlow(self.w, self.h, int(self.rng.integers(1e6)), None)
         self.bg.pal = [p * 0.55 for p in self.pal]
+        self.bg.setup()
         text = (self.text or self.description or "").upper().strip() or " "
         lines = textwrap.wrap(text, width=12) or [text]
         size = int(self.w * 0.2)
@@ -272,6 +275,107 @@ class TextCard(Generator):
         return np.clip(img, 0, 255).astype(np.uint8)
 
 
+class Screen(Generator):
+    """A dark monitor / clock display: glowing monospace text in the scene (upper third, clear of
+    the captions), scanlines, soft glow, flicker and a blinking cursor."""
+
+    def setup(self):
+        w, h = self.w, self.h
+        bg = np.zeros((h, w, 3), np.float32) + self.pal[0][None, None] * 0.9
+        yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+        r = np.sqrt(((xx - w / 2) / (w * 0.75)) ** 2 + ((yy - h * 0.32) / (h * 0.55)) ** 2)
+        bg += (self.pal[1][None, None] * 0.55) * np.clip(1 - r, 0, 1)[..., None]
+        self.scan = (0.82 + 0.18 * (np.arange(h) % 4 < 2)).astype(np.float32)[:, None, None]
+        text = (self.text or self.description or "").strip() or " "
+        lines = textwrap.wrap(text, width=16) or [text]
+        size = int(w * 0.26)
+        while size > 28:
+            f = _font(size, "VT323-Regular.ttf")
+            if max(f.getbbox(l)[2] for l in lines) <= w * 0.82:
+                break
+            size -= 4
+        f = _font(size, "VT323-Regular.ttf")
+        lh = int(size * 1.0)
+        img = Image.new("L", (w, h), 0)
+        d = ImageDraw.Draw(img)
+        y0 = int(h * 0.30) - lh * len(lines) // 2
+        last_box = (0, 0, 0, 0)
+        for i, l in enumerate(lines):
+            tw = f.getbbox(l)[2]
+            x0 = (w - tw) / 2
+            d.text((x0, y0 + i * lh), l, font=f, fill=255)
+            last_box = (int(x0 + tw + size * 0.12), y0 + i * lh + int(size * 0.18), int(size * 0.45), int(size * 0.75))
+        a = np.asarray(img).astype(np.float32) / 255.0
+        col = self.pal[3 % len(self.pal)].astype(np.float32)
+        self.text_layer = a[..., None] * col[None, None]
+        small = cv2.resize(a, (w // 4, h // 4), interpolation=cv2.INTER_AREA)
+        glow = cv2.resize(cv2.GaussianBlur(small, (0, 0), 6), (w, h), interpolation=cv2.INTER_CUBIC)
+        self.glow_layer = glow[..., None] * col[None, None] * 1.6
+        self.bg = bg
+        self.cursor = last_box
+
+    def frame(self, t):
+        flick = 0.92 + 0.08 * math.sin(t * 37.0) * math.sin(t * 11.0 + 1.3)
+        img = self.bg + (self.text_layer + self.glow_layer) * flick
+        if int(t * 2) % 2 == 0:
+            x, y, cw, ch = self.cursor
+            img[y:y + ch, x:x + cw] += self.pal[3 % len(self.pal)][None, None] * 0.9
+        img *= self.scan
+        return np.clip(img, 0, 255).astype(np.uint8)
+
+
+class Signal(Generator):
+    """Oscilloscope / radio receiver display: grid and a glowing, voice-like waveform."""
+
+    def setup(self):
+        w, h = self.w // 2, self.h // 2
+        self.sw, self.sh = w, h
+        bg = np.zeros((h, w, 3), np.float32) + self.pal[0][None, None]
+        grid = np.zeros((h, w), np.float32)
+        for x in range(0, w, max(8, w // 10)):
+            grid[:, x] = 1
+        for y in range(0, h, max(8, w // 10)):
+            grid[y, :] = 1
+        self.bg = bg + grid[..., None] * (self.pal[1][None, None] * 0.9 + 12)
+        self.col = self.pal[3 % len(self.pal)].astype(np.float32)
+        self.ph = self.rng.uniform(0, 6.28, 6)
+
+    def frame(self, t):
+        w, h = self.sw, self.sh
+        xs = np.arange(w, dtype=np.float32)
+        env = 0.35 + 0.65 * abs(math.sin(t * 2.3 + self.ph[0])) * (0.6 + 0.4 * math.sin(t * 5.1 + self.ph[1]))
+        y = sum(math.sin(t * f + p) * np.sin(xs / w * k * 2 * math.pi + t * f * 0.7 + p)
+                for f, k, p in zip((3.1, 7.3, 13.7), (2.0, 5.0, 11.0), self.ph[2:5]))
+        y = y / 3.0 * env + 0.08 * np.sin(xs * 0.9 + t * 40)
+        yc = h * 0.42
+        pts = np.stack([xs, yc + y * h * 0.13], axis=1).astype(np.int32)
+        line = np.zeros((h, w), np.float32)
+        cv2.polylines(line, [pts], False, 1.0, 2, cv2.LINE_AA)
+        glow = cv2.GaussianBlur(line, (0, 0), 5) * 2.2
+        img = self.bg + (line + glow)[..., None] * self.col[None, None]
+        out = cv2.resize(np.clip(img, 0, 255).astype(np.uint8), (self.w, self.h), interpolation=cv2.INTER_LINEAR)
+        return out
+
+
+class Static(Generator):
+    """Analogue radio/TV static: coarse noise, scanlines, rolling bar, dark tint."""
+
+    def setup(self):
+        self.bw, self.bh = max(2, self.w // 4), max(2, self.h // 4)
+        self.tint = (self.pal[1] * 0.6 + 40).astype(np.float32)
+        self.scan = (0.75 + 0.25 * (np.arange(self.h) % 3 == 0)).astype(np.float32)[:, None, None]
+
+    def frame(self, t):
+        rng = np.random.default_rng(int(t * 1000) % (2 ** 31))
+        n = rng.random((self.bh, self.bw)).astype(np.float32)
+        n = cv2.resize(n, (self.w, self.h), interpolation=cv2.INTER_NEAREST)
+        img = n[..., None] * (self.tint[None, None] * 1.6)
+        bar = int((t * 0.35 % 1.0) * self.h)
+        img[max(0, bar - 40):bar + 40] *= 1.35
+        img *= self.scan
+        return np.clip(img, 0, 255).astype(np.uint8)
+
+
 class Placeholder(Generator):
     """Deliberately obvious stand-in for a missing asset."""
 
@@ -296,7 +400,8 @@ class Placeholder(Generator):
 
 
 CLASSES = {"starfield": Starfield, "planet": Planet, "gradient_flow": GradientFlow, "particles": Particles,
-           "grid": Grid, "waves": Waves, "text_card": TextCard, "placeholder": Placeholder}
+           "grid": Grid, "waves": Waves, "text_card": TextCard, "screen": Screen, "signal": Signal, "static": Static,
+           "placeholder": Placeholder}
 
 
 def create(name: str, w: int, h: int, seed: int, palette: list[str] | None = None, text: str = "",

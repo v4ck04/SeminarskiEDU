@@ -1,0 +1,374 @@
+{
+  "title": "The Radio Signal From 2040",
+  "topic": "The 3:33 AM radio signal",
+  "angle": "Short horror fiction: a night-shift radio host receives a recording from the future in his own voice",
+  "target_duration_s": 45,
+  "music_mood": "eerie",
+  "fiction": true,
+  "beats": [
+    {
+      "id": 1,
+      "role": "hook",
+      "text": "At exactly 3:33 AM, a radio station received a signal that shouldn’t have existed.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "studio clock showing 3:33 AM",
+        "generator": "screen",
+        "on_screen_text": "3:33 AM"
+      },
+      "extra_shots": [
+        {
+          "type": "generated",
+          "query": "",
+          "description": "an unknown radio signal on the receiver",
+          "generator": "signal",
+          "on_screen_text": ""
+        }
+      ],
+      "emphasis": [
+        "signal"
+      ],
+      "sfx": "static",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 2,
+      "role": "body",
+      "text": "The night-shift host played the recording.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "playback screen of the recording",
+        "generator": "screen",
+        "on_screen_text": "PLAYING REC_0333"
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 3,
+      "role": "body",
+      "text": "A man’s voice whispered:",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "radio static as the voice comes through",
+        "generator": "static",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "static",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 4,
+      "role": "body",
+      "text": "“If you’re hearing this, it’s the year 2040. Whatever you do, don’t turn on the radio tomorrow at 3:33 AM.”",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the voice as a waveform",
+        "generator": "signal",
+        "on_screen_text": ""
+      },
+      "extra_shots": [
+        {
+          "type": "generated",
+          "query": "",
+          "description": "the year from the message",
+          "generator": "screen",
+          "on_screen_text": "2040"
+        }
+      ],
+      "emphasis": [
+        "2040"
+      ],
+      "sfx": "auto",
+      "voice_fx": "radio",
+      "transition": "auto"
+    },
+    {
+      "id": 5,
+      "role": "body",
+      "text": "The host thought it was a prank.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "dark empty studio mood",
+        "generator": "gradient_flow",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 6,
+      "role": "body",
+      "text": "Until the voice said his full name.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the signal distorts",
+        "generator": "static",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "name"
+      ],
+      "sfx": "static",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 7,
+      "role": "body",
+      "text": "Then it whispered:",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "dust floating in the dark studio",
+        "generator": "particles",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 8,
+      "role": "body",
+      "text": "“I know you don’t believe me. Look behind you.”",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the whispering voice as a waveform",
+        "generator": "signal",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "behind"
+      ],
+      "sfx": "auto",
+      "voice_fx": "radio",
+      "transition": "auto"
+    },
+    {
+      "id": 9,
+      "role": "body",
+      "text": "He slowly turned around.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "slow turn into the dark room",
+        "generator": "particles",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 10,
+      "role": "body",
+      "text": "Nobody was there.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "empty darkness behind him",
+        "generator": "gradient_flow",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "none",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 11,
+      "role": "body",
+      "text": "Suddenly, the recording stopped.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the recording cuts out",
+        "generator": "static",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "static",
+      "voice_fx": "none",
+      "transition": "cut"
+    },
+    {
+      "id": 12,
+      "role": "body",
+      "text": "A message appeared on his computer: “Your next broadcast begins in 30 seconds.”",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "message on the studio computer",
+        "generator": "screen",
+        "on_screen_text": "YOUR NEXT BROADCAST BEGINS IN 30 SECONDS"
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "30"
+      ],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 13,
+      "role": "body",
+      "text": "The radio switched on by itself.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the radio turns on, the signal returns",
+        "generator": "signal",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "static",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 14,
+      "role": "body",
+      "text": "This time, the voice was his own.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "eerie stillness",
+        "generator": "particles",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "own"
+      ],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 15,
+      "role": "body",
+      "text": "“Please… don’t leave me here.”",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "his own voice through the static",
+        "generator": "static",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "here"
+      ],
+      "sfx": "auto",
+      "voice_fx": "radio",
+      "transition": "auto"
+    },
+    {
+      "id": 16,
+      "role": "body",
+      "text": "Then the entire station lost power.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the power fails",
+        "generator": "static",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "powerdown",
+      "voice_fx": "none",
+      "transition": "auto"
+    },
+    {
+      "id": 17,
+      "role": "body",
+      "text": "The next morning, another recording appeared.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "a new recording on the receiver",
+        "generator": "signal",
+        "on_screen_text": ""
+      },
+      "extra_shots": [],
+      "emphasis": [],
+      "sfx": "auto",
+      "voice_fx": "none",
+      "transition": "dip_black"
+    },
+    {
+      "id": 18,
+      "role": "ending",
+      "text": "Its date? November 22, 2040.",
+      "visual": {
+        "type": "generated",
+        "query": "",
+        "description": "the date of the new recording",
+        "generator": "screen",
+        "on_screen_text": "NOVEMBER 22, 2040"
+      },
+      "extra_shots": [],
+      "emphasis": [
+        "2040"
+      ],
+      "sfx": "riser",
+      "voice_fx": "none",
+      "transition": "auto"
+    }
+  ],
+  "sources": [],
+  "pronunciations": [
+    {
+      "word": "November 22, 2040",
+      "say_as": "November twenty second, twenty forty"
+    },
+    {
+      "word": "3:33 AM",
+      "say_as": "three thirty three A M"
+    },
+    {
+      "word": "2040",
+      "say_as": "twenty forty"
+    }
+  ],
+  "notes": "Narration is the user's story, verbatim. Fiction - no factual sources needed. Quoted recordings use the radio voice effect.",
+  "overrides": {
+    "visuals": {
+      "palette": [
+        "#04060A",
+        "#10202C",
+        "#5A0F18",
+        "#FF4136"
+      ]
+    }
+  }
+}
