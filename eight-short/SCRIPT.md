@@ -90,23 +90,34 @@ sourced. Ending lands the payoff and stops (no call to action), as in all 8 refe
   - Measured, not listened to: voice 10.7 dB over the bed during words (Poyais: 11.3 dB).
 - **Checks:** 7 rounds of stills, then a separate verifier read a 43-frame contact sheet; its fixes are in. Sheets in
   `stills-r5.jpg`; frame-by-frame QA in `finance-short/out/eight/qa/` after the render.
-- **Render (here):** 1080x1920 with software WebGL (about 3.3 s per frame on 4 CPU cores),
-  then `bash eight-short/finalize.sh` (join, mux, `short_qa.py`).
+- **Render:** left for your laptop (GPU), see below. Here, with software WebGL on 4 CPU cores, it ran at about
+  5 s per frame (2.5 h for 1080p, 4+ h for 2K); the test renders of every shot are in `stills-r5.jpg`.
 
-## Render in 2K on your laptop (cmd, drive D, GPU)
-```
-cd /d D:\Projekti\SeminarskiEDU
-git pull
-cd finance-short
-npm install
-set TEMP=D:\remotion-tmp
-set TMP=D:\remotion-tmp
-npx remotion render src/index.ts EightShort D:\Videi\the-bank-that-wanted-eight-2k.mp4 --codec h264 --crf 16 --scale 1.3333333333333333 --gl=angle
-```
-The soundtrack is inside the composition, so this one command gives the finished 1440x2560 file.
-Options: `--props "{\"caps\":false}"` without captions, `--concurrency 1` if the laptop runs out of memory,
-`--gl=swangle` if the picture is black. Use the full `1.3333333333333333`: `1.3333` gives a non-integer height
-and Remotion refuses it.
+## Render on your laptop (Windows, GPU)
+1. Get this branch (once):
+   ```
+   cd /d D:\Projekti\SeminarskiEDU
+   git stash
+   git fetch origin claude/rickclips-studio-setup-3bvdqe
+   git checkout claude/rickclips-studio-setup-3bvdqe
+   git pull
+   ```
+2. Double-click `eight-short\render.cmd` (or run it from cmd). The first run installs the packages (`npm install`).
+   It writes `finance-short\out\the-bank-that-wanted-eight-2k.mp4`: 1440x2560, 30 fps, 61.5 s, H.264 + AAC,
+   captions and soundtrack included. One command, nothing to join or mux.
+   - `set SCALE=1 & render.cmd` renders 1080x1920 instead.
+   - `set GL=swangle & render.cmd` if the picture comes out black (software WebGL, much slower).
+   - `render.cmd --props "{\"caps\":false}"` renders without the burned-in captions.
+   - Add `--concurrency 1` if the laptop runs out of memory.
+   - The temp bundle goes to `<drive>\remotion-tmp` (it is about 1 GB per render); empty it when you are done.
+3. Optional check (needs Python with numpy and Pillow, and ffmpeg on PATH), from `finance-short`:
+   `python scripts\short_qa.py out\the-bank-that-wanted-eight-2k.mp4 out\eight-qa ..\eight-short\shots.json`
+   checks every frame (black / white / frozen / pop frames, loudness) and writes contact sheets.
+4. Upload with the title, description and tags below, and `eight.en.srt` as the English subtitles.
+
+Manual command, if you prefer (from `finance-short`):
+`npx remotion render src/index.ts EightShort out\the-bank-that-wanted-eight-2k.mp4 --codec h264 --crf 16 --scale 1.3333333333333333 --gl=angle`
+(the full `1.3333333333333333`: `1.3333` gives a non-integer height and Remotion refuses it).
 
 ## Posting
 **Title:** The Bank That Wanted Eight of Everything
