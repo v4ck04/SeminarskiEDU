@@ -141,6 +141,16 @@ lighting 5-6, ink 6, textures 5-6, characters 7, depth 6-7, composition 6-7 (fro
 5. Contracts between owners live in exported constants (e.g. `NOINK` layer from ink.ts, `dofAt`/`FOREGROUND` from story.ts, `LIGHTS`/`LOOK` from lights.ts). Changing a contract means telling every owner that reads it.
 
 ## Gotchas
+- **Interiors** (learned on "The Bank That Wanted Eight of Everything", `src/videos/eight/`):
+  - Build the room's shell with `Batch.build(root, false)` (no shadows), so the sun lights the room like a lit interior. Fittings (counter, props) still cast shadows.
+  - The default camera-relative sun (az 75) leaves every wall turned to the lens in the cool shade, so they read lavender. Interiors and facades want a front-right key: `SUN_SHOT` az 125-140, el 42-50.
+  - `boxGeo` has no bottom face. A roof or slab seen from below needs `bottom = true` (or a ceiling quad facing down), otherwise the sky shows through.
+  - Characters are about 1.68 m tall with big heads. Counters and desks at 0.8 m, not 1.1 m, or the torso disappears.
+  - Mind the vertical frame. A 9:16 frame at 4 m sees only about 2 m across, so two characters plus a board rarely fit. Pan between them with two camera keys instead.
+  - A held card must move toward the lens (`toward(cam, at, 0.06)`), not by a fixed `-z`. Otherwise it disappears behind its holder whenever the camera looks along -z or x.
+- Distant hills (hemispheres) melt into golden fog and read as a ghostly arc in the sky. Remove the ones behind a golden shot.
+- 2K: pass `--scale 1.3333333333333333`. `1.3333` gives a 2559.94 px height and Remotion refuses it.
+- Software WebGL (swangle) already uses every core: three render processes in parallel were slower than one (13 s vs 5 s per frame at 1080). Render the parts one after another.
 - Kenney nature-kit materials are teal: recolour them by material name in build.ts.
 - Cameras end up inside houses: the sight-line culler in build.ts/world.ts removes anything blocking any camera ray.
 - Ink in the same merged effect pass as DOF gets overwritten. Ink must be its own pass before the blur.
