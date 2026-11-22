@@ -51,12 +51,32 @@
       "description": "Hook states a paradox in one sentence, then escalates with concrete consequences; narration runs continuously over constant visual changes.",
       "confidence": "medium",
       "evidence": "transcript + contact_timeline.jpg"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"It's impossible to get fired in Japan, but companies found something way worse.\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        4.22
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"So they take away your work and your friends, and just wait because nobody can do nothing forever.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
     }
   ],
   "categorical": {
     "footage_type": "original 3D cartoon animation",
     "caption_case": "sentence case",
-    "overlay_graphics": "none (text lives inside the scene)"
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
-  "updated_at": "2026-11-21T22:28:00+00:00"
+  "updated_at": "2026-11-22T09:35:53+00:00"
 }

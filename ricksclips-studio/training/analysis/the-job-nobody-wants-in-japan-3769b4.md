@@ -222,6 +222,14 @@ Each line: timestamp - description - confidence - evidence source.
 
 - `whole video` No overlay graphics, stickers or progress bar; text appears inside the scene (door sign, calendar, FIRE button). - **medium** _(reviewer notes: contact_shots.jpg #0, #2, #11)_
 
+### Hook
+
+- `0:00.00-0:04.22` Hook is a single concrete paradox stated immediately: "It's impossible to get fired in Japan, but companies found something way worse." - **high** _(reviewer notes: transcript, first sentence)_
+
+### Ending
+
+- `whole video` Ends on a concrete payoff that resolves the hook, no call to action: "So they take away your work and your friends, and just wait because nobody can do nothing forever." - **high** _(reviewer notes: transcript, last sentence)_
+
 ## Shot list
 
 | # | Start | End | Duration | In | Motion |

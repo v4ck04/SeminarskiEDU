@@ -1,0 +1,3069 @@
+{
+  "version": 16,
+  "updated_at": "2026-11-22T09:35:51+00:00",
+  "n_videos": 8,
+  "videos": [
+    "how-mine-salting-worked-98449a",
+    "the-ancient-jar-that-warned-an-empire-53119a",
+    "the-difference-between-rich-and-poor-503075",
+    "the-instinct-that-makes-you-crash-5e5256",
+    "the-job-nobody-wants-in-japan-3769b4",
+    "the-window-that-breaks-japans-gambling-l-544d9a",
+    "why-astronauts-cant-flush-in-space-2bb775",
+    "why-samurai-feared-the-flying-thunder-04b3cc"
+  ],
+  "features": {
+    "duration": {
+      "kind": "numeric",
+      "section": "Storytelling structure",
+      "label": "video length",
+      "format": "{:.0f}s",
+      "median": 60.8697,
+      "mean": 60.6275,
+      "min": 45.1265,
+      "max": 73.259,
+      "std": 7.2671,
+      "iqr": [
+        59.43,
+        62.199
+      ],
+      "n": 8,
+      "confidence": 1.0,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 61.1483,
+        "the-ancient-jar-that-warned-an-empire-53119a": 64.9331,
+        "the-difference-between-rich-and-poor-503075": 73.259,
+        "the-instinct-that-makes-you-crash-5e5256": 59.5229,
+        "the-job-nobody-wants-in-japan-3769b4": 60.591,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 45.1265,
+        "why-astronauts-cant-flush-in-space-2bb775": 61.2876,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 59.1513
+      }
+    },
+    "words_per_sentence": {
+      "kind": "numeric",
+      "section": "Storytelling structure",
+      "label": "words per sentence",
+      "format": "{:.1f}",
+      "median": 13.215,
+      "mean": 12.5963,
+      "min": 8.47,
+      "max": 15.57,
+      "std": 2.1485,
+      "iqr": [
+        11.2125,
+        13.8525
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 13.59,
+        "the-ancient-jar-that-warned-an-empire-53119a": 10.68,
+        "the-difference-between-rich-and-poor-503075": 8.47,
+        "the-instinct-that-makes-you-crash-5e5256": 15.57,
+        "the-job-nobody-wants-in-japan-3769b4": 13.18,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 14.64,
+        "why-astronauts-cant-flush-in-space-2bb775": 11.39,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 13.25
+      }
+    },
+    "numbers_per_10s": {
+      "kind": "numeric",
+      "section": "Storytelling structure",
+      "label": "numbers/statistics per 10 s",
+      "format": "{:.1f}",
+      "median": 0.505,
+      "mean": 0.5163,
+      "min": 0.22,
+      "max": 0.96,
+      "std": 0.2178,
+      "iqr": [
+        0.3375,
+        0.6275
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.65,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.62,
+        "the-difference-between-rich-and-poor-503075": 0.96,
+        "the-instinct-that-makes-you-crash-5e5256": 0.34,
+        "the-job-nobody-wants-in-japan-3769b4": 0.5,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.22,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.33,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.51
+      }
+    },
+    "hook_duration": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "hook sentence length",
+      "format": "{:.1f}s",
+      "median": 3.91,
+      "mean": 3.9325,
+      "min": 3.06,
+      "max": 4.98,
+      "std": 0.543,
+      "iqr": [
+        3.585,
+        4.225
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 3.54,
+        "the-ancient-jar-that-warned-an-empire-53119a": 4.98,
+        "the-difference-between-rich-and-poor-503075": 3.06,
+        "the-instinct-that-makes-you-crash-5e5256": 4.08,
+        "the-job-nobody-wants-in-japan-3769b4": 4.22,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 4.24,
+        "why-astronauts-cant-flush-in-space-2bb775": 3.6,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 3.74
+      }
+    },
+    "hook_words": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "hook word count",
+      "format": "{:.0f} words",
+      "median": 15.0,
+      "mean": 14.75,
+      "min": 12.0,
+      "max": 19.0,
+      "std": 1.9203,
+      "iqr": [
+        13.75,
+        15.0
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 15.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 19.0,
+        "the-difference-between-rich-and-poor-503075": 12.0,
+        "the-instinct-that-makes-you-crash-5e5256": 15.0,
+        "the-job-nobody-wants-in-japan-3769b4": 13.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 14.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 15.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 15.0
+      }
+    },
+    "time_to_first_word": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "time to first spoken word",
+      "format": "{:.2f}s",
+      "median": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 8,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "hook_cuts_per_s": {
+      "kind": "numeric",
+      "section": "Hook patterns",
+      "label": "cuts per second in the first 3 s",
+      "format": "{:.2f}/s",
+      "median": 0.3333,
+      "mean": 0.3333,
+      "min": 0.0,
+      "max": 0.6667,
+      "std": 0.1667,
+      "iqr": [
+        0.3333,
+        0.3333
+      ],
+      "n": 8,
+      "confidence": 0.8,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.3333,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.3333,
+        "the-difference-between-rich-and-poor-503075": 0.3333,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3333,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.6667,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.3333,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.3333
+      }
+    },
+    "wpm": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "narration pace",
+      "format": "{:.0f} wpm",
+      "median": 243.95,
+      "mean": 244.8375,
+      "min": 222.5,
+      "max": 260.9,
+      "std": 10.6522,
+      "iqr": [
+        242.675,
+        248.275
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 244.6,
+        "the-ancient-jar-that-warned-an-empire-53119a": 245.5,
+        "the-difference-between-rich-and-poor-503075": 260.9,
+        "the-instinct-that-makes-you-crash-5e5256": 242.6,
+        "the-job-nobody-wants-in-japan-3769b4": 256.6,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 242.7,
+        "why-astronauts-cant-flush-in-space-2bb775": 222.5,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 243.3
+      }
+    },
+    "speech_ratio": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "share of runtime with speech",
+      "format": "{:.0%}",
+      "median": 0.887,
+      "mean": 0.8821,
+      "min": 0.798,
+      "max": 0.927,
+      "std": 0.0362,
+      "iqr": [
+        0.8785,
+        0.904
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.927,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.885,
+        "the-difference-between-rich-and-poor-503075": 0.798,
+        "the-instinct-that-makes-you-crash-5e5256": 0.907,
+        "the-job-nobody-wants-in-japan-3769b4": 0.865,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.883,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.903,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.889
+      }
+    },
+    "pause_median": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "median pause",
+      "format": "{:.2f}s",
+      "median": 0.2325,
+      "mean": 0.2456,
+      "min": 0.19,
+      "max": 0.33,
+      "std": 0.0382,
+      "iqr": [
+        0.23,
+        0.255
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.19,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.23,
+        "the-difference-between-rich-and-poor-503075": 0.33,
+        "the-instinct-that-makes-you-crash-5e5256": 0.23,
+        "the-job-nobody-wants-in-japan-3769b4": 0.25,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.27,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.235,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.23
+      }
+    },
+    "pauses_per_min": {
+      "kind": "numeric",
+      "section": "Narration pacing",
+      "label": "pauses per minute of speech",
+      "format": "{:.0f}",
+      "median": 29.925,
+      "mean": 30.0362,
+      "min": 21.18,
+      "max": 44.16,
+      "std": 6.8115,
+      "iqr": [
+        24.3275,
+        32.8825
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 21.18,
+        "the-ancient-jar-that-warned-an-empire-53119a": 32.39,
+        "the-difference-between-rich-and-poor-503075": 44.16,
+        "the-instinct-that-makes-you-crash-5e5256": 24.48,
+        "the-job-nobody-wants-in-japan-3769b4": 34.36,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 30.15,
+        "why-astronauts-cant-flush-in-space-2bb775": 23.87,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 29.7
+      }
+    },
+    "shot_len_median": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "median shot length",
+      "format": "{:.2f}s",
+      "median": 2.5585,
+      "mean": 2.4813,
+      "min": 1.7835,
+      "max": 3.3,
+      "std": 0.4363,
+      "iqr": [
+        2.1873,
+        2.6753
+      ],
+      "n": 8,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 1.7835,
+        "the-ancient-jar-that-warned-an-empire-53119a": 2.233,
+        "the-difference-between-rich-and-poor-503075": 2.45,
+        "the-instinct-that-makes-you-crash-5e5256": 2.7,
+        "the-job-nobody-wants-in-japan-3769b4": 2.667,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 2.667,
+        "why-astronauts-cant-flush-in-space-2bb775": 2.05,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 3.3
+      }
+    },
+    "cuts_per_min": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts per minute",
+      "format": "{:.0f}",
+      "median": 18.8766,
+      "mean": 18.9526,
+      "min": 14.2009,
+      "max": 24.5305,
+      "std": 3.1031,
+      "iqr": [
+        16.8883,
+        20.3978
+      ],
+      "n": 8,
+      "confidence": 0.8,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 24.5305,
+        "the-ancient-jar-that-warned-an-empire-53119a": 22.1767,
+        "the-difference-between-rich-and-poor-503075": 17.1993,
+        "the-instinct-that-makes-you-crash-5e5256": 19.1523,
+        "the-job-nobody-wants-in-japan-3769b4": 19.8049,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 15.9552,
+        "why-astronauts-cant-flush-in-space-2bb775": 18.6008,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 14.2009
+      }
+    },
+    "shot_len_cv": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "shot-length variation (CV)",
+      "format": "{:.2f}",
+      "median": 0.7603,
+      "mean": 0.7817,
+      "min": 0.5107,
+      "max": 1.0863,
+      "std": 0.1801,
+      "iqr": [
+        0.6824,
+        0.8571
+      ],
+      "n": 8,
+      "confidence": 0.72,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.8047,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.7062,
+        "the-difference-between-rich-and-poor-503075": 1.0863,
+        "the-instinct-that-makes-you-crash-5e5256": 0.611,
+        "the-job-nobody-wants-in-japan-3769b4": 0.5107,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.7233,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.7973,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 1.0145
+      }
+    },
+    "pace_change_ratio": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "2nd-half / 1st-half shot length",
+      "format": "{:.2f}",
+      "median": 0.8979,
+      "mean": 0.9213,
+      "min": 0.3726,
+      "max": 1.3479,
+      "std": 0.2867,
+      "iqr": [
+        0.7765,
+        1.122
+      ],
+      "n": 8,
+      "confidence": 0.64,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.3726,
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.0896,
+        "the-difference-between-rich-and-poor-503075": 0.8202,
+        "the-instinct-that-makes-you-crash-5e5256": 0.9756,
+        "the-job-nobody-wants-in-japan-3769b4": 1.3479,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 1.2191,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.7656,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.7801
+      }
+    },
+    "cut_word_alignment": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts on word boundaries",
+      "format": "{:.0%}",
+      "median": 0.8495,
+      "mean": 0.8424,
+      "min": 0.667,
+      "max": 0.95,
+      "std": 0.0854,
+      "iqr": [
+        0.7973,
+        0.917
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.8,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.917,
+        "the-difference-between-rich-and-poor-503075": 0.667,
+        "the-instinct-that-makes-you-crash-5e5256": 0.789,
+        "the-job-nobody-wants-in-japan-3769b4": 0.95,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.917,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.842,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.857
+      }
+    },
+    "cut_sentence_alignment": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts on sentence boundaries",
+      "format": "{:.0%}",
+      "median": 0.419,
+      "mean": 0.4051,
+      "min": 0.071,
+      "max": 0.667,
+      "std": 0.1775,
+      "iqr": [
+        0.307,
+        0.4923
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.28,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.667,
+        "the-difference-between-rich-and-poor-503075": 0.619,
+        "the-instinct-that-makes-you-crash-5e5256": 0.421,
+        "the-job-nobody-wants-in-japan-3769b4": 0.45,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.417,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.316,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.071
+      }
+    },
+    "cuts_per_sentence": {
+      "kind": "numeric",
+      "section": "Scene duration patterns",
+      "label": "cuts per narrated sentence",
+      "format": "{:.1f}",
+      "median": 1.09,
+      "mean": 1.1038,
+      "min": 0.7,
+      "max": 1.47,
+      "std": 0.2294,
+      "iqr": [
+        1.015,
+        1.225
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 1.47,
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.09,
+        "the-difference-between-rich-and-poor-503075": 0.7,
+        "the-instinct-that-makes-you-crash-5e5256": 1.36,
+        "the-job-nobody-wants-in-japan-3769b4": 1.18,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 1.09,
+        "why-astronauts-cant-flush-in-space-2bb775": 1.06,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.88
+      }
+    },
+    "caption_coverage": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption coverage",
+      "format": "{:.0%}",
+      "median": 0.7825,
+      "mean": 0.787,
+      "min": 0.512,
+      "max": 0.924,
+      "std": 0.1204,
+      "iqr": [
+        0.773,
+        0.8588
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.778,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.838,
+        "the-difference-between-rich-and-poor-503075": 0.758,
+        "the-instinct-that-makes-you-crash-5e5256": 0.778,
+        "the-job-nobody-wants-in-japan-3769b4": 0.512,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.787,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.924,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.921
+      }
+    },
+    "caption_y": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption vertical position (0=top)",
+      "format": "{:.2f}",
+      "median": 0.7047,
+      "mean": 0.7043,
+      "min": 0.7022,
+      "max": 0.7047,
+      "std": 0.0008,
+      "iqr": [
+        0.7042,
+        0.7047
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.7047,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.7047,
+        "the-difference-between-rich-and-poor-503075": 0.7022,
+        "the-instinct-that-makes-you-crash-5e5256": 0.7042,
+        "the-job-nobody-wants-in-japan-3769b4": 0.7047,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.7047,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.7042,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.7047
+      }
+    },
+    "caption_text_h": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption letter height (frame fraction)",
+      "format": "{:.3f}",
+      "median": 0.0219,
+      "mean": 0.0219,
+      "min": 0.0219,
+      "max": 0.0219,
+      "std": 0.0,
+      "iqr": [
+        0.0219,
+        0.0219
+      ],
+      "n": 8,
+      "confidence": 0.77,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0219,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0219,
+        "the-difference-between-rich-and-poor-503075": 0.0219,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0219,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0219,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0219,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0219,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0219
+      }
+    },
+    "caption_words": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "words per caption",
+      "format": "{:.1f}",
+      "median": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "std": 0.0,
+      "iqr": [
+        1.0,
+        1.0
+      ],
+      "n": 8,
+      "confidence": 0.81,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 1.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.0,
+        "the-difference-between-rich-and-poor-503075": 1.0,
+        "the-instinct-that-makes-you-crash-5e5256": 1.0,
+        "the-job-nobody-wants-in-japan-3769b4": 1.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 1.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 1.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 1.0
+      }
+    },
+    "caption_words_p80": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "words per caption (80th percentile)",
+      "format": "{:.1f}",
+      "median": 2.0,
+      "mean": 2.0,
+      "min": 2.0,
+      "max": 2.0,
+      "std": 0.0,
+      "iqr": [
+        2.0,
+        2.0
+      ],
+      "n": 8,
+      "confidence": 0.81,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 2.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 2.0,
+        "the-difference-between-rich-and-poor-503075": 2.0,
+        "the-instinct-that-makes-you-crash-5e5256": 2.0,
+        "the-job-nobody-wants-in-japan-3769b4": 2.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 2.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 2.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 2.0
+      }
+    },
+    "caption_lines": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "lines per caption",
+      "format": "{:.1f}",
+      "median": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "std": 0.0,
+      "iqr": [
+        1.0,
+        1.0
+      ],
+      "n": 8,
+      "confidence": 0.68,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 1.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 1.0,
+        "the-difference-between-rich-and-poor-503075": 1.0,
+        "the-instinct-that-makes-you-crash-5e5256": 1.0,
+        "the-job-nobody-wants-in-japan-3769b4": 1.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 1.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 1.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 1.0
+      }
+    },
+    "caption_duration": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "caption on-screen time",
+      "format": "{:.2f}s",
+      "median": 0.3,
+      "mean": 0.3,
+      "min": 0.3,
+      "max": 0.3,
+      "std": 0.0,
+      "iqr": [
+        0.3,
+        0.3
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.3,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.3,
+        "the-difference-between-rich-and-poor-503075": 0.3,
+        "the-instinct-that-makes-you-crash-5e5256": 0.3,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.3,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.3,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.3
+      }
+    },
+    "caption_highlight_share": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "captions with highlighted words",
+      "format": "{:.0%}",
+      "median": 0.111,
+      "mean": 0.1165,
+      "min": 0.049,
+      "max": 0.189,
+      "std": 0.0476,
+      "iqr": [
+        0.0798,
+        0.1557
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.087,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.049,
+        "the-difference-between-rich-and-poor-503075": 0.152,
+        "the-instinct-that-makes-you-crash-5e5256": 0.083,
+        "the-job-nobody-wants-in-japan-3769b4": 0.189,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.167,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.07,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.135
+      }
+    },
+    "caption_outline_share": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "captions with dark outline",
+      "format": "{:.0%}",
+      "median": 0.842,
+      "mean": 0.8396,
+      "min": 0.745,
+      "max": 0.935,
+      "std": 0.0636,
+      "iqr": [
+        0.7855,
+        0.8888
+      ],
+      "n": 8,
+      "confidence": 0.85,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.812,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.872,
+        "the-difference-between-rich-and-poor-503075": 0.778,
+        "the-instinct-that-makes-you-crash-5e5256": 0.903,
+        "the-job-nobody-wants-in-japan-3769b4": 0.884,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.935,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.745,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.788
+      }
+    },
+    "caption_outline_frac": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "outline thickness (frame-width fraction)",
+      "format": "{:.4f}",
+      "median": 0.0074,
+      "mean": 0.0073,
+      "min": 0.0042,
+      "max": 0.0093,
+      "std": 0.0014,
+      "iqr": [
+        0.0074,
+        0.0076
+      ],
+      "n": 8,
+      "confidence": 0.59,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0074,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0074,
+        "the-difference-between-rich-and-poor-503075": 0.0042,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0074,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0074,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0074,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0083,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0093
+      }
+    },
+    "caption_caps_share": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "ALL CAPS likelihood",
+      "format": "{:.0%}",
+      "median": 0.1085,
+      "mean": 0.1146,
+      "min": 0.057,
+      "max": 0.219,
+      "std": 0.0464,
+      "iqr": [
+        0.0862,
+        0.1288
+      ],
+      "n": 8,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.057,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.134,
+        "the-difference-between-rich-and-poor-503075": 0.219,
+        "the-instinct-that-makes-you-crash-5e5256": 0.091,
+        "the-job-nobody-wants-in-japan-3769b4": 0.072,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.105,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.112,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.127
+      }
+    },
+    "caption_stroke_ratio": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "stroke/height ratio (weight)",
+      "format": "{:.2f}",
+      "median": 0.3226,
+      "mean": 0.3214,
+      "min": 0.2791,
+      "max": 0.3518,
+      "std": 0.0189,
+      "iqr": [
+        0.3189,
+        0.3284
+      ],
+      "n": 8,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.3191,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.3221,
+        "the-difference-between-rich-and-poor-503075": 0.2791,
+        "the-instinct-that-makes-you-crash-5e5256": 0.3279,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3518,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.3231,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.3183,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.33
+      }
+    },
+    "caption_char_aspect": {
+      "kind": "numeric",
+      "section": "Subtitle design",
+      "label": "letter width/height",
+      "format": "{:.2f}",
+      "median": 0.8615,
+      "mean": 0.8686,
+      "min": 0.8342,
+      "max": 0.9048,
+      "std": 0.025,
+      "iqr": [
+        0.85,
+        0.8897
+      ],
+      "n": 8,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.8457,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.8579,
+        "the-difference-between-rich-and-poor-503075": 0.8342,
+        "the-instinct-that-makes-you-crash-5e5256": 0.8514,
+        "the-job-nobody-wants-in-japan-3769b4": 0.8651,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.8846,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.9048,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.9048
+      }
+    },
+    "transition_share_cut": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "hard cuts",
+      "format": "{:.0%}",
+      "median": 0.7434,
+      "mean": 0.6865,
+      "min": 0.2917,
+      "max": 0.8947,
+      "std": 0.1905,
+      "iqr": [
+        0.5661,
+        0.8443
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.84,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.2917,
+        "the-difference-between-rich-and-poor-503075": 0.5714,
+        "the-instinct-that-makes-you-crash-5e5256": 0.8947,
+        "the-job-nobody-wants-in-japan-3769b4": 0.55,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.75,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.7368,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.8571
+      }
+    },
+    "transition_share_dissolve": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "dissolves",
+      "format": "{:.0%}",
+      "median": 0.1886,
+      "mean": 0.2261,
+      "min": 0.0714,
+      "max": 0.5417,
+      "std": 0.1501,
+      "iqr": [
+        0.099,
+        0.3083
+      ],
+      "n": 8,
+      "confidence": 0.5,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.08,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.5417,
+        "the-difference-between-rich-and-poor-503075": 0.3333,
+        "the-instinct-that-makes-you-crash-5e5256": 0.1053,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.1667,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.2105,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0714
+      }
+    },
+    "transition_share_flash": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "flash transitions",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 8,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "transition_share_dip_black": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "dips to black",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 8,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "transition_share_whip_or_blur": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "whip/blur transitions",
+      "format": "{:.0%}",
+      "median": 0.0459,
+      "mean": 0.0423,
+      "min": 0.0,
+      "max": 0.0952,
+      "std": 0.0362,
+      "iqr": [
+        0.0,
+        0.0736
+      ],
+      "n": 8,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.08,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.0417,
+        "the-difference-between-rich-and-poor-503075": 0.0952,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.05,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0714
+      }
+    },
+    "transition_share_zoom_transition": {
+      "kind": "numeric",
+      "section": "Transitions",
+      "label": "zoom transitions",
+      "format": "{:.0%}",
+      "median": 0.0263,
+      "mean": 0.0451,
+      "min": 0.0,
+      "max": 0.125,
+      "std": 0.0488,
+      "iqr": [
+        0.0,
+        0.0875
+      ],
+      "n": 8,
+      "confidence": 0.5,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.125,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.1,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0833,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0526,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "motion_share_zoom_in": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "zoom-in shots",
+      "format": "{:.0%}",
+      "median": 0.6075,
+      "mean": 0.581,
+      "min": 0.435,
+      "max": 0.708,
+      "std": 0.0903,
+      "iqr": [
+        0.525,
+        0.644
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.708,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.435,
+        "the-difference-between-rich-and-poor-503075": 0.647,
+        "the-instinct-that-makes-you-crash-5e5256": 0.55,
+        "the-job-nobody-wants-in-japan-3769b4": 0.6,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.615,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.45,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.643
+      }
+    },
+    "motion_share_zoom_out": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "zoom-out shots",
+      "format": "{:.0%}",
+      "median": 0.2155,
+      "mean": 0.2391,
+      "min": 0.125,
+      "max": 0.4,
+      "std": 0.0851,
+      "iqr": [
+        0.194,
+        0.2607
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.125,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.217,
+        "the-difference-between-rich-and-poor-503075": 0.176,
+        "the-instinct-that-makes-you-crash-5e5256": 0.4,
+        "the-job-nobody-wants-in-japan-3769b4": 0.2,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.231,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.35,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.214
+      }
+    },
+    "motion_share_pan_left": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-left shots",
+      "format": "{:.0%}",
+      "median": 0.0465,
+      "mean": 0.0427,
+      "min": 0.0,
+      "max": 0.077,
+      "std": 0.0273,
+      "iqr": [
+        0.0315,
+        0.062
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.042,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.043,
+        "the-difference-between-rich-and-poor-503075": 0.059,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.077,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.05,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.071
+      }
+    },
+    "motion_share_pan_right": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-right shots",
+      "format": "{:.0%}",
+      "median": 0.074,
+      "mean": 0.0784,
+      "min": 0.05,
+      "max": 0.15,
+      "std": 0.0301,
+      "iqr": [
+        0.0567,
+        0.084
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.083,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.087,
+        "the-difference-between-rich-and-poor-503075": 0.059,
+        "the-instinct-that-makes-you-crash-5e5256": 0.05,
+        "the-job-nobody-wants-in-japan-3769b4": 0.15,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.077,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.05,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.071
+      }
+    },
+    "motion_share_pan_up": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-up shots",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0234,
+      "min": 0.0,
+      "max": 0.087,
+      "std": 0.032,
+      "iqr": [
+        0.0,
+        0.05
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.087,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.05,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.05,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "motion_share_pan_down": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "pan-down shots",
+      "format": "{:.0%}",
+      "median": 0.0,
+      "mean": 0.0054,
+      "min": 0.0,
+      "max": 0.043,
+      "std": 0.0142,
+      "iqr": [
+        0.0,
+        0.0
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.0,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.043,
+        "the-difference-between-rich-and-poor-503075": 0.0,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.0,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "motion_share_static": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "static shots",
+      "format": "{:.0%}",
+      "median": 0.021,
+      "mean": 0.0297,
+      "min": 0.0,
+      "max": 0.087,
+      "std": 0.0321,
+      "iqr": [
+        0.0,
+        0.0523
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.042,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.087,
+        "the-difference-between-rich-and-poor-503075": 0.059,
+        "the-instinct-that-makes-you-crash-5e5256": 0.0,
+        "the-job-nobody-wants-in-japan-3769b4": 0.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.05,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.0
+      }
+    },
+    "moving_shot_share": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "shots with camera/zoom movement",
+      "format": "{:.0%}",
+      "median": 0.979,
+      "mean": 0.9703,
+      "min": 0.913,
+      "max": 1.0,
+      "std": 0.0321,
+      "iqr": [
+        0.9477,
+        1.0
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.958,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.913,
+        "the-difference-between-rich-and-poor-503075": 0.941,
+        "the-instinct-that-makes-you-crash-5e5256": 1.0,
+        "the-job-nobody-wants-in-japan-3769b4": 1.0,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 1.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.95,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 1.0
+      }
+    },
+    "zoom_rate_median": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "zoom speed",
+      "format": "{:.1%}/s",
+      "median": 0.1305,
+      "mean": 0.1558,
+      "min": 0.1022,
+      "max": 0.3143,
+      "std": 0.0633,
+      "iqr": [
+        0.1204,
+        0.1607
+      ],
+      "n": 8,
+      "confidence": 0.55,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.1571,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.1205,
+        "the-difference-between-rich-and-poor-503075": 0.1259,
+        "the-instinct-that-makes-you-crash-5e5256": 0.12,
+        "the-job-nobody-wants-in-japan-3769b4": 0.3143,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.1714,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.1022,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.1352
+      }
+    },
+    "shake_share": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "shots with shake",
+      "format": "{:.0%}",
+      "median": 0.1125,
+      "mean": 0.1341,
+      "min": 0.0,
+      "max": 0.353,
+      "std": 0.1026,
+      "iqr": [
+        0.0658,
+        0.1805
+      ],
+      "n": 8,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.125,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.174,
+        "the-difference-between-rich-and-poor-503075": 0.353,
+        "the-instinct-that-makes-you-crash-5e5256": 0.05,
+        "the-job-nobody-wants-in-japan-3769b4": 0.2,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.0,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.1,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.071
+      }
+    },
+    "animated_still_share": {
+      "kind": "numeric",
+      "section": "Camera movement",
+      "label": "animated still images (Ken Burns)",
+      "format": "{:.0%}",
+      "median": 0.1825,
+      "mean": 0.1784,
+      "min": 0.071,
+      "max": 0.308,
+      "std": 0.0862,
+      "iqr": [
+        0.0958,
+        0.25
+      ],
+      "n": 8,
+      "confidence": 0.45,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.083,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.13,
+        "the-difference-between-rich-and-poor-503075": 0.235,
+        "the-instinct-that-makes-you-crash-5e5256": 0.25,
+        "the-job-nobody-wants-in-japan-3769b4": 0.1,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.308,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.25,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.071
+      }
+    },
+    "brightness": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "brightness (L)",
+      "format": "{:.2f}",
+      "median": 0.4289,
+      "mean": 0.4317,
+      "min": 0.244,
+      "max": 0.6355,
+      "std": 0.127,
+      "iqr": [
+        0.3247,
+        0.5189
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.4273,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.4305,
+        "the-difference-between-rich-and-poor-503075": 0.6355,
+        "the-instinct-that-makes-you-crash-5e5256": 0.4984,
+        "the-job-nobody-wants-in-japan-3769b4": 0.5802,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.3067,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.244,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.3307
+      }
+    },
+    "contrast": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "contrast (L std)",
+      "format": "{:.3f}",
+      "median": 0.1997,
+      "mean": 0.2024,
+      "min": 0.1673,
+      "max": 0.2366,
+      "std": 0.0218,
+      "iqr": [
+        0.194,
+        0.2145
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.1993,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.178,
+        "the-difference-between-rich-and-poor-503075": 0.2001,
+        "the-instinct-that-makes-you-crash-5e5256": 0.2095,
+        "the-job-nobody-wants-in-japan-3769b4": 0.1993,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.2295,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.2366,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.1673
+      }
+    },
+    "saturation": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "saturation",
+      "format": "{:.2f}",
+      "median": 0.4268,
+      "mean": 0.4348,
+      "min": 0.2821,
+      "max": 0.5487,
+      "std": 0.082,
+      "iqr": [
+        0.3955,
+        0.5073
+      ],
+      "n": 8,
+      "confidence": 0.7,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.5487,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.4079,
+        "the-difference-between-rich-and-poor-503075": 0.4458,
+        "the-instinct-that-makes-you-crash-5e5256": 0.2821,
+        "the-job-nobody-wants-in-japan-3769b4": 0.4042,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.5044,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.5159,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.3694
+      }
+    },
+    "colorfulness": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "colourfulness",
+      "format": "{:.0f}",
+      "median": 56.139,
+      "mean": 56.5188,
+      "min": 38.3023,
+      "max": 76.959,
+      "std": 12.3525,
+      "iqr": [
+        48.1288,
+        63.4246
+      ],
+      "n": 8,
+      "confidence": 0.65,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 52.6145,
+        "the-ancient-jar-that-warned-an-empire-53119a": 59.6634,
+        "the-difference-between-rich-and-poor-503075": 70.6956,
+        "the-instinct-that-makes-you-crash-5e5256": 49.8003,
+        "the-job-nobody-wants-in-japan-3769b4": 76.959,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 61.0009,
+        "why-astronauts-cant-flush-in-space-2bb775": 38.3023,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 43.1143
+      }
+    },
+    "warmth": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "warmth (Lab b*)",
+      "format": "{:+.1f}",
+      "median": 1.1593,
+      "mean": 0.6158,
+      "min": -11.4529,
+      "max": 21.4608,
+      "std": 10.8341,
+      "iqr": [
+        -10.3827,
+        6.2705
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": false,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 21.4608,
+        "the-ancient-jar-that-warned-an-empire-53119a": 7.6588,
+        "the-difference-between-rich-and-poor-503075": 5.8077,
+        "the-instinct-that-makes-you-crash-5e5256": 5.4904,
+        "the-job-nobody-wants-in-japan-3769b4": -11.4529,
+        "the-window-that-breaks-japans-gambling-l-544d9a": -10.332,
+        "why-astronauts-cant-flush-in-space-2bb775": -10.5349,
+        "why-samurai-feared-the-flying-thunder-04b3cc": -3.1718
+      }
+    },
+    "face_frame_share": {
+      "kind": "numeric",
+      "section": "Visual composition",
+      "label": "frames with faces",
+      "format": "{:.0%}",
+      "median": 0.2,
+      "mean": 0.1664,
+      "min": 0.038,
+      "max": 0.26,
+      "std": 0.0763,
+      "iqr": [
+        0.091,
+        0.2223
+      ],
+      "n": 8,
+      "confidence": 0.55,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.195,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.038,
+        "the-difference-between-rich-and-poor-503075": 0.218,
+        "the-instinct-that-makes-you-crash-5e5256": 0.092,
+        "the-job-nobody-wants-in-japan-3769b4": 0.205,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.088,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.26,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.235
+      }
+    },
+    "lufs": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "integrated loudness",
+      "format": "{:.1f} LUFS",
+      "median": -14.105,
+      "mean": -14.1288,
+      "min": -14.39,
+      "max": -14.02,
+      "std": 0.1042,
+      "iqr": [
+        -14.1225,
+        -14.09
+      ],
+      "n": 8,
+      "confidence": 0.95,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": -14.13,
+        "the-ancient-jar-that-warned-an-empire-53119a": -14.02,
+        "the-difference-between-rich-and-poor-503075": -14.1,
+        "the-instinct-that-makes-you-crash-5e5256": -14.12,
+        "the-job-nobody-wants-in-japan-3769b4": -14.06,
+        "the-window-that-breaks-japans-gambling-l-544d9a": -14.39,
+        "why-astronauts-cant-flush-in-space-2bb775": -14.11,
+        "why-samurai-feared-the-flying-thunder-04b3cc": -14.1
+      }
+    },
+    "true_peak": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "true peak",
+      "format": "{:.1f} dBTP",
+      "median": -1.875,
+      "mean": -1.7675,
+      "min": -2.16,
+      "max": -1.03,
+      "std": 0.3861,
+      "iqr": [
+        -2.09,
+        -1.605
+      ],
+      "n": 8,
+      "confidence": 0.95,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": -1.71,
+        "the-ancient-jar-that-warned-an-empire-53119a": -2.16,
+        "the-difference-between-rich-and-poor-503075": -1.03,
+        "the-instinct-that-makes-you-crash-5e5256": -2.12,
+        "the-job-nobody-wants-in-japan-3769b4": -2.08,
+        "the-window-that-breaks-japans-gambling-l-544d9a": -1.29,
+        "why-astronauts-cant-flush-in-space-2bb775": -1.78,
+        "why-samurai-feared-the-flying-thunder-04b3cc": -1.97
+      }
+    },
+    "sfx_per_min": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "effect-like events per minute",
+      "format": "{:.0f}",
+      "median": 75.05,
+      "mean": 69.1562,
+      "min": 33.59,
+      "max": 96.03,
+      "std": 20.1635,
+      "iqr": [
+        52.77,
+        85.2225
+      ],
+      "n": 8,
+      "confidence": 0.35,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 54.02,
+        "the-ancient-jar-that-warned-an-empire-53119a": 49.02,
+        "the-difference-between-rich-and-poor-503075": 33.59,
+        "the-instinct-that-makes-you-crash-5e5256": 79.72,
+        "the-job-nobody-wants-in-japan-3769b4": 70.38,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 85.2,
+        "why-astronauts-cant-flush-in-space-2bb775": 96.03,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 85.29
+      }
+    },
+    "cuts_with_sfx_share": {
+      "kind": "numeric",
+      "section": "Sound design",
+      "label": "cuts with an effect",
+      "format": "{:.0%}",
+      "median": 0.3095,
+      "mean": 0.303,
+      "min": 0.083,
+      "max": 0.55,
+      "std": 0.1407,
+      "iqr": [
+        0.2157,
+        0.3812
+      ],
+      "n": 8,
+      "confidence": 0.35,
+      "consistent": true,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": 0.24,
+        "the-ancient-jar-that-warned-an-empire-53119a": 0.083,
+        "the-difference-between-rich-and-poor-503075": 0.143,
+        "the-instinct-that-makes-you-crash-5e5256": 0.368,
+        "the-job-nobody-wants-in-japan-3769b4": 0.55,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 0.333,
+        "why-astronauts-cant-flush-in-space-2bb775": 0.421,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 0.286
+      }
+    },
+    "bed_below_speech_db": {
+      "kind": "numeric",
+      "section": "Music characteristics",
+      "label": "background bed below speech",
+      "format": "{:.0f} dB",
+      "median": 9.15,
+      "mean": 8.875,
+      "min": 4.7,
+      "max": 14.4,
+      "std": 3.4416,
+      "iqr": [
+        5.25,
+        11.2
+      ],
+      "n": 8,
+      "confidence": 0.6,
+      "consistent": true,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": 9.2,
+        "the-ancient-jar-that-warned-an-empire-53119a": 14.4,
+        "the-difference-between-rich-and-poor-503075": 12.7,
+        "the-instinct-that-makes-you-crash-5e5256": 4.8,
+        "the-job-nobody-wants-in-japan-3769b4": 10.7,
+        "the-window-that-breaks-japans-gambling-l-544d9a": 4.7,
+        "why-astronauts-cant-flush-in-space-2bb775": 9.1,
+        "why-samurai-feared-the-flying-thunder-04b3cc": 5.4
+      }
+    },
+    "layout": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "frame layout",
+      "mode": "full_bleed",
+      "share": 0.875,
+      "counts": {
+        "full_bleed": 7,
+        "blurred_fill": 1
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "full_bleed",
+        "the-ancient-jar-that-warned-an-empire-53119a": "full_bleed",
+        "the-difference-between-rich-and-poor-503075": "full_bleed",
+        "the-instinct-that-makes-you-crash-5e5256": "full_bleed",
+        "the-job-nobody-wants-in-japan-3769b4": "full_bleed",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "full_bleed",
+        "why-astronauts-cant-flush-in-space-2bb775": "full_bleed",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "blurred_fill"
+      }
+    },
+    "temperature": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "colour temperature",
+      "mode": "neutral",
+      "share": 0.375,
+      "counts": {
+        "warm": 2,
+        "neutral": 3,
+        "cool": 3
+      },
+      "n": 8,
+      "of": 8,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": "warm",
+        "the-ancient-jar-that-warned-an-empire-53119a": "warm",
+        "the-difference-between-rich-and-poor-503075": "neutral",
+        "the-instinct-that-makes-you-crash-5e5256": "neutral",
+        "the-job-nobody-wants-in-japan-3769b4": "cool",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "cool",
+        "why-astronauts-cant-flush-in-space-2bb775": "cool",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "neutral"
+      }
+    },
+    "teal_orange": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "teal/orange split tone",
+      "mode": "False",
+      "share": 0.625,
+      "counts": {
+        "False": 5,
+        "True": 3
+      },
+      "n": 8,
+      "of": 8,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": false,
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-instinct-that-makes-you-crash-5e5256": false,
+        "the-job-nobody-wants-in-japan-3769b4": true,
+        "the-window-that-breaks-japans-gambling-l-544d9a": true,
+        "why-astronauts-cant-flush-in-space-2bb775": false,
+        "why-samurai-feared-the-flying-thunder-04b3cc": true
+      }
+    },
+    "vignette_likely": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "vignette",
+      "mode": "False",
+      "share": 0.625,
+      "counts": {
+        "False": 5,
+        "True": 3
+      },
+      "n": 8,
+      "of": 8,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": false,
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-instinct-that-makes-you-crash-5e5256": false,
+        "the-job-nobody-wants-in-japan-3769b4": false,
+        "the-window-that-breaks-japans-gambling-l-544d9a": true,
+        "why-astronauts-cant-flush-in-space-2bb775": true,
+        "why-samurai-feared-the-flying-thunder-04b3cc": true
+      }
+    },
+    "dominant_motion": {
+      "kind": "categorical",
+      "section": "Camera movement",
+      "label": "most common camera move",
+      "mode": "zoom_in",
+      "share": 1.0,
+      "counts": {
+        "zoom_in": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "zoom_in",
+        "the-ancient-jar-that-warned-an-empire-53119a": "zoom_in",
+        "the-difference-between-rich-and-poor-503075": "zoom_in",
+        "the-instinct-that-makes-you-crash-5e5256": "zoom_in",
+        "the-job-nobody-wants-in-japan-3769b4": "zoom_in",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "zoom_in",
+        "why-astronauts-cant-flush-in-space-2bb775": "zoom_in",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "zoom_in"
+      }
+    },
+    "caption_zone": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption zone",
+      "mode": "lower_middle",
+      "share": 1.0,
+      "counts": {
+        "lower_middle": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "lower_middle",
+        "the-ancient-jar-that-warned-an-empire-53119a": "lower_middle",
+        "the-difference-between-rich-and-poor-503075": "lower_middle",
+        "the-instinct-that-makes-you-crash-5e5256": "lower_middle",
+        "the-job-nobody-wants-in-japan-3769b4": "lower_middle",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "lower_middle",
+        "why-astronauts-cant-flush-in-space-2bb775": "lower_middle",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "lower_middle"
+      }
+    },
+    "caption_fill_color": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption text colour",
+      "mode": "white",
+      "share": 1.0,
+      "counts": {
+        "white": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "white",
+        "the-ancient-jar-that-warned-an-empire-53119a": "white",
+        "the-difference-between-rich-and-poor-503075": "white",
+        "the-instinct-that-makes-you-crash-5e5256": "white",
+        "the-job-nobody-wants-in-japan-3769b4": "white",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "white",
+        "why-astronauts-cant-flush-in-space-2bb775": "white",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "white"
+      }
+    },
+    "caption_fill_hex": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption text colour (hex)",
+      "mode": "#FFFEFF",
+      "share": 0.5,
+      "counts": {
+        "#FFFEFF": 4,
+        "#FDFAFD": 1,
+        "#FFFFFF": 3
+      },
+      "n": 8,
+      "of": 8,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": "#FFFEFF",
+        "the-ancient-jar-that-warned-an-empire-53119a": "#FFFEFF",
+        "the-difference-between-rich-and-poor-503075": "#FDFAFD",
+        "the-instinct-that-makes-you-crash-5e5256": "#FFFFFF",
+        "the-job-nobody-wants-in-japan-3769b4": "#FFFFFF",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "#FFFFFF",
+        "why-astronauts-cant-flush-in-space-2bb775": "#FFFEFF",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "#FFFEFF"
+      }
+    },
+    "caption_highlight_color": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "highlight colour",
+      "mode": "orange",
+      "share": 0.25,
+      "counts": {
+        "orange": 2,
+        "green": 1
+      },
+      "n": 3,
+      "of": 8,
+      "status": "uncertain",
+      "values": {
+        "the-difference-between-rich-and-poor-503075": "orange",
+        "the-job-nobody-wants-in-japan-3769b4": "green",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "orange"
+      }
+    },
+    "caption_highlight_hex": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "highlight colour (hex)",
+      "mode": "#CF9135",
+      "share": 0.125,
+      "counts": {
+        "#CF9135": 1,
+        "#8EC28B": 1,
+        "#E69734": 1
+      },
+      "n": 3,
+      "of": 8,
+      "status": "uncertain",
+      "values": {
+        "the-difference-between-rich-and-poor-503075": "#CF9135",
+        "the-job-nobody-wants-in-japan-3769b4": "#8EC28B",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "#E69734"
+      }
+    },
+    "caption_highlight_mode": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "highlight style",
+      "mode": "none",
+      "share": 0.625,
+      "counts": {
+        "none": 5,
+        "emphasis": 3
+      },
+      "n": 8,
+      "of": 8,
+      "status": "occasional",
+      "values": {
+        "how-mine-salting-worked-98449a": "none",
+        "the-ancient-jar-that-warned-an-empire-53119a": "none",
+        "the-difference-between-rich-and-poor-503075": "emphasis",
+        "the-instinct-that-makes-you-crash-5e5256": "none",
+        "the-job-nobody-wants-in-japan-3769b4": "emphasis",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "emphasis",
+        "why-astronauts-cant-flush-in-space-2bb775": "none",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "none"
+      }
+    },
+    "caption_shadow": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "drop shadow",
+      "mode": "True",
+      "share": 1.0,
+      "counts": {
+        "True": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": true,
+        "the-ancient-jar-that-warned-an-empire-53119a": true,
+        "the-difference-between-rich-and-poor-503075": true,
+        "the-instinct-that-makes-you-crash-5e5256": true,
+        "the-job-nobody-wants-in-japan-3769b4": true,
+        "the-window-that-breaks-japans-gambling-l-544d9a": true,
+        "why-astronauts-cant-flush-in-space-2bb775": true,
+        "why-samurai-feared-the-flying-thunder-04b3cc": true
+      }
+    },
+    "caption_boxed": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption background box",
+      "mode": "False",
+      "share": 1.0,
+      "counts": {
+        "False": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": false,
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-instinct-that-makes-you-crash-5e5256": false,
+        "the-job-nobody-wants-in-japan-3769b4": false,
+        "the-window-that-breaks-japans-gambling-l-544d9a": false,
+        "why-astronauts-cant-flush-in-space-2bb775": false,
+        "why-samurai-feared-the-flying-thunder-04b3cc": false
+      }
+    },
+    "caption_weight_class": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "letter weight",
+      "mode": "heavy/black",
+      "share": 1.0,
+      "counts": {
+        "heavy/black": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "heavy/black",
+        "the-ancient-jar-that-warned-an-empire-53119a": "heavy/black",
+        "the-difference-between-rich-and-poor-503075": "heavy/black",
+        "the-instinct-that-makes-you-crash-5e5256": "heavy/black",
+        "the-job-nobody-wants-in-japan-3769b4": "heavy/black",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "heavy/black",
+        "why-astronauts-cant-flush-in-space-2bb775": "heavy/black",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "heavy/black"
+      }
+    },
+    "caption_width_class": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "letter width",
+      "mode": "wide",
+      "share": 1.0,
+      "counts": {
+        "wide": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "wide",
+        "the-ancient-jar-that-warned-an-empire-53119a": "wide",
+        "the-difference-between-rich-and-poor-503075": "wide",
+        "the-instinct-that-makes-you-crash-5e5256": "wide",
+        "the-job-nobody-wants-in-japan-3769b4": "wide",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "wide",
+        "why-astronauts-cant-flush-in-space-2bb775": "wide",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "wide"
+      }
+    },
+    "caption_animation": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption onset animation",
+      "mode": "none",
+      "share": 1.0,
+      "counts": {
+        "none": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "none",
+        "the-ancient-jar-that-warned-an-empire-53119a": "none",
+        "the-difference-between-rich-and-poor-503075": "none",
+        "the-instinct-that-makes-you-crash-5e5256": "none",
+        "the-job-nobody-wants-in-japan-3769b4": "none",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "none",
+        "why-astronauts-cant-flush-in-space-2bb775": "none",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "none"
+      }
+    },
+    "music_likely": {
+      "kind": "categorical",
+      "section": "Music characteristics",
+      "label": "music bed under narration",
+      "mode": "True",
+      "share": 1.0,
+      "counts": {
+        "True": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": true,
+        "the-ancient-jar-that-warned-an-empire-53119a": true,
+        "the-difference-between-rich-and-poor-503075": true,
+        "the-instinct-that-makes-you-crash-5e5256": true,
+        "the-job-nobody-wants-in-japan-3769b4": true,
+        "the-window-that-breaks-japans-gambling-l-544d9a": true,
+        "why-astronauts-cant-flush-in-space-2bb775": true,
+        "why-samurai-feared-the-flying-thunder-04b3cc": true
+      }
+    },
+    "ending_cta": {
+      "kind": "categorical",
+      "section": "Ending patterns",
+      "label": "ends with a call to action",
+      "mode": "False",
+      "share": 1.0,
+      "counts": {
+        "False": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": false,
+        "the-ancient-jar-that-warned-an-empire-53119a": false,
+        "the-difference-between-rich-and-poor-503075": false,
+        "the-instinct-that-makes-you-crash-5e5256": false,
+        "the-job-nobody-wants-in-japan-3769b4": false,
+        "the-window-that-breaks-japans-gambling-l-544d9a": false,
+        "why-astronauts-cant-flush-in-space-2bb775": false,
+        "why-samurai-feared-the-flying-thunder-04b3cc": false
+      }
+    },
+    "footage_type": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "footage type (reviewed)",
+      "mode": "original 3D cartoon animation",
+      "share": 1.0,
+      "counts": {
+        "original 3D cartoon animation": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "original 3D cartoon animation",
+        "the-ancient-jar-that-warned-an-empire-53119a": "original 3D cartoon animation",
+        "the-difference-between-rich-and-poor-503075": "original 3D cartoon animation",
+        "the-instinct-that-makes-you-crash-5e5256": "original 3D cartoon animation",
+        "the-job-nobody-wants-in-japan-3769b4": "original 3D cartoon animation",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "original 3D cartoon animation",
+        "why-astronauts-cant-flush-in-space-2bb775": "original 3D cartoon animation",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "original 3D cartoon animation"
+      }
+    },
+    "hook_style": {
+      "kind": "categorical",
+      "section": "Hook patterns",
+      "label": "hook style (reviewed)",
+      "mode": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+      "share": 0.125,
+      "counts": {
+        "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro": 1
+      },
+      "n": 1,
+      "of": 8,
+      "status": "uncertain",
+      "values": {
+        "how-mine-salting-worked-98449a": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro"
+      }
+    },
+    "ending_style": {
+      "kind": "categorical",
+      "section": "Ending patterns",
+      "label": "ending style (reviewed)",
+      "mode": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)",
+      "share": 0.125,
+      "counts": {
+        "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)": 1
+      },
+      "n": 1,
+      "of": 8,
+      "status": "uncertain",
+      "values": {
+        "how-mine-salting-worked-98449a": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
+      }
+    },
+    "caption_case": {
+      "kind": "categorical",
+      "section": "Subtitle design",
+      "label": "caption letter case (reviewed)",
+      "mode": "sentence case",
+      "share": 1.0,
+      "counts": {
+        "sentence case": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "sentence case",
+        "the-ancient-jar-that-warned-an-empire-53119a": "sentence case",
+        "the-difference-between-rich-and-poor-503075": "sentence case",
+        "the-instinct-that-makes-you-crash-5e5256": "sentence case",
+        "the-job-nobody-wants-in-japan-3769b4": "sentence case",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "sentence case",
+        "why-astronauts-cant-flush-in-space-2bb775": "sentence case",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "sentence case"
+      }
+    },
+    "overlay_graphics": {
+      "kind": "categorical",
+      "section": "Visual composition",
+      "label": "overlay graphics (reviewed)",
+      "mode": "none (text lives inside the scene)",
+      "share": 1.0,
+      "counts": {
+        "none (text lives inside the scene)": 8
+      },
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "values": {
+        "how-mine-salting-worked-98449a": "none (text lives inside the scene)",
+        "the-ancient-jar-that-warned-an-empire-53119a": "none (text lives inside the scene)",
+        "the-difference-between-rich-and-poor-503075": "none (text lives inside the scene)",
+        "the-instinct-that-makes-you-crash-5e5256": "none (text lives inside the scene)",
+        "the-job-nobody-wants-in-japan-3769b4": "none (text lives inside the scene)",
+        "the-window-that-breaks-japans-gambling-l-544d9a": "none (text lives inside the scene)",
+        "why-astronauts-cant-flush-in-space-2bb775": "none (text lives inside the scene)",
+        "why-samurai-feared-the-flying-thunder-04b3cc": "none (text lives inside the scene)"
+      }
+    },
+    "hook_features:narrative opener (he/she did...)": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses narrative opener (he/she did...)",
+      "share": 0.375,
+      "n": 3,
+      "of": 8,
+      "status": "occasional",
+      "videos": [
+        "how-mine-salting-worked-98449a",
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ]
+    },
+    "hook_features:superlative/extreme claim": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses superlative/extreme claim",
+      "share": 0.25,
+      "n": 2,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "why-astronauts-cant-flush-in-space-2bb775"
+      ]
+    },
+    "hook_features:contradiction (but/yet)": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses contradiction (but/yet)",
+      "share": 0.25,
+      "n": 2,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075",
+        "the-window-that-breaks-japans-gambling-l-544d9a"
+      ]
+    },
+    "hook_features:curiosity gap": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses curiosity gap",
+      "share": 0.125,
+      "n": 1,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ]
+    },
+    "hook_features:question": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses question",
+      "share": 0.125,
+      "n": 1,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ]
+    },
+    "hook_features:direct address (you)": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses direct address (you)",
+      "share": 0.25,
+      "n": 2,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-instinct-that-makes-you-crash-5e5256",
+        "why-astronauts-cant-flush-in-space-2bb775"
+      ]
+    },
+    "hook_features:conditional consequence (if you...)": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses conditional consequence (if you...)",
+      "share": 0.25,
+      "n": 2,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-instinct-that-makes-you-crash-5e5256",
+        "why-astronauts-cant-flush-in-space-2bb775"
+      ]
+    },
+    "hook_features:contrarian/negation": {
+      "kind": "presence",
+      "section": "Hook patterns",
+      "label": "hook uses contrarian/negation",
+      "share": 0.25,
+      "n": 2,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-job-nobody-wants-in-japan-3769b4",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ]
+    },
+    "ending_types:abrupt end right after last word": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending abrupt end right after last word",
+      "share": 0.375,
+      "n": 3,
+      "of": 8,
+      "status": "occasional",
+      "videos": [
+        "how-mine-salting-worked-98449a",
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-window-that-breaks-japans-gambling-l-544d9a"
+      ]
+    },
+    "ending_types:reveal/twist": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending reveal/twist",
+      "share": 0.125,
+      "n": 1,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a"
+      ]
+    },
+    "ending_types:loops back to the opening": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending loops back to the opening",
+      "share": 0.125,
+      "n": 1,
+      "of": 8,
+      "status": "uncertain",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ]
+    },
+    "ending_types:statement/conclusion": {
+      "kind": "presence",
+      "section": "Ending patterns",
+      "label": "ending statement/conclusion",
+      "share": 0.5,
+      "n": 4,
+      "of": 8,
+      "status": "occasional",
+      "videos": [
+        "the-instinct-that-makes-you-crash-5e5256",
+        "the-job-nobody-wants-in-japan-3769b4",
+        "why-astronauts-cant-flush-in-space-2bb775",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ]
+    },
+    "transitions_present:cut": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses cut",
+      "share": 1.0,
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "videos": [
+        "how-mine-salting-worked-98449a",
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-instinct-that-makes-you-crash-5e5256",
+        "the-job-nobody-wants-in-japan-3769b4",
+        "the-window-that-breaks-japans-gambling-l-544d9a",
+        "why-astronauts-cant-flush-in-space-2bb775",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ]
+    },
+    "transitions_present:dissolve": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses dissolve",
+      "share": 1.0,
+      "n": 8,
+      "of": 8,
+      "status": "frequent",
+      "videos": [
+        "how-mine-salting-worked-98449a",
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-instinct-that-makes-you-crash-5e5256",
+        "the-job-nobody-wants-in-japan-3769b4",
+        "the-window-that-breaks-japans-gambling-l-544d9a",
+        "why-astronauts-cant-flush-in-space-2bb775",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ]
+    },
+    "transitions_present:whip_or_blur": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses whip or blur",
+      "share": 0.625,
+      "n": 5,
+      "of": 8,
+      "status": "occasional",
+      "videos": [
+        "how-mine-salting-worked-98449a",
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-job-nobody-wants-in-japan-3769b4",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ]
+    },
+    "transitions_present:zoom_transition": {
+      "kind": "presence",
+      "section": "Transitions",
+      "label": "uses zoom transition",
+      "share": 0.5,
+      "n": 4,
+      "of": 8,
+      "status": "occasional",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-job-nobody-wants-in-japan-3769b4",
+        "the-window-that-breaks-japans-gambling-l-544d9a",
+        "why-astronauts-cant-flush-in-space-2bb775"
+      ]
+    }
+  },
+  "production": {
+    "editing.target_shot_seconds": {
+      "value": 2.56,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "shot_len_median"
+      ],
+      "confidence": 0.8
+    },
+    "editing.motion_mix": {
+      "value": {
+        "zoom_in": 0.581,
+        "zoom_out": 0.239,
+        "pan_left": 0.043,
+        "pan_right": 0.078,
+        "pan_up": 0.023,
+        "pan_down": 0.005,
+        "static": 0.03
+      },
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "motion_share_zoom_in",
+        "motion_share_zoom_out",
+        "motion_share_pan_left",
+        "motion_share_pan_right",
+        "motion_share_pan_up",
+        "motion_share_pan_down",
+        "motion_share_static"
+      ],
+      "confidence": 0.6
+    },
+    "editing.motion_intensity": {
+      "value": 0.3,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "zoom_rate_median",
+        "shot_len_median"
+      ],
+      "confidence": 0.68
+    },
+    "editing.shake_amount": {
+      "value": 0.0,
+      "status": "occasional",
+      "n_videos": 8,
+      "source": [
+        "shake_share"
+      ],
+      "confidence": 0.45
+    },
+    "transitions.mix": {
+      "value": {
+        "cut": 0.686,
+        "crossfade": 0.226,
+        "flash": 0.0,
+        "dip_black": 0.0,
+        "whip": 0.042,
+        "zoom": 0.045
+      },
+      "status": "occasional",
+      "n_videos": 8,
+      "source": [
+        "transition_share_cut",
+        "transition_share_dissolve",
+        "transition_share_flash",
+        "transition_share_dip_black",
+        "transition_share_whip_or_blur",
+        "transition_share_zoom_transition"
+      ],
+      "confidence": 0.53
+    },
+    "captions.position_y": {
+      "value": 0.705,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_y"
+      ],
+      "confidence": 0.85
+    },
+    "captions.max_words": {
+      "value": 2,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_words_p80"
+      ],
+      "confidence": 0.81
+    },
+    "captions.uppercase": {
+      "value": false,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_caps_share"
+      ],
+      "confidence": 0.5
+    },
+    "captions.outline_width": {
+      "value": 8,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_outline_frac",
+        "caption_outline_share"
+      ],
+      "confidence": 0.72
+    },
+    "captions.primary_color": {
+      "value": "#FFFFFF",
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_fill_color"
+      ],
+      "confidence": 0.5
+    },
+    "captions.highlight_mode": {
+      "value": "emphasis",
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_highlight_share"
+      ],
+      "confidence": 0.85,
+      "note": "11% of reference captions contain a coloured word"
+    },
+    "captions.highlight_color": {
+      "value": "#DA9434",
+      "status": "uncertain",
+      "n_videos": 3,
+      "source": [
+        "caption_highlight_color"
+      ],
+      "confidence": 0.5
+    },
+    "captions.shadow": {
+      "value": 3,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_shadow"
+      ],
+      "confidence": 0.5
+    },
+    "captions.animation": {
+      "value": "none",
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_animation"
+      ],
+      "confidence": 0.5
+    },
+    "captions.font": {
+      "value": "Poppins ExtraBold",
+      "status": "occasional",
+      "n_videos": 8,
+      "source": [
+        "caption_stroke_ratio",
+        "caption_char_aspect"
+      ],
+      "confidence": 0.45,
+      "note": "closest bundled font by measured weight/width - not an identification of the reference font"
+    },
+    "captions.font_file": {
+      "value": "Poppins-ExtraBold.ttf",
+      "status": "occasional",
+      "n_videos": 8,
+      "source": [
+        "caption_stroke_ratio",
+        "caption_char_aspect"
+      ],
+      "confidence": 0.45,
+      "note": "closest bundled font by measured weight/width - not an identification of the reference font"
+    },
+    "captions.font_size": {
+      "value": 131,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "caption_text_h",
+        "caption_caps_share"
+      ],
+      "confidence": 0.64,
+      "note": "letter height matched for Poppins-Black.ttf (lower case)"
+    },
+    "color.target_saturation": {
+      "value": 0.427,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "saturation"
+      ],
+      "confidence": 0.7
+    },
+    "color.target_contrast": {
+      "value": 0.2,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "contrast"
+      ],
+      "confidence": 0.7
+    },
+    "color.vignette": {
+      "value": 0.0,
+      "status": "occasional",
+      "n_videos": 8,
+      "source": [
+        "vignette_likely"
+      ],
+      "confidence": 0.5
+    },
+    "audio.target_lufs": {
+      "value": -14.1,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "lufs"
+      ],
+      "confidence": 0.95
+    },
+    "audio.music_enabled": {
+      "value": true,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "music_likely"
+      ],
+      "confidence": 0.5
+    },
+    "audio.music_db_below_voice": {
+      "value": 9.2,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "bed_below_speech_db"
+      ],
+      "confidence": 0.6
+    },
+    "audio.sfx_on_cuts_prob": {
+      "value": 0.31,
+      "status": "occasional",
+      "n_videos": 8,
+      "source": [
+        "cuts_with_sfx_share"
+      ],
+      "confidence": 0.35
+    },
+    "voice.target_wpm": {
+      "value": 244,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "wpm"
+      ],
+      "confidence": 0.85
+    },
+    "voice.sentence_pause_s": {
+      "value": 0.23,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "pause_median"
+      ],
+      "confidence": 0.85
+    },
+    "story.hook_max_seconds": {
+      "value": 4.7,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "hook_duration"
+      ],
+      "confidence": 0.7
+    },
+    "story.target_duration_s": {
+      "value": 61,
+      "status": "frequent",
+      "n_videos": 8,
+      "source": [
+        "duration"
+      ],
+      "confidence": 1.0
+    }
+  },
+  "differences": [
+    "cuts per second in the first 3 s: cuts per second in the first 3 s: 0.33/s (0.00/s-0.67/s, varies; 8 video(s), conf 0.8)",
+    "2nd-half / 1st-half shot length: 2nd-half / 1st-half shot length: 0.90 (0.37-1.35, varies; 8 video(s), conf 0.64)",
+    "hard cuts: hard cuts: 74% (29%-89%, varies; 8 video(s), conf 0.7)",
+    "dissolves: dissolves: 19% (7%-54%, varies; 8 video(s), conf 0.5)",
+    "brightness (L): brightness (L): 0.43 (0.24-0.64, varies; 8 video(s), conf 0.7)",
+    "warmth (Lab b*): warmth (Lab b*): +1.2 (-11.5-+21.5, varies; 8 video(s), conf 0.6)"
+  ],
+  "reviewed_notes": [
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: a Wild-West gold mine, a top-hatted swindler, miners and investors.",
+      "confidence": "high",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Macro close-ups on the key detail (gold nugget in gravel, gold pan) alternate with medium character shots.",
+      "confidence": "medium",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Text appears inside the scene (mine entrance sign 'SURE THING MINE'), no overlay graphics.",
+      "confidence": "medium",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Warm amber lantern lighting throughout; a dust cloud fills the frame at the climax.",
+      "confidence": "medium",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Explains a historical scam step by step and ends on the reveal of how the trick worked.",
+      "confidence": "medium",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Hook patterns",
+      "description": "Hook is a single concrete paradox stated immediately: \"He loaded the shotgun with gold and fired it into the walls of the mine.\"",
+      "confidence": "high",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Ending patterns",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"And when the dust clears, there's a vein of real gold as thick as your arm, 10 feet past where the last guy gave up.\"",
+      "confidence": "high",
+      "video": "how-mine-salting-worked-98449a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: medieval palace, army, city gate; key prop (bronze dragon jar with frogs) recurs throughout.",
+      "confidence": "high",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Close-up inserts on the key prop (dragon mouth, frog) alternate with wide establishing shots (palace hall, army, city).",
+      "confidence": "medium",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Time-of-day lighting tells the story: warm sunset, blue moonlit night, orange dust cloud for the earthquake.",
+      "confidence": "medium",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Historical mystery told as a mini-story; the final sentence is the reveal (the earthquake) and the video ends right after it.",
+      "confidence": "medium",
+      "video": "the-ancient-jar-that-warned-an-empire-53119a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style; an economics explainer told through a metaphor (eggs and chickens) with diagrams drawn inside the scene (chalkboard '2 = egg').",
+      "confidence": "high",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Transitions",
+      "description": "Visible dissolves between scenes (ghosted double images) and heavy horizontal motion blur on fast camera moves.",
+      "confidence": "high",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Story text appears as in-scene signs ('UNFAIR!', 'BOO!', 'WE WANT EGGS') rather than overlay graphics.",
+      "confidence": "medium",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Question hook, metaphor-driven explanation, and an ending that loops back to the three groups named at the start.",
+      "confidence": "medium",
+      "video": "the-difference-between-rich-and-poor-503075"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: country road, sheriff, cars and a roadside tree stump.",
+      "confidence": "high",
+      "video": "the-instinct-that-makes-you-crash-5e5256"
+    },
+    {
+      "section": "Visual composition",
+      "description": "The key concept is named inside the world on a highway sign ('TARGET FIXATION') instead of an overlay title.",
+      "confidence": "high",
+      "video": "the-instinct-that-makes-you-crash-5e5256"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Driver point-of-view sequence through the windscreen for the explanation part.",
+      "confidence": "medium",
+      "video": "the-instinct-that-makes-you-crash-5e5256"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Sunny daylight for the setup, dark stormy night lighting for the climax.",
+      "confidence": "medium",
+      "video": "the-instinct-that-makes-you-crash-5e5256"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "video": "the-instinct-that-makes-you-crash-5e5256"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Ironic ending: the character who mocked the crashes hits the same stump.",
+      "confidence": "medium",
+      "video": "the-instinct-that-makes-you-crash-5e5256"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation, not stock footage: recurring round-headed characters with dot eyes and thin limbs in detailed isometric office sets.",
+      "confidence": "high",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Virtual 3D camera moves: push-ins, top-down and low angles, face close-ups; perspective changes rather than flat 2D zooms.",
+      "confidence": "medium",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept (e.g. 'Wait,', 'paradise.'); white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. No boxes, no emoji.",
+      "confidence": "high",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Font category: heavy geometric/rounded sans-serif (Poppins/Montserrat-like category). The exact font cannot be identified from the frames.",
+      "confidence": "low",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Visual composition",
+      "description": "No overlay graphics, stickers or progress bar; text appears inside the scene (door sign, calendar, FIRE button).",
+      "confidence": "medium",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Transitions",
+      "description": "Calendar-page overlay with a crossfade signals time passing.",
+      "confidence": "medium",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Bright, saturated cartoon palette (blues/greens); a night skyline marks a time jump.",
+      "confidence": "medium",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Hook states a paradox in one sentence, then escalates with concrete consequences; narration runs continuously over constant visual changes.",
+      "confidence": "medium",
+      "video": "the-job-nobody-wants-in-japan-3769b4"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: neon night streets in Japan, a pachinko hall and a prize counter.",
+      "confidence": "high",
+      "video": "the-window-that-breaks-japans-gambling-l-544d9a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Information carried by in-scene signs ('PRIZE HALL', 'PRIZE COUNTER', 'THANK YOU', a 'GAMBLING: NONE' checklist).",
+      "confidence": "high",
+      "video": "the-window-that-breaks-japans-gambling-l-544d9a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Neon purple/blue night palette with warm interior light.",
+      "confidence": "medium",
+      "video": "the-window-that-breaks-japans-gambling-l-544d9a"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "video": "the-window-that-breaks-japans-gambling-l-544d9a"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Explains a legal loophole and ends on an ironic image (police checklist: gambling none).",
+      "confidence": "medium",
+      "video": "the-window-that-breaks-japans-gambling-l-544d9a"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: spaceship interior, crew, mission control and exterior space shots.",
+      "confidence": "high",
+      "video": "why-astronauts-cant-flush-in-space-2bb775"
+    },
+    {
+      "section": "Visual composition",
+      "description": "On-screen information appears on props in the scene ('OFF COURSE' console, phone showing 'No GPS Signal', 'NO FLUSHING TONIGHT' sign).",
+      "confidence": "high",
+      "video": "why-astronauts-cant-flush-in-space-2bb775"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Interior character shots alternate with wide exterior shots of the ship among stars.",
+      "confidence": "medium",
+      "video": "why-astronauts-cant-flush-in-space-2bb775"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "video": "why-astronauts-cant-flush-in-space-2bb775"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Ends on a calm payoff line about navigating home by the stars.",
+      "confidence": "medium",
+      "video": "why-astronauts-cant-flush-in-space-2bb775"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Original 3D cartoon animation in the same character style: a moonlit samurai camp, soldiers, a commander and a rolling bomb.",
+      "confidence": "high",
+      "video": "why-samurai-feared-the-flying-thunder-04b3cc"
+    },
+    {
+      "section": "Camera movement",
+      "description": "Some very long continuous shots (10-13 s) with camera movement, unusual compared with the other references.",
+      "confidence": "medium",
+      "video": "why-samurai-feared-the-flying-thunder-04b3cc"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Time passing shown with an in-scene prop (a burning fuse coil) rather than an overlay.",
+      "confidence": "medium",
+      "video": "why-samurai-feared-the-flying-thunder-04b3cc"
+    },
+    {
+      "section": "Visual composition",
+      "description": "Blue moonlit night palette; the climax is a full-frame explosion.",
+      "confidence": "medium",
+      "video": "why-samurai-feared-the-flying-thunder-04b3cc"
+    },
+    {
+      "section": "Subtitle design",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "video": "why-samurai-feared-the-flying-thunder-04b3cc"
+    },
+    {
+      "section": "Storytelling structure",
+      "description": "Builds tension around one object and ends on the explosion as the payoff.",
+      "confidence": "medium",
+      "video": "why-samurai-feared-the-flying-thunder-04b3cc"
+    }
+  ],
+  "content_hash": "73233aab6ca7f868"
+}

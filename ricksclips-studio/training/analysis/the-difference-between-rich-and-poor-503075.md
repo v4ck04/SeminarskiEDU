@@ -199,7 +199,7 @@ Each line: timestamp - description - confidence - evidence source.
 
 ### Story
 
-- `0:00.00-0:03.06` hook (3.1s, 12 words): "Why do the rich keep getting richer while the poor get poorer?" - question, curiosity gap - **medium** _(transcript + text rules)_
+- `0:00.00-0:03.06` hook (3.1s, 12 words): "Why do the rich keep getting richer while the poor get poorer?" - question, curiosity gap, contradiction (but/yet) - **medium** _(transcript + text rules)_
 - `whole video` ending: "The poor, the middle class, and the rich." - loops back to the opening - **medium** _(transcript + text rules)_
 - `whole video` pace by thirds (words/s | cuts/s): 3.11|0.2 -> 3.73|0.25 -> 3.56|0.41 - **medium** _(transcript + shot detection)_
 - `whole video` Question hook, metaphor-driven explanation, and an ending that loops back to the three groups named at the start. - **medium** _(reviewer notes: transcript hook and ending)_
@@ -211,6 +211,14 @@ Each line: timestamp - description - confidence - evidence source.
 ### Overlays
 
 - `whole video` Story text appears as in-scene signs ('UNFAIR!', 'BOO!', 'WE WANT EGGS') rather than overlay graphics. - **medium** _(reviewer notes: contact_shots.jpg #14, #17, #18)_
+
+### Hook
+
+- `0:00.00-0:03.06` Hook is a single concrete paradox stated immediately: "Why do the rich keep getting richer while the poor get poorer?" - **high** _(reviewer notes: transcript, first sentence)_
+
+### Ending
+
+- `whole video` Ends on a concrete payoff that resolves the hook, no call to action: "The poor, the middle class, and the rich." - **high** _(reviewer notes: transcript, last sentence)_
 
 ## Shot list
 

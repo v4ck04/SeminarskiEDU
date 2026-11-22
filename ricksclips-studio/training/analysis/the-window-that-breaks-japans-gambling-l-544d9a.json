@@ -4048,7 +4048,9 @@
       "end": 4.24,
       "duration": 4.24,
       "words": 14,
-      "features": [],
+      "features": [
+        "contradiction (but/yet)"
+      ],
       "time_to_first_word": 0.0
     },
     "ending": {
@@ -4336,11 +4338,18 @@
     "caption_width_class": "wide",
     "caption_animation": "none",
     "music_likely": true,
-    "hook_features": [],
+    "hook_features": [
+      "contradiction (but/yet)"
+    ],
     "ending_types": [
       "abrupt end right after last word"
     ],
-    "ending_cta": false
+    "ending_cta": false,
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
   "observations": [
     {
@@ -5185,7 +5194,7 @@
     {
       "category": "story",
       "feature": "hook",
-      "description": "hook (4.2s, 14 words): \"Gambling is illegal in Japan, yet there's a gambling hall on almost every street.\" - plain statement",
+      "description": "hook (4.2s, 14 words): \"Gambling is illegal in Japan, yet there's a gambling hall on almost every street.\" - contradiction (but/yet)",
       "timestamp": [
         0.0,
         4.24
@@ -5224,6 +5233,79 @@
       "confidence": "medium",
       "confidence_score": 0.6,
       "evidence": "transcript + shot detection"
+    },
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "description": "Original 3D cartoon animation in the same character style: neon night streets in Japan, a pachinko hall and a prize counter.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg, all 13 shots"
+    },
+    {
+      "category": "overlays",
+      "feature": "review",
+      "description": "Information carried by in-scene signs ('PRIZE HALL', 'PRIZE COUNTER', 'THANK YOU', a 'GAMBLING: NONE' checklist).",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg #5, #7, #8, #12"
+    },
+    {
+      "category": "color",
+      "feature": "review",
+      "description": "Neon purple/blue night palette with warm interior light.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: contact_shots.jpg"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "feature": "review",
+      "description": "Explains a legal loophole and ends on an ironic image (police checklist: gambling none).",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: contact_shots.jpg #12"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"Gambling is illegal in Japan, yet there's a gambling hall on almost every street.\"",
+      "timestamp": [
+        0.0,
+        4.24
+      ],
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, first sentence"
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"He slides the tokens through, a hand slides over cash, and on paper, nobody gambles.\"",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, last sentence"
     }
   ],
   "comparison": {

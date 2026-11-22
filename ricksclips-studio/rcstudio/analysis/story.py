@@ -16,6 +16,8 @@ SUPERLATIVE = re.compile(r"\b(most|biggest|largest|smallest|fastest|oldest|stran
 CURIOSITY = re.compile(r"\b(secret|mystery|mysterious|why|how|what happens|nobody|no one|hidden|truth|actually|turns out|unknown|strange|weird)\b", re.I)
 CONTRARIAN = re.compile(r"\b(isn't|wasn't|aren't|don't|doesn't|myth|wrong|lie|actually|but)\b", re.I)
 IMPERATIVE = re.compile(r"^(imagine|look|watch|stop|listen|think|picture|meet|this is|here's|wait)\b", re.I)
+CONDITIONAL = re.compile(r"^if (you|we|they|someone)\b", re.I)
+NARRATIVE = re.compile(r"^(he|she|they|someone|one man|a man|a woman)\s+(\w+ed|put|took|made|built|told|found|gave|sent|left|threw|hid|sold|bought|rolled|loaded)\b", re.I)
 SECOND_PERSON = re.compile(r"\b(you|your|you're)\b", re.I)
 CTA = re.compile(r"\b(follow|subscribe|like|comment|share|part \d|part two|let me know|link)\b", re.I)
 REVEAL = re.compile(r"\b(but|turns out|actually|in fact|the answer|the truth|the reason|that's why|which means|meant|means|was really|it was)\b", re.I)
@@ -39,6 +41,12 @@ def hook_features(text: str) -> list[str]:
         feats.append("contrarian/negation")
     if IMPERATIVE.search(text.strip()):
         feats.append("imperative/scene-setting opener")
+    if CONDITIONAL.search(text.strip()):
+        feats.append("conditional consequence (if you...)")
+    if NARRATIVE.search(text.strip()):
+        feats.append("narrative opener (he/she did...)")
+    if re.search(r"\b(but|yet|while)\b", text, re.I) and "contrarian/negation" not in feats:
+        feats.append("contradiction (but/yet)")
     return feats
 
 

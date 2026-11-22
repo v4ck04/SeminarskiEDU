@@ -1,0 +1,69 @@
+{
+  "observations": [
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "confidence": "high",
+      "description": "Original 3D cartoon animation in the same character style: country road, sheriff, cars and a roadside tree stump.",
+      "evidence": "contact_shots.jpg, all 20 shots"
+    },
+    {
+      "category": "overlays",
+      "description": "The key concept is named inside the world on a highway sign ('TARGET FIXATION') instead of an overlay title.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg #13",
+      "timestamp": 44.6
+    },
+    {
+      "category": "motion",
+      "description": "Driver point-of-view sequence through the windscreen for the explanation part.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #13-#18"
+    },
+    {
+      "category": "color",
+      "description": "Sunny daylight for the setup, dark stormy night lighting for the climax.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #0-#12 vs #13-#19"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "description": "Ironic ending: the character who mocked the crashes hits the same stump.",
+      "confidence": "medium",
+      "evidence": "transcript ending + contact_shots.jpg #19"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"If you plant a tree beside an empty road, cars will steer right into it.\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        4.08
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"Even when it's just a stump.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
+    }
+  ],
+  "categorical": {
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
+  },
+  "updated_at": "2026-11-22T09:35:52+00:00"
+}

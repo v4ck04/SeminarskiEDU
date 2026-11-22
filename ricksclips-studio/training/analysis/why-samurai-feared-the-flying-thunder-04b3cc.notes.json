@@ -1,0 +1,68 @@
+{
+  "observations": [
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "confidence": "high",
+      "description": "Original 3D cartoon animation in the same character style: a moonlit samurai camp, soldiers, a commander and a rolling bomb.",
+      "evidence": "contact_shots.jpg, all 15 shots"
+    },
+    {
+      "category": "motion",
+      "description": "Some very long continuous shots (10-13 s) with camera movement, unusual compared with the other references.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #1, #5, #9"
+    },
+    {
+      "category": "overlays",
+      "description": "Time passing shown with an in-scene prop (a burning fuse coil) rather than an overlay.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #10"
+    },
+    {
+      "category": "color",
+      "description": "Blue moonlit night palette; the climax is a full-frame explosion.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #13, #14"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "description": "Builds tension around one object and ends on the explosion as the payoff.",
+      "confidence": "medium",
+      "evidence": "transcript ending + contact_shots.jpg #13-#14"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"He rolled the bomb into the enemy camp, but made sure it wouldn't go off.\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        3.74
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"And right as the biggest guy in camp lifts a hammer over his head, it finally reaches the powder.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
+    }
+  ],
+  "categorical": {
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
+  },
+  "updated_at": "2026-11-22T09:35:54+00:00"
+}

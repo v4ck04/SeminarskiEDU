@@ -208,7 +208,7 @@ Each line: timestamp - description - confidence - evidence source.
 
 ### Story
 
-- `0:00.00-0:04.98` hook (5.0s, 19 words): "He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!" - superlative/extreme claim - **medium** _(transcript + text rules)_
+- `0:00.00-0:04.98` hook (5.0s, 19 words): "He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!" - superlative/extreme claim, narrative opener (he/she did...) - **medium** _(transcript + text rules)_
 - `whole video` ending: "All eight meant the biggest earthquake the empire had ever seen was right underneath them." - reveal/twist, abrupt end right after last word - **medium** _(transcript + text rules)_
 - `whole video` pace by thirds (words/s | cuts/s): 3.7|0.37 -> 3.51|0.46 -> 3.65|0.28 - **medium** _(transcript + shot detection)_
 - `whole video` Historical mystery told as a mini-story; the final sentence is the reveal (the earthquake) and the video ends right after it. - **medium** _(reviewer notes: transcript ending)_
@@ -220,6 +220,14 @@ Each line: timestamp - description - confidence - evidence source.
 ### Motion
 
 - `whole video` Close-up inserts on the key prop (dragon mouth, frog) alternate with wide establishing shots (palace hall, army, city). - **medium** _(reviewer notes: contact_shots.jpg #1, #7, #8, #22)_
+
+### Hook
+
+- `0:00.00-0:04.98` Hook is a single concrete paradox stated immediately: "He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!" - **high** _(reviewer notes: transcript, first sentence)_
+
+### Ending
+
+- `whole video` Ends on a concrete payoff that resolves the hook, no call to action: "All eight meant the biggest earthquake the empire had ever seen was right underneath them." - **high** _(reviewer notes: transcript, last sentence)_
 
 ## Shot list
 

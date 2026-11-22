@@ -125,6 +125,7 @@ Each line: timestamp - description - confidence - evidence source.
 - `whole video` corners consistently darker than centre (vignette likely) - **low** _(opencv:corner/centre luminance)_
 - `whole video` look varies between shots (mixed sources / no unified grade) - **medium** _(opencv:per-shot Lab/HSV)_
 - `whole video` dominant colours: #221F3F (32%), #9A7162 (19%), #484272 (17%), #5E2E23 (16%), #D8B9A0 (16%) - **medium** _(opencv:k-means)_
+- `whole video` Neon purple/blue night palette with warm interior light. - **medium** _(reviewer notes: contact_shots.jpg)_
 
 ### Composition
 
@@ -145,6 +146,7 @@ Each line: timestamp - description - confidence - evidence source.
 - `whole video` heavy/black weight, wide letter width (stroke/height 0.32, width/height 0.88). Exact font family not identifiable from pixels. - **low** _(opencv:stroke width)_
 - `whole video` caption onset animation: scale down in 2%, scale in 1% - **low** _(opencv:caption onset tracking (10 fps))_
 - `whole video` 92% of captions contain spoken words at the same time (captions follow the narration) - **medium** _(caption-detector + transcript)_
+- `whole video` Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. - **high** _(reviewer notes: contact_shots.jpg, all shots)_
 
 ### Audio
 
@@ -182,9 +184,26 @@ Each line: timestamp - description - confidence - evidence source.
 
 ### Story
 
-- `0:00.00-0:04.24` hook (4.2s, 14 words): "Gambling is illegal in Japan, yet there's a gambling hall on almost every street." - plain statement - **medium** _(transcript + text rules)_
+- `0:00.00-0:04.24` hook (4.2s, 14 words): "Gambling is illegal in Japan, yet there's a gambling hall on almost every street." - contradiction (but/yet) - **medium** _(transcript + text rules)_
 - `whole video` ending: "He slides the tokens through, a hand slides over cash, and on paper, nobody gambles." - abrupt end right after last word - **medium** _(transcript + text rules)_
 - `whole video` pace by thirds (words/s | cuts/s): 3.19|0.4 -> 3.99|0.2 -> 3.52|0.2 - **medium** _(transcript + shot detection)_
+- `whole video` Explains a legal loophole and ends on an ironic image (police checklist: gambling none). - **medium** _(reviewer notes: contact_shots.jpg #12)_
+
+### Footage
+
+- `whole video` Original 3D cartoon animation in the same character style: neon night streets in Japan, a pachinko hall and a prize counter. - **high** _(reviewer notes: contact_shots.jpg, all 13 shots)_
+
+### Overlays
+
+- `whole video` Information carried by in-scene signs ('PRIZE HALL', 'PRIZE COUNTER', 'THANK YOU', a 'GAMBLING: NONE' checklist). - **high** _(reviewer notes: contact_shots.jpg #5, #7, #8, #12)_
+
+### Hook
+
+- `0:00.00-0:04.24` Hook is a single concrete paradox stated immediately: "Gambling is illegal in Japan, yet there's a gambling hall on almost every street." - **high** _(reviewer notes: transcript, first sentence)_
+
+### Ending
+
+- `whole video` Ends on a concrete payoff that resolves the hook, no call to action: "He slides the tokens through, a hand slides over cash, and on paper, nobody gambles." - **high** _(reviewer notes: transcript, last sentence)_
 
 ## Shot list
 

@@ -38,12 +38,32 @@
       "description": "Historical mystery told as a mini-story; the final sentence is the reveal (the earthquake) and the video ends right after it.",
       "confidence": "medium",
       "evidence": "transcript ending"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        4.98
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"All eight meant the biggest earthquake the empire had ever seen was right underneath them.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
     }
   ],
   "categorical": {
     "footage_type": "original 3D cartoon animation",
     "caption_case": "sentence case",
-    "overlay_graphics": "none (text lives inside the scene)"
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
-  "updated_at": "2026-11-21T22:28:00+00:00"
+  "updated_at": "2026-11-22T09:35:52+00:00"
 }

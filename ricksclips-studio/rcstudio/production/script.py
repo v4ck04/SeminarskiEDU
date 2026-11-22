@@ -312,8 +312,13 @@ def style_brief(settings: dict) -> str:
         lines.append(f"Reference sentences average {feats['words_per_sentence']['median']:.0f} words.")
     if "cuts_per_sentence" in feats:
         lines.append(f"About {feats['cuts_per_sentence']['median']:.1f} visual cuts per sentence - plan extra_shots for long beats.")
-    reviewed = {k: f for k, f in feats.items() if k in ("footage_type", "overlay_graphics", "caption_case")
+    reviewed = {k: f for k, f in feats.items() if k in ("footage_type", "overlay_graphics", "caption_case",
+                                                         "hook_style", "ending_style")
                 and f.get("status") == "frequent"}
+    if "hook_style" in reviewed:
+        lines.append(f"Reference hook style (reviewed in every reference): {reviewed['hook_style']['mode']}.")
+    if "ending_style" in reviewed:
+        lines.append(f"Reference ending style (reviewed in every reference): {reviewed['ending_style']['mode']}.")
     if "footage_type" in reviewed:
         lines.append(f"Reference visuals are {reviewed['footage_type']['mode']}. This pipeline cannot animate characters: "
                      "plan visuals that read well as stills with camera motion (AI illustrations in an original style, "

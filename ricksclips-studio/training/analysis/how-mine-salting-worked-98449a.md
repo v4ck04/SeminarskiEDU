@@ -137,6 +137,7 @@ Each line: timestamp - description - confidence - evidence source.
 - `whole video` brightness L 0.43, contrast 0.20, saturation 0.55, warm temperature (b* +21.5) - **medium** _(opencv:Lab/HSV stats)_
 - `whole video` look varies between shots (mixed sources / no unified grade) - **medium** _(opencv:per-shot Lab/HSV)_
 - `whole video` dominant colours: #67412B (30%), #916547 (24%), #B8906A (20%), #36211B (19%), #DFCAAD (7%) - **medium** _(opencv:k-means)_
+- `whole video` Warm amber lantern lighting throughout; a dust cloud fills the frame at the climax. - **medium** _(reviewer notes: contact_shots.jpg #23, #24)_
 
 ### Composition
 
@@ -156,6 +157,7 @@ Each line: timestamp - description - confidence - evidence source.
 - `whole video` heavy/black weight, wide letter width (stroke/height 0.32, width/height 0.85). Exact font family not identifiable from pixels. - **low** _(opencv:stroke width)_
 - `whole video` caption onset animation: word reveal next 1%, scale down in 1%, slide in 1%, word reveal 1%, scale in 3% - **low** _(opencv:caption onset tracking (10 fps))_
 - `whole video` 95% of captions contain spoken words at the same time (captions follow the narration) - **medium** _(caption-detector + transcript)_
+- `whole video` Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. - **high** _(reviewer notes: contact_shots.jpg, all shots)_
 
 ### Audio
 
@@ -193,9 +195,30 @@ Each line: timestamp - description - confidence - evidence source.
 
 ### Story
 
-- `0:00.00-0:03.54` hook (3.5s, 15 words): "He loaded the shotgun with gold and fired it into the walls of the mine." - plain statement - **medium** _(transcript + text rules)_
+- `0:00.00-0:03.54` hook (3.5s, 15 words): "He loaded the shotgun with gold and fired it into the walls of the mine." - narrative opener (he/she did...) - **medium** _(transcript + text rules)_
 - `whole video` ending: "And when the dust clears, there's a vein of real gold as thick as your arm, 10 feet past where the last guy gave up." - abrupt end right after last word - **medium** _(transcript + text rules)_
 - `whole video` pace by thirds (words/s | cuts/s): 3.83|0.29 -> 3.68|0.49 -> 3.83|0.44 - **medium** _(transcript + shot detection)_
+- `whole video` Explains a historical scam step by step and ends on the reveal of how the trick worked. - **medium** _(reviewer notes: transcript ending + contact_shots.jpg #25)_
+
+### Footage
+
+- `whole video` Original 3D cartoon animation in the same character style: a Wild-West gold mine, a top-hatted swindler, miners and investors. - **high** _(reviewer notes: contact_shots.jpg, all 26 shots)_
+
+### Motion
+
+- `whole video` Macro close-ups on the key detail (gold nugget in gravel, gold pan) alternate with medium character shots. - **medium** _(reviewer notes: contact_shots.jpg #10, #13, #14)_
+
+### Overlays
+
+- `whole video` Text appears inside the scene (mine entrance sign 'SURE THING MINE'), no overlay graphics. - **medium** _(reviewer notes: contact_shots.jpg #7, #18)_
+
+### Hook
+
+- `0:00.00-0:03.54` Hook is a single concrete paradox stated immediately: "He loaded the shotgun with gold and fired it into the walls of the mine." - **high** _(reviewer notes: transcript, first sentence)_
+
+### Ending
+
+- `whole video` Ends on a concrete payoff that resolves the hook, no call to action: "And when the dust clears, there's a vein of real gold as thick as your arm, 10 feet past where the last guy gave up." - **high** _(reviewer notes: transcript, last sentence)_
 
 ## Shot list
 

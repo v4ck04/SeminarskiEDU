@@ -154,6 +154,245 @@
       "profile_changed": true,
       "changes": [],
       "note": null
+    },
+    {
+      "time": "2026-11-22T09:34:23+00:00",
+      "event": "analyze",
+      "videos": [
+        "how-mine-salting-worked-98449a",
+        "the-ancient-jar-that-warned-an-empire-53119a",
+        "the-difference-between-rich-and-poor-503075",
+        "the-instinct-that-makes-you-crash-5e5256",
+        "the-job-nobody-wants-in-japan-3769b4",
+        "the-window-that-breaks-japans-gambling-l-544d9a",
+        "why-astronauts-cant-flush-in-space-2bb775",
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ],
+      "n_videos": 8,
+      "profile_version": 10,
+      "profile_changed": true,
+      "changes": [
+        "reference videos: 3 -> 8",
+        "cuts per second in the first 3 s: frequent -> occasional",
+        "shot-length variation (CV): occasional -> frequent",
+        "2nd-half / 1st-half shot length: frequent -> occasional",
+        "hard cuts: frequent -> occasional",
+        "dissolves: frequent -> occasional",
+        "zoom speed: occasional -> frequent",
+        "effect-like events per minute: uncertain -> occasional",
+        "cuts with an effect: uncertain -> occasional",
+        "vignette: frequent -> occasional",
+        "highlight colour: occasional -> uncertain",
+        "highlight colour (hex): occasional -> uncertain",
+        "footage type (reviewed): frequent -> occasional",
+        "caption letter case (reviewed): frequent -> occasional",
+        "overlay graphics (reviewed): frequent -> occasional",
+        "hook uses superlative/extreme claim: occasional -> uncertain",
+        "hook uses question: occasional -> uncertain",
+        "hook uses curiosity gap: occasional -> uncertain",
+        "new: hook uses direct address (you) (2/8 videos) [uncertain]",
+        "hook uses contrarian/negation: occasional -> uncertain",
+        "ending reveal/twist: occasional -> uncertain",
+        "ending loops back to the opening: occasional -> uncertain",
+        "uses whip or blur: frequent -> occasional",
+        "production param editing.target_shot_seconds: 2.45 -> 2.56 [frequent]",
+        "production param editing.motion_mix: {'zoom_in': 0.561, 'zoom_out': 0.198, 'pan_left': 0.034, 'pan_right': 0.099, 'pan_up': 0.046, 'pan_down': 0.014, 'static': 0.049} -> {'zoom_in': 0.581, 'zoom_out': 0.239, 'pan_left': 0.043, 'pan_right': 0.078, 'pan_up': 0.023, 'pan_down': 0.005, 'static': 0.03} [frequent]",
+        "production param editing.motion_intensity: 0.3 -> 0.3 [frequent]",
+        "production param transitions.mix: {'cut': 0.471, 'crossfade': 0.392, 'flash': 0.0, 'dip_black': 0.0, 'whip': 0.062, 'zoom': 0.075} -> {'cut': 0.686, 'crossfade': 0.226, 'flash': 0.0, 'dip_black': 0.0, 'whip': 0.042, 'zoom': 0.045} [occasional]",
+        "production param captions.highlight_color: #CF9135 -> #DA9434 [uncertain]",
+        "production param color.target_saturation: 0.408 -> 0.427 [frequent]",
+        "production param color.target_contrast: 0.199 -> 0.2 [frequent]",
+        "production param color.vignette: 0.0 -> 0.0 [occasional]",
+        "production param audio.music_db_below_voice: 12.7 -> 9.2 [frequent]",
+        "production param audio.sfx_on_cuts_prob: 0.14 -> 0.31 [occasional]",
+        "production param voice.target_wpm: 257 -> 244 [frequent]",
+        "production param voice.sentence_pause_s: 0.25 -> 0.23 [frequent]",
+        "production param story.hook_max_seconds: 5.1 -> 4.7 [frequent]",
+        "production param story.target_duration_s: 65 -> 61 [frequent]"
+      ],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:34:49+00:00",
+      "event": "notes",
+      "videos": [
+        "how-mine-salting-worked-98449a"
+      ],
+      "n_videos": 8,
+      "profile_version": 11,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:34:49+00:00",
+      "event": "notes",
+      "videos": [
+        "the-instinct-that-makes-you-crash-5e5256"
+      ],
+      "n_videos": 8,
+      "profile_version": 12,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:34:50+00:00",
+      "event": "notes",
+      "videos": [
+        "the-window-that-breaks-japans-gambling-l-544d9a"
+      ],
+      "n_videos": 8,
+      "profile_version": 13,
+      "profile_changed": true,
+      "changes": [
+        "footage type (reviewed): occasional -> frequent",
+        "caption letter case (reviewed): occasional -> frequent",
+        "overlay graphics (reviewed): occasional -> frequent"
+      ],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:34:50+00:00",
+      "event": "notes",
+      "videos": [
+        "why-astronauts-cant-flush-in-space-2bb775"
+      ],
+      "n_videos": 8,
+      "profile_version": 14,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:34:51+00:00",
+      "event": "notes",
+      "videos": [
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ],
+      "n_videos": 8,
+      "profile_version": 15,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:51+00:00",
+      "event": "notes",
+      "videos": [
+        "how-mine-salting-worked-98449a"
+      ],
+      "n_videos": 8,
+      "profile_version": 16,
+      "profile_changed": true,
+      "changes": [
+        "new: hook style (reviewed): one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro (1/8 videos) [uncertain]",
+        "new: ending style (reviewed): concrete payoff image that resolves the hook, then the video stops (no CTA, no summary) (1/8 videos) [uncertain]",
+        "new: hook uses narrative opener (he/she did...) (3/8 videos) [occasional]",
+        "new: hook uses contradiction (but/yet) (2/8 videos) [uncertain]",
+        "new: hook uses conditional consequence (if you...) (2/8 videos) [uncertain]"
+      ],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:52+00:00",
+      "event": "notes",
+      "videos": [
+        "the-ancient-jar-that-warned-an-empire-53119a"
+      ],
+      "n_videos": 8,
+      "profile_version": 17,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:52+00:00",
+      "event": "notes",
+      "videos": [
+        "the-difference-between-rich-and-poor-503075"
+      ],
+      "n_videos": 8,
+      "profile_version": 18,
+      "profile_changed": true,
+      "changes": [
+        "hook style (reviewed): uncertain -> occasional",
+        "ending style (reviewed): uncertain -> occasional"
+      ],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:52+00:00",
+      "event": "notes",
+      "videos": [
+        "the-instinct-that-makes-you-crash-5e5256"
+      ],
+      "n_videos": 8,
+      "profile_version": 19,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:53+00:00",
+      "event": "notes",
+      "videos": [
+        "the-job-nobody-wants-in-japan-3769b4"
+      ],
+      "n_videos": 8,
+      "profile_version": 20,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:53+00:00",
+      "event": "notes",
+      "videos": [
+        "the-window-that-breaks-japans-gambling-l-544d9a"
+      ],
+      "n_videos": 8,
+      "profile_version": 21,
+      "profile_changed": true,
+      "changes": [
+        "hook style (reviewed): occasional -> frequent",
+        "ending style (reviewed): occasional -> frequent"
+      ],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:54+00:00",
+      "event": "notes",
+      "videos": [
+        "why-astronauts-cant-flush-in-space-2bb775"
+      ],
+      "n_videos": 8,
+      "profile_version": 22,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:54+00:00",
+      "event": "notes",
+      "videos": [
+        "why-samurai-feared-the-flying-thunder-04b3cc"
+      ],
+      "n_videos": 8,
+      "profile_version": 23,
+      "profile_changed": true,
+      "changes": [],
+      "note": null
+    },
+    {
+      "time": "2026-11-22T09:35:54+00:00",
+      "event": "rebuild",
+      "videos": [],
+      "n_videos": 8,
+      "profile_version": 23,
+      "profile_changed": false,
+      "changes": [],
+      "note": null
     }
   ]
 }

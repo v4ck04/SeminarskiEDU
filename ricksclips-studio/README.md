@@ -93,18 +93,25 @@ videos), **occasionally observed** and **uncertain** characteristics. Only frequ
 production rules; one video is never enough. Every change is versioned in
 `training/profile-history/` and logged in `training/training-history.json`.
 
-### Current training state (3 RicksClips references)
+### Current training state (8 RicksClips references)
 
-The profile was built from *The Job Nobody Wants in Japan*, *The Difference Between Rich and Poor* and
-*The Ancient Jar That Warned an Empire* (see `training/style-profile.md`). Highlights:
+Built from *How Mine Salting Worked*, *The Ancient Jar That Warned an Empire*, *The Difference Between
+Rich and Poor*, *The Instinct That Makes You Crash*, *The Job Nobody Wants in Japan*, *The Window That
+Breaks Japan's Gambling Law*, *Why Astronauts Can't Flush in Space* and *Why Samurai Feared the Flying
+Thunder* (see `training/style-profile.md`). Consistent across all eight:
 
-- ~65 s videos, narration at ~257 words/min with ~0.25 s pauses, speech from the first frame
-- shots ~2.5 s (≈20 cuts/min), ~92 % of cuts on word boundaries; ~55 % hard cuts, ~33 % dissolves
-- constant camera motion (≈60 % push-ins), full-bleed frames, no vignette
+- ~61 s videos (45-73 s), narration at ~244 words/min with ~0.23 s pauses, speech from the first frame
+- shots ~2.6 s (some long camera moves up to 10-13 s), cuts land on word boundaries
+- constant camera motion (≈58 % push-ins, ≈24 % pull-outs); transition mix varies per video
+  (29-89 % hard cuts, the rest mostly dissolves), so it is not forced
 - captions: white, sentence case, 1-2 words at a time, dark outline + soft shadow, ~70 % down the
   frame, occasional coloured emphasis word
-- music bed ~13 dB under the voice, master at -14 LUFS, no call to action at the end
-- **visuals are original 3D cartoon animation with recurring characters** (reviewed)
+- music bed ~9 dB under the voice, master at -14 LUFS
+- **hook**: one sentence stating a concrete paradox (a strange action, an absurd consequence, or a
+  rule + contradiction), no intro
+- **ending**: a concrete payoff image that resolves the hook, then the video stops - no call to action
+- **visuals: original 3D cartoon animation with recurring characters; on-screen text lives inside the
+  scene (signs, screens, props), no overlay graphics** (reviewed)
 
 That last point is the biggest gap between the references and what this pipeline can make: it does not
 animate characters. Closest options, in order: your own animation clips in

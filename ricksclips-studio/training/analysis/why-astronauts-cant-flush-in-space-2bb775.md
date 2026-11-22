@@ -156,6 +156,7 @@ Each line: timestamp - description - confidence - evidence source.
 - `whole video` heavy/black weight, wide letter width (stroke/height 0.32, width/height 0.90). Exact font family not identifiable from pixels. - **low** _(opencv:stroke width)_
 - `whole video` caption onset animation: slide in 1%, fade in 1%, scale down in 2%, scale in 2% - **low** _(opencv:caption onset tracking (10 fps))_
 - `whole video` 88% of captions contain spoken words at the same time (captions follow the narration) - **medium** _(caption-detector + transcript)_
+- `whole video` Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame. - **high** _(reviewer notes: contact_shots.jpg, all shots)_
 
 ### Audio
 
@@ -193,9 +194,30 @@ Each line: timestamp - description - confidence - evidence source.
 
 ### Story
 
-- `0:00.00-0:03.60` hook (3.6s, 15 words): "If you flush the toilet on a spaceship, you'll never make it back to Earth." - direct address (you), superlative/extreme claim - **medium** _(transcript + text rules)_
+- `0:00.00-0:03.60` hook (3.6s, 15 words): "If you flush the toilet on a spaceship, you'll never make it back to Earth." - direct address (you), superlative/extreme claim, conditional consequence (if you...) - **medium** _(transcript + text rules)_
 - `whole video` ending: "And because there's no GPS out here, the only way to find home is by lining up the real stars." - statement/conclusion - **medium** _(transcript + text rules)_
 - `whole video` pace by thirds (words/s | cuts/s): 3.52|0.24 -> 3.18|0.34 -> 3.33|0.34 - **medium** _(transcript + shot detection)_
+- `whole video` Ends on a calm payoff line about navigating home by the stars. - **medium** _(reviewer notes: transcript ending + contact_shots.jpg #16-#19)_
+
+### Footage
+
+- `whole video` Original 3D cartoon animation in the same character style: spaceship interior, crew, mission control and exterior space shots. - **high** _(reviewer notes: contact_shots.jpg, all 20 shots)_
+
+### Overlays
+
+- `whole video` On-screen information appears on props in the scene ('OFF COURSE' console, phone showing 'No GPS Signal', 'NO FLUSHING TONIGHT' sign). - **high** _(reviewer notes: contact_shots.jpg #2, #8, #15)_
+
+### Motion
+
+- `whole video` Interior character shots alternate with wide exterior shots of the ship among stars. - **medium** _(reviewer notes: contact_shots.jpg #9, #12, #13, #19)_
+
+### Hook
+
+- `0:00.00-0:03.60` Hook is a single concrete paradox stated immediately: "If you flush the toilet on a spaceship, you'll never make it back to Earth." - **high** _(reviewer notes: transcript, first sentence)_
+
+### Ending
+
+- `whole video` Ends on a concrete payoff that resolves the hook, no call to action: "And because there's no GPS out here, the only way to find home is by lining up the real stars." - **high** _(reviewer notes: transcript, last sentence)_
 
 ## Shot list
 

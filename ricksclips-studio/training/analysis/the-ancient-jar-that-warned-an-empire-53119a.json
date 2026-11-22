@@ -5958,7 +5958,8 @@
       "duration": 4.98,
       "words": 19,
       "features": [
-        "superlative/extreme claim"
+        "superlative/extreme claim",
+        "narrative opener (he/she did...)"
       ],
       "time_to_first_word": 0.0
     },
@@ -6308,7 +6309,8 @@
     "caption_animation": "none",
     "music_likely": true,
     "hook_features": [
-      "superlative/extreme claim"
+      "superlative/extreme claim",
+      "narrative opener (he/she did...)"
     ],
     "ending_types": [
       "reveal/twist",
@@ -6317,7 +6319,9 @@
     "ending_cta": false,
     "footage_type": "original 3D cartoon animation",
     "caption_case": "sentence case",
-    "overlay_graphics": "none (text lives inside the scene)"
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
   "observations": [
     {
@@ -7435,7 +7439,7 @@
     {
       "category": "story",
       "feature": "hook",
-      "description": "hook (5.0s, 19 words): \"He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!\" - superlative/extreme claim",
+      "description": "hook (5.0s, 19 words): \"He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!\" - superlative/extreme claim, narrative opener (he/she did...)",
       "timestamp": [
         0.0,
         4.98
@@ -7534,6 +7538,29 @@
       "confidence": "medium",
       "confidence_score": 0.6,
       "evidence": "reviewer notes: transcript ending"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"He put a bronze ball in a dragon's mouth and told the emperor, if this ever falls out, run!\"",
+      "timestamp": [
+        0.0,
+        4.98
+      ],
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, first sentence"
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"All eight meant the biggest earthquake the empire had ever seen was right underneath them.\"",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, last sentence"
     }
   ],
   "comparison": {

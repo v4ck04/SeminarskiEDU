@@ -38,12 +38,32 @@
       "description": "Question hook, metaphor-driven explanation, and an ending that loops back to the three groups named at the start.",
       "confidence": "medium",
       "evidence": "transcript hook and ending"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"Why do the rich keep getting richer while the poor get poorer?\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        3.06
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"The poor, the middle class, and the rich.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
     }
   ],
   "categorical": {
     "footage_type": "original 3D cartoon animation",
     "caption_case": "sentence case",
-    "overlay_graphics": "none (text lives inside the scene)"
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
-  "updated_at": "2026-11-21T22:28:00+00:00"
+  "updated_at": "2026-11-22T09:35:52+00:00"
 }

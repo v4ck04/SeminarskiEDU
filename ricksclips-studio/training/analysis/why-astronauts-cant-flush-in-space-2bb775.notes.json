@@ -1,0 +1,62 @@
+{
+  "observations": [
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "confidence": "high",
+      "description": "Original 3D cartoon animation in the same character style: spaceship interior, crew, mission control and exterior space shots.",
+      "evidence": "contact_shots.jpg, all 20 shots"
+    },
+    {
+      "category": "overlays",
+      "description": "On-screen information appears on props in the scene ('OFF COURSE' console, phone showing 'No GPS Signal', 'NO FLUSHING TONIGHT' sign).",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg #2, #8, #15"
+    },
+    {
+      "category": "motion",
+      "description": "Interior character shots alternate with wide exterior shots of the ship among stars.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #9, #12, #13, #19"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "description": "Ends on a calm payoff line about navigating home by the stars.",
+      "confidence": "medium",
+      "evidence": "transcript ending + contact_shots.jpg #16-#19"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"If you flush the toilet on a spaceship, you'll never make it back to Earth.\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        3.6
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"And because there's no GPS out here, the only way to find home is by lining up the real stars.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
+    }
+  ],
+  "categorical": {
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
+  },
+  "updated_at": "2026-11-22T09:35:54+00:00"
+}

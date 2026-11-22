@@ -1,0 +1,68 @@
+{
+  "observations": [
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "confidence": "high",
+      "description": "Original 3D cartoon animation in the same character style: a Wild-West gold mine, a top-hatted swindler, miners and investors.",
+      "evidence": "contact_shots.jpg, all 26 shots"
+    },
+    {
+      "category": "motion",
+      "description": "Macro close-ups on the key detail (gold nugget in gravel, gold pan) alternate with medium character shots.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #10, #13, #14"
+    },
+    {
+      "category": "overlays",
+      "description": "Text appears inside the scene (mine entrance sign 'SURE THING MINE'), no overlay graphics.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #7, #18"
+    },
+    {
+      "category": "color",
+      "description": "Warm amber lantern lighting throughout; a dust cloud fills the frame at the climax.",
+      "confidence": "medium",
+      "evidence": "contact_shots.jpg #23, #24"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "confidence": "high",
+      "evidence": "contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "description": "Explains a historical scam step by step and ends on the reveal of how the trick worked.",
+      "confidence": "medium",
+      "evidence": "transcript ending + contact_shots.jpg #25"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"He loaded the shotgun with gold and fired it into the walls of the mine.\"",
+      "confidence": "high",
+      "evidence": "transcript, first sentence",
+      "timestamp": [
+        0.0,
+        3.54
+      ]
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"And when the dust clears, there's a vein of real gold as thick as your arm, 10 feet past where the last guy gave up.\"",
+      "confidence": "high",
+      "evidence": "transcript, last sentence"
+    }
+  ],
+  "categorical": {
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
+  },
+  "updated_at": "2026-11-22T09:35:51+00:00"
+}

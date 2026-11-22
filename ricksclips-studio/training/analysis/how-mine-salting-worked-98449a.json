@@ -5295,7 +5295,9 @@
       "end": 3.54,
       "duration": 3.54,
       "words": 15,
-      "features": [],
+      "features": [
+        "narrative opener (he/she did...)"
+      ],
       "time_to_first_word": 0.0
     },
     "ending": {
@@ -5646,11 +5648,18 @@
     "caption_width_class": "wide",
     "caption_animation": "none",
     "music_likely": true,
-    "hook_features": [],
+    "hook_features": [
+      "narrative opener (he/she did...)"
+    ],
     "ending_types": [
       "abrupt end right after last word"
     ],
-    "ending_cta": false
+    "ending_cta": false,
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
   "observations": [
     {
@@ -6647,7 +6656,7 @@
     {
       "category": "story",
       "feature": "hook",
-      "description": "hook (3.5s, 15 words): \"He loaded the shotgun with gold and fired it into the walls of the mine.\" - plain statement",
+      "description": "hook (3.5s, 15 words): \"He loaded the shotgun with gold and fired it into the walls of the mine.\" - narrative opener (he/she did...)",
       "timestamp": [
         0.0,
         3.54
@@ -6686,6 +6695,89 @@
       "confidence": "medium",
       "confidence_score": 0.6,
       "evidence": "transcript + shot detection"
+    },
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "description": "Original 3D cartoon animation in the same character style: a Wild-West gold mine, a top-hatted swindler, miners and investors.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg, all 26 shots"
+    },
+    {
+      "category": "motion",
+      "feature": "review",
+      "description": "Macro close-ups on the key detail (gold nugget in gravel, gold pan) alternate with medium character shots.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: contact_shots.jpg #10, #13, #14"
+    },
+    {
+      "category": "overlays",
+      "feature": "review",
+      "description": "Text appears inside the scene (mine entrance sign 'SURE THING MINE'), no overlay graphics.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: contact_shots.jpg #7, #18"
+    },
+    {
+      "category": "color",
+      "feature": "review",
+      "description": "Warm amber lantern lighting throughout; a dust cloud fills the frame at the climax.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: contact_shots.jpg #23, #24"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "feature": "review",
+      "description": "Explains a historical scam step by step and ends on the reveal of how the trick worked.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: transcript ending + contact_shots.jpg #25"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"He loaded the shotgun with gold and fired it into the walls of the mine.\"",
+      "timestamp": [
+        0.0,
+        3.54
+      ],
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, first sentence"
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"And when the dust clears, there's a vein of real gold as thick as your arm, 10 feet past where the last guy gave up.\"",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, last sentence"
     }
   ],
   "comparison": {

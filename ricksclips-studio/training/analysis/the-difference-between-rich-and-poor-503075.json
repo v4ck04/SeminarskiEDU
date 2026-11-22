@@ -5667,7 +5667,8 @@
       "words": 12,
       "features": [
         "question",
-        "curiosity gap"
+        "curiosity gap",
+        "contradiction (but/yet)"
       ],
       "time_to_first_word": 0.0
     },
@@ -6003,7 +6004,8 @@
     "music_likely": true,
     "hook_features": [
       "question",
-      "curiosity gap"
+      "curiosity gap",
+      "contradiction (but/yet)"
     ],
     "ending_types": [
       "loops back to the opening"
@@ -6011,7 +6013,9 @@
     "ending_cta": false,
     "footage_type": "original 3D cartoon animation",
     "caption_case": "sentence case",
-    "overlay_graphics": "none (text lives inside the scene)"
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
   "observations": [
     {
@@ -7033,7 +7037,7 @@
     {
       "category": "story",
       "feature": "hook",
-      "description": "hook (3.1s, 12 words): \"Why do the rich keep getting richer while the poor get poorer?\" - question, curiosity gap",
+      "description": "hook (3.1s, 12 words): \"Why do the rich keep getting richer while the poor get poorer?\" - question, curiosity gap, contradiction (but/yet)",
       "timestamp": [
         0.0,
         3.06
@@ -7132,6 +7136,29 @@
       "confidence": "medium",
       "confidence_score": 0.6,
       "evidence": "reviewer notes: transcript hook and ending"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"Why do the rich keep getting richer while the poor get poorer?\"",
+      "timestamp": [
+        0.0,
+        3.06
+      ],
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, first sentence"
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"The poor, the middle class, and the rich.\"",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, last sentence"
     }
   ],
   "comparison": {

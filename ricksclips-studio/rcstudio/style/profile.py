@@ -108,6 +108,8 @@ CATEGORICAL = {
     "music_likely": ("Music characteristics", "music bed under narration"),
     "ending_cta": ("Ending patterns", "ends with a call to action"),
     "footage_type": ("Visual composition", "footage type (reviewed)"),
+    "hook_style": ("Hook patterns", "hook style (reviewed)"),
+    "ending_style": ("Ending patterns", "ending style (reviewed)"),
     "caption_case": ("Subtitle design", "caption letter case (reviewed)"),
     "overlay_graphics": ("Visual composition", "overlay graphics (reviewed)"),
 }

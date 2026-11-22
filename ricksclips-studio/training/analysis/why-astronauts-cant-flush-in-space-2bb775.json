@@ -5882,7 +5882,8 @@
       "words": 15,
       "features": [
         "direct address (you)",
-        "superlative/extreme claim"
+        "superlative/extreme claim",
+        "conditional consequence (if you...)"
       ],
       "time_to_first_word": 0.0
     },
@@ -6206,12 +6207,18 @@
     "music_likely": true,
     "hook_features": [
       "direct address (you)",
-      "superlative/extreme claim"
+      "superlative/extreme claim",
+      "conditional consequence (if you...)"
     ],
     "ending_types": [
       "statement/conclusion"
     ],
-    "ending_cta": false
+    "ending_cta": false,
+    "footage_type": "original 3D cartoon animation",
+    "caption_case": "sentence case",
+    "overlay_graphics": "none (text lives inside the scene)",
+    "hook_style": "one-sentence concrete paradox (strange action, absurd consequence, or rule + contradiction), no intro",
+    "ending_style": "concrete payoff image that resolves the hook, then the video stops (no CTA, no summary)"
   },
   "observations": [
     {
@@ -7200,7 +7207,7 @@
     {
       "category": "story",
       "feature": "hook",
-      "description": "hook (3.6s, 15 words): \"If you flush the toilet on a spaceship, you'll never make it back to Earth.\" - direct address (you), superlative/extreme claim",
+      "description": "hook (3.6s, 15 words): \"If you flush the toilet on a spaceship, you'll never make it back to Earth.\" - direct address (you), superlative/extreme claim, conditional consequence (if you...)",
       "timestamp": [
         0.0,
         3.6
@@ -7239,6 +7246,79 @@
       "confidence": "medium",
       "confidence_score": 0.6,
       "evidence": "transcript + shot detection"
+    },
+    {
+      "category": "footage",
+      "feature": "footage_type",
+      "description": "Original 3D cartoon animation in the same character style: spaceship interior, crew, mission control and exterior space shots.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg, all 20 shots"
+    },
+    {
+      "category": "overlays",
+      "feature": "review",
+      "description": "On-screen information appears on props in the scene ('OFF COURSE' console, phone showing 'No GPS Signal', 'NO FLUSHING TONIGHT' sign).",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg #2, #8, #15"
+    },
+    {
+      "category": "motion",
+      "feature": "review",
+      "description": "Interior character shots alternate with wide exterior shots of the ship among stars.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: contact_shots.jpg #9, #12, #13, #19"
+    },
+    {
+      "category": "subtitles",
+      "feature": "caption_style",
+      "description": "Captions show 1-2 words at a time in sentence case with punctuation kept; white heavy rounded sans-serif with a thin dark outline and soft shadow, centred just below the middle of the frame.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: contact_shots.jpg, all shots"
+    },
+    {
+      "category": "story",
+      "feature": "review",
+      "description": "Ends on a calm payoff line about navigating home by the stars.",
+      "timestamp": null,
+      "value": null,
+      "confidence": "medium",
+      "confidence_score": 0.6,
+      "evidence": "reviewer notes: transcript ending + contact_shots.jpg #16-#19"
+    },
+    {
+      "category": "hook",
+      "feature": "hook_style",
+      "description": "Hook is a single concrete paradox stated immediately: \"If you flush the toilet on a spaceship, you'll never make it back to Earth.\"",
+      "timestamp": [
+        0.0,
+        3.6
+      ],
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, first sentence"
+    },
+    {
+      "category": "ending",
+      "feature": "ending_style",
+      "description": "Ends on a concrete payoff that resolves the hook, no call to action: \"And because there's no GPS out here, the only way to find home is by lining up the real stars.\"",
+      "timestamp": null,
+      "value": null,
+      "confidence": "high",
+      "confidence_score": 0.8,
+      "evidence": "reviewer notes: transcript, last sentence"
     }
   ],
   "comparison": {
