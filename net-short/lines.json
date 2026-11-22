@@ -1,0 +1,18 @@
+[
+ {"id": "hook", "gap": 0.25, "text": "Why do some people work every single day, and still stay broke?"},
+ {"id": "net", "gap": 0.45, "text": "One fishing net explains it."},
+ {"id": "set", "gap": 0.35, "text": "Three men live by the same river. Each one owns a single fishing line. Nothing else."},
+ {"id": "p1", "gap": 0.3, "text": "The first man catches one fish a day. He eats it that night. Every night. Same fish. Same hunger."},
+ {"id": "p2", "gap": 0.3, "text": "The second man works longer. He catches two. He eats one, and dries the other for bad days."},
+ {"id": "p3", "gap": 0.25, "text": "The third man stops fishing. For a whole week, he just sits there, tying knots."},
+ {"id": "laugh", "gap": 0.35, "text": "Everyone laughs at him."},
+ {"id": "starve", "gap": 0.2, "text": "By day five, he's starving. So he goes to the second man."},
+ {"id": "loan", "gap": 0.4, "text": "Lend me ten dried fish, and I'll pay you back twenty."},
+ {"id": "throw", "gap": 0.2, "text": "On day eight, he throws his net. One throw."},
+ {"id": "fifty", "gap": 0.4, "text": "Fifty fish."},
+ {"id": "more", "gap": 0.3, "text": "Soon he has two nets. Then five. Too many to pull alone."},
+ {"id": "job", "gap": 0.35, "text": "So he offers the first man a job. Three fish a day. Three times what he used to catch."},
+ {"id": "same", "gap": 0.35, "text": "Same river. Same start."},
+ {"id": "lesson", "gap": 0.4, "text": "One sold his time. One saved it. One built something that catches fish while he sleeps."},
+ {"id": "end", "gap": 0.0, "text": "The fish were never the difference. The net was."}
+]

@@ -1,0 +1,14 @@
+[
+ {"id": "hook", "gap": 0.3, "text": "In eighteen twenty-two, a Scottish soldier sold London a country that did not exist."},
+ {"id": "name", "gap": 0.45, "text": "It was called Poyais."},
+ {"id": "set", "gap": 0.3, "text": "Gregor MacGregor arrived calling himself its prince. Poyais, he said, had rich land, rivers full of fish, and a capital with a theater."},
+ {"id": "book", "gap": 0.3, "text": "There was even a guidebook, by a Captain Thomas Strangeways. There was no Captain Strangeways."},
+ {"id": "money", "gap": 0.3, "text": "He printed Poyais money. He sold Poyais land. Then he sold Poyais bonds. Two hundred thousand pounds of them."},
+ {"id": "pack", "gap": 0.45, "text": "And people started packing."},
+ {"id": "ships", "gap": 0.3, "text": "Two ships of settlers sailed for Central America. They found no capital. No theater. No town. Just jungle."},
+ {"id": "luck", "gap": 0.3, "text": "Luckily, they had brought plenty of Poyais money. Unluckily, nobody had ever heard of it."},
+ {"id": "died", "gap": 0.5, "text": "Most of them never came home."},
+ {"id": "why", "gap": 0.3, "text": "Why did it work? Nobody could check. It's like buying a house from photos. The nicer the pictures, the fewer the questions."},
+ {"id": "france", "gap": 0.3, "text": "When the news reached London, MacGregor was in France, selling Poyais again."},
+ {"id": "end", "gap": 0.0, "text": "He was put on trial, and walked free. The best lie is a place nobody can visit."}
+]

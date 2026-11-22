@@ -1,0 +1,17 @@
+[
+ {"id": "hook", "gap": 0.2, "text": "Bitcoin has lost almost half its value since its record a year ago."},
+ {"id": "hook2", "gap": 0.3, "text": "Some people lost everything. Others didn't even blink."},
+ {"id": "gold", "gap": 0.45, "text": "One golden fish explains it."},
+ {"id": "set", "gap": 0.35, "text": "In the river town, everyone wants the new golden fish. And every week, its price goes up."},
+ {"id": "p1", "gap": 0.3, "text": "The first man wants to get rich fast. So he borrows twenty baskets of fish, and buys golden fish at the top."},
+ {"id": "p2", "gap": 0.3, "text": "The second man thinks it's a silly fish. He buys none."},
+ {"id": "p3", "gap": 0.4, "text": "The third man buys just one. With fish he can afford to lose. And he borrows nothing."},
+ {"id": "crash", "gap": 0.45, "text": "Then, one morning, the price falls by half."},
+ {"id": "calm", "gap": 0.35, "text": "The second man laughs. The third man shrugs, and waits."},
+ {"id": "door", "gap": 0.35, "text": "But the first man's lender is at the door. Pay me back. Today."},
+ {"id": "sell", "gap": 0.35, "text": "His golden fish are worth half. So he sells every single one, at the bottom, to the third man."},
+ {"id": "know", "gap": 0.45, "text": "Maybe the price comes back. Maybe it doesn't. The first man will never find out."},
+ {"id": "lesson", "gap": 0.4, "text": "The crash didn't ruin him. The loan did."},
+ {"id": "fact", "gap": 0.4, "text": "On November thirteenth, one point six billion dollars of borrowed crypto bets were force-sold in a single day."},
+ {"id": "end", "gap": 0.0, "text": "Prices fall for everyone. Only borrowed money makes you sell at the bottom."}
+]

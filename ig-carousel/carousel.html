@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Newton vs Read carousel</title>
+<style>
+  :root { --navy: #0B1E3A; --navy2: #132b50; --teal: #2BD9A8; --gold: #FFC94A; --ink: #0b0b14; --text: #DCE6F2; --red: #FF6B5B; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; }
+  .s { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--navy); color: #fff;
+       font-family: "Inter", sans-serif; }
+  .img { position: absolute; left: 0; top: 0; width: 1080px; height: 830px; background-repeat: no-repeat; background-size: 1080px auto; }
+  .panel { position: absolute; left: 0; right: 0; bottom: 0; height: 520px; background: var(--navy); border-top: 10px solid var(--teal);
+           padding: 52px 100px 0; }
+  .kicker { font: 800 32px/1 "Inter"; letter-spacing: 4px; color: var(--teal); text-transform: uppercase; margin-bottom: 22px; }
+  h2 { font: 900 80px/1.02 "Inter Display", "Inter"; letter-spacing: -1.5px; margin-bottom: 26px; }
+  h2 em { font-style: normal; color: var(--gold); }
+  p { font: 600 40px/1.32 "Inter"; color: var(--text); }
+  p b { color: #fff; font-weight: 800; }
+  .foot { position: absolute; left: 100px; right: 100px; bottom: 40px; display: flex; justify-content: space-between;
+          font: 800 32px/1 "Inter"; letter-spacing: 2px; color: rgba(220,230,242,0.6); }
+  .foot .brand b { color: var(--teal); }
+
+  /* cover */
+  .cover .top, .cover .bot { position: absolute; left: 0; width: 1080px; background-repeat: no-repeat; background-size: 1080px auto; }
+  .cover .top { top: 0; height: 560px; }
+  .cover .bot { top: 840px; height: 510px; }
+  .cover .band { position: absolute; left: 0; right: 0; top: 500px; height: 400px; background: var(--navy);
+                 border-top: 10px solid var(--teal); border-bottom: 10px solid var(--teal);
+                 display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .cover .band div { font: 900 118px/1.0 "Inter Display", "Inter"; letter-spacing: -2.5px; }
+  .cover .band .l2 { color: var(--gold); margin-top: 14px; }
+  .cover .band .sub { font: 800 40px/1 "Inter"; letter-spacing: 0; color: var(--teal); margin-top: 30px; }
+  .cover .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 180px; background: linear-gradient(transparent, rgba(11,30,58,0.85)); }
+  .cover .swipe { position: absolute; left: 50%; transform: translateX(-50%); bottom: 130px; white-space: nowrap;
+                  background: rgba(11,30,58,0.92); border: 5px solid var(--teal); border-radius: 60px; padding: 22px 44px;
+                  font: 800 40px/1 "Inter"; }
+  .cover .foot { bottom: 46px; color: rgba(255,255,255,0.85); text-shadow: 0 3px 0 rgba(0,0,0,0.5); }
+
+  /* recap */
+  .recap { padding: 120px 100px 0; }
+  .recap h2 { font-size: 92px; margin-bottom: 50px; }
+  .row { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 52px; }
+  .av { flex: none; width: 200px; height: 200px; border-radius: 50%; border: 8px solid var(--teal); background-repeat: no-repeat; }
+  .row.n .av { border-color: var(--red); }
+  .row.r .av { border-color: var(--gold); }
+  .who { font: 900 44px/1.1 "Inter Display", "Inter"; margin: 6px 0 4px; }
+  .res { font: 700 32px/1.2 "Inter"; margin-bottom: 16px; }
+  .row.n .res { color: var(--red); }
+  .row.r .res { color: var(--gold); }
+  .row ul { list-style: none; }
+  .row li { font: 600 38px/1.42 "Inter"; color: var(--text); }
+  .row li i { font-style: normal; font-weight: 900; display: inline-block; width: 46px; }
+  .row.n li i { color: var(--red); }
+  .row.r li i { color: var(--teal); }
+  .moral { margin-top: 18px; border-top: 4px solid rgba(43,217,168,0.4); padding-top: 40px;
+           font: 900 52px/1.15 "Inter Display", "Inter"; letter-spacing: -0.5px; }
+  .moral em { font-style: normal; color: var(--gold); }
+
+  /* cta */
+  .duo { position: absolute; top: 0; height: 830px; width: 540px; background-repeat: no-repeat; }
+  .duo.a { left: 0; border-right: 5px solid var(--navy); }
+  .duo.b { left: 540px; border-left: 5px solid var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="s cover">
+  <div class="top" style="background-image:url(src/newton_180.jpg); background-position: 0 -800px"></div>
+  <div class="bot" style="background-image:url(src/read_6.jpg); background-position: 0 -860px"></div>
+  <div class="band"><div class="l1">A GENIUS LOST.</div><div class="l2">A JANITOR WON.</div><div class="sub">Two true money stories &rarr;</div></div>
+  <div class="shade"></div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>1/10</span></div>
+</section>
+
+<!-- 2 STAKE -->
+<section class="s">
+  <div class="img" style="background-image:url(src/read_0.jpg); background-position: 0 -960px"></div>
+  <div class="panel">
+    <div class="kicker">Same stock market</div>
+    <h2>Opposite <em>endings</em></h2>
+    <p>The smartest man of his age lost a fortune on stocks. A man who mopped floors died with <b>almost $8 million.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>2/10</span></div>
+</section>
+
+<!-- 3 NEWTON 1 -->
+<section class="s">
+  <div class="img" style="background-image:url(src/newton_600.jpg); background-position: 0 -900px"></div>
+  <div class="panel">
+    <div class="kicker">Isaac Newton &middot; 1720</div>
+    <h2>Newton <em>cashes out</em></h2>
+    <p>He ran England's Royal Mint. In April he sold his South Sea Company shares and walked away <b>&pound;20,000 richer.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>3/10</span></div>
+</section>
+
+<!-- 4 NEWTON 2 -->
+<section class="s">
+  <div class="img" style="background-image:url(src/newton_780.jpg); background-position: 0 -640px"></div>
+  <div class="panel">
+    <div class="kicker">Isaac Newton &middot; June 1720</div>
+    <h2>Then <em>FOMO</em> hit</h2>
+    <p>The price kept climbing and his friends kept getting richer. In June he bought back in near the top, with <b>almost everything he owned.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>4/10</span></div>
+</section>
+
+<!-- 5 NEWTON 3 -->
+<section class="s">
+  <div class="img" style="background-image:url(src/newton_1140.jpg); background-position: 0 -620px"></div>
+  <div class="panel">
+    <div class="kicker">Isaac Newton &middot; September 1720</div>
+    <h2>The bubble <em>pops</em></h2>
+    <p>One share hit &pound;1,000 in August. By the end of September it was worth about &pound;150. Newton lost <b>his profit, and more.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>5/10</span></div>
+</section>
+
+<!-- 6 READ 1 -->
+<section class="s">
+  <div class="img" style="background-image:url(src/read_2.jpg); background-size: 1350px auto; background-position: -135px -1190px"></div>
+  <div class="panel">
+    <div class="kicker">Ronald Read &middot; Vermont</div>
+    <h2>Meet the <em>janitor</em></h2>
+    <p>He pumped gas for 25 years, cleaned floors for 17 more, and held his coat together with <b>a safety pin.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>6/10</span></div>
+</section>
+
+<!-- 7 READ 2 -->
+<section class="s">
+  <div class="img" style="background-image:url(src/read_6.jpg); background-position: 0 -960px"></div>
+  <div class="panel">
+    <div class="kicker">Ronald Read &middot; for decades</div>
+    <h2><em>Boring</em> stocks</h2>
+    <p>Big companies that pay dividends. He reinvested the dividends, held for decades and died in 2014 with <b>almost $8 million.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>7/10</span></div>
+</section>
+
+<!-- 8 READ 3 -->
+<section class="s">
+  <div class="img" style="background-image:url(src/readB_0.jpg); background-position: 0 -1090px"></div>
+  <div class="panel">
+    <div class="kicker">Ronald Read &middot; 2014</div>
+    <h2>Then he <em>gave it away</em></h2>
+    <p><b>$4.8 million</b> to his town's hospital. <b>$1.2 million</b> to its library. His friends and neighbors never knew he was rich.</p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>8/10</span></div>
+</section>
+
+<!-- 9 RECAP -->
+<section class="s recap">
+  <div class="kicker">The whole story</div>
+  <h2>The <em>difference</em></h2>
+  <div class="row n">
+    <div class="av" style="background-image:url(src/newton_1740.jpg); background-size: 470px auto; background-position: -135px -235px"></div>
+    <div>
+      <div class="who">Isaac Newton</div>
+      <div class="res">Lost his profit, and more</div>
+      <ul><li><i>&#x2715;</i>Sold early</li><li><i>&#x2715;</i>Bought back late</li><li><i>&#x2715;</i>Followed the crowd</li></ul>
+    </div>
+  </div>
+  <div class="row r">
+    <div class="av" style="background-image:url(src/read_5.jpg); background-size: 470px auto; background-position: -135px -370px"></div>
+    <div>
+      <div class="who">Ronald Read</div>
+      <div class="res">Left almost $8 million</div>
+      <ul><li><i>&#x2713;</i>Bought boring companies</li><li><i>&#x2713;</i>Reinvested dividends</li><li><i>&#x2713;</i>Held for decades</li></ul>
+    </div>
+  </div>
+  <div class="moral">You don't need to be a genius.<br><em>You need to be patient.</em></div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>9/10</span></div>
+</section>
+
+<!-- 10 CTA -->
+<section class="s">
+  <div class="duo a" style="background-image:url(src/newton_1860.jpg); background-size: 1080px auto; background-position: -40px -720px"></div>
+  <div class="duo b" style="background-image:url(src/read_5.jpg); background-size: 1080px auto; background-position: -270px -1000px"></div>
+  <div class="panel">
+    <div class="kicker">Who made this</div>
+    <h2>Hi, I'm <em>Vacko</em></h2>
+    <p>I turn true money stories into short cartoons. <b>Follow for the next one.</b></p>
+  </div>
+  <div class="foot"><span class="brand">VACKO &middot; <b>MONEY STORIES</b></span><span>10/10</span></div>
+</section>
+
+</body>
+</html>

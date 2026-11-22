@@ -1,0 +1,698 @@
+[
+ {
+  "id": "h1",
+  "ch": "hook",
+  "mode": "3d",
+  "start": 0.4,
+  "end": 5.731,
+  "text": "You are not smarter than Isaac Newton. So why did Newton lose a fortune on one stock?"
+ },
+ {
+  "id": "h2",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 6.081,
+  "end": 17.029,
+  "text": "He wasn't alone. America's most famous writer, its greatest economist, and two Nobel Prize winners all lost fortunes too. Four geniuses. The same four mistakes."
+ },
+ {
+  "id": "h3",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 17.379,
+  "end": 22.629,
+  "text": "And at the end, you'll meet a janitor who avoided all four, and died with eight million dollars."
+ },
+ {
+  "id": "h4",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 22.979,
+  "end": 26.514,
+  "text": "Four true stories. Let's start with the smartest man of them all."
+ },
+ {
+  "id": "n0",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 27.114,
+  "end": 29.514,
+  "text": ""
+ },
+ {
+  "id": "n1",
+  "ch": "newton",
+  "mode": "3d",
+  "start": 29.814,
+  "end": 42.326,
+  "text": "London, seventeen twenty. Isaac Newton is seventy-seven years old. He has explained gravity, invented calculus, and for more than twenty years he has run the Royal Mint. He literally makes England's money."
+ },
+ {
+  "id": "n2",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 42.726,
+  "end": 47.022,
+  "text": "That year, all of London is talking about one stock: the South Sea Company."
+ },
+ {
+  "id": "n2b",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 47.322,
+  "end": 55.375,
+  "text": "Its shares change hands in the coffee houses of a narrow street called Exchange Alley. From lords to servants, everybody wants in."
+ },
+ {
+  "id": "n3",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 55.725,
+  "end": 67.825,
+  "text": "The company has a monopoly on British trade with South America. The trade itself earns almost nothing. But the company has just made a deal to take over the national debt, and its share price is flying."
+ },
+ {
+  "id": "n4",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 68.225,
+  "end": 74.435,
+  "text": "In January, one share costs about a hundred and thirty pounds. By March, it's three hundred and thirty."
+ },
+ {
+  "id": "n5",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 74.785,
+  "end": 82.425,
+  "text": "Newton owns shares. In April he sells them, for a profit of about twenty thousand pounds. A fortune. And a smart move."
+ },
+ {
+  "id": "n6",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 82.825,
+  "end": 89.797,
+  "text": "Except the price doesn't stop. By the end of May, it's five hundred and fifty. In early June, almost nine hundred."
+ },
+ {
+  "id": "n7",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 90.147,
+  "end": 96.561,
+  "text": "And this is the part that hurts. Newton's friends are still in. Every week they get richer, and he just watches."
+ },
+ {
+  "id": "n8",
+  "ch": "newton",
+  "mode": "3d",
+  "start": 96.961,
+  "end": 105.399,
+  "text": "So in June, the man who invented calculus does something very human. He buys back in. Near the top. With almost everything he owns."
+ },
+ {
+  "id": "n9",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 105.799,
+  "end": 111.457,
+  "text": "In August, one share touches a thousand pounds. By the end of September, it's a hundred and fifty."
+ },
+ {
+  "id": "n9b",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 111.857,
+  "end": 122.364,
+  "text": "Thousands of investors are ruined. Parliament investigates, and sends the finance minister to the Tower of London. The same fortress where Newton's Mint makes its coins."
+ },
+ {
+  "id": "n10",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 122.764,
+  "end": 131.809,
+  "text": "When it's over, his early profit is gone, and so is about a third of the fortune he started with. He later wrote that the South Sea had left his pockets empty."
+ },
+ {
+  "id": "n11",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 132.259,
+  "end": 140.899,
+  "text": "Notice what went wrong. It wasn't his math. Newton got out at the right time. What he couldn't stand was watching other people get rich without him."
+ },
+ {
+  "id": "n12",
+  "ch": "newton",
+  "mode": "2d",
+  "start": 141.249,
+  "end": 143.392,
+  "text": "Mistake number one: following the crowd."
+ },
+ {
+  "id": "t0",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 144.192,
+  "end": 146.592,
+  "text": ""
+ },
+ {
+  "id": "t1",
+  "ch": "twain",
+  "mode": "3d",
+  "start": 146.892,
+  "end": 157.317,
+  "text": "Hartford, Connecticut, eighteen eighty. Mark Twain is the most famous writer in America. Tom Sawyer is a hit. Huckleberry Finn is on the way. The money is pouring in."
+ },
+ {
+  "id": "t2",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 157.717,
+  "end": 161.905,
+  "text": "And Twain loves one thing almost as much as writing: new inventions."
+ },
+ {
+  "id": "t3",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 162.205,
+  "end": 168.993,
+  "text": "By his own account, he was once offered stock in a strange new gadget, and said no. The gadget was the telephone."
+ },
+ {
+  "id": "t4",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 169.443,
+  "end": 178.319,
+  "text": "Then he meets an inventor named James Paige. Paige is building a machine that sets type for printing, automatically, faster than any human can."
+ },
+ {
+  "id": "t5",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 178.669,
+  "end": 187.366,
+  "text": "Twain started out as a printer's apprentice, setting type by hand. He knows exactly how big this could be. Every newspaper on Earth would want one."
+ },
+ {
+  "id": "t5b",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 187.766,
+  "end": 196.299,
+  "text": "And he has money to spend. His own publishing company releases the memoirs of President Ulysses Grant, and they become a giant bestseller."
+ },
+ {
+  "id": "t6",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 196.699,
+  "end": 200.546,
+  "text": "So he invests. Then he invests again. And again. For fourteen years."
+ },
+ {
+  "id": "t7",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 200.896,
+  "end": 211.227,
+  "text": "There's just one problem. The machine has around eighteen thousand parts, and it keeps breaking down. Paige keeps taking it apart to make it perfect. Every year, it's almost ready."
+ },
+ {
+  "id": "t8",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 211.577,
+  "end": 216.75,
+  "text": "Meanwhile, a simpler machine called the Linotype is already at work in newspaper offices."
+ },
+ {
+  "id": "t9",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 217.15,
+  "end": 225.832,
+  "text": "By eighteen ninety-four, Twain has put in about three hundred thousand dollars, roughly ten million in today's money. The machine is a failure."
+ },
+ {
+  "id": "t10",
+  "ch": "twain",
+  "mode": "3d",
+  "start": 226.232,
+  "end": 231.121,
+  "text": "That same year his publishing company collapses, and Mark Twain files for bankruptcy."
+ },
+ {
+  "id": "t11",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 231.521,
+  "end": 241.968,
+  "text": "He is almost sixty. So he sets off on a lecture tour around the entire world, to earn the money back. The law said he didn't have to repay his debts. He paid every dollar anyway."
+ },
+ {
+  "id": "t11b",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 242.418,
+  "end": 248.256,
+  "text": "Today, the only surviving machine sits in his old house in Hartford. As a museum piece."
+ },
+ {
+  "id": "t12",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 248.656,
+  "end": 255.093,
+  "text": "Twain didn't follow a crowd. His mistake was different. He fell in love with one idea, and kept feeding it."
+ },
+ {
+  "id": "t13",
+  "ch": "twain",
+  "mode": "2d",
+  "start": 255.443,
+  "end": 258.086,
+  "text": "Mistake number two: all your eggs in one basket."
+ },
+ {
+  "id": "f0",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 258.886,
+  "end": 261.286,
+  "text": ""
+ },
+ {
+  "id": "f1",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 261.586,
+  "end": 265.551,
+  "text": "Now, you could say Newton and Twain weren't money experts. This man was."
+ },
+ {
+  "id": "f2",
+  "ch": "fisher",
+  "mode": "3d",
+  "start": 265.851,
+  "end": 275.534,
+  "text": "Irving Fisher is a professor at Yale, and the most famous economist in America. Other great economists would later call him the best the country ever produced."
+ },
+ {
+  "id": "f3",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 275.934,
+  "end": 282.253,
+  "text": "He's also rich. He invented a filing system for index cards, sold it, and put the money into stocks."
+ },
+ {
+  "id": "f4",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 282.603,
+  "end": 289.723,
+  "text": "And in the nineteen twenties, stocks only seem to go up. Fisher's fortune reportedly reaches about ten million dollars."
+ },
+ {
+  "id": "f5",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 290.123,
+  "end": 300.845,
+  "text": "But he isn't only investing his own money. He's also investing borrowed money. That's called leverage. In the nineteen twenties, you could buy stocks with as little as ten percent down."
+ },
+ {
+  "id": "f6",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 301.195,
+  "end": 311.474,
+  "text": "Here's how it works. Put in ten dollars of your own, and borrow ninety. If the stock rises ten percent, you've doubled your money. If it falls ten percent, you've lost all of it."
+ },
+ {
+  "id": "f7",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 311.924,
+  "end": 320.126,
+  "text": "On October fifteenth, nineteen twenty-nine, Fisher announces that stock prices have reached, quote, what looks like a permanently high plateau."
+ },
+ {
+  "id": "f8",
+  "ch": "fisher",
+  "mode": "3d",
+  "start": 320.526,
+  "end": 322.357,
+  "text": "Nine days later, the market crashes."
+ },
+ {
+  "id": "f8b",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 322.807,
+  "end": 328.174,
+  "text": "A few days after that, on two days in a row, the Dow loses nearly a quarter of its value."
+ },
+ {
+  "id": "f9",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 328.574,
+  "end": 334.603,
+  "text": "For months, Fisher keeps telling investors that the recovery is just around the corner. He holds on."
+ },
+ {
+  "id": "f10",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 334.953,
+  "end": 341.034,
+  "text": "It isn't. By the summer of nineteen thirty-two, the Dow Jones has fallen eighty-nine percent from its peak."
+ },
+ {
+  "id": "f11",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 341.434,
+  "end": 351.615,
+  "text": "Fisher's fortune is gone. He ends up deep in debt, borrowing from his sister-in-law. In the end, Yale has to buy his house and rent it back to him, so he has somewhere to live."
+ },
+ {
+  "id": "f11b",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 352.065,
+  "end": 363.873,
+  "text": "He spends the rest of his life working out why the Depression became so deep. His answer, a theory called debt deflation, is still used by economists today. He just had to live through it first."
+ },
+ {
+  "id": "f12",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 364.323,
+  "end": 373.472,
+  "text": "The best economist in the country was wiped out. Not because he bought terrible companies. Because he bought them with borrowed money, and was sure he couldn't be wrong."
+ },
+ {
+  "id": "f13",
+  "ch": "fisher",
+  "mode": "2d",
+  "start": 373.822,
+  "end": 375.643,
+  "text": "Mistake number three: leverage."
+ },
+ {
+  "id": "l0",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 376.443,
+  "end": 378.843,
+  "text": ""
+ },
+ {
+  "id": "l1",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 379.143,
+  "end": 384.688,
+  "text": "Surely by the nineteen nineties, with computers and modern math, the geniuses had it figured out."
+ },
+ {
+  "id": "l2",
+  "ch": "ltcm",
+  "mode": "3d",
+  "start": 385.038,
+  "end": 392.901,
+  "text": "In nineteen ninety-four, a star Wall Street bond trader named John Meriwether starts a fund called Long-Term Capital Management."
+ },
+ {
+  "id": "l3",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 393.301,
+  "end": 404.147,
+  "text": "His team may be the smartest ever assembled in finance. It includes Myron Scholes and Robert Merton, who in nineteen ninety-seven share the Nobel Prize in economics."
+ },
+ {
+  "id": "l4",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 404.547,
+  "end": 413.964,
+  "text": "Their strategy sounds boring. They find two almost identical bonds with slightly different prices, and bet that the gap will close. Each bet earns pennies."
+ },
+ {
+  "id": "l5",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 414.364,
+  "end": 417.194,
+  "text": "To turn pennies into fortunes, they borrow. A lot."
+ },
+ {
+  "id": "l6",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 417.544,
+  "end": 423.484,
+  "text": "And it works. The fund returns twenty-one percent in its first year. Then forty-three. Then forty-one."
+ },
+ {
+  "id": "l7",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 423.884,
+  "end": 436.202,
+  "text": "By the start of nineteen ninety-eight, the fund has under five billion dollars of its own, and about a hundred and twenty-five billion borrowed. That's more than twenty-five dollars of debt for every dollar it owns."
+ },
+ {
+  "id": "l8",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 436.602,
+  "end": 442.833,
+  "text": "Remember Fisher's math. At that level, a drop of just four percent in what the fund owns wipes it out."
+ },
+ {
+  "id": "l9",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 443.233,
+  "end": 448.499,
+  "text": "Their models, built on years of market data, say a loss like that is almost impossible."
+ },
+ {
+  "id": "l10",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 448.899,
+  "end": 458.924,
+  "text": "Then, in August nineteen ninety-eight, Russia defaults on its debt. Investors everywhere panic. And the price gaps that were supposed to close get wider instead."
+ },
+ {
+  "id": "l11",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 459.324,
+  "end": 463.611,
+  "text": "In less than four months, the fund loses four point six billion dollars."
+ },
+ {
+  "id": "l12",
+  "ch": "ltcm",
+  "mode": "3d",
+  "start": 464.011,
+  "end": 477.844,
+  "text": "And because it owes so much, to so many banks, its collapse could take Wall Street down with it. So the Federal Reserve Bank of New York gathers the big banks in one room. Fourteen of them put in three point six billion dollars to take the fund over."
+ },
+ {
+  "id": "l13",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 478.294,
+  "end": 484.363,
+  "text": "The partners had about one point nine billion dollars of their own money in the fund. It's wiped out."
+ },
+ {
+  "id": "l13b",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 484.763,
+  "end": 493.651,
+  "text": "The fund is closed in early two thousand. Meriwether starts a second fund. It gets hit hard in the two thousand eight crisis, and closes too."
+ },
+ {
+  "id": "l14",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 494.051,
+  "end": 501.502,
+  "text": "The best-known book about them is called When Genius Failed. They trusted their models so much, they forgot a model can be wrong."
+ },
+ {
+  "id": "l15",
+  "ch": "ltcm",
+  "mode": "2d",
+  "start": 501.852,
+  "end": 503.992,
+  "text": "Mistake number four: overconfidence."
+ },
+ {
+  "id": "p0",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 504.792,
+  "end": 507.192,
+  "text": ""
+ },
+ {
+  "id": "p1",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 507.492,
+  "end": 514.695,
+  "text": "So. A physicist, a writer, an economist, and a room full of PhDs. Three centuries. Look at what they share."
+ },
+ {
+  "id": "p2",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 515.045,
+  "end": 521.389,
+  "text": "None of them lost money because they were stupid. They lost it because they were smart. Smart enough to feel sure."
+ },
+ {
+  "id": "p3",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 521.789,
+  "end": 530.365,
+  "text": "Newton followed the crowd. Twain bet everything on one idea. Fisher borrowed to buy more. And Long-Term Capital believed it couldn't be wrong."
+ },
+ {
+  "id": "p4",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 530.765,
+  "end": 538.918,
+  "text": "The crowd. One basket. Leverage. Overconfidence. Almost every investing disaster in history is some mix of those four."
+ },
+ {
+  "id": "p4b",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 539.368,
+  "end": 554.234,
+  "text": "And they still work today. The crowd is the stock everyone at work is talking about. One basket is all your savings in a single company, or a single coin. Leverage is trading on margin. And overconfidence is the thought: this time, I know."
+ },
+ {
+  "id": "p5",
+  "ch": "pattern",
+  "mode": "2d",
+  "start": 554.684,
+  "end": 559.219,
+  "text": "So what does the opposite look like? Meet the least likely millionaire in America."
+ },
+ {
+  "id": "r0",
+  "ch": "read",
+  "mode": "2d",
+  "start": 559.919,
+  "end": 562.319,
+  "text": ""
+ },
+ {
+  "id": "r1",
+  "ch": "read",
+  "mode": "3d",
+  "start": 562.619,
+  "end": 571.116,
+  "text": "Brattleboro, Vermont. Ronald Read pumps gas for twenty-five years. Then he works as a janitor in a department store for seventeen more."
+ },
+ {
+  "id": "r2",
+  "ch": "read",
+  "mode": "2d",
+  "start": 571.516,
+  "end": 579.879,
+  "text": "He drives a used car. He holds his coat together with a safety pin. Once, a stranger pays for his breakfast, thinking he can't afford it."
+ },
+ {
+  "id": "r3",
+  "ch": "read",
+  "mode": "2d",
+  "start": 580.279,
+  "end": 586.964,
+  "text": "When he dies in twenty fourteen, at ninety-two, his town finds out he was worth almost eight million dollars."
+ },
+ {
+  "id": "r4",
+  "ch": "read",
+  "mode": "2d",
+  "start": 587.414,
+  "end": 597.151,
+  "text": "No formulas. No borrowed money. No hot tips. He bought shares in boring, solid companies. Soap. Medicine. Electricity. At least ninety-five of them."
+ },
+ {
+  "id": "r5",
+  "ch": "read",
+  "mode": "2d",
+  "start": 597.551,
+  "end": 603.243,
+  "text": "He reinvested every dividend. And he held on. Some of his shares, for more than fifty years."
+ },
+ {
+  "id": "r5b",
+  "ch": "read",
+  "mode": "2d",
+  "start": 603.643,
+  "end": 610.26,
+  "text": "He kept his stock certificates in a safe deposit box. When it was opened, the pile was five inches thick."
+ },
+ {
+  "id": "r6",
+  "ch": "read",
+  "mode": "2d",
+  "start": 610.66,
+  "end": 619.914,
+  "text": "Check him against the list. The crowd? He ignored it. One basket? He had ninety-five. Leverage? None. Overconfidence? He never tried to outsmart anyone."
+ },
+ {
+  "id": "r7",
+  "ch": "read",
+  "mode": "2d",
+  "start": 620.364,
+  "end": 626.998,
+  "text": "He left six million dollars to his town's hospital and library. The largest gifts either had ever received."
+ },
+ {
+  "id": "r8",
+  "ch": "read",
+  "mode": "3d",
+  "start": 627.398,
+  "end": 633.295,
+  "text": "Newton could calculate the path of a comet. Ronald Read could wait. In the market, waiting won."
+ },
+ {
+  "id": "r9",
+  "ch": "read",
+  "mode": "3d",
+  "start": 633.745,
+  "end": 637.267,
+  "text": "You don't have to be a genius to build wealth. You have to be patient."
+ },
+ {
+  "id": "r10",
+  "ch": "read",
+  "mode": "2d",
+  "start": 637.767,
+  "end": 642.001,
+  "text": "If you enjoyed this, subscribe. The next true money story is on its way."
+ }
+]

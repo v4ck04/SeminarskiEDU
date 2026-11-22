@@ -1,0 +1,7 @@
+node_modules/
+out/
+remotion-tmp/
+*.log
+__pycache__/
+audio/stem_*.wav
+npm-install.log

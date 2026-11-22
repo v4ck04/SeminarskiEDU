@@ -1,0 +1,88 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter Display Black,92,&H00FFFFFF,&H00FFFFFF,&H00141016,&H78000000,0,0,0,0,100,100,0,0,1,8,4,2,70,70,560,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:00.60,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}WHY DO SOME
+Dialogue: 0,0:00:00.60,0:00:01.58,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}PEOPLE WORK EVERY
+Dialogue: 0,0:00:01.58,0:00:02.24,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SINGLE DAY,
+Dialogue: 0,0:00:02.24,0:00:03.00,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}AND STILL STAY
+Dialogue: 0,0:00:03.00,0:00:03.74,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}BROKE?
+Dialogue: 0,0:00:03.74,0:00:04.36,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}ONE FISHING {\c&H3CC9FF&}NET{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.36,0:00:05.54,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}EXPLAINS IT.
+Dialogue: 0,0:00:05.54,0:00:06.28,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}{\c&H3CC9FF&}THREE{\c&HFFFFFF&} MEN LIVE
+Dialogue: 0,0:00:06.28,0:00:06.94,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}BY THE SAME
+Dialogue: 0,0:00:06.94,0:00:07.56,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}RIVER.
+Dialogue: 0,0:00:07.56,0:00:08.26,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}EACH ONE OWNS
+Dialogue: 0,0:00:08.26,0:00:09.08,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}A SINGLE FISHING
+Dialogue: 0,0:00:09.08,0:00:09.66,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}LINE.
+Dialogue: 0,0:00:09.66,0:00:10.16,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}NOTHING ELSE.
+Dialogue: 0,0:00:10.72,0:00:11.32,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THE FIRST MAN
+Dialogue: 0,0:00:11.32,0:00:12.30,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}CATCHES ONE FISH
+Dialogue: 0,0:00:12.30,0:00:12.92,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}A DAY.
+Dialogue: 0,0:00:12.92,0:00:13.34,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE EATS IT
+Dialogue: 0,0:00:13.34,0:00:13.96,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THAT NIGHT.
+Dialogue: 0,0:00:13.96,0:00:14.68,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}EVERY NIGHT.
+Dialogue: 0,0:00:14.68,0:00:15.40,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SAME FISH.
+Dialogue: 0,0:00:15.40,0:00:16.36,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SAME HUNGER.
+Dialogue: 0,0:00:16.36,0:00:17.02,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THE SECOND MAN
+Dialogue: 0,0:00:17.02,0:00:17.98,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}WORKS LONGER.
+Dialogue: 0,0:00:17.98,0:00:19.10,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE CATCHES TWO.
+Dialogue: 0,0:00:19.10,0:00:19.68,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE EATS ONE,
+Dialogue: 0,0:00:19.68,0:00:20.28,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}AND DRIES THE
+Dialogue: 0,0:00:20.28,0:00:20.90,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}OTHER FOR BAD
+Dialogue: 0,0:00:20.90,0:00:21.26,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}DAYS.
+Dialogue: 0,0:00:21.82,0:00:22.36,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THE THIRD MAN
+Dialogue: 0,0:00:22.36,0:00:23.52,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}STOPS FISHING.
+Dialogue: 0,0:00:23.52,0:00:23.98,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}FOR A WHOLE
+Dialogue: 0,0:00:23.98,0:00:24.38,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}WEEK,
+Dialogue: 0,0:00:24.38,0:00:24.86,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE JUST SITS
+Dialogue: 0,0:00:24.86,0:00:25.24,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THERE,
+Dialogue: 0,0:00:25.24,0:00:26.29,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}TYING KNOTS.
+Dialogue: 0,0:00:26.29,0:00:27.08,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}EVERYONE LAUGHS AT
+Dialogue: 0,0:00:27.08,0:00:27.68,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HIM.
+Dialogue: 0,0:00:27.68,0:00:28.48,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}BY DAY {\c&H3CC9FF&}FIVE,{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.48,0:00:29.24,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE'S STARVING.
+Dialogue: 0,0:00:29.24,0:00:29.70,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SO HE GOES
+Dialogue: 0,0:00:29.70,0:00:30.26,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}TO THE SECOND
+Dialogue: 0,0:00:30.26,0:00:30.92,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}MAN.
+Dialogue: 0,0:00:30.92,0:00:31.38,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}LEND ME {\c&H3CC9FF&}TEN{\c&HFFFFFF&}
+Dialogue: 0,0:00:31.38,0:00:32.24,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}DRIED FISH,
+Dialogue: 0,0:00:32.24,0:00:32.68,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}AND I'LL PAY
+Dialogue: 0,0:00:32.68,0:00:33.36,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}YOU BACK {\c&H3CC9FF&}TWENTY.{\c&HFFFFFF&}
+Dialogue: 0,0:00:33.94,0:00:34.54,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}ON DAY {\c&H3CC9FF&}EIGHT,{\c&HFFFFFF&}
+Dialogue: 0,0:00:34.54,0:00:35.06,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE THROWS HIS
+Dialogue: 0,0:00:35.06,0:00:35.56,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}{\c&H3CC9FF&}NET.{\c&HFFFFFF&}
+Dialogue: 0,0:00:35.56,0:00:36.40,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}ONE THROW.
+Dialogue: 0,0:00:36.40,0:00:36.88,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}{\c&H3CC9FF&}FIFTY{\c&HFFFFFF&} FISH.
+Dialogue: 0,0:00:37.46,0:00:37.94,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SOON HE HAS
+Dialogue: 0,0:00:37.94,0:00:38.56,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}TWO NETS.
+Dialogue: 0,0:00:38.56,0:00:39.22,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THEN FIVE.
+Dialogue: 0,0:00:39.22,0:00:39.62,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}TOO MANY TO
+Dialogue: 0,0:00:39.62,0:00:40.52,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}PULL ALONE.
+Dialogue: 0,0:00:40.52,0:00:41.08,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SO HE OFFERS
+Dialogue: 0,0:00:41.08,0:00:41.82,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THE FIRST MAN
+Dialogue: 0,0:00:41.82,0:00:42.64,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}A JOB.
+Dialogue: 0,0:00:42.64,0:00:43.26,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}{\c&H3CC9FF&}THREE{\c&HFFFFFF&} FISH A
+Dialogue: 0,0:00:43.26,0:00:43.72,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}DAY.
+Dialogue: 0,0:00:43.72,0:00:44.62,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}{\c&H3CC9FF&}THREE{\c&HFFFFFF&} TIMES WHAT
+Dialogue: 0,0:00:44.62,0:00:45.06,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}HE USED TO
+Dialogue: 0,0:00:45.06,0:00:45.28,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}CATCH.
+Dialogue: 0,0:00:45.88,0:00:46.62,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SAME RIVER.
+Dialogue: 0,0:00:46.62,0:00:47.10,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}SAME START.
+Dialogue: 0,0:00:47.60,0:00:48.26,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}ONE SOLD HIS
+Dialogue: 0,0:00:48.26,0:00:48.84,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}{\c&H3CC9FF&}TIME.{\c&HFFFFFF&}
+Dialogue: 0,0:00:48.84,0:00:49.82,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}ONE {\c&H3CC9FF&}SAVED{\c&HFFFFFF&} IT.
+Dialogue: 0,0:00:49.82,0:00:50.52,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}ONE {\c&H3CC9FF&}BUILT{\c&HFFFFFF&} SOMETHING
+Dialogue: 0,0:00:50.52,0:00:51.46,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THAT CATCHES FISH
+Dialogue: 0,0:00:51.46,0:00:52.12,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}WHILE HE SLEEPS.
+Dialogue: 0,0:00:52.76,0:00:53.26,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THE FISH WERE
+Dialogue: 0,0:00:53.26,0:00:53.92,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}NEVER THE {\c&H3CC9FF&}DIFFERENCE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:53.92,0:00:54.70,Cap,,0,0,0,,{\fscx88\fscy88\t(0,90,\fscx100\fscy100)}THE {\c&H3CC9FF&}NET{\c&HFFFFFF&} WAS.

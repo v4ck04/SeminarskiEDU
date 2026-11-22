@@ -1,0 +1,5 @@
+audio/mix.wav
+audio/bed.wav
+__pycache__/
+audio/__pycache__/
+voice/*.log

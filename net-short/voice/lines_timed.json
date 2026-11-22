@@ -1,0 +1,98 @@
+[
+ {
+  "id": "hook",
+  "start": 0.15,
+  "end": 3.478,
+  "text": "Why do some people work every single day, and still stay broke?"
+ },
+ {
+  "id": "net",
+  "start": 3.728,
+  "end": 5.104,
+  "text": "One fishing net explains it."
+ },
+ {
+  "id": "set",
+  "start": 5.554,
+  "end": 10.388,
+  "text": "Three men live by the same river. Each one owns a single fishing line. Nothing else."
+ },
+ {
+  "id": "p1",
+  "start": 10.738,
+  "end": 16.098,
+  "text": "The first man catches one fish a day. He eats it that night. Every night. Same fish. Same hunger."
+ },
+ {
+  "id": "p2",
+  "start": 16.398,
+  "end": 21.521,
+  "text": "The second man works longer. He catches two. He eats one, and dries the other for bad days."
+ },
+ {
+  "id": "p3",
+  "start": 21.821,
+  "end": 26.092,
+  "text": "The third man stops fishing. For a whole week, he just sits there, tying knots."
+ },
+ {
+  "id": "laugh",
+  "start": 26.342,
+  "end": 27.357,
+  "text": "Everyone laughs at him."
+ },
+ {
+  "id": "starve",
+  "start": 27.707,
+  "end": 30.682,
+  "text": "By day five, he's starving. So he goes to the second man."
+ },
+ {
+  "id": "loan",
+  "start": 30.882,
+  "end": 33.545,
+  "text": "Lend me ten dried fish, and I'll pay you back twenty."
+ },
+ {
+  "id": "throw",
+  "start": 33.945,
+  "end": 36.167,
+  "text": "On day eight, he throws his net. One throw."
+ },
+ {
+  "id": "fifty",
+  "start": 36.367,
+  "end": 37.075,
+  "text": "Fifty fish."
+ },
+ {
+  "id": "more",
+  "start": 37.475,
+  "end": 40.268,
+  "text": "Soon he has two nets. Then five. Too many to pull alone."
+ },
+ {
+  "id": "job",
+  "start": 40.568,
+  "end": 45.574,
+  "text": "So he offers the first man a job. Three fish a day. Three times what he used to catch."
+ },
+ {
+  "id": "same",
+  "start": 45.924,
+  "end": 47.238,
+  "text": "Same river. Same start."
+ },
+ {
+  "id": "lesson",
+  "start": 47.588,
+  "end": 52.405,
+  "text": "One sold his time. One saved it. One built something that catches fish while he sleeps."
+ },
+ {
+  "id": "end",
+  "start": 52.805,
+  "end": 54.925,
+  "text": "The fish were never the difference. The net was."
+ }
+]

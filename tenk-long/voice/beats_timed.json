@@ -1,0 +1,322 @@
+[
+ {
+  "id": "h1",
+  "ch": "hook",
+  "mode": "3d",
+  "start": 0.4,
+  "end": 5.463,
+  "text": "Somebody hands you ten thousand dollars. A bonus, a tax refund, an inheritance."
+ },
+ {
+  "id": "h2",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 5.813,
+  "end": 10.288,
+  "text": "A year later, for a lot of people, it is gone, and they cannot tell you where it went."
+ },
+ {
+  "id": "h3",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 10.638,
+  "end": 13.558,
+  "text": "Not because they were careless. Because they had no order."
+ },
+ {
+  "id": "h4",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 13.908,
+  "end": 19.541,
+  "text": "So if I got ten thousand dollars tomorrow, this is exactly what I would do with it. Six steps."
+ },
+ {
+  "id": "h5",
+  "ch": "hook",
+  "mode": "2d",
+  "start": 19.891,
+  "end": 23.301,
+  "text": "And step five is the one that turns ten thousand into a million."
+ },
+ {
+  "id": "c1",
+  "ch": "s1",
+  "mode": "2d",
+  "start": 23.901,
+  "end": 26.301,
+  "text": ""
+ },
+ {
+  "id": "s1a",
+  "ch": "s1",
+  "mode": "3d",
+  "start": 26.601,
+  "end": 32.747,
+  "text": "For thirty days, I would not spend a single dollar of it. No new phone. No trip. No \"I deserve this.\""
+ },
+ {
+  "id": "s1b",
+  "ch": "s1",
+  "mode": "2d",
+  "start": 33.097,
+  "end": 37.791,
+  "text": "I would move it into a high-yield savings account, where it earns interest while I wait."
+ },
+ {
+  "id": "s1c",
+  "ch": "s1",
+  "mode": "2d",
+  "start": 38.141,
+  "end": 41.534,
+  "text": "Big money makes you feel rich, and feeling rich is expensive."
+ },
+ {
+  "id": "s1d",
+  "ch": "s1",
+  "mode": "2d",
+  "start": 41.884,
+  "end": 49.856,
+  "text": "Thirty days is long enough for that feeling to pass. If I still want something after a month, I can buy it then. Most of the time, I won't."
+ },
+ {
+  "id": "c2",
+  "ch": "s2",
+  "mode": "2d",
+  "start": 50.456,
+  "end": 52.856,
+  "text": ""
+ },
+ {
+  "id": "s2a",
+  "ch": "s2",
+  "mode": "2d",
+  "start": 53.156,
+  "end": 56.563,
+  "text": "Before I invest a single dollar, I would ask three questions."
+ },
+ {
+  "id": "s2b",
+  "ch": "s2",
+  "mode": "2d",
+  "start": 56.913,
+  "end": 67.48,
+  "text": "One. Do I owe money at more than eight percent interest? A credit card at twenty-four percent costs more than the market will ever reliably pay me. So that debt goes first."
+ },
+ {
+  "id": "s2c",
+  "ch": "s2",
+  "mode": "2d",
+  "start": 67.83,
+  "end": 78.568,
+  "text": "Two. Do I have three months of costs in cash? If my life costs two thousand dollars a month, that is six thousand dollars sitting safely, so losing a job never forces me to sell."
+ },
+ {
+  "id": "s2d",
+  "ch": "s2",
+  "mode": "2d",
+  "start": 78.918,
+  "end": 86.519,
+  "text": "Three. Do I need this money in the next five years? For a car, a wedding, a down payment? Then it does not go into stocks at all."
+ },
+ {
+  "id": "s2e",
+  "ch": "s2",
+  "mode": "2d",
+  "start": 86.869,
+  "end": 93.754,
+  "text": "If any answer is wrong, I fix that first. Let's say I pass all three. Now the full ten thousand moves on."
+ },
+ {
+  "id": "c3",
+  "ch": "s3",
+  "mode": "2d",
+  "start": 94.354,
+  "end": 96.754,
+  "text": ""
+ },
+ {
+  "id": "s3a",
+  "ch": "s3",
+  "mode": "2d",
+  "start": 97.054,
+  "end": 104.49,
+  "text": "Many employers match part of what you put into a retirement plan. Often it is fifty cents for every dollar, up to a limit."
+ },
+ {
+  "id": "s3b",
+  "ch": "s3",
+  "mode": "2d",
+  "start": 104.84,
+  "end": 111.692,
+  "text": "That is a fifty percent return on day one, before the market does anything. No investment reliably beats that."
+ },
+ {
+  "id": "s3c",
+  "ch": "s3",
+  "mode": "2d",
+  "start": 112.042,
+  "end": 126.119,
+  "text": "So the first money I invest goes into the account with the match. After that, a tax-advantaged account, like an IRA, so the growth is not taxed every single year. Same money. Same investments. But more of it stays mine."
+ },
+ {
+  "id": "c4",
+  "ch": "s4",
+  "mode": "2d",
+  "start": 126.719,
+  "end": 129.119,
+  "text": ""
+ },
+ {
+  "id": "s4a",
+  "ch": "s4",
+  "mode": "2d",
+  "start": 129.419,
+  "end": 134.807,
+  "text": "Now the ten thousand needs a home. Not a stock a friend is excited about. Not a coin."
+ },
+ {
+  "id": "s4b",
+  "ch": "s4",
+  "mode": "2d",
+  "start": 135.157,
+  "end": 142.981,
+  "text": "I would buy one broad, low-cost index fund. One fund, thousands of companies. If one of them fails, I barely notice."
+ },
+ {
+  "id": "s4c",
+  "ch": "s4",
+  "mode": "2d",
+  "start": 143.331,
+  "end": 157.976,
+  "text": "And before anything else, I would look at one number. The fee. One percent a year sounds tiny. But over thirty years, it can eat almost a fifth of everything I end up with. A good index fund charges a few hundredths of a percent. Almost nothing."
+ },
+ {
+  "id": "c5",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 158.576,
+  "end": 160.976,
+  "text": ""
+ },
+ {
+  "id": "s5a",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 161.276,
+  "end": 174.28,
+  "text": "Here is the step that actually makes the million. Ten thousand dollars on its own, at an eight percent average return, grows to about one hundred and nine thousand in thirty years. That is good. But it is not a million."
+ },
+ {
+  "id": "s5b",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 174.63,
+  "end": 181.471,
+  "text": "The million comes from what I add. Six hundred dollars a month, every month, automatically, the day my paycheck lands."
+ },
+ {
+  "id": "s5c",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 181.821,
+  "end": 191.032,
+  "text": "After ten years, about one hundred and thirty-two thousand. After twenty, about four hundred thousand. After thirty, just over one million dollars."
+ },
+ {
+  "id": "s5d",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 191.382,
+  "end": 197.058,
+  "text": "I only put in two hundred and twenty-six thousand of that. The rest is growth on top of growth."
+ },
+ {
+  "id": "s5e",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 197.408,
+  "end": 209.286,
+  "text": "And look at the curve. Half of the million arrives in the last eight years. That is why the most expensive thing you can do is wait. Start ten years later, and the same plan ends at about four hundred thousand."
+ },
+ {
+  "id": "s5f",
+  "ch": "s5",
+  "mode": "2d",
+  "start": 209.636,
+  "end": 214.8,
+  "text": "Eight percent is an assumption, not a promise. But time is the one thing a beginner has."
+ },
+ {
+  "id": "c6",
+  "ch": "s6",
+  "mode": "2d",
+  "start": 215.4,
+  "end": 217.8,
+  "text": ""
+ },
+ {
+  "id": "s6a",
+  "ch": "s6",
+  "mode": "3d",
+  "start": 218.1,
+  "end": 222.728,
+  "text": "This is the step that breaks most plans. At some point, the market will fall hard."
+ },
+ {
+  "id": "s6b",
+  "ch": "s6",
+  "mode": "2d",
+  "start": 223.078,
+  "end": 236.053,
+  "text": "Between two thousand seven and two thousand nine, the S&P five hundred fell about fifty-seven percent. People who sold locked in the loss. People who held on were back at a record high by two thousand thirteen."
+ },
+ {
+  "id": "s6c",
+  "ch": "s6",
+  "mode": "2d",
+  "start": 236.403,
+  "end": 249.342,
+  "text": "And the best days hide right next to the worst ones. J.P. Morgan found that seven of the ten best days came within two weeks of the ten worst. Miss the ten best days over twenty years, and you end up with less than half."
+ },
+ {
+  "id": "s6d",
+  "ch": "s6",
+  "mode": "2d",
+  "start": 249.692,
+  "end": 255.752,
+  "text": "So when it falls, I would do the most boring thing possible. Keep the six hundred going, and close the app."
+ },
+ {
+  "id": "c7",
+  "ch": "order",
+  "mode": "2d",
+  "start": 256.352,
+  "end": 258.752,
+  "text": ""
+ },
+ {
+  "id": "o1",
+  "ch": "order",
+  "mode": "2d",
+  "start": 259.052,
+  "end": 268.308,
+  "text": "So here is the order again. Do nothing for thirty days. Run the three checks. Take the free money. Buy the whole market. Feed it every month. And do not sell."
+ },
+ {
+  "id": "o2",
+  "ch": "order",
+  "mode": "2d",
+  "start": 268.658,
+  "end": 271.224,
+  "text": "None of it needs luck. It needs time, and the order."
+ },
+ {
+  "id": "o3",
+  "ch": "order",
+  "mode": "3d",
+  "start": 271.574,
+  "end": 282.944,
+  "text": "If you have ten thousand dollars right now, do not try to do all six tonight. Do step one. Move it somewhere safe, and wait thirty days. And if this helped, subscribe, so you are here for the next step."
+ }
+]
