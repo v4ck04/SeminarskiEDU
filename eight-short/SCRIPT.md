@@ -107,6 +107,10 @@ sourced. Ending lands the payoff and stops (no call to action), as in all 8 refe
    captions and soundtrack included. One command, nothing to join or mux.
    - `set SCALE=1 & render.cmd` renders 1080x1920 instead.
    - `set GL=swangle & render.cmd` if the picture comes out black (software WebGL, much slower).
+   - It renders one frame at a time (`--concurrency=1`) with a 15-minute frame timeout: the first frame builds the
+     whole world and takes far longer than Remotion's default 30 s. `set CONC=2 & render.cmd` is faster if the GPU
+     has the memory. If 2K fails while creating the WebGL context, render 1080p (`set SCALE=1`).
+     `set` stays for the whole cmd window: `set GL=` (and `set SCALE=`, `set CONC=`) clears it again.
    - `render.cmd --props "{\"caps\":false}"` renders without the burned-in captions.
    - Add `--concurrency 1` if the laptop runs out of memory.
    - The temp bundle goes to `<drive>\remotion-tmp` (it is about 1 GB per render); empty it when you are done.
@@ -116,7 +120,7 @@ sourced. Ending lands the payoff and stops (no call to action), as in all 8 refe
 4. Upload with the title, description and tags below, and `eight.en.srt` as the English subtitles.
 
 Manual command, if you prefer (from `finance-short`):
-`npx remotion render src/index.ts EightShort out\the-bank-that-wanted-eight-2k.mp4 --codec h264 --crf 16 --scale 1.3333333333333333 --gl=angle`
+`npx remotion render src/index.ts EightShort out\the-bank-that-wanted-eight-2k.mp4 --codec h264 --crf 16 --scale 1.3333333333333333 --gl=angle --concurrency=1 --timeout=900000`
 (the full `1.3333333333333333`: `1.3333` gives a non-integer height and Remotion refuses it).
 
 ## Posting
