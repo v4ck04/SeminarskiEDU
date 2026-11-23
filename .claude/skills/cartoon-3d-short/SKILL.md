@@ -141,6 +141,21 @@ lighting 5-6, ink 6, textures 5-6, characters 7, depth 6-7, composition 6-7 (fro
 4. **Verify** with a fresh Opus max agent: side-by-side sheets (`python scripts/sbs_sheet.py out.jpg --ours a b --ref r1 r2`), score each area out of 10 (colour day / golden, lighting, ink, textures, characters, depth, composition) plus a numbered fix list with frame numbers. Map each fix to the file owner and resume that owner's agent with SendMessage (keeps its context). Bridge scores: round 1 5/3/4/5/4/7/4/6 → round 2 5/4/5/6/4/7/6/6 → round 3 see notes.
 5. Contracts between owners live in exported constants (e.g. `NOINK` layer from ink.ts, `dofAt`/`FOREGROUND` from story.ts, `LIGHTS`/`LOOK` from lights.ts). Changing a contract means telling every owner that reads it.
 
+## Realistic 3D pass (default since "The Bats That Bombed America", 2026-11-23)
+The user wants the world to read as real 3D (shadows, depth), like their reference clips. Copy these from
+`finance-short/src/videos/batbomb/` into every new film:
+- `ao.ts`: our own screen-space ambient-occlusion pass, added FIRST in the composer (`Batbomb.tsx` makeAO): radius
+  1.0 m, intensity 2.2, bias 0.05, colour #3a3050. Debug: inputProps `{"aoMode":1,"caps":false}` shows the AO alone;
+  `{"aoCfg":{...}}` tries values. Do NOT use n8ao's N8AOPostPass: under software WebGL it returned no occlusion at all.
+- `lights.ts`: day `actorShadow: true` (characters cast real shadows in daylight too), softer two-tone
+  (day lambert .6 / term .55 / shade [.36,.35,.44]; golden lambert .5 / term .3).
+- `build.ts` `rbox(min, max, r)` (RoundedBoxGeometry) for furniture, crates, fridges, towers, beams, mesas, and
+  `shiny(key, colour, specular, shininess)` (Phong two-tone) for metal, enamel and glass. Keep specular dim on big
+  curved surfaces (tank: #5e584c / 22), or it blows out to a white stripe.
+- Cost: ~15 % slower per frame. Room shells stay `cast=false` (otherwise interiors go dark); AO darkens their corners.
+- Not done yet: real 3D characters (capsule body, sphere head, face drawn on the head) instead of flat cards. That is
+  the next big step toward the reference look; ask the user before starting it.
+
 ## Gotchas
 - **Interiors** (learned on "The Bank That Wanted Eight of Everything", `src/videos/eight/`):
   - Build the room's shell with `Batch.build(root, false)` (no shadows), so the sun lights the room like a lit interior. Fittings (counter, props) still cast shadows.

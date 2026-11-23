@@ -2,7 +2,7 @@
 // President's office, the lab with its fridge, the desert test base (hangar, fuel tank, flagpole, crates) and a
 // street of wooden houses. update(id, f, camera) poses everything for shot `id` at frame f.
 import * as THREE from "three";
-import { Batch, boxGeo, V, lam, buildTown, Kit, Ray, kitClone, quad, tri, house, prop } from "./build";
+import { Batch, boxGeo, rbox, shiny, V, lam, buildTown, Kit, Ray, kitClone, quad, tri, house, prop } from "./build";
 import { bed, ctex, cobbleHD, grassHD, waterNear, waterFar, cloudHD, brick, stoneHD, jit, rep } from "./paint";
 import { Pen } from "./toon";
 import { LIGHTS, LOOK, LightPreset } from "./lights";
@@ -272,23 +272,23 @@ export class World {
       lam("ovalFloor", () => ({ map: floorTex("ovalFloor", "#8a6a4a", "#7f6044", 8, "rgba(40,25,15,0.25)") })), lam("ovalCeil", () => ({ color: "#f6f1e4" })));
     const rug = new THREE.CircleGeometry(1, 40); rug.rotateX(-Math.PI / 2); rug.scale(4.2, 1, 3.0);
     fit.add(rug, lam("ovalRug", () => ({ color: "#2f4a8a" })), new THREE.Matrix4().makeTranslation(328, D0 + 0.02, 62.4));
-    fit.add(boxGeo(V(DESK.x0, D0, DESK.z0), V(DESK.x1, DESK.y, DESK.z1)), wood);
+    fit.add(rbox(V(DESK.x0, D0, DESK.z0), V(DESK.x1, DESK.y, DESK.z1), 0.08), wood);
     for (const x of [324.6, 331.4]) {
       fit.add(quad(V(x + 0.9, D0 + 0.9, OFFICE.z1 - 0.02), V(x - 0.9, D0 + 0.9, OFFICE.z1 - 0.02), V(x - 0.9, D0 + 3.6, OFFICE.z1 - 0.02), V(x + 0.9, D0 + 3.6, OFFICE.z1 - 0.02)), lam("ovalWindow", () => ({ map: officeWin() })));
-      for (const s of [-1, 1]) fit.add(boxGeo(V(x + s * 1.0 - 0.18, D0, OFFICE.z1 - 0.25), V(x + s * 1.0 + 0.18, D0 + 3.9, OFFICE.z1 - 0.05)), lam("drape", () => ({ color: "#a8242c" })));
+      for (const s of [-1, 1]) fit.add(rbox(V(x + s * 1.0 - 0.18, D0, OFFICE.z1 - 0.25), V(x + s * 1.0 + 0.18, D0 + 3.9, OFFICE.z1 - 0.05), 0.09), lam("drape", () => ({ color: "#a8242c" })));
     }
     fit.add(boxGeo(V(326.9, DESK.y, 63.6), V(327.4, DESK.y + 0.06, 64.0)), lam("blotter", () => ({ color: "#1f3a2a" })));
     // ---- the lab: tiled walls, a bench with flasks, the fridge ----
     this.room(sh, LAB, lam("labWall", () => ({ map: tileTex() })), lam("labFloor", () => ({ map: floorTex("labFloorB", "#c9c6bd", "#bfbcb2", 6) })), lam("labCeil", () => ({ color: "#f4f6f4" })), 3);
-    fit.add(boxGeo(V(BENCH.x0, BENCH.y - 0.06, BENCH.z0), V(BENCH.x1, BENCH.y, BENCH.z1)), lam("benchTop", () => ({ color: "#2b2c33" })));
-    fit.add(boxGeo(V(BENCH.x0, D0, BENCH.z0 + 0.1), V(BENCH.x1, BENCH.y - 0.06, BENCH.z1)), white);
-    const glass = lam("flask", () => ({ color: "#9fd6c8" })), liquid = [lam("liqA", () => ({ color: "#ff8a3a" })), lam("liqB", () => ({ color: "#7ac35a" }))];
+    fit.add(rbox(V(BENCH.x0, BENCH.y - 0.06, BENCH.z0), V(BENCH.x1, BENCH.y, BENCH.z1), 0.025), shiny("benchTop", "#2b2c33", "#9aa0aa", 40));
+    fit.add(rbox(V(BENCH.x0, D0, BENCH.z0 + 0.1), V(BENCH.x1, BENCH.y - 0.06, BENCH.z1), 0.05), white);
+    const glass = shiny("flask", "#9fd6c8", "#ffffff", 90), liquid = [lam("liqA", () => ({ color: "#ff8a3a" })), lam("liqB", () => ({ color: "#7ac35a" }))];
     for (let i = 0; i < 6; i++) {
       const x = BENCH.x0 + 0.8 + i * 1.2;
       fit.add(new THREE.CylinderGeometry(0.06, 0.16, 0.3, 14), glass, new THREE.Matrix4().makeTranslation(x, BENCH.y + 0.15, 64.45));
       fit.add(new THREE.CylinderGeometry(0.12, 0.155, 0.12, 14), liquid[i % 2], new THREE.Matrix4().makeTranslation(x, BENCH.y + 0.07, 64.45));
     }
-    fit.add(boxGeo(V(FRIDGE.x0, D0, FRIDGE.z0), V(FRIDGE.x1, D0 + FRIDGE.h, FRIDGE.z1)), lam("fridgeBody", () => ({ color: "#eef0f2" })));
+    fit.add(rbox(V(FRIDGE.x0, D0, FRIDGE.z0), V(FRIDGE.x1, D0 + FRIDGE.h, FRIDGE.z1), 0.12), shiny("fridgeBody", "#eef0f2", "#c8ccd2", 50));
     fit.add(quad(V(FRIDGE.x1 - 0.06, D0 + 0.08, FRIDGE.z0 - 0.01), V(FRIDGE.x0 + 0.06, D0 + 0.08, FRIDGE.z0 - 0.01), V(FRIDGE.x0 + 0.06, D0 + FRIDGE.h - 0.08, FRIDGE.z0 - 0.01), V(FRIDGE.x1 - 0.06, D0 + FRIDGE.h - 0.08, FRIDGE.z0 - 0.01)), lam("fridgeIn", () => ({ color: "#cfe6f2" })));
     for (const y of [0.55, 1.0, 1.45]) fit.add(boxGeo(V(FRIDGE.x0 + 0.06, D0 + y, FRIDGE.z0 - 0.02), V(FRIDGE.x1 - 0.06, D0 + y + 0.03, FRIDGE.z0 + 0.4)), lam("shelf", () => ({ color: "#b9c4cc" })));
     this.fridge = this.door(null, FRIDGE.x1 - FRIDGE.x0, FRIDGE.h, [FRIDGE.x0, D0, FRIDGE.z0 - 0.03], 0, 1);
@@ -303,25 +303,25 @@ export class World {
     fit.add(quad(V(x1 - 1, D0, z0 - 0.02), V(x0 + 1, D0, z0 - 0.02), V(x0 + 1, D0 + h - 0.6, z0 - 0.02), V(x1 - 1, D0 + h - 0.6, z0 - 0.02)), lam("hangarDoor", () => ({ map: hangarDoorTex() })));
     const front = new THREE.CircleGeometry(R, 32, 0, Math.PI); front.scale(1, 0.5, 1); front.rotateY(Math.PI);
     fit.add(front, metal, new THREE.Matrix4().makeTranslation(cx, D0 + h, z0 - 0.01));
-    const tankM = lam("tank", () => ({ color: "#d9d4c4" }));
+    const tankM = shiny("tank", "#d9d4c4", "#5e584c", 22);
     fit.add(new THREE.CylinderGeometry(TANK_R, TANK_R, TANK_H, 28), tankM, new THREE.Matrix4().makeTranslation(TANK[0], D0 + TANK_LEG + TANK_H / 2, TANK[2]));
     fit.add(new THREE.SphereGeometry(TANK_R, 28, 10, 0, Math.PI * 2, 0, Math.PI / 2).scale(1, 0.35, 1), tankM, new THREE.Matrix4().makeTranslation(TANK[0], D0 + TANK_LEG + TANK_H, TANK[2]));
     for (const [dx, dz] of [[-1.6, -1.6], [1.6, -1.6], [-1.6, 1.6], [1.6, 1.6]]) fit.add(boxGeo(V(TANK[0] + dx - 0.12, D0, TANK[2] + dz - 0.12), V(TANK[0] + dx + 0.12, D0 + TANK_LEG + 0.2, TANK[2] + dz + 0.12)), dark);
     fit.add(new THREE.CylinderGeometry(0.08, 0.1, POLE_H, 10), white, new THREE.Matrix4().makeTranslation(POLE[0], D0 + POLE_H / 2, POLE[2]));
     fit.add(boxGeo(V(POLE[0] - 0.9, D0 + POLE_H - 0.6, POLE[2] - 0.04), V(POLE[0] + 0.9, D0 + POLE_H - 0.52, POLE[2] + 0.04)), white);
-    fit.add(boxGeo(V(406, D0, 154), V(414, D0 + 10, 162), 3), lam("tower", () => ({ color: "#c9b48f" })));
-    fit.add(boxGeo(V(405.5, D0 + 10, 153.5), V(414.5, D0 + 12.4, 162.5)), lam("towerGlass", () => ({ color: "#4a6a8a" })));
+    fit.add(rbox(V(406, D0, 154), V(414, D0 + 10, 162), 0.25), lam("tower", () => ({ color: "#c9b48f" })));
+    fit.add(rbox(V(405.5, D0 + 10, 153.5), V(414.5, D0 + 12.4, 162.5), 0.2), shiny("towerGlass", "#4a6a8a", "#ffffff", 80));
     const crate = lam("crate", () => ({ color: "#b5824a" }));
-    for (const c of CRATES) fit.add(boxGeo(V(c[0] - 0.4, D0, c[2] - 0.3), V(c[0] + 0.4, D0 + 0.55, c[2] + 0.3)), crate);
+    for (const c of CRATES) fit.add(rbox(V(c[0] - 0.4, D0, c[2] - 0.3), V(c[0] + 0.4, D0 + 0.55, c[2] + 0.3), 0.045), crate);
     for (const [mx, mz, mw, mh] of [[360, 330, 80, 26], [470, 360, 110, 34], [580, 320, 70, 22]] as const)
-      fit.add(boxGeo(V(mx - mw / 2, D0, mz - 18), V(mx + mw / 2, D0 + mh, mz + 18)), lam("mesa", () => ({ color: "#c98a5a" })));
+      fit.add(rbox(V(mx - mw / 2, D0, mz - 18), V(mx + mw / 2, D0 + mh, mz + 18), 4), lam("mesa", () => ({ color: "#c98a5a" })));
     // ---- a street of wooden houses ----
     sh.add(quadUp(STREET.x0, STREET.x1, STREET.z0, STREET.z1, 10, 9, 0.008), lam("streetDirt", () => ({ map: sandTex() })));
     const wall = lam("shoji", () => ({ map: paperWallTex() })), beam = lam("darkWood", () => ({ color: "#4a3324" })), tile = lam("roofTile", () => ({ color: "#3e434c" }));
     for (const hs of HOUSES) {
       const fx = hs.x + hs.side * 2.6, w = 6.2;
       fit.add(boxGeo(V(hs.x - 2.6, D0, hs.z - w / 2 + 0.2), V(hs.x + 2.6, D0 + 2.9, hs.z + w / 2 - 0.2), 1.5), wall);
-      for (const dz of [-w / 2 + 0.2, 0, w / 2 - 0.2]) fit.add(boxGeo(V(fx - 0.12, D0, hs.z + dz - 0.12), V(fx + 0.12, D0 + 2.9, hs.z + dz + 0.12)), beam);
+      for (const dz of [-w / 2 + 0.2, 0, w / 2 - 0.2]) fit.add(rbox(V(fx - 0.12, D0, hs.z + dz - 0.12), V(fx + 0.12, D0 + 2.9, hs.z + dz + 0.12), 0.04), beam);
       fit.add(boxGeo(V(hs.x - 2.7, D0 + 2.8, hs.z - w / 2), V(hs.x + 2.7, D0 + 3.0, hs.z + w / 2)), beam);
       for (const s of [-1, 1]) {
         const g = new THREE.BoxGeometry(3.6, 0.14, w + 0.8); g.rotateZ(s * 0.5);

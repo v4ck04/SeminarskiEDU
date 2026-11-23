@@ -20,14 +20,15 @@ import { World, loadKit } from "./world";
 import { InkPass, noInkFallback } from "./ink";
 import { LensBlur, GrainEffect } from "./lensblur";
 import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "./grade";
+import { AOPass } from "./ao";
 import { Kit } from "./build";
 import { TOTAL, FLASHES, SHOTS, DARK, layersAt, dofAt } from "./story";
 
 export const BATBOMB_FRAMES = TOTAL;
 
 /** A/B switches for test stills only (Remotion inputProps `{ post: { ink: false, ... } }`); everything is on by default. */
-type PostToggles = { ink: boolean; lens: boolean; pre: boolean; bloom: boolean; grade: boolean; grain: boolean; msaa: number };
-const toggles = (): PostToggles => ({ ink: true, lens: true, pre: true, bloom: true, grade: true, grain: false, msaa: 4, ...((getInputProps() as { post?: Partial<PostToggles> }).post ?? {}) });
+type PostToggles = { ao: boolean; ink: boolean; lens: boolean; pre: boolean; bloom: boolean; grade: boolean; grain: boolean; msaa: number };
+const toggles = (): PostToggles => ({ ao: true, ink: true, lens: true, pre: true, bloom: true, grade: true, grain: false, msaa: 4, ...((getInputProps() as { post?: Partial<PostToggles> }).post ?? {}) });
 
 /** Bloom for emissive sources only (depth.md 6.4). Its MIP chain always starts at 540x960 (half of 1080x1920),
  *  whatever the output size, so the glow keeps the same size relative to the frame (e-fold ~30 px at 1080p,
@@ -38,6 +39,13 @@ const makeBloom = () => {
   const setSize = mip.setSize.bind(mip);
   mip.setSize = (w: number, h: number) => setSize(Math.round((1920 * w) / Math.max(h, 1)), 1920);
   return b;
+};
+
+/** Ambient occlusion (the "real 3D" contact darkening: corners, under desks, round feet, where props meet the floor).
+ *  Runs first, on the linear HDR scene, so ink lines, DOF and grade sit on top of it. Radius in metres. */
+const makeAO = (cam: THREE.PerspectiveCamera) => {
+  const ip = getInputProps() as { aoMode?: number; aoCfg?: { radius?: number; intensity?: number; bias?: number } };
+  return new AOPass(cam, { radius: 1.0, intensity: 2.2, bias: 0.05, ...(ip.aoCfg ?? {}), debug: ip.aoMode ?? 0 });
 };
 
 const fwd = new THREE.Vector3(), fpt = new THREE.Vector3();
@@ -55,6 +63,7 @@ const Inner: React.FC<{ id: number; kit: Kit; f: number }> = ({ id, kit, f }) =>
   const target = useMemo(() => new THREE.Vector3(), []);
   const on = useMemo(toggles, []);
   const fx = useMemo(() => ({
+    ao: makeAO(camera as THREE.PerspectiveCamera),
     ink: new InkPass(scene, camera as THREE.PerspectiveCamera),
     lens: new LensBlur({ maxCoC: 24, nearScale: 1.2 }),
     bloom: makeBloom(),
@@ -66,6 +75,7 @@ const Inner: React.FC<{ id: number; kit: Kit; f: number }> = ({ id, kit, f }) =>
   useEffect(() => () => { const d = Object.getPrototypeOf(fx.ink)?.dispose; if (typeof d === "function") d.call(fx.ink); }, [fx]);
   const post = useMemo(() => (
     <EffectComposer multisampling={on.msaa}>
+      {on.ao ? <primitive object={fx.ao} dispose={null} /> : null}
       {on.ink ? <primitive object={fx.ink} dispose={null} /> : null}
       {on.lens && on.pre ? <primitive object={fx.lens.pre} dispose={null} /> : null}
       {on.lens ? <primitive object={fx.lens.main} dispose={null} /> : null}

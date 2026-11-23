@@ -74,6 +74,8 @@ lytle adams, animated history
 - Sound: `audio/mix.py` -> `finance-short/public/batbomb/mix.wav`: original march score + `sfx-library/` effects
   (booms, riser, sting, chimes, pops, the denied buzz) and synthesized wings, fire roar, stamp, knocks, steps.
   -14.2 LUFS, -1.5 dBTP, voice 11.5 dB over the bed (measured, not listened to).
+- Realistic 3D pass (user request): ambient occlusion (`ao.ts`), character shadows in daylight, softer shading,
+  rounded props, specular on metal/enamel/glass. Before/after: `pre-posle.jpg`.
 - Subtitles: `bat-bombs.en.srt`. Stills: `stills.jpg`.
 
 ## Render on your laptop

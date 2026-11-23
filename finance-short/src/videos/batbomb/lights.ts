@@ -15,16 +15,16 @@ export type LightPreset = {
 export const LIGHTS: Record<"day" | "golden", LightPreset> = {
   day: {
     az: 75, el: 48,
-    lit: [1.58, 1.5, 1.33], shade: [0.3, 0.29, 0.36], lift: [0.05, 0.06, 0.11], lambert: 0.35, sideK: 0.84, term: 0.2,
+    lit: [1.58, 1.5, 1.33], shade: [0.36, 0.35, 0.44], lift: [0.05, 0.06, 0.11], lambert: 0.6, sideK: 0.8, term: 0.55,
     charTint: [1.0, 0.94, 0.92], charShade: 0.86, charGrad: 0.07, bodyGrad: 0.2, sideTint: [0.92, 0.90, 0.96],
-    blob: [0.62, 0.58, 0.58], actorShadow: false,
+    blob: [0.7, 0.66, 0.68], actorShadow: true,
     top: "#3e7fd2", hor: "#b8d0ec", skyCurve: [0.0, 0.5, 0.6], fog: "#b8d0ec", fogNear: 25, fogFar: 300, sunDisc: "#000000",
     sunCol: "#fff3e0", sunI: 2.8, sky: "#dcecff", ground: "#b49a78", hemiI: 0.55,
     bias: -0.00025, normalBias: 0.015,
   },
   golden: {
     az: 6, el: 7,
-    lit: [1.5, 0.68, 0.24], shade: [0.15, 0.15, 0.3], lift: [0.04, 0.06, 0.17], lambert: 0.35, sideK: 0.82, term: 0.07,
+    lit: [1.5, 0.68, 0.24], shade: [0.15, 0.15, 0.3], lift: [0.04, 0.06, 0.17], lambert: 0.5, sideK: 0.8, term: 0.3,
     charTint: [1.0, 0.78, 0.56], charShade: 0.88, charGrad: 0.1, bodyGrad: 0.25, sideTint: [0.85, 0.80, 0.95],
     blob: [0.75, 0.74, 0.9], actorShadow: true,
     top: "#6a4f8c", hor: "#ffd08a", skyCurve: [0.05, 0.6, 1.0], fog: "#efb489", fogNear: 50, fogFar: 380, sunDisc: "#ffcf9e",

@@ -3,6 +3,7 @@
 // hills and CC0 Kenney props (trees, lanterns, stalls, hedges).
 import * as THREE from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
+import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 import { D0 } from "./story";
 import { brick, rng, ctex, rep, facadeHD, roofHD, stoneHD } from "./paint";
 import { twoTone } from "./shade";
@@ -82,6 +83,20 @@ export const boxGeo = (min: THREE.Vector3, max: THREE.Vector3, tile = 0, bottom 
   ];
   if (bottom) faces.push(quad(V(x0, y0, z0), V(x1, y0, z0), V(x1, y0, z1), V(x0, y0, z1), t(w), t(d)));
   return mergeGeometries(faces, false);
+};
+
+/** rounded axis box (toy-like bevelled edges that catch light; one image per face). r in metres, capped to the size */
+export const rbox = (min: THREE.Vector3, max: THREE.Vector3, r = 0.05, seg = 3) => {
+  const w = max.x - min.x, h = max.y - min.y, d = max.z - min.z;
+  const g = new RoundedBoxGeometry(w, h, d, seg, Math.min(r, 0.45 * Math.min(w, h, d)));
+  g.translate((min.x + max.x) / 2, (min.y + max.y) / 2, (min.z + max.z) / 2);
+  return g;
+};
+/** glossy two-tone material: the sun's specular highlight is kept (masked by the cast shadow) for metal, enamel, glass */
+export const shiny = (key: string, color: string, specular = "#ffffff", shininess = 60) => {
+  let m = mats.get(key) as THREE.MeshLambertMaterial | undefined;
+  if (!m) { m = twoTone(new THREE.MeshPhongMaterial({ color, specular, shininess })) as unknown as THREE.MeshLambertMaterial; mats.set(key, m); }
+  return m;
 };
 
 /** collects pieces by material and merges them into one static mesh per material */
