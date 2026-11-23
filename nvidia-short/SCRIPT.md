@@ -1,8 +1,8 @@
-# Eleven Days Without Jensen — script, sources and posting (v1, for approval)
+# Eleven Days Without Jensen — script, sources and posting (approved)
 
 A same-day news short (23 Nov 2026) for **Vacko | Money Stories**, to be made with the `cartoon-3d-short` skill:
 Jensen Huang stepped down as Nvidia CEO on 12 Nov 2026 and was reinstated by the board on 23 Nov 2026.
-Vertical, ~64 s at ~3.6 words/s (231 words), English, one steady voice, word captions.
+Vertical 1080x1920, 30 fps, 74.3 s (2230 frames), 233 words, English, one steady voice, word captions.
 
 ## Facts (sources)
 - 12 Nov 2026: Huang stepped down after reports about his private life, including a relationship with a woman U.S.
@@ -33,7 +33,7 @@ private life beyond what the board and the reports said. No claim that he was fi
    — *a giant stock chart on a trading floor shoots straight up; traders' jaws drop*
 2. **Setting** — Jensen Huang co-founded Nvidia in 1993. For over thirty years, the leather jacket on stage was the company.
    — *Jensen on a keynote stage, leather jacket, a huge chip glowing behind him*
-3. Then, on November twelfth, he stepped down.
+3. And then, on November the twelfth, he stepped down.
    — *flash; the stage lights go out, an empty spotlight on the jacket hanging on a chair*
 4. Reports said one of his relationships was with a woman American officials suspected of spying for China. China denied it.
    — *newspapers spin in; a shadowy figure in a trench coat on the front page, a red "DENIED" stamp*
@@ -78,3 +78,21 @@ him, and NVDA jumped more than 30% in one morning. What happened, and why invest
 is jensen huang coming back, nvidia ceo, nvda stock, nvidia news, jensen huang news, nvidia reinstates huang,
 jensen huang back, jensen is back, nvidia stock price today, stock market today, nasdaq, s&p 500, nvidia market cap,
 nvidia board, jensen huang return to nvidia
+
+## Production (done)
+- Voice: Kokoro am_fenrir 1.22 (`voice/voice.wav`, 73.9 s), word timings `voice/words.json` (faster-whisper).
+- Film: `finance-short/src/videos/nvidia/` (composition `NvidiaShort`, preview `NvidiaPreview`): five sets built in
+  code on the far-bank meadow (keynote hall with a GPU screen, trading floor with a live chart and ticker, boardroom,
+  glass HQ on its plaza, a restaurant). Jensen is our caricature (grey hair, black leather jacket), no photo likeness,
+  no company logo (the sign is plain text).
+- Sound: `audio/mix.py` -> `finance-short/public/nvidia/mix.wav`: original score + effects from `sfx-library/`
+  (riser, booms, sting, whooshes, chimes, pops, ticks, the denied buzz) and synthesized steps, stamp, applause.
+  -14.1 LUFS, -1.5 dBTP, 74.333 s; voice 11.4 dB over the bed (measured, not listened to).
+- Checks: 5 rounds of stills (`stills.jpg`), plus a separate verifier.
+- Subtitles: `eleven-days.en.srt`.
+
+## Render on your laptop
+`git pull`, then double-click `nvidia-short\render.cmd` (2K 1440x2560 by default; `set SCALE=1` for 1080p,
+`set GL=swangle` if the picture is black). Output: `finance-short\out\eleven-days-without-jensen-2k.mp4`.
+Before posting, check the day's closing numbers: the script says "more than thirty percent in one morning" and
+"close to a trillion dollars", which match the morning reports.
