@@ -3,6 +3,9 @@
 Everything here is synthesised from scratch (numpy), so it is royalty free
 and needs no network. User-supplied, licensed files take priority:
   production/sound-effects/<type>*.wav|mp3   (e.g. whoosh_01.wav)
+  the shared library of the repository (settings assets.shared_sfx_library, default ../sfx-library): its
+  catalog.json maps each file to effect types ("studio_kinds"); files are trimmed to their onset and a whoosh
+  is placed so that its peak lands on the cut
   production/music/*.mp3|wav  + optional sidecar .json {"moods": [...], "license": "...", "attribution": "..."}
 """
 from __future__ import annotations
@@ -13,6 +16,7 @@ from pathlib import Path
 import numpy as np
 
 from .. import ffmpeg, paths
+from ..config import load_settings
 from ..utils import read_json
 
 SR = 48000
@@ -126,14 +130,58 @@ SFX_FUNCS = {"whoosh": whoosh, "impact": impact, "riser": riser, "pop": pop, "di
              "static": static, "powerdown": powerdown}
 
 
+def shared_library() -> tuple[Path, list[dict]] | None:
+    """The repository's shared sound library (folder with catalog.json), if configured and present."""
+    rel = (load_settings().get("assets", {}) or {}).get("shared_sfx_library", "")
+    if not rel:
+        return None
+    d = Path(rel)
+    d = d if d.is_absolute() else paths.root() / d
+    cat = read_json(d / "catalog.json")
+    if not cat:
+        return None
+    return d.resolve(), [e for e in cat.get("sounds", []) if e.get("file") and (d / e["file"]).exists()]
+
+
+def _from_shared(kind: str, variant: int) -> tuple[Path, dict] | None:
+    sh = shared_library()
+    if not sh:
+        return None
+    d, sounds = sh
+    pool = [e for e in sounds if kind in e.get("studio_kinds", [])]
+    if not pool:
+        return None
+    e = pool[variant % len(pool)]
+    src = d / e["file"]
+    start = max(0.0, float(e.get("onset", 0.0)) - 0.005)
+    out = paths.generated_sfx_dir() / f"lib_{e['id']}.wav"
+    if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
+        x = ffmpeg.decode_audio(src, sr=SR, mono=False).astype(np.float64)
+        if x.size == 0:
+            return None
+        end = float(e.get("end", len(x) / SR)) + 0.05
+        y = x[int(start * SR): int(min(len(x) / SR, end) * SR)].copy()
+        n = min(len(y) // 2, int(0.004 * SR))
+        if n:
+            y[:n] *= np.linspace(0, 1, n)[:, None]
+            y[-n:] *= np.linspace(1, 0, n)[:, None]
+        ffmpeg.write_wav(out, _norm(y, -3.0), SR)
+    return out, {"source": "shared library", "file": e["file"], "license": e.get("license", "user-provided"),
+                 "attribution": e.get("attribution"), "lead": round(max(0.0, float(e.get("peak", start)) - start), 3)}
+
+
 def sfx_file(kind: str, variant: int = 0) -> tuple[Path, dict]:
-    """A user-provided effect if present, else a generated (cached) one."""
+    """A user-provided effect if present (project folder, then the shared library), else a generated (cached) one.
+    meta["lead"] (shared library only) = seconds from the start of the file to its peak."""
     lib = sorted(p for p in paths.sfx_library().glob(f"{kind}*") if p.suffix.lower() in (".wav", ".mp3", ".ogg", ".flac"))
     if lib:
         p = lib[variant % len(lib)]
         side = read_json(p.with_suffix(p.suffix + ".json"), {}) or {}
         return p, {"source": "user library", "file": p.name, "license": side.get("license", "user-provided"),
                    "attribution": side.get("attribution")}
+    shared = _from_shared(kind, variant)
+    if shared:
+        return shared
     kind = kind if kind in SFX_FUNCS else "whoosh"
     out = paths.generated_sfx_dir() / f"{kind}_v{variant % 3}.wav"
     if not out.exists():

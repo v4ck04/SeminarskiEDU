@@ -1,7 +1,10 @@
 # Sound for "The Bank That Wanted Eight of Everything": an original, cheeky little score for the bank (fingerpicked
 # guitar + glockenspiel, a sneaky minor turn while the accounts pile up, everything drops out at the 2016 snap, a
 # plain calm arp for the explanation, the theme resolved slowly over the golden ending) and synthesized SFX on the
-# picture's cues (stamps, cards, cash bell, typing, the tower bursting, paper riffles, the fence clanging up).
+# picture's cues. Recorded / produced effects come from the project's sound library (sfx-library/, catalog.json):
+# whooshes on the cuts, the riser into the snap, the low sting and the boom, chimes, pops, typing, card slides,
+# the counter roll under the fee bill, the comic 'denied' buzz. Synthesized ones fill what the library has not
+# got (stamps, the cash bell, the board knock, steps, paper riffles and tearing, the card clatter, metal clanks).
 # Reuses the instrument / effect / DSP code of genius-long/audio. Mix as the other episodes: music -12 LU under the
 # voice and ducked 3 dB under words, SFX -15 LU, master -14 LUFS with a true-peak ceiling of -1.5 dBTP, 48 kHz stereo.
 # usage: python audio/mix.py    (from eight-short/; writes audio/mix.wav, audio/cues.md and finance-short/public/eight/mix.wav)
@@ -13,6 +16,8 @@ sys.path.insert(0, os.path.join(ROOT, "..", "genius-long", "audio"))
 from dsp import SR, TAU, ns, tt, rng, lp, hp, bp, fades, modal, pan, place, integrated, true_peak, read_wav, write_wav, dbg, phase, smooth_noise
 import instruments as I
 import sfx_gen as S
+sys.path.insert(0, os.path.join(ROOT, "..", "sfx-library"))
+import sfxlib as LIB
 
 FPS, TOTAL = 30, 1845          # must match finance-short/src/videos/eight/story.ts TOTAL
 DUR = TOTAL / FPS
@@ -280,6 +285,16 @@ def swish(r, dur=0.35):
 
 
 two = lambda x, p=0.0: x if np.ndim(x) == 2 else pan(x, p)
+
+
+def lib(key, t, g=1.0, p=0.0, what=None, peak=False):
+    """a library sound (sfxlib: trimmed to its onset, -20 dBFS RMS) at t; peak=True puts its peak on t"""
+    x = LIB.load(key, SR)
+    if p:
+        x = x * np.array([[np.cos((p + 1) * np.pi / 4)], [np.sin((p + 1) * np.pi / 4)]]) * np.sqrt(2)
+    sfx(x, max(0.0, t - (LIB.lead(key) if peak else LIB.PRE)), g, 0.0, what)
+
+
 # ambience: street (birds, breeze, river) outside, a murmuring lobby inside, birds in the garden
 for a, b in ((140, 274), (772, 830), (1040, 1288), (1557, TOTAL)):
     put(two(S.breeze(fr(b - a), Q, 0.3))[:, :ns(fr(b - a))], fr(a), 0.5, 0.0, SF)
@@ -289,48 +304,53 @@ put(two(S.babble(fr(134), Q, 150, 1.1), 0.2), fr(140), 0.14, 0.0, SF)
 for a, b in ((0, 140), (396, 772), (830, 1040), (1421, 1557)):
     put(two(S.babble(fr(b - a), Q, 140, 1.15), -0.15), fr(a), 0.07, 0.0, SF)
 put(two(S.bird_chirps(fr(133), Q, 0.4, "sparrow"), -0.2), fr(1288), 0.3, 0.0, SF)
-for f0 in (140, 274, 396, 497, 583, 690, 772, 830, 912, 1040, 1112, 1288, 1421, 1557, 1703):
-    sfx(swish(Q, 0.3), fr(f0) - 0.1, 0.22, Q.uniform(-0.4, 0.4))
+for i, f0 in enumerate((274, 396, 497, 583, 690, 772, 830, 1040, 1112, 1288, 1421, 1557)):
+    lib(["whoosh_soft", "whoosh_smooth", "swipe_tech"][i % 3], fr(f0), 0.3, Q.uniform(-0.3, 0.3), peak=True)
+lib("whoosh_heavy", fr(140), 0.35, 0.0, "hook flash", peak=True)
+lib("whoosh_airy", fr(1703), 0.3, 0.0, "into the golden ending", peak=True)
 # 1 the hook: stamps; a card ticks onto the tower
 for h in (6, 24, 42, 58, 74, 90, 106, 122, 136):
     sfx(stamp(Q), fr(h), 0.42, -0.15)
 CUES.append((fr(6), "stamps (nine)"))
 for h in (30, 64, 98, 130):
-    sfx(tick(Q), fr(h), 0.5, 0.2)
+    lib("card_slide", fr(h) - 0.2, 0.3, 0.2)
 # 2 the street; the gold 8 gleams
 for k in range(6):
     for j in range(6):
         sfx(S.stroll_step(Q, 0.4), fr(150) + k * 0.13 + j * 0.62, 0.12, -0.6 + 0.24 * k)
-sfx(ding(Q, 3136), fr(252), 0.6, 0.1, "the gold 8 gleams")
-sfx(ding(Q, 4186), fr(258), 0.3, -0.1)
+lib("chime_success", fr(252), 0.55, 0.1, "the gold 8 gleams")
 # 3 "great": the frame sparkles
-sfx(ding(Q, 2637), fr(371), 0.5, -0.2, "eight rhymed with great")
+lib("ding", fr(371), 0.45, -0.2, "eight rhymed with great")
 # 4 the manager taps the board; the badges pop
 sfx(knock(Q), fr(419), 0.8, 0.3, "taps the board"); sfx(knock(Q), fr(423), 0.6, 0.3)
 for k in range(4):
-    sfx(pop_small(Q, 700 + 60 * k), fr(468 + 3 * k), 0.4, -0.4 + 0.25 * k)
+    lib(["pop_bubble", "pop_ui"][k % 2], fr(468 + 3 * k), 0.4, -0.4 + 0.25 * k)
 CUES.append((fr(468), "daily-number badges"))
 # 5 bonus / glare
-sfx(swish(Q, 0.25), fr(512), 0.35, -0.2)
+lib("card_slide", fr(513), 0.4, -0.2)
 sfx(till(Q), fr(521), 0.7, -0.2, "bonus (cash bell)")
-sfx(thud(Q, 55), fr(540), 0.5, 0.2, "the glare")
+lib("chime_success", fr(521), 0.25, -0.2)
+lib("buzz_error", fr(540), 0.22, 0.2, "the glare (denied buzz)")
+sfx(thud(Q, 55), fr(540), 0.3, 0.2)
 # 6 typing; a blip for every new account
-sfx(typing(2.8, Q), fr(604), 0.35, 0.2, "typing")
+lib("typing", fr(604), 0.5, 0.2, "typing"); lib("typing", fr(604) + 1.25, 0.45, 0.2)
 for k in range(4):
-    sfx(blip(Q), fr(600 + 22 * k), 0.35, 0.25)
+    lib("pop_ui", fr(600 + 22 * k), 0.32, 0.25)
 for j in range(8):
     sfx(S.stroll_step(Q, 0.3), fr(606) + j * 0.5, 0.25, -0.1 - 0.06 * j)
 # 7 cards into envelopes; PIN and email screens
 for d in (698, 712, 726, 740, 754):
-    sfx(tick(Q, 1800), fr(d + 5), 0.5, -0.1)
-sfx(blip(Q, 990), fr(728), 0.4, 0.3, "PIN screen"); sfx(blip(Q, 1180), fr(754), 0.4, 0.3, "email screen")
+    lib("card_slide", fr(d), 0.38, -0.1)
+lib("blip_tech", fr(728), 0.3, 0.3, "PIN screen"); lib("click_mouse", fr(754), 0.45, 0.3, "email screen")
 # 8 the envelope on the doormat
 sfx(S.whoosh(0.3, Q, peak=0.25), fr(776), 0.3, -0.2)
 sfx(plop(Q, 260), fr(786), 0.5, 0.0, "envelope lands on the mat")
-sfx(pop_small(Q, 500), fr(806), 0.35, 0.1)
+lib("pop_bubble", fr(806), 0.32, 0.1)
 # 9 the tower grows; the calendar riffles
 for g in (834, 855, 868, 886, 902):
-    sfx(tick(Q), fr(g), 0.55, 0.15); sfx(tick(Q, 3200), fr(g) + 0.06, 0.4, 0.15)
+    lib("card_slide", fr(g) - 0.2, 0.32, 0.15); lib("click_mouse", fr(g) + 0.02, 0.25, 0.15)
+lib("riser", fr(912), 0.4, 0.0, "riser into the snap", peak=True)
+lib("sting_reveal", fr(912), 0.45, 0.0, "the snap: 2016 (low sting)")
 sfx(riffle(1.1, Q), fr(872), 0.45, -0.3, "calendar pages flip")
 for k in range(9):
     sfx(stamp(Q), fr(838 + 14 * k), 0.45, 0.25)
@@ -338,7 +358,7 @@ for k in range(9):
 for k in range(2):
     for j in range(6):
         sfx(S.stroll_step(Q, 0.5), fr(912 + 6 * k) + j * 0.5, 0.3, -0.5 + 0.2 * k)
-sfx(thud(Q, 48), fr(968), 0.6, 0.0); sfx(clatter(Q), fr(968), 0.65, 0.0, "the card tower bursts")
+lib("boom", fr(968), 0.38, 0.0); sfx(clatter(Q), fr(968), 0.6, 0.0, "the card tower bursts")
 # 11 fired: slow steps down the steps
 for k in range(3):
     for j in range(7):
@@ -346,24 +366,27 @@ for k in range(3):
 CUES.append((fr(1052), "tellers walk out with boxes"))
 # 12 the present and the bill
 sfx(tear(Q), fr(1152), 0.5, 0.2, "envelope torn open")
-sfx(ding(Q, 3520), fr(1160), 0.45, 0.2); sfx(ding(Q, 4186), fr(1168), 0.25, 0.2)
-sfx(unroll(1.8, Q), fr(1206), 0.6, 0.1, "the bill unrolls")
-sfx(thud(Q, 80), fr(1262), 0.38, 0.0, "fees")
+lib("chime_success", fr(1160), 0.45, 0.2, "the new credit card")
+sfx(unroll(1.8, Q), fr(1206), 0.3, 0.1, "the bill unrolls")
+for k in range(4):
+    lib("tick_roll", fr(1206) + 0.42 * k, 0.3 * (1 - 0.12 * k), 0.1)
+lib("buzz_error", fr(1262), 0.2, 0.0, "fees (the denied buzz again)"); sfx(thud(Q, 80), fr(1262), 0.25, 0.0)
 # 13 the garden
-sfx(plop(Q, 300), fr(1318), 0.6, -0.2, "weed pulled")
-sfx(S.clink(Q, 2900), fr(1344), 0.6, -0.1, "coin"); sfx(ding(Q, 3951), fr(1344), 0.25, -0.1)
+lib("pop_bubble", fr(1318), 0.45, -0.2, "weed pulled")
+sfx(S.clink(Q, 2900), fr(1344), 0.6, -0.1, "coin"); lib("ding", fr(1344), 0.2, -0.1)
 sfx(plop(Q, 200), fr(1372), 0.5, 0.2, "weed planted")
-sfx(S.clink(Q, 3100), fr(1402), 0.6, -0.1); sfx(ding(Q, 3951), fr(1402), 0.25, -0.1)
+sfx(S.clink(Q, 3100), fr(1402), 0.6, -0.1); lib("ding", fr(1402), 0.2, -0.1)
 # 14 hearts
 for k in range(5):
-    sfx(pop_small(Q, 900 + 100 * (k % 3)), fr(1432 + 26 * k), 0.25, -0.3 + 0.15 * k)
+    lib("pop_ui", fr(1432 + 26 * k), 0.25, -0.3 + 0.15 * k)
 # 15 the cheque; the fence clangs up all around
-sfx(S.whoosh(0.4, Q, peak=0.3), fr(1584), 0.35, 0.0); sfx(ding(Q, 2637), fr(1590), 0.5, 0.0, "the cheque")
+lib("whoosh_heavy", fr(1590), 0.35, 0.0, peak=True); lib("chime_success", fr(1590), 0.4, 0.0, "the cheque")
 for k in range(10):
     sfx(clank(Q), fr(1646) + 0.055 * k * k ** 0.3, 0.32 * (1 - 0.06 * k), -0.5 + 0.11 * k)
+lib("boom", fr(1646), 0.35, 0.0)
 CUES.append((fr(1646), "the fence slams up"))
 # 16 the crane up: a soft wind swell
-sfx(S.whoosh(2.4, Q, peak=0.5, f_lo=200, f_hi=1200), fr(1745), 0.25, 0.0, "crane up")
+lib("whoosh_airy", fr(1745) + 0.9, 0.28, 0.0, "crane up", peak=True)
 
 # =============================================================== mix
 def limiter(x, ceil_db=-1.2, look=0.004, rel=0.08):

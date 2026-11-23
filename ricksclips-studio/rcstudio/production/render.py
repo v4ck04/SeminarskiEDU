@@ -44,8 +44,11 @@ def build_audio(slug: str, settings: dict, force: bool = False) -> dict:
     for sc in sb["scenes"]:
         for ev in sc.get("sfx", []):
             f, meta = audio_gen.sfx_file(ev["type"], k)
-            sfx.append({"type": ev["type"], "time": ev["time"], "file": str(f), "gain_db": ev.get("gain_db", 0.0)})
-            sfx_meta.append({**meta, "type": ev["type"], "time": ev["time"]})
+            t = ev["time"]
+            if ev["type"] == "whoosh" and "lead" in meta:   # storyboard: whoosh 0.1 s before the cut -> its peak on the cut
+                t = round(max(0.0, t + 0.1 - meta["lead"]), 3)
+            sfx.append({"type": ev["type"], "time": t, "file": str(f), "gain_db": ev.get("gain_db", 0.0)})
+            sfx_meta.append({**meta, "type": ev["type"], "time": t})
             k += 1
     say("Mixing audio (voice processing, music, effects, mastering)...", level="step")
     rep = mixer.mix(narration, music, sfx, duration, mixdir, settings, load_voice_settings())

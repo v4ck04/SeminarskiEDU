@@ -77,7 +77,9 @@
       "style": "stylized 3D cartoon illustration with original simple characters, vibrant colours, soft cinematic lighting, clean shapes",
       "_note": "The references use original 3D cartoon animation. AI illustrations in an original style are the closest automatic option; enable this only if you accept OpenAI image costs and terms."
     },
-    "http_user_agent": "RickClipsStudio/1.0 (local video production tool)"
+    "http_user_agent": "RickClipsStudio/1.0 (local video production tool)",
+    "shared_sfx_library": "../sfx-library",
+    "_shared_sfx_library_note": "Folder with catalog.json (sound effects shared by the projects of this repository); \"\" turns it off. Its files take over the effect types listed under studio_kinds; the rest stay generated."
   },
   "export": {
     "width": 1080,

@@ -88,6 +88,7 @@ As soon as the stills are clean, start the full render yourself. Do not make a r
 1. Run `npm install` once if `node_modules` is missing.
    Output resolution is **1080x1920 (1080p vertical)**: set `width={1080} height={1920}` on the composition in `src/index.jsx` before rendering.
 2. Render the silent video in the background: `npx remotion render src/index.jsx <Id> out/full_silent.mp4 --gl=angle --concurrency=4 --image-format=jpeg --jpeg-quality=92 --crf=17`.
+   Sound effects: the shared library `sfx-library/` (see its CATALOG.md and sfxlib.py) for whooshes on location changes, pops on labels, impacts on big moments; mix them under the voice.
 3. Add the voice-over: `npx remotion ffmpeg -y -i out/full_silent.mp4 -i voiceover.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest final.mp4`.
 4. If the render fails or is very slow, say so plainly and fix the cause; do not fall back to handing over a .bat file.
 

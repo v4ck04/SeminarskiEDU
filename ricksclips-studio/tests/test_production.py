@@ -401,3 +401,23 @@ def test_script_fiction_flag_and_beat_transition(workspace):
     sb = storyboard.build(s, settings(), "fx")
     first_of_beat = next(x for x in sb["scenes"] if x["beat_id"] == s["beats"][3]["id"])
     assert first_of_beat["transition_in"]["type"] == "dip_black" and first_of_beat["transition_in"]["duration"] > 0
+
+
+def test_shared_sfx_library(workspace):
+    """Files of the shared library (catalog.json) take over their effect types, trimmed to the onset."""
+    import json as _json
+    from rcstudio import ffmpeg as ff
+    from rcstudio.production import audio_gen
+    lib = workspace / "sharedlib"; lib.mkdir()
+    sr = 48000; t = np.arange(int(1.2 * sr)) / sr
+    x = np.where(t > 0.4, np.sin(2 * np.pi * 500 * t) * np.exp(-((t - 0.8) / 0.15) ** 2), 0.0)
+    ff.write_wav(lib / "w.wav", x * 0.5, sr)
+    (lib / "catalog.json").write_text(_json.dumps({"sounds": [{"id": "w", "file": "w.wav", "studio_kinds": ["whoosh"],
+                                                                "onset": 0.45, "peak": 0.8, "end": 1.15}]}))
+    p = workspace / "config" / "settings.json"; d = _json.loads(p.read_text())
+    d["assets"]["shared_sfx_library"] = str(lib); p.write_text(_json.dumps(d))
+    f, meta = audio_gen.sfx_file("whoosh")
+    assert meta["source"] == "shared library" and abs(meta["lead"] - 0.355) < 0.01
+    y = ff.decode_audio(f, sr=sr, mono=True)
+    assert abs(len(y) / sr - (1.2 - 0.445)) < 0.02          # leading silence trimmed
+    assert audio_gen.sfx_file("powerdown")[1]["source"] == "generated"

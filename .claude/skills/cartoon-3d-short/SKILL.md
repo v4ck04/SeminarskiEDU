@@ -65,6 +65,7 @@ User rules that apply:
    - Composer order: ink → lens pre → lens main → bloom → NEUTRAL tone map → grade (MSAA 4).
    - Every pixel parameter scales with output height / 1920.
 8. **Sound** (`~/bridge-short/audio/`: timeline.py, sfx_gen.py, sfx.py, music.py, instruments.py, dsp.py, mix.py).
+   - Recorded / produced effects: the shared library `sfx-library/` (21 sounds, `CATALOG.md`; load with `sfxlib.load(id)`, `sfxlib.lead(id)` puts a peak on a cue). Prefer it for whooshes, risers, stings, booms, chimes, pops, typing, card slides; synthesize what it lacks. Example: `eight-short/audio/mix.py`.
    - Event table → synthesized SFX plus an original score ducked under the voice.
    - Output: mix.wav (48 kHz, exact length), stems and cues.md.
    - Lock the picture's time constants before the sound is made. Any later timing change means re-running the sound.

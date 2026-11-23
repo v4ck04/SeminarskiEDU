@@ -1,0 +1,440 @@
+{
+ "version": 1,
+ "about": "Sound effects provided by the user (pack 'SFX 1', added 23 Nov 2026). Load them with sfxlib.py.",
+ "license_note": "Source and licence of the pack were not given; the file names call one of them 'no copyright'. Treat them as user-provided and check the source before monetised use.",
+ "sounds": [
+  {
+   "id": "glitch",
+   "file": "01-glitch-digital-distortion.wav",
+   "roles": [
+    "glitch",
+    "static",
+    "digital"
+   ],
+   "studio_kinds": [
+    "static"
+   ],
+   "license": "user-provided",
+   "notes": "hits full scale (clipped); harsh, use quietly",
+   "duration": 0.5,
+   "onset": 0.0,
+   "peak": 0.146,
+   "end": 0.5,
+   "peak_dbfs": 1.3,
+   "rms_dbfs": -4.5,
+   "centroid_hz": 5698,
+   "stereo": false
+  },
+  {
+   "id": "whoosh_soft",
+   "file": "01-soft-digital-whoosh.mp3",
+   "roles": [
+    "whoosh",
+    "transition"
+   ],
+   "studio_kinds": [
+    "whoosh"
+   ],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 0.781,
+   "onset": 0.097,
+   "peak": 0.296,
+   "end": 0.687,
+   "peak_dbfs": -0.1,
+   "rms_dbfs": -19.0,
+   "centroid_hz": 2966,
+   "stereo": true
+  },
+  {
+   "id": "buzz_error",
+   "file": "02-error-denied-buzz.wav",
+   "roles": [
+    "buzz",
+    "wrong",
+    "ui"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "very loud and at full scale: a comic 'wrong' / denied",
+   "duration": 0.4,
+   "onset": 0.0,
+   "peak": 0.009,
+   "end": 0.399,
+   "peak_dbfs": 0.3,
+   "rms_dbfs": -9.2,
+   "centroid_hz": 5542,
+   "stereo": false
+  },
+  {
+   "id": "swipe_tech",
+   "file": "02-smooth-tech-swipe.mp3",
+   "roles": [
+    "whoosh",
+    "swipe",
+    "transition"
+   ],
+   "studio_kinds": [
+    "whoosh"
+   ],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 1.056,
+   "onset": 0.081,
+   "peak": 0.263,
+   "end": 0.609,
+   "peak_dbfs": -1.0,
+   "rms_dbfs": -20.1,
+   "centroid_hz": 2991,
+   "stereo": true
+  },
+  {
+   "id": "impact_subtle",
+   "file": "03-subtle-digital-impact.mp3",
+   "roles": [
+    "impact",
+    "tap",
+    "ui"
+   ],
+   "studio_kinds": [
+    "impact"
+   ],
+   "license": "user-provided",
+   "notes": "very short (30 ms) tap",
+   "duration": 0.5,
+   "onset": 0.0,
+   "peak": 0.013,
+   "end": 0.028,
+   "peak_dbfs": -4.8,
+   "rms_dbfs": -15.9,
+   "centroid_hz": 3361,
+   "stereo": false
+  },
+  {
+   "id": "typing",
+   "file": "03-typing-keyboard-burst.wav",
+   "roles": [
+    "typing",
+    "keyboard"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "1.2 s of keys, ends on one louder key at 1.37 s",
+   "duration": 1.5,
+   "onset": 0.181,
+   "peak": 1.372,
+   "end": 1.38,
+   "peak_dbfs": -1.0,
+   "rms_dbfs": -28.8,
+   "centroid_hz": 14158,
+   "stereo": false
+  },
+  {
+   "id": "tick_roll",
+   "file": "04-counter-tick-number-roll.wav",
+   "roles": [
+    "tick",
+    "counter",
+    "roll"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "a fast tick roll (numbers counting); loops well",
+   "duration": 0.5,
+   "onset": 0.02,
+   "peak": 0.065,
+   "end": 0.44,
+   "peak_dbfs": -0.9,
+   "rms_dbfs": -16.8,
+   "centroid_hz": 2173,
+   "stereo": false
+  },
+  {
+   "id": "pop_ui",
+   "file": "04-soft-ui-pop.mp3",
+   "roles": [
+    "pop",
+    "ui"
+   ],
+   "studio_kinds": [
+    "pop"
+   ],
+   "license": "user-provided",
+   "notes": "short soft pop, the rest of the file is silence",
+   "duration": 1.059,
+   "onset": 0.053,
+   "peak": 0.054,
+   "end": 0.077,
+   "peak_dbfs": -3.2,
+   "rms_dbfs": -18.2,
+   "centroid_hz": 972,
+   "stereo": true
+  },
+  {
+   "id": "whoosh_airy",
+   "file": "05-airy-whoosh.mp3",
+   "roles": [
+    "whoosh",
+    "swell",
+    "air"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "long (1.4 s) airy swell",
+   "duration": 2.321,
+   "onset": 0.16,
+   "peak": 0.715,
+   "end": 1.547,
+   "peak_dbfs": -1.5,
+   "rms_dbfs": -21.0,
+   "centroid_hz": 2073,
+   "stereo": true
+  },
+  {
+   "id": "card_slide",
+   "file": "05-card-slide-paper-swipe.wav",
+   "roles": [
+    "paper",
+    "card",
+    "swipe"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "a card / sheet sliding",
+   "duration": 0.4,
+   "onset": 0.02,
+   "peak": 0.255,
+   "end": 0.391,
+   "peak_dbfs": -0.9,
+   "rms_dbfs": -16.9,
+   "centroid_hz": 5610,
+   "stereo": false
+  },
+  {
+   "id": "boom",
+   "file": "06-deep-cinematic-boom.wav",
+   "roles": [
+    "impact",
+    "boom",
+    "low"
+   ],
+   "studio_kinds": [
+    "impact"
+   ],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 1.2,
+   "onset": 0.0,
+   "peak": 0.02,
+   "end": 1.181,
+   "peak_dbfs": -0.8,
+   "rms_dbfs": -15.1,
+   "centroid_hz": 1438,
+   "stereo": false
+  },
+  {
+   "id": "blip_tech",
+   "file": "06-digital-glitch-tech-blip.mp3",
+   "roles": [
+    "blip",
+    "screen",
+    "ui",
+    "digital"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "bright; peaks slightly over full scale after resampling",
+   "duration": 1.023,
+   "onset": 0.001,
+   "peak": 0.199,
+   "end": 0.473,
+   "peak_dbfs": 0.3,
+   "rms_dbfs": -15.8,
+   "centroid_hz": 13348,
+   "stereo": true
+  },
+  {
+   "id": "riser",
+   "file": "07-riser-build-up.wav",
+   "roles": [
+    "riser",
+    "build"
+   ],
+   "studio_kinds": [
+    "riser"
+   ],
+   "license": "user-provided",
+   "notes": "peaks at its very end (1.75 s): place its end on the hit",
+   "duration": 1.8,
+   "onset": 0.343,
+   "peak": 1.752,
+   "end": 1.8,
+   "peak_dbfs": -0.8,
+   "rms_dbfs": -16.2,
+   "centroid_hz": 3884,
+   "stereo": false
+  },
+  {
+   "id": "whoosh_smooth",
+   "file": "07-smooth-transition-whoosh.mp3",
+   "roles": [
+    "whoosh",
+    "transition"
+   ],
+   "studio_kinds": [
+    "whoosh"
+   ],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 1.757,
+   "onset": 0.286,
+   "peak": 0.712,
+   "end": 0.757,
+   "peak_dbfs": -1.0,
+   "rms_dbfs": -23.0,
+   "centroid_hz": 5040,
+   "stereo": true
+  },
+  {
+   "id": "whoosh_heavy",
+   "file": "08-heavy-whoosh.wav",
+   "roles": [
+    "whoosh",
+    "heavy"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 1.2,
+   "onset": 0.119,
+   "peak": 0.666,
+   "end": 1.124,
+   "peak_dbfs": -1.1,
+   "rms_dbfs": -17.5,
+   "centroid_hz": 6119,
+   "stereo": false
+  },
+  {
+   "id": "chime_success",
+   "file": "08-soft-success-chime.mp3",
+   "roles": [
+    "ding",
+    "chime",
+    "success"
+   ],
+   "studio_kinds": [
+    "ding"
+   ],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 1.619,
+   "onset": 0.007,
+   "peak": 0.259,
+   "end": 1.383,
+   "peak_dbfs": -0.6,
+   "rms_dbfs": -17.3,
+   "centroid_hz": 2343,
+   "stereo": false
+  },
+  {
+   "id": "ding",
+   "file": "09-notification-ding.wav",
+   "roles": [
+    "ding",
+    "notify"
+   ],
+   "studio_kinds": [
+    "ding"
+   ],
+   "license": "user-provided",
+   "notes": "",
+   "duration": 1.0,
+   "onset": 0.0,
+   "peak": 0.004,
+   "end": 0.993,
+   "peak_dbfs": -0.9,
+   "rms_dbfs": -15.0,
+   "centroid_hz": 1842,
+   "stereo": false
+  },
+  {
+   "id": "sting_reveal",
+   "file": "10-mystery-secret-reveal-sting.wav",
+   "roles": [
+    "sting",
+    "reveal",
+    "low"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "low (centroid ~180 Hz), loud",
+   "duration": 1.0,
+   "onset": 0.023,
+   "peak": 0.394,
+   "end": 0.988,
+   "peak_dbfs": -0.9,
+   "rms_dbfs": -11.2,
+   "centroid_hz": 176,
+   "stereo": false
+  },
+  {
+   "id": "click_mouse",
+   "file": "Mouse Click Sound Effect.mp3",
+   "roles": [
+    "click",
+    "ui"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "1.04 s of silence before the click (load() trims it)",
+   "duration": 3.061,
+   "onset": 1.04,
+   "peak": 1.049,
+   "end": 1.184,
+   "peak_dbfs": -2.2,
+   "rms_dbfs": -24.2,
+   "centroid_hz": 5707,
+   "stereo": true
+  },
+  {
+   "id": "pop_bubble",
+   "file": "Pop Bubble Sound Effect.mp3",
+   "roles": [
+    "pop",
+    "bubble"
+   ],
+   "studio_kinds": [
+    "pop"
+   ],
+   "license": "user-provided",
+   "notes": "0.3 s of silence before the pop (load() trims it)",
+   "duration": 1.045,
+   "onset": 0.307,
+   "peak": 0.312,
+   "end": 0.429,
+   "peak_dbfs": -0.4,
+   "rms_dbfs": -12.7,
+   "centroid_hz": 1028,
+   "stereo": false
+  },
+  {
+   "id": "click_shutter",
+   "file": "Shutter Click sound effect (no copyright ).mp3",
+   "roles": [
+    "click",
+    "shutter"
+   ],
+   "studio_kinds": [],
+   "license": "user-provided",
+   "notes": "camera shutter",
+   "duration": 0.906,
+   "onset": 0.22,
+   "peak": 0.336,
+   "end": 0.45,
+   "peak_dbfs": -5.7,
+   "rms_dbfs": -26.1,
+   "centroid_hz": 6172,
+   "stereo": false
+  }
+ ]
+}
