@@ -1,4 +1,4 @@
-# The Bats That Bombed America — idea, script, sources and posting (v1, for approval)
+# The Bats That Bombed America — idea, script, sources and posting (approved)
 
 A true WWII story for a ~55 s vertical short, to be made with the `cartoon-3d-short` skill: Project X-Ray, the
 American plan to firebomb Japanese cities with bats, which instead set fire to a U.S. air base in May 1943.
@@ -65,3 +65,17 @@ test base burned down. True story.
 **Tags:** bat bomb, project x-ray, ww2 bat bomb, bat bombs ww2, weird ww2 weapons, strange ww2 weapons, ww2 history,
 ww2 facts, history shorts, weird history, crazy history facts, military history, carlsbad caverns bats,
 lytle adams, animated history
+
+## Production (done)
+- Voice: Kokoro am_fenrir 1.22 (`voice/voice.wav`, 62.8 s), word timings `voice/words.json`.
+- Film: `finance-short/src/videos/batbomb/` (composition `BatbombShort`, preview `BatbombPreview`), 1900 frames (63.3 s):
+  Carlsbad Caverns with stalactites and sleeping bats, the President's office, the lab with flasks and the bat
+  fridge, the desert base (hangar, fuel tank, flagpole, crates, mesas), a street of wooden houses.
+- Sound: `audio/mix.py` -> `finance-short/public/batbomb/mix.wav`: original march score + `sfx-library/` effects
+  (booms, riser, sting, chimes, pops, the denied buzz) and synthesized wings, fire roar, stamp, knocks, steps.
+  -14.2 LUFS, -1.5 dBTP, voice 11.5 dB over the bed (measured, not listened to).
+- Subtitles: `bat-bombs.en.srt`. Stills: `stills.jpg`.
+
+## Render on your laptop
+`git pull`, then `batbomb-short\render.cmd` -> `finance-short\out\the-bats-that-bombed-america-2k.mp4`
+(`set SCALE=1` for 1080p, `set GL=swangle` if the picture is black).
