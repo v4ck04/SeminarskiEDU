@@ -245,8 +245,8 @@ const bat = (out: Stage, at: V3, f: number, k: number, size = 0.5, bomb = false,
   fxCard(out, `bat${fl}${bomb ? 1 : 0}${glow ? 1 : 0}`, 300, 200, (pp) => fxBat(pp, fl, bomb, glow), at, size, size * 0.667, 0.15 * Math.sin(f * 0.2 + k));
 };
 const flames = (out: Stage, f: number, pts: V3[], start: number, size = 2.0) => pts.forEach((p, k) => {
-  if (f < start + 3 * k) return;
-  const s = size * scale01(f, start + 3 * k, 8) * (0.8 + 0.3 * hsh(k, 1)), t = q(((f * 0.12 + k * 0.29) % 1), 8);
+  if (f < start + 2 * k) return;
+  const s = size * scale01(f, start + 2 * k, 3) * (0.8 + 0.3 * hsh(k, 1)), t = q(((f * 0.12 + k * 0.29) % 1), 8);
   fxCard(out, `flame${t}`, 220, 320, (pp) => fxFlame(pp, t), [p[0], p[1] + s * 0.7, p[2]], s, s * 1.45);
   const u = ((f - start) / 40 + hsh(k, 2)) % 1;
   fxCard(out, "smoke", 260, 220, fxSmoke, [p[0] + 0.6 * u, p[1] + s * 1.2 + u * 5, p[2] + 0.3], (1.4 + u * 2.5) * size / 2, (1.2 + u * 2.1) * size / 2, u);
@@ -269,31 +269,31 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     st(W_D, DENT, { mode: "stand", expr: f < 300 ? "smile" : "shock", look: 0 });
     for (let k = 0; k < 64; k++) {
       const x = CAVE.x0 + 2.5 + (k % 16) * 0.95 + 0.3 * hsh(k, 1), z = 62 + Math.floor(k / 16) * 2.0 + 0.4 * hsh(k, 2);
-      if (f < 336) fxCard(out, "batSleep", 120, 160, fxBatSleep, [x, D0 + CAVE.h - 0.35, z], 0.22, 0.3);
-      else { const u = (f - 336) / 20; bat(out, [x + Math.sin(k + f * 0.2) * u * 2, D0 + CAVE.h - 0.4 - u * (1 + 2 * hsh(k, 3)), z - u * 2], f, k, 0.34); }
+      if (f < 336) fxCard(out, "batSleep", 120, 160, fxBatSleep, [x, D0 + CAVE.h - 0.4, z], 0.4, 0.53);
+      else { const u = (f - 336) / 20; bat(out, [x + Math.sin(k + f * 0.2) * u * 2, D0 + CAVE.h - 0.4 - u * (1 + 2 * hsh(k, 3)), z - u * 2], f, k, 0.55); }
     }
   } else if (id === 3 || id === 10) {
     if (id === 3) {
-      const u = clamp01((f - 395) / 110), p = arcP([600.0, D0 + 4.2, 66.0], [601.9, EAVE_Y, 78.0], u, 0.4);
-      if (f < 505) bat(out, p, f, 0, 0.62, true); else pop(out, [601.9, EAVE_Y, 78.0], f, 505, 0.5, "#ffffff");
+      const u = clamp01((f - 395) / 110), p = arcP([600.0, D0 + 3.2, 64.5], [601.3, EAVE_Y - 0.25, 71.0], u, 0.4);
+      if (f < 505) bat(out, p, f, 0, 1.0, true); else pop(out, [601.3, EAVE_Y - 0.25, 71.0], f, 505, 0.8, "#ffffff");
     } else {
-      if (f < 1424) { const u = clamp01((f - 1376) / 20); fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), [597.4, D0 + 8 - 4.3 * u * u, 76], 0.5, 0.33, f * 0.3); }
-      else if (f < 1445) { const u = (f - 1424) / 21; fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), arcP([597.4, D0 + 3.7, 76], [599.4, D0 + 0.2, 75], u, 1.2), 0.5, 0.33, f * 0.4); }
-      else fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), [599.4, D0 + 0.2, 75], 0.5, 0.33, 1.5);
-      pop(out, [597.4, D0 + 3.7, 76], f, 1424, 0.6, "#ffffff");
-      const u = clamp01((f - 1450) / 95), p = arcP([600.0, D0 + 4.4, 69], [601.9, EAVE_Y, 82.0], u, 0.3);
-      if (f < 1545) bat(out, p, f, 1, 0.62, true); else pop(out, [601.9, EAVE_Y, 82.0], f, 1545, 0.5, "#ffffff");
+      if (f < 1424) { const u = clamp01((f - 1376) / 20); fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), [598.9, D0 + 7.6 - 3.8 * u * u, 71], 0.8, 0.53, f * 0.3); }
+      else if (f < 1445) { const u = (f - 1424) / 21; fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), arcP([598.9, D0 + 3.8, 71], [600.0, D0 + 0.3, 70], u, 1.2), 0.8, 0.53, f * 0.4); }
+      else fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), [600.0, D0 + 0.3, 70], 0.8, 0.53, 1.5);
+      pop(out, [598.9, D0 + 3.8, 71], f, 1424, 1.0, "#ffffff");
+      const u = clamp01((f - 1450) / 95), p = arcP([599.9, D0 + 3.3, 66.5], [601.3, EAVE_Y - 0.25, 73.0], u, 0.3);
+      if (f < 1545) bat(out, p, f, 1, 1.0, true); else pop(out, [601.3, EAVE_Y - 0.25, 73.0], f, 1545, 0.5, "#ffffff");
     }
   } else if (id === 4) {
     st(W_P, FDR, { mode: "stand", expr: f < 641 ? "neutral" : "grin", look: 0, wave: f >= 560 && f < 640 ? 0.8 : undefined });
     if (f >= 549 && f < 560) fxCard(out, "envW", 440, 300, (pp) => fxEnvelope(pp, false, false), arcP([325, D0 + 2.5, 60], raised(cam, FDR), (f - 549) / 11, 0.3), 0.36, 0.25, f * 0.4);
     if (f >= 560 && f < 640) held(out, cam, FDR, "envOpen", 440, 300, (pp) => fxEnvelope(pp, false, true), 0.36);
-    if (f >= 641) fxCard(out, "note", 520, 300, fxNoteWH, toward(cam, [328.4, DESK.y + 0.95, DESK.z0 - 0.3], 0.1), 0.85 * scale01(f, 641, 5), 0.49 * scale01(f, 641, 5));
-    pop(out, toward(cam, [328.4, DESK.y + 0.95, DESK.z0 - 0.3], 0.15), f, 641, 1.0);
+    if (f >= 641) fxCard(out, "note", 520, 300, fxNoteWH, toward(cam, [328.0, DESK.y + 1.3, DESK.z0 - 0.3], 0.1), 0.85 * scale01(f, 641, 5), 0.49 * scale01(f, 641, 5));
+    pop(out, toward(cam, [328.0, DESK.y + 1.3, DESK.z0 - 0.3], 0.15), f, 641, 1.0);
   } else if (id === 5) {
-    st(W_C, CHEM, { mode: "stand", expr: f >= 751 ? "grin" : "neutral", wave: f >= 751 ? 1 : undefined, look: 0 });
-    if (f >= 751) held(out, cam, CHEM, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), 0.42, scale01(f, 751, 5));
-    pop(out, raised(cam, CHEM), f, 751, 0.6);
+    st(W_C, CHEM, { mode: "stand", expr: f >= 751 ? "grin" : "neutral", prop: f >= 751 ? "present" : null, look: 0 });
+    if (f >= 751) { const s = scale01(f, 751, 5); fxCard(out, "tinybomb", 300, 200, (pp) => fxTinyBomb(pp), toward(cam, onCard(cam, CHEM, 0.05, 1.25), 0.1), 0.6 * s, 0.4 * s); }
+    pop(out, toward(cam, onCard(cam, CHEM, 0.05, 1.25), 0.15), f, 751, 0.7);
     st(OFF[0], OFFICER_LAB, { mode: "stand", expr: f >= 727 ? "grin" : "stern", look: 0, headTilt: f >= 727 && f < 745 ? q(8 * Math.sin((f - 727) * 0.6), 2) : 0 }, true);
   } else if (id === 6) {
     for (let r = 0; r < 3; r++) for (let k = 0; k < 5; k++)
@@ -308,13 +308,13 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
       const f0 = 1070 + 2 * k; if (f < f0) continue;
       const u = (f - f0) / 30; bat(out, [452.1 + (hsh(k, 1) - 0.5) * 4 * u, D0 + 0.8 + 3.5 * u, 130.0 + 3 * u * hsh(k, 2)], f, k, 0.45, true);
     }
-    st(OFF[1], [450.9, D0, 129.4], { mode: "stand", expr: open ? "shock" : "neutral", look: 0 });
+    st(OFF[1], [451.6, D0, 131.9], { mode: "stand", expr: open ? "shock" : "neutral", look: 0 });
   } else if (id === 8) {
     for (let k = 0; k < 6; k++) {
       const f0 = 1104 + 3 * k, u = clamp01((f - f0) / 34);
       const a: V3 = [462 + 2 * hsh(k, 1), D0 + 5 + 2 * hsh(k, 2), 133], b: V3 = [TANK[0] - 1.2 + 0.5 * k, D0 + TANK_LEG - 0.15, TANK[2] - 0.4];
       if (u < 1) bat(out, arcP(a, b, u, 0.5), f, k, 0.45, true, true);
-      else if (f < FIRE_TANK) fxCard(out, "batSleep", 120, 160, fxBatSleep, b, 0.2, 0.27);
+      else if (f < FIRE_TANK) fxCard(out, "batSleep", 120, 160, fxBatSleep, toward(cam, b, 0.3), 0.34, 0.45);
     }
     flames(out, f, TANK_FIRE, FIRE_TANK, 2.6);
     pop(out, [466, D0 + 2.6, 138.0], f, FIRE_TANK, 4.0, "#ffd23f");

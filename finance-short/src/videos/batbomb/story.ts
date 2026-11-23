@@ -29,7 +29,7 @@ export const ease = (pts: [number, number][], x: number) => {
 
 // ---------------- places ----------------
 export type Room = { x0: number; x1: number; z0: number; z1: number; h: number };
-export const CAVE: Room = { x0: 280, x1: 300, z0: 56, z1: 72, h: 7 };
+export const CAVE: Room = { x0: 280, x1: 300, z0: 56, z1: 72, h: 5.6 };
 export const DENT: V3 = [290, D0, 64.6];
 export const OFFICE: Room = { x0: 320, x1: 336, z0: 56, z1: 68, h: 4.2 };
 export const DESK = { x0: 326.5, x1: 329.5, z0: 63.4, z1: 64.4, y: D0 + 0.76 };
@@ -128,10 +128,10 @@ const C2 = (f: number) => dolly([290.3, D0 + 1.5, 58.8], [290.0, D0 + 2.9, 66.0]
 const C3 = (f: number) => dolly([599.6, D0 + 1.9, 61.0], [600.4, D0 + 2.7, 80.0], pushK(f, 358, 0.0014), { fov: 52 });
 const C4 = (f: number) => dolly([328.2, D0 + 1.6, 59.8], [328.0, D0 + 1.45, 65.0], pushK(f, 540, 0.0016, 0.005, 16), { fov: 50 });
 const C5 = (f: number) => dolly([366.4, D0 + 1.6, 59.4], [366.3, D0 + 1.45, 64.8], pushK(f, 698, 0.0016), { fov: 52 });
-const C6 = (f: number) => dolly([373.1, D0 + 1.3, 62.6], [373.3, D0 + 1.05, 66.8], pushK(f, 860, 0.0022, 0.006, 16), { fov: 48 });
+const C6 = (f: number) => dolly([373.0, D0 + 1.35, 61.6], [373.3, D0 + 1.05, 66.8], pushK(f, 860, 0.0018, 0.005, 16), { fov: 54 });
 const C7 = (f: number) => dolly([451.2, D0 + 1.7, 125.0], [452.2, D0 + 1.7, 131.0], pushK(f, 970, 0.0016, 0.006, 16), { fov: 52 });
 const C8 = (f: number) => dolly([461.0, D0 + 2.6, 129.0], [466.0, D0 + 3.2, 140.0], pushK(f, 1100, 0.0016, 0.006, 16), { fov: 54 });
-const C9 = (f: number) => dolly([446.4, D0 + 1.7, 135.2], [446.0, D0 + 2.4, 143.0], pushK(f, 1220, 0.0016), { fov: 52 });
+const C9 = (f: number) => dolly([446.4, D0 + 1.6, 135.2], [446.0, D0 + 1.55, 143.0], pushK(f, 1220, 0.0016), { fov: 52 });
 const C10 = (f: number) => dolly([599.4, D0 + 2.2, 64.0], [600.0, D0 + 2.8, 80.0], pushK(f, 1348, 0.0014), { fov: 52 });
 const C11 = (f: number) => dolly([451.6, D0 + 1.8, 122.4], [452.4, D0 + 1.6, 131.0], pushK(f, 1572, 0.0014, 0.006, 16), { fov: 52 });
 const C12a = (f: number) => dolly([456.2, D0 + 5.5, 121.5], [458.0, D0 + 8.2, 127.0], pushK(f, 1740, 0.0016), { fov: 48 });
