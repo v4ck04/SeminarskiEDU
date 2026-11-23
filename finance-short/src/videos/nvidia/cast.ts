@@ -252,7 +252,7 @@ const arcP = (a: V3, b: V3, u: number, h: number): V3 => {
 const ask = (out: Stage, cam: CamInfo, p: V3, f: number, f0: number, k: number) => {
   if (f < f0) return;
   const s = scale01(f, f0, 4);
-  fxCard(out, "q", 200, 240, fxQ, onCard(cam, p, 0.05, 2.3 + 0.04 * Math.sin(f * 0.2 + k)), 0.26 * s, 0.31 * s);
+  fxCard(out, "q", 200, 240, fxQ, onCard(cam, p, 0.05, 2.3 + 0.04 * Math.sin(f * 0.2 + k)), 0.38 * s, 0.45 * s);
 };
 const CONF = ["#f2c230", "#2fe07a", "#ef4f6c", "#4fa3d9", "#ffffff", "#76b900"];
 
@@ -310,17 +310,17 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
       st(BD[0], bp, { mode: "stand", expr: "stern", look: f >= 1146 && f < 1166 ? q(Math.sin((f - 1146) * 0.6), 2) : 0 });
     }
   } else if (id === 9) {
-    BD.forEach((w, k) => { const up = f >= 1268 + 3 * k; st(w, BOARD[k], { mode: "stand", expr: up ? (k % 2 ? "grin" : "smile") : "neutral", wave: up ? 1 : undefined, look: 0 }); });
-    if (f >= 1314) { const m = walk(f, 1314, [371.6, D0, 64.9], [370.2, D0, 64.9], 1.4); st(W_J, m.p, { mode: m.moving ? "stroll" : "stand", phase: q((((f - 1314) / FPS) * 1.4) % 1, 24), expr: "grin", look: 0 }, true); }
+    BD.forEach((w, k) => { const up = f >= 1268 + 3 * k; st(w, [367.3 + 1.25 * k, D0, 67.95], { mode: "stand", expr: up ? (k % 2 ? "grin" : "smile") : "neutral", wave: up ? 1 : undefined, look: 0 }); });
+    if (f >= 1314) { const m = walk(f, 1314, [371.0, D0, 64.9], [369.7, D0, 64.9], 1.3); st(W_J, m.p, { mode: m.moving ? "stroll" : "stand", phase: q((((f - 1314) / FPS) * 1.4) % 1, 24), expr: "grin", look: 0 }, true); }
     pop(out, [369.0, D0 + 3.0, 66.4], f, 1276, 2.6, "#ffffff");
   } else if (id === 10) {
     BD.forEach((w, k) => st(w, BOARD[k], { mode: "stand", expr: k === 1 && f >= 1385 ? "grin" : "smile", wave: k === 1 && f >= 1385 && f < 1440 ? 1 : undefined, look: k === 1 ? 0 : 0.3 }));
     const ph: V3 = [367.4, TABLE.y + 0.28, TABLE.z0 + 0.25];
     if (f < 1385) fxCard(out, `phone${q((f % 8) / 8, 8)}`, 300, 540, (pp) => fxPhone(pp, (f % 8) / 8, true), ph, 0.3, 0.54);
     else if (f < 1440) held(out, cam, BOARD[1], "phoneOn", 300, 540, (pp) => fxPhone(pp, 0, false), 0.22);
-    st(W_J, [370.2, D0, 64.9], { mode: "stand", expr: "smile", look: 0 }, true);
+    st(W_J, [369.7, D0, 64.9], { mode: "stand", expr: "smile", look: 0 }, true);
     const inv: [Who, V3][] = [[AG[0], [362.3, D0, 62.2]], [AG[1], [363.4, D0, 62.9]]];
-    inv.forEach(([w, p], k) => { st(w, p, { mode: "stand", expr: "stern", wave: q(0.5 + 0.15 * Math.sin(f * 0.7 + k), 6), look: 0 }); held(out, cam, p, `notes${k}`, 260, 320, (pp) => fxNotes(pp, k), 0.3); });
+    inv.forEach(([w, p], k) => { st(w, p, { mode: "stand", expr: "stern", look: 0 }); fxCard(out, `notes${k}`, 260, 320, (pp) => fxNotes(pp, k), toward(cam, onCard(cam, p, 0.28, 1.15), 0.08), 0.34, 0.42, -0.15); });
   } else if (id === 11) {
     const ps: V3[] = [[331.3, D0, 66.9], [332.4, D0, 67.2], [333.5, D0, 66.9], [334.6, D0, 67.2], [335.7, D0, 66.9]];
     INV.forEach((w, k) => st(w, ps[k], { mode: "stand", expr: f >= 1658 ? (k % 2 ? "smile_closed" : "grin") : f >= 1600 ? "neutral" : "nervous", look: 0, wave: f >= 1662 && k === 2 ? 0.8 : undefined }, k > 2));

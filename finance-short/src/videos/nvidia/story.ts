@@ -146,16 +146,16 @@ const dolly = (pos: V3, look: V3, k: number, rest: Partial<Cam> = {}): Shot =>
 const add = (a: V3, b: V3): V3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const H = (p: V3, d: V3) => add(p, d);
 
-const C1 = (f: number) => dolly([333.8, D0 + 2.0, 62.0], [333.5, D0 + 3.6, 79.0], pushK(f, 0, 0.0016, 0.006, 20), { fov: 58 });
+const C1 = (f: number) => dolly([333.2, D0 + 2.2, 62.0], [333.0, D0 + 3.3, 79.0], pushK(f, 0, 0.0016, 0.006, 20), { fov: 58 });
 const C2a = (f: number) => dolly([292.4, D0 + 2.4, 61.0], [292.0, D0 + 3.6, 74.0], pushK(f, 195, 0.0012), { fov: 52 });
 const C2b = (f: number) => dolly([292.2, D0 + 2.2, 66.2], [292.0, D0 + 2.35, 71.6], pushK(f, 300, 0.0018, 0.005, 16), { fov: 44 });
-const C3 = (f: number) => dolly([292.6, D0 + 2.0, 66.6], [292.3, D0 + 1.9, 71.8], pushK(f, 398, 0.0016), { fov: 46, roll: 0.03 });
+const C3 = (f: number) => dolly([292.5, D0 + 2.3, 67.2], [292.3, D0 + 2.25, 71.8], pushK(f, 398, 0.0016), { fov: 44, roll: 0.03 });
 const C4 = (f: number) => dolly([333.4, D0 + 1.9, 63.4], [333.5, D0 + 2.3, 70.0], pushK(f, 472, 0.0012), { fov: 50 });
-const C5 = (f: number) => dolly([369.8, D0 + 1.65, 59.0], [369.9, D0 + 1.35, 66.0], pushK(f, 680, 0.0012), { fov: 56 });
-const C6 = (f: number) => dolly([334.3, D0 + 1.65, 61.4], [334.0, D0 + 2.6, 72.0], pushK(f, 812, 0.0014, 0.005, 18), { fov: 54 });
-const C7 = (f: number) => dolly([436.4, D0 + 1.7, 107.0], [436.1, D0 + 2.6, 116.5], pushK(f, 998, 0.0012), { fov: 54 });
+const C5 = (f: number) => dolly([370.3, D0 + 1.65, 58.6], [370.2, D0 + 1.4, 66.0], pushK(f, 680, 0.0012), { fov: 56 });
+const C6 = (f: number) => dolly([333.85, D0 + 1.75, 60.6], [333.7, D0 + 2.05, 70.0], pushK(f, 812, 0.0012, 0.005, 18), { fov: 54 });
+const C7 = (f: number) => dolly([436.4, D0 + 1.45, 107.0], [436.1, D0 + 1.1, 116.5], pushK(f, 998, 0.0012), { fov: 54 });
 const C8 = (f: number) => dolly([436.6, D0 + 1.6, 112.8], [436.0, D0 + 1.8, 119.6], pushK(f, 1136, 0.002, 0.006, 16), { fov: 48 });
-const C9 = (f: number) => dolly([369.3, D0 + 1.75, 60.6], [369.4, D0 + 1.45, 67.0], pushK(f, 1205, 0.0012, 0.006, 16), { fov: 56 });
+const C9 = (f: number) => dolly([369.2, D0 + 1.7, 61.4], [369.2, D0 + 1.5, 67.0], pushK(f, 1205, 0.0012, 0.006, 16), { fov: 56 });
 const C10a = (f: number) => dolly([367.8, D0 + 1.6, 61.5], [367.6, D0 + 1.35, 66.8], pushK(f, 1350, 0.0016), { fov: 48 });
 const C10b = (f: number) => dolly([364.6, D0 + 1.6, 58.6], [362.6, D0 + 1.45, 62.6], pushK(f, 1440, 0.0016), { fov: 48 });
 const C11 = (f: number) => dolly([333.6, D0 + 1.3, 60.6], [333.5, D0 + 3.4, 79.0], pushK(f, 1520, 0.0014, 0.005, 16), { fov: 54 });
