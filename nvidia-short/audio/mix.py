@@ -406,7 +406,7 @@ e = np.minimum(1, (N - np.arange(N)) / ns(0.6)); mix *= e[None, :]
 for _ in range(2):
     mix = limiter(mix * dbg(-14.0 - integrated(mix)), -1.5)
 write_wav(os.path.join(HERE, "mix.wav"), mix)
-PUB = os.path.join(ROOT, "..", "finance-short", "public", "eight"); os.makedirs(PUB, exist_ok=True)
+PUB = os.path.join(ROOT, "..", "finance-short", "public", "nvidia"); os.makedirs(PUB, exist_ok=True)
 write_wav(os.path.join(PUB, "mix.wav"), mix)
 rep = f"integrated {integrated(mix):.2f} LUFS, true peak {true_peak(mix):.2f} dBTP, length {mix.shape[1] / SR:.3f} s"
 print(rep)
