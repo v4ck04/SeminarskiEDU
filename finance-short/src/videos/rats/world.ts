@@ -36,8 +36,8 @@ const haloTex = () => ctex("sunHalo", 256, 256, (g) => {
 /** per-shot sun override (story.ts ShotDef sunAz/sunEl win if present) */
 // a front-right key: walls and faces turned to the lens stay lit (the default az 75 leaves them in the cool shade)
 const SUN_SHOT: Record<number, { az?: number; el?: number }> = {
-  1: { az: 165, el: 26 }, 2: { az: 120, el: 40 }, 3: { az: 140, el: 30 }, 4: { az: 135, el: 45 }, 5: { az: 135, el: 45 }, 6: { az: 120, el: 40 },
-  7: { az: 135, el: 45 }, 8: { az: 130, el: 45 }, 9: { az: 125, el: 38 }, 10: { az: 140, el: 30 }, 11: { az: 150, el: 18 }, 12: { az: 200, el: 24 },
+  1: { az: 165, el: 26 }, 2: { az: 120, el: 40 }, 3: { az: 150, el: 62 }, 4: { az: 135, el: 45 }, 5: { az: 135, el: 45 }, 6: { az: 120, el: 40 },
+  7: { az: 135, el: 45 }, 8: { az: 130, el: 45 }, 9: { az: 125, el: 38 }, 10: { az: 150, el: 62 }, 11: { az: 150, el: 18 }, 12: { az: 200, el: 24 },
   13: { az: 135, el: 45 }, 14: { az: 165, el: 26 },
 };
 const smokeTex = () => ctex("smoke", 256, 256, (g) => {

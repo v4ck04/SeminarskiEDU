@@ -7,7 +7,7 @@ import * as THREE from "three";
 import {
   Pen, bodyFront, bodySide, fxBurst, fxShadow, fxContact, fxStrip, Outfit, FrontOpts, SideOpts,
   fxCancelled, fxDrop, fxAsia, fxTailSign, fxRatCount, fxChalk, fxEyes, fxCoin, fxScissors,
-  drawRat, RatDraw, fxLamp, fxTailCut, fxBowl, fxPointer,
+  drawRat, RatDraw, fxLamp, fxTailCut, fxBowl,
 } from "./toon";
 import {
   FPS, D0, SHOTS, V3, clamp01, ease, walk, MAN, CRATE, CRATE_H, POSTER, DRAINS, LEDGE_H, DRAIN_B, CHAIR, SEAT_H, COUNTER, BOARD, CAGES,
@@ -255,9 +255,9 @@ const hatRat = (out: Stage, cam: CamInfo, f: number, tip = 0, expr: RatDraw["exp
 const crowd = (out: Stage, cam: CamInfo, f: number, n: number, cx: number, cz: number, R: number, tails = 0.5) => {
   for (let k = 0; k < n; k++) {
     const sp = 0.6 + hsh(k, 2) * 0.8, z = cz - R + 2 * R * hsh(k, 3), dir = k % 2 ? 1 : -1;
-    const span = 12, x0 = cx - span / 2 + span * hsh(k, 1);
+    const span = 9, x0 = cx - span / 2 + span * hsh(k, 1);
     const x = cx - span / 2 + ((x0 - (cx - span / 2) + dir * sp * f / FPS) % span + span) % span;
-    rat(out, cam, [x, D0 + (Math.abs(x - 296) > 5 ? 0.15 : 0), z], { view: "side", run: runQ(f, k, 0.2), tail: hsh(k, 4) > tails }, dir * (cam.right.x < 0 ? -1 : 1), 0.95);
+    rat(out, cam, [x, D0 + (Math.abs(x - 296) > 5 ? 0.15 : 0), z], { view: "side", run: runQ(f, k, 0.2), tail: hsh(k, 4) > tails }, dir * (cam.right.x < 0 ? -1 : 1), 1.25);
   }
 };
 
@@ -268,7 +268,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     const tip = id === 14 ? Math.max(0, Math.sin(clamp01((f - 1795) / 24) * Math.PI)) : 0;
     hatRat(out, cam, f, tip);
     const wide = (id === 1 && f >= 108) || (id === 14 && f >= 1840);
-    if (wide) crowd(out, cam, f, 26, 297, 104, 6, id === 14 ? 0.15 : 0.6);
+    if (wide) crowd(out, cam, f, 30, 298.2, 104.2, 3.2, id === 14 ? 0.15 : 0.6);
     else for (let k = 0; k < 3; k++) rat(out, cam, [298.4 + k * 1.1, D0, 107.0 + 0.6 * hsh(k, 1)], { view: "side", run: runQ(f, k), tail: k % 2 === 0 }, k % 2 ? 1 : -1, 0.9);
     if (id === 1 && f >= 64 && f < 100) { const u = (f - 64) / 36; fxCard(out, `coin${q(u, 8)}`, 200, 200, (p) => fxCoin(p, u * 2), toward(cam, [CRATE[0] + 0.18, D0 + CRATE_H + 0.3 + 0.3 * Math.sin(u * Math.PI), CRATE[2]], 0.1), 0.14, 0.14); }
   } else if (id === 2) {
@@ -280,10 +280,10 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     st(WK[3], w2.p, { mode: "stroll", phase: q(((f / FPS) * 1.5) % 1, 24), expr: "neutral", look: 0 });
   } else if (id === 3) {
     for (let k = 0; k < 16; k++) {
-      const z = 96 - ((f - 310 + 90 * hsh(k, 1)) * (0.08 + 0.03 * hsh(k, 2)));
-      if (z < 57.5) continue;
+      const z = 78 - ((f - 310 + 120 * hsh(k, 1)) * (0.06 + 0.03 * hsh(k, 2)));
+      if (z < 59.5) continue;
       const x = k % 3 ? 340.4 + 1.3 * hsh(k, 3) : 344.4 + 1.3 * hsh(k, 3);
-      rat(out, cam, [x, D0 + LEDGE_H, z], { view: "front", run: runQ(f, k, 0.22), tail: true, expr: "grin" }, 1, 0.9);
+      rat(out, cam, [x, D0 + LEDGE_H, z], { view: "front", run: runQ(f, k, 0.22), tail: true, expr: "grin" }, 1, 1.2);
     }
   } else if (id === 4) {
     const up = clamp01((f - 412) / 6);
@@ -322,20 +322,19 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     for (let k = 0; k < 2; k++) st(WK[k], [383.0 + 2.8 * k, D0, 61.3 - 0.4 * k], { mode: "stand", expr: "smile", look: 0 });
     const n = Math.round(20114 * ease([[752, 0], [817, 1]], f));
     fxCard(out, `count${n}`, 600, 240, (pp) => fxRatCount(pp, n), [384.5, D0 + 2.85, 67.6], 2.3, 0.92);
-    pop(out, toward(cam, [384.5, D0 + 2.85, 67.5], 0.3), f, 817, 1.6);
   } else if (id === 8) {
     const c: V3 = [383.4, D0, 64.3];
     st(W_CLERK, c, { mode: "stand", expr: f < 896 ? "pained" : f < 959 ? "stern" : "smile", look: 0, prop: f >= 976 ? "coin" : null });
-    fxCard(out, "peg", 120, 80, (pp) => { pp.poly([[20, 10], [50, 10], [50, 70], [20, 70]], "#c99a5a", 5); pp.poly([[70, 10], [100, 10], [100, 70], [70, 70]], "#c99a5a", 5); pp.dot(60, 40, 9, "#9aa0aa"); }, toward(cam, onCard(cam, c, 0, 1.6), 0.25), 0.12, 0.08);
+    fxCard(out, "peg", 120, 80, (pp) => { pp.poly([[20, 10], [50, 10], [50, 70], [20, 70]], "#c99a5a", 5); pp.poly([[70, 10], [100, 10], [100, 70], [70, 70]], "#c99a5a", 5); pp.dot(60, 40, 9, "#9aa0aa"); }, toward(cam, onCard(cam, c, 0, 1.62), 0.25), 0.2, 0.13);
     for (let k = 0; k < 4; k++) {
-      const w: V3 = [383.5 + 0.15 * (k % 2), D0, 61.7 - k * 0.95];
+      const w: V3 = [384.0 + 0.15 * (k % 2), D0, 61.7 - k * 0.95];
       const show = f >= 950 + 4 * k;
       st(WK[k], w, { mode: "stand", expr: show ? "grin" : "smile", look: 0, wave: show ? 1 : undefined });
-      if (show) inHand(out, cam, w, "tailcut", 300, 120, fxTailCut, 0.32, 1, true, -0.6);
+      if (show) inHand(out, cam, w, "tailcut", 300, 120, fxTailCut, 0.42, 1, false, 1.1);
     }
     const s = f >= 959 ? scale01(f, 959, 5) : 0;
-    if (s) fxCard(out, "tailSign", 520, 360, fxTailSign, [383.5, D0 + 2.65, 67.6], 1.8 * s, 1.25 * s);
-    pop(out, toward(cam, [383.5, D0 + 2.65, 67.5], 0.3), f, 959, 1.6);
+    if (s) fxCard(out, "tailSign", 520, 360, fxTailSign, [382.7, D0 + 2.6, 67.6], 2.3 * s, 1.6 * s);
+    pop(out, toward(cam, [382.7, D0 + 2.6, 67.5], 0.3), f, 959, 1.6);
   } else if (id === 9) {
     const p: V3 = [297.2, D0, 96.4];
     st(W_OFF, p, { mode: "stand", expr: f < 1057 ? "grin" : f < 1127 ? "nervous" : "shock", look: 0, headTilt: f >= 1095 ? 10 : 0 });
@@ -348,13 +347,14 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     const cut = f >= 1206;
     const snip = f < 1194 ? 1 : f < 1206 ? 1 - (f - 1194) / 12 : f < 1214 ? (f - 1206) / 8 : 1;
     st(WK[1], w, { mode: "stand", expr: cut ? "grin" : "smile", look: 0 });
-    if (f < 1232) inHand(out, cam, w, `sc${q(snip, 6)}`, 300, 300, (pp) => fxScissors(pp, q(snip, 6)), 0.3, 1, false, -0.4);
-    if (cut) inHand(out, cam, w, "tailcut", 300, 120, fxTailCut, 0.3, -1, false, 0.9);
+    const tailAt = onCard(cam, [341.5, D0 + LEDGE_H, 70.3], 0.22, 0.12);
+    if (f < 1222) fxCard(out, `sc${q(snip, 6)}`, 300, 300, (pp) => fxScissors(pp, q(snip, 6)), toward(cam, [tailAt[0], tailAt[1] + 0.08, tailAt[2]], 0.12), 0.42, 0.42, -0.5);
+    if (cut) { const dropY = Math.max(0.02, 0.12 - 0.02 * (f - 1206)); fxCard(out, "tailcut", 300, 120, fxTailCut, toward(cam, [tailAt[0] + 0.1, D0 + LEDGE_H + dropY, tailAt[2]], 0.05), 0.4, 0.16, 0.2); }
     inHand(out, cam, w, "lampB", 160, 240, fxLamp, 0.2, -1, false, 0, 0.6);
     const u = ease([[1232, 0], [1262, 1]], f);
-    const rp: V3 = [341.5 + 0.25 * u, D0 + LEDGE_H, 70.3 - 1.4 * u];
+    const rp: V3 = [341.5 + 0.35 * u, D0 + LEDGE_H, 70.3 - 0.75 * u];
     const wave = f >= 1266;
-    rat(out, cam, rp, f >= 1232 && f < 1262 ? { view: "side", run: runQ(f, 2, 0.24), tail: !cut } : { view: wave ? "up" : "front", tail: !cut, expr: cut ? "grin" : "neutral", wave: wave ? q(0.6 + 0.4 * Math.sin(f * 0.5), 6) : 0, blink: bl(t, 9) }, 1, 1.05);
+    rat(out, cam, rp, f >= 1232 && f < 1262 ? { view: "side", run: runQ(f, 2, 0.24), tail: !cut } : { view: wave ? "up" : "front", tail: !cut, expr: cut ? "grin" : "neutral", wave: wave ? q(0.6 + 0.4 * Math.sin(f * 0.5), 6) : 0, blink: bl(t, 9) }, 1, 1.3);
   } else if (id === 11) {
     st(WK[4], [447.0, D0, 147.4], { mode: "stand", expr: "smile", look: 1 });
     inHand(out, cam, [447.0, D0, 147.4], "bowl", 240, 140, fxBowl, 0.32, 1, false);
@@ -365,12 +365,11 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 12) {
     if (f >= 1470) fxCard(out, "cancelled", 560, 180, fxCancelled, toward(cam, [POSTER[0] - 0.05, POSTER[1], POSTER[2]], 0.6), 1.7 * scale01(f, 1470, 3), 0.55 * scale01(f, 1470, 3));
     pop(out, [POSTER[0] - 0.15, POSTER[1], POSTER[2]], f, 1470, 1.4);
-    for (let k = 0; k < 4; k++) rat(out, cam, [302.3 + 0.55 * (k % 2), D0 + 0.15, 98.4 + k * 1.15], { view: k % 2 ? "up" : "front", tail: k === 3, expr: k % 2 ? "grin" : "neutral", blink: bl(t, 30 + k) }, 1, 0.95);
-    if (f >= 1514) for (const [i, d] of DRAINS.entries()) { if (bl(t, 40 + i) > 0.5) continue; fxCard(out, "eyes", 120, 60, fxEyes, [d[0] - 0.05, d[1] + 0.06, d[2]], 0.22, 0.11); }
+    for (let k = 0; k < 4; k++) rat(out, cam, [302.3 + 0.55 * (k % 2), D0 + 0.15, 98.9 + k * 1.0], { view: k % 2 ? "up" : "front", tail: k === 3, expr: k % 2 ? "grin" : "neutral", blink: bl(t, 30 + k) }, 1, 0.95);
+    if (f >= 1514) for (const [i, d] of DRAINS.entries()) { if (bl(t, 40 + i) > 0.5) continue; fxCard(out, "eyes", 120, 60, fxEyes, toward(cam, [d[0] - 0.05, d[1] + 0.07, d[2]], 0.15), 0.4, 0.2); }
   } else if (id === 13) {
-    const p: V3 = [389.7, D0, 66.2];
+    const p: V3 = [388.95, D0, 66.2];
     st(W_OFF, p, { mode: "stand", expr: f < 1675 ? "grin" : "stern", look: -1, wave: 0.7 });
-    fxCard(out, "pointer", 400, 60, fxPointer, toward(cam, onCard(cam, p, -0.9, 2.2), 0.1), 1.0, 0.15, 0.25);
     const k = ease([[1600, 0], [1700, 1]], f), cb = clamp01((f - 1619) / 8);
     fxCard(out, `chalk${q(k, 20)}${q(cb, 4)}`, 640, 300, (pp) => fxChalk(pp, k, cb), [(BOARD.x0 + BOARD.x1) / 2 + 0.2, (BOARD.y0 + BOARD.y1) / 2, BOARD.z - 0.09], 3.7, 1.73);
   }

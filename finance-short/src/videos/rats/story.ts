@@ -61,14 +61,14 @@ export const TOTAL = 1880;
 export const SHOTS: ShotDef[] = [
   { id: 1, a: 0, b: 155, light: "golden" },     // in 1902 a city paid people to kill rats ... more rats than ever
   { id: 2, a: 155, b: 310, light: "day" },      // Hanoi, a French colony; a new quarter with modern sewers
-  { id: 3, a: 310, b: 396, light: "golden" },   // the sewers: a perfect highway for rats
+  { id: 3, a: 310, b: 396, light: "day" },   // the sewers: a perfect highway for rats
   { id: 4, a: 396, b: 470, light: "day" },      // straight into the fanciest houses in town
   { id: 5, a: 470, b: 592, light: "day" },      // plague spreading across Asia
   { id: 6, a: 592, b: 722, light: "day" },      // workers go down into the sewers; paid for every rat
   { id: 7, a: 722, b: 838, light: "day" },      // June 12th: over twenty thousand rats
   { id: 8, a: 838, b: 1015, light: "day" },     // disgusting; just bring us the tail; one cent per tail
   { id: 9, a: 1015, b: 1157, light: "day" },    // something strange: rats with no tails
-  { id: 10, a: 1157, b: 1316, light: "golden" },// cutting off the tails and letting them go
+  { id: 10, a: 1157, b: 1316, light: "day" },// cutting off the tails and letting them go
   { id: 11, a: 1316, b: 1452, light: "golden" },// breeding rats outside the city
   { id: 12, a: 1452, b: 1561, light: "golden" },// cancelled; the rats stayed; the plague came anyway
   { id: 13, a: 1561, b: 1737, light: "day" },   // the cobra effect
@@ -125,8 +125,8 @@ const add = (a: V3, b: V3): V3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const H = (p: V3, d: V3) => add(p, d);
 
 const C1a = (f: number) => dolly([298.4, D0 + 1.05, 101.5], [299.95, D0 + 0.8, 103.8], pushK(f, 0, 0.0016, 0.006, 20), { fov: 44 });
-const C1b = (f: number) => dolly([292.6, D0 + 7.5, 89.5], [298.4, D0 + 0.2, 103.4], pushK(f, 108, 0.001), { fov: 50 });
-const C2 = (f: number) => dolly([294.0, D0 + 1.7, 85.6], [296.7, D0 + 1.25, 92.2], pushK(f, 155, 0.0014, 0.005, 18), { fov: 50 });
+const C1b = (f: number) => dolly([295.0, D0 + 3.6, 97.0], [298.6, D0 + 0.3, 104.0], pushK(f, 108, 0.001), { fov: 50 });
+const C2 = (f: number) => dolly([295.4, D0 + 1.6, 88.0], [297.1, D0 + 1.2, 92.5], pushK(f, 155, 0.0014, 0.005, 18), { fov: 50 });
 const C3 = (f: number) => dolly([343.1, D0 + 1.0, 58.6], [341.6, D0 + 0.55, 70.0], pushK(f, 310, 0.0016, 0.006, 14), { fov: 54 });
 const C4 = (f: number) => dolly([363.7, D0 + 1.55, 56.2], [362.0, D0 + 1.25, 60.2], pushK(f, 396, 0.0018, 0.006, 14), { fov: 54 });
 const C5 = (f: number) => dolly([390.7, D0 + 1.65, 58.6], [390.7, D0 + 1.8, 66.4], pushK(f, 470, 0.0016), { fov: 50 });
@@ -134,12 +134,12 @@ const C6 = (f: number) => dolly([292.6, D0 + 1.8, 85.8], [296.3, D0 + 0.85, 92.0
 const C7 = (f: number) => dolly([384.4, D0 + 1.7, 58.4], [384.5, D0 + 2.0, 65.5], pushK(f, 722, 0.0016, 0.005, 14), { fov: 50 });
 const C8 = (f: number) => dolly([386.4, D0 + 1.8, 57.0], [383.8, D0 + 1.65, 63.4], pushK(f, 838, 0.0012), { fov: 52 });
 const C9 = (f: number) => dolly([296.3, D0 + 0.3, 92.2], [297.0, D0 + 0.85, 96.0], pushK(f, 1015, 0.0012), { fov: 54 });
-const C10 = (f: number) => dolly([343.5, D0 + 1.25, 66.4], [341.4, D0 + 0.75, 70.2], pushK(f, 1157, 0.0014, 0.005, 14), { fov: 52 });
+const C10 = (f: number) => dolly([342.9, D0 + 1.15, 67.4], [341.4, D0 + 0.8, 70.4], pushK(f, 1157, 0.0014, 0.005, 14), { fov: 52 });
 const C11 = (f: number) => dolly([446.4, D0 + 1.5, 142.4], [446.9, D0 + 0.9, 148.6], pushK(f, 1316, 0.0014), { fov: 52 });
 const C12 = (f: number) => dolly([299.0, D0 + 1.4, 97.2], [303.6, D0 + 1.15, 100.6], pushK(f, 1452, 0.0016, 0.005, 14), { fov: 52 });
-const C13 = (f: number) => dolly([391.0, D0 + 1.7, 57.6], [391.0, D0 + 1.85, 66.6], pushK(f, 1561, 0.0014), { fov: 50 });
+const C13 = (f: number) => dolly([391.0, D0 + 1.7, 56.6], [391.0, D0 + 1.85, 66.6], pushK(f, 1561, 0.0012), { fov: 54 });
 const C14a = (f: number) => dolly([298.4, D0 + 1.05, 101.5], [299.95, D0 + 0.8, 103.8], pushK(f, 1737, 0.0016), { fov: 44 });
-const C14b = (f: number) => dolly([293.0, D0 + 9.0, 86.0], [298.6, D0 + 0.5, 103.6], pushK(f, 1840, 0.0006), { fov: 50 });
+const C14b = (f: number) => dolly([295.0, D0 + 4.2, 96.0], [298.6, D0 + 0.4, 104.0], pushK(f, 1840, 0.0006), { fov: 50 });
 
 export const CAMS: Record<number, Key[]> = {
   1: [{ f: 0, s: C1a }, { f: 108, cut: true, s: C1b }], 2: [{ f: 155, s: C2 }], 3: [{ f: 310, s: C3 }], 4: [{ f: 396, s: C4 }],
