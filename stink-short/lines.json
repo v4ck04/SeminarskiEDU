@@ -1,0 +1,82 @@
+[
+ {
+  "id": "hook",
+  "gap": 0.5,
+  "text": "In eighteen fifty eight, London smelled so bad... even Parliament wanted to escape."
+ },
+ {
+  "id": "river",
+  "gap": 0.3,
+  "text": "Back then, the River Thames wasn't just a river. It was London's giant open sewer."
+ },
+ {
+  "id": "dump",
+  "gap": 0.45,
+  "text": "For decades, people dumped human waste, dead animals, and industrial garbage straight into it."
+ },
+ {
+  "id": "summer",
+  "gap": 0.3,
+  "text": "Then came the summer of eighteen fifty eight."
+ },
+ {
+  "id": "heat",
+  "gap": 0.4,
+  "text": "Temperatures soared above thirty degrees Celsius, and the filthy river began baking in the heat."
+ },
+ {
+  "id": "smell",
+  "gap": 0.25,
+  "text": "The smell was unbearable."
+ },
+ {
+  "id": "people",
+  "gap": 0.3,
+  "text": "People couldn't stand near the river. And inside Parliament?"
+ },
+ {
+  "id": "curtains",
+  "gap": 0.4,
+  "text": "Politicians desperately closed the windows and soaked the curtains in chemicals to block the stench."
+ },
+ {
+  "id": "nope",
+  "gap": 0.35,
+  "text": "It didn't work."
+ },
+ {
+  "id": "move",
+  "gap": 0.45,
+  "text": "There was even talk of moving Parliament."
+ },
+ {
+  "id": "enough",
+  "gap": 0.3,
+  "text": "Finally, the government had enough."
+ },
+ {
+  "id": "law",
+  "gap": 0.3,
+  "text": "They rushed through a new law in just eighteen days,"
+ },
+ {
+  "id": "baz",
+  "gap": 0.45,
+  "text": "and gave engineer Joseph Bazalgette the green light to build a massive underground sewer system."
+ },
+ {
+  "id": "years",
+  "gap": 0.35,
+  "text": "It took years to complete, but by eighteen seventy five, London's new sewer network was in place."
+ },
+ {
+  "id": "embarrass",
+  "gap": 0.3,
+  "text": "The Great Stink didn't just embarrass London."
+ },
+ {
+  "id": "rebuild",
+  "gap": 0.2,
+  "text": "It forced an entire city to rebuild what was underneath it."
+ }
+]

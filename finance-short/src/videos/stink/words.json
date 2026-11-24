@@ -1,0 +1,1010 @@
+[
+{
+"w": "In",
+"s": 0.09999999999999999,
+"e": 0.22,
+"line": "hook"
+},
+{
+"w": "eighteen",
+"s": 0.22,
+"e": 0.44,
+"line": "hook"
+},
+{
+"w": "fifty",
+"s": 0.44,
+"e": 0.8,
+"line": "hook"
+},
+{
+"w": "eight,",
+"s": 0.8,
+"e": 1.12,
+"line": "hook"
+},
+{
+"w": "London",
+"s": 1.22,
+"e": 1.38,
+"line": "hook"
+},
+{
+"w": "smelled",
+"s": 1.38,
+"e": 1.82,
+"line": "hook"
+},
+{
+"w": "so",
+"s": 1.82,
+"e": 2.14,
+"line": "hook"
+},
+{
+"w": "bad...",
+"s": 2.14,
+"e": 2.46,
+"line": "hook"
+},
+{
+"w": "even",
+"s": 2.78,
+"e": 3.02,
+"line": "hook"
+},
+{
+"w": "Parliament",
+"s": 3.02,
+"e": 3.44,
+"line": "hook"
+},
+{
+"w": "wanted",
+"s": 3.44,
+"e": 3.78,
+"line": "hook"
+},
+{
+"w": "to",
+"s": 3.78,
+"e": 3.96,
+"line": "hook"
+},
+{
+"w": "escape.",
+"s": 3.96,
+"e": 4.28,
+"line": "hook"
+},
+{
+"w": "Back",
+"s": 4.96,
+"e": 5.14,
+"line": "river"
+},
+{
+"w": "then,",
+"s": 5.14,
+"e": 5.36,
+"line": "river"
+},
+{
+"w": "the",
+"s": 5.48,
+"e": 5.53,
+"line": "river"
+},
+{
+"w": "River",
+"s": 5.5,
+"e": 5.68,
+"line": "river"
+},
+{
+"w": "Thames",
+"s": 5.68,
+"e": 6.02,
+"line": "river"
+},
+{
+"w": "wasn't",
+"s": 6.02,
+"e": 6.44,
+"line": "river"
+},
+{
+"w": "just",
+"s": 6.44,
+"e": 6.6,
+"line": "river"
+},
+{
+"w": "a",
+"s": 6.6,
+"e": 6.8,
+"line": "river"
+},
+{
+"w": "river.",
+"s": 6.8,
+"e": 6.98,
+"line": "river"
+},
+{
+"w": "It",
+"s": 7.32,
+"e": 7.4,
+"line": "river"
+},
+{
+"w": "was",
+"s": 7.4,
+"e": 7.54,
+"line": "river"
+},
+{
+"w": "London's",
+"s": 7.54,
+"e": 8.04,
+"line": "river"
+},
+{
+"w": "giant",
+"s": 8.04,
+"e": 8.36,
+"line": "river"
+},
+{
+"w": "open",
+"s": 8.36,
+"e": 8.7,
+"line": "river"
+},
+{
+"w": "sewer.",
+"s": 8.7,
+"e": 9.02,
+"line": "river"
+},
+{
+"w": "For",
+"s": 9.54,
+"e": 9.62,
+"line": "dump"
+},
+{
+"w": "decades,",
+"s": 9.62,
+"e": 9.86,
+"line": "dump"
+},
+{
+"w": "people",
+"s": 10.22,
+"e": 10.42,
+"line": "dump"
+},
+{
+"w": "dumped",
+"s": 10.42,
+"e": 10.74,
+"line": "dump"
+},
+{
+"w": "human",
+"s": 10.74,
+"e": 11.02,
+"line": "dump"
+},
+{
+"w": "waste,",
+"s": 11.02,
+"e": 11.34,
+"line": "dump"
+},
+{
+"w": "dead",
+"s": 11.68,
+"e": 11.76,
+"line": "dump"
+},
+{
+"w": "animals,",
+"s": 11.76,
+"e": 12.16,
+"line": "dump"
+},
+{
+"w": "and",
+"s": 12.38,
+"e": 12.44,
+"line": "dump"
+},
+{
+"w": "industrial",
+"s": 12.44,
+"e": 12.86,
+"line": "dump"
+},
+{
+"w": "garbage",
+"s": 12.86,
+"e": 13.32,
+"line": "dump"
+},
+{
+"w": "straight",
+"s": 13.32,
+"e": 13.68,
+"line": "dump"
+},
+{
+"w": "into",
+"s": 13.68,
+"e": 13.92,
+"line": "dump"
+},
+{
+"w": "it.",
+"s": 13.92,
+"e": 14.1,
+"line": "dump"
+},
+{
+"w": "Then",
+"s": 14.54,
+"e": 14.7,
+"line": "summer"
+},
+{
+"w": "came",
+"s": 14.7,
+"e": 14.84,
+"line": "summer"
+},
+{
+"w": "the",
+"s": 14.84,
+"e": 14.98,
+"line": "summer"
+},
+{
+"w": "summer",
+"s": 14.98,
+"e": 15.24,
+"line": "summer"
+},
+{
+"w": "of",
+"s": 15.24,
+"e": 15.44,
+"line": "summer"
+},
+{
+"w": "eighteen",
+"s": 15.44,
+"e": 15.6,
+"line": "summer"
+},
+{
+"w": "fifty",
+"s": 15.6,
+"e": 15.92,
+"line": "summer"
+},
+{
+"w": "eight.",
+"s": 15.92,
+"e": 16.2,
+"line": "summer"
+},
+{
+"w": "Temperatures",
+"s": 16.6,
+"e": 17.02,
+"line": "heat"
+},
+{
+"w": "soared",
+"s": 17.02,
+"e": 17.44,
+"line": "heat"
+},
+{
+"w": "above",
+"s": 17.44,
+"e": 17.6,
+"line": "heat"
+},
+{
+"w": "thirty",
+"s": 17.6,
+"e": 18.02,
+"line": "heat"
+},
+{
+"w": "degrees",
+"s": 18.02,
+"e": 18.38,
+"line": "heat"
+},
+{
+"w": "Celsius,",
+"s": 18.38,
+"e": 18.74,
+"line": "heat"
+},
+{
+"w": "and",
+"s": 19.22,
+"e": 19.3,
+"line": "heat"
+},
+{
+"w": "the",
+"s": 19.3,
+"e": 19.4,
+"line": "heat"
+},
+{
+"w": "filthy",
+"s": 19.4,
+"e": 19.64,
+"line": "heat"
+},
+{
+"w": "river",
+"s": 19.64,
+"e": 19.94,
+"line": "heat"
+},
+{
+"w": "began",
+"s": 19.94,
+"e": 20.3,
+"line": "heat"
+},
+{
+"w": "baking",
+"s": 20.3,
+"e": 20.68,
+"line": "heat"
+},
+{
+"w": "in",
+"s": 20.68,
+"e": 20.92,
+"line": "heat"
+},
+{
+"w": "the",
+"s": 20.92,
+"e": 21.0,
+"line": "heat"
+},
+{
+"w": "heat.",
+"s": 21.0,
+"e": 21.26,
+"line": "heat"
+},
+{
+"w": "The",
+"s": 21.695,
+"e": 21.745,
+"line": "smell"
+},
+{
+"w": "smell",
+"s": 21.695,
+"e": 22.0,
+"line": "smell"
+},
+{
+"w": "was",
+"s": 22.0,
+"e": 22.14,
+"line": "smell"
+},
+{
+"w": "unbearable.",
+"s": 22.14,
+"e": 22.6,
+"line": "smell"
+},
+{
+"w": "People",
+"s": 23.0,
+"e": 23.2,
+"line": "people"
+},
+{
+"w": "couldn't",
+"s": 23.2,
+"e": 23.52,
+"line": "people"
+},
+{
+"w": "stand",
+"s": 23.52,
+"e": 23.72,
+"line": "people"
+},
+{
+"w": "near",
+"s": 23.72,
+"e": 23.98,
+"line": "people"
+},
+{
+"w": "the",
+"s": 23.98,
+"e": 24.08,
+"line": "people"
+},
+{
+"w": "river.",
+"s": 24.08,
+"e": 24.32,
+"line": "people"
+},
+{
+"w": "And",
+"s": 24.62,
+"e": 24.68,
+"line": "people"
+},
+{
+"w": "inside",
+"s": 24.68,
+"e": 25.08,
+"line": "people"
+},
+{
+"w": "Parliament?",
+"s": 25.08,
+"e": 25.58,
+"line": "people"
+},
+{
+"w": "Politicians",
+"s": 26.031,
+"e": 26.6,
+"line": "curtains"
+},
+{
+"w": "desperately",
+"s": 26.6,
+"e": 27.06,
+"line": "curtains"
+},
+{
+"w": "closed",
+"s": 27.06,
+"e": 27.48,
+"line": "curtains"
+},
+{
+"w": "the",
+"s": 27.48,
+"e": 27.68,
+"line": "curtains"
+},
+{
+"w": "windows",
+"s": 27.68,
+"e": 27.94,
+"line": "curtains"
+},
+{
+"w": "and",
+"s": 27.94,
+"e": 28.26,
+"line": "curtains"
+},
+{
+"w": "soaked",
+"s": 28.26,
+"e": 28.54,
+"line": "curtains"
+},
+{
+"w": "the",
+"s": 28.54,
+"e": 28.76,
+"line": "curtains"
+},
+{
+"w": "curtains",
+"s": 28.76,
+"e": 29.04,
+"line": "curtains"
+},
+{
+"w": "in",
+"s": 29.04,
+"e": 29.3,
+"line": "curtains"
+},
+{
+"w": "chemicals",
+"s": 29.3,
+"e": 29.68,
+"line": "curtains"
+},
+{
+"w": "to",
+"s": 29.68,
+"e": 29.94,
+"line": "curtains"
+},
+{
+"w": "block",
+"s": 29.94,
+"e": 30.2,
+"line": "curtains"
+},
+{
+"w": "the",
+"s": 30.2,
+"e": 30.38,
+"line": "curtains"
+},
+{
+"w": "stench.",
+"s": 30.38,
+"e": 30.78,
+"line": "curtains"
+},
+{
+"w": "It",
+"s": 31.207,
+"e": 31.257,
+"line": "nope"
+},
+{
+"w": "didn't",
+"s": 31.207,
+"e": 31.46,
+"line": "nope"
+},
+{
+"w": "work.",
+"s": 31.46,
+"e": 31.66,
+"line": "nope"
+},
+{
+"w": "There",
+"s": 32.184000000000005,
+"e": 32.3,
+"line": "move"
+},
+{
+"w": "was",
+"s": 32.3,
+"e": 32.4,
+"line": "move"
+},
+{
+"w": "even",
+"s": 32.4,
+"e": 32.6,
+"line": "move"
+},
+{
+"w": "talk",
+"s": 32.6,
+"e": 32.92,
+"line": "move"
+},
+{
+"w": "of",
+"s": 32.92,
+"e": 33.1,
+"line": "move"
+},
+{
+"w": "moving",
+"s": 33.1,
+"e": 33.36,
+"line": "move"
+},
+{
+"w": "Parliament.",
+"s": 33.36,
+"e": 33.74,
+"line": "move"
+},
+{
+"w": "Finally,",
+"s": 34.36,
+"e": 34.66,
+"line": "enough"
+},
+{
+"w": "the",
+"s": 34.8,
+"e": 34.86,
+"line": "enough"
+},
+{
+"w": "government",
+"s": 34.86,
+"e": 35.1,
+"line": "enough"
+},
+{
+"w": "had",
+"s": 35.1,
+"e": 35.36,
+"line": "enough"
+},
+{
+"w": "enough.",
+"s": 35.36,
+"e": 35.6,
+"line": "enough"
+},
+{
+"w": "They",
+"s": 36.02,
+"e": 36.14,
+"line": "law"
+},
+{
+"w": "rushed",
+"s": 36.14,
+"e": 36.36,
+"line": "law"
+},
+{
+"w": "through",
+"s": 36.36,
+"e": 36.54,
+"line": "law"
+},
+{
+"w": "a",
+"s": 36.54,
+"e": 36.64,
+"line": "law"
+},
+{
+"w": "new",
+"s": 36.64,
+"e": 36.76,
+"line": "law"
+},
+{
+"w": "law",
+"s": 36.76,
+"e": 37.0,
+"line": "law"
+},
+{
+"w": "in",
+"s": 37.0,
+"e": 37.16,
+"line": "law"
+},
+{
+"w": "just",
+"s": 37.16,
+"e": 37.32,
+"line": "law"
+},
+{
+"w": "eighteen",
+"s": 37.32,
+"e": 37.56,
+"line": "law"
+},
+{
+"w": "days,",
+"s": 37.56,
+"e": 37.92,
+"line": "law"
+},
+{
+"w": "and",
+"s": 38.36,
+"e": 38.48,
+"line": "baz"
+},
+{
+"w": "gave",
+"s": 38.48,
+"e": 38.64,
+"line": "baz"
+},
+{
+"w": "engineer",
+"s": 38.64,
+"e": 39.02,
+"line": "baz"
+},
+{
+"w": "Joseph",
+"s": 39.02,
+"e": 39.5,
+"line": "baz"
+},
+{
+"w": "Bazalgette",
+"s": 39.5,
+"e": 40.28,
+"line": "baz"
+},
+{
+"w": "the",
+"s": 40.28,
+"e": 40.36,
+"line": "baz"
+},
+{
+"w": "green",
+"s": 40.36,
+"e": 40.56,
+"line": "baz"
+},
+{
+"w": "light",
+"s": 40.56,
+"e": 40.84,
+"line": "baz"
+},
+{
+"w": "to",
+"s": 40.84,
+"e": 41.04,
+"line": "baz"
+},
+{
+"w": "build",
+"s": 41.04,
+"e": 41.22,
+"line": "baz"
+},
+{
+"w": "a",
+"s": 41.22,
+"e": 41.36,
+"line": "baz"
+},
+{
+"w": "massive",
+"s": 41.36,
+"e": 41.72,
+"line": "baz"
+},
+{
+"w": "underground",
+"s": 41.72,
+"e": 42.36,
+"line": "baz"
+},
+{
+"w": "sewer",
+"s": 42.36,
+"e": 42.68,
+"line": "baz"
+},
+{
+"w": "system.",
+"s": 42.68,
+"e": 43.08,
+"line": "baz"
+},
+{
+"w": "It",
+"s": 43.626000000000005,
+"e": 43.74,
+"line": "years"
+},
+{
+"w": "took",
+"s": 43.74,
+"e": 43.9,
+"line": "years"
+},
+{
+"w": "years",
+"s": 43.9,
+"e": 44.16,
+"line": "years"
+},
+{
+"w": "to",
+"s": 44.16,
+"e": 44.36,
+"line": "years"
+},
+{
+"w": "complete,",
+"s": 44.36,
+"e": 44.72,
+"line": "years"
+},
+{
+"w": "but",
+"s": 44.92,
+"e": 45.0,
+"line": "years"
+},
+{
+"w": "by",
+"s": 45.0,
+"e": 45.14,
+"line": "years"
+},
+{
+"w": "eighteen",
+"s": 45.14,
+"e": 45.4,
+"line": "years"
+},
+{
+"w": "seventy",
+"s": 45.4,
+"e": 45.74,
+"line": "years"
+},
+{
+"w": "five,",
+"s": 45.74,
+"e": 46.14,
+"line": "years"
+},
+{
+"w": "London's",
+"s": 46.38,
+"e": 46.76,
+"line": "years"
+},
+{
+"w": "new",
+"s": 46.76,
+"e": 46.9,
+"line": "years"
+},
+{
+"w": "sewer",
+"s": 46.9,
+"e": 47.18,
+"line": "years"
+},
+{
+"w": "network",
+"s": 47.18,
+"e": 47.58,
+"line": "years"
+},
+{
+"w": "was",
+"s": 47.58,
+"e": 47.84,
+"line": "years"
+},
+{
+"w": "in",
+"s": 47.84,
+"e": 48.0,
+"line": "years"
+},
+{
+"w": "place.",
+"s": 48.0,
+"e": 48.26,
+"line": "years"
+},
+{
+"w": "The",
+"s": 48.88,
+"e": 48.94,
+"line": "embarrass"
+},
+{
+"w": "Great",
+"s": 48.94,
+"e": 49.08,
+"line": "embarrass"
+},
+{
+"w": "Stink",
+"s": 49.08,
+"e": 49.34,
+"line": "embarrass"
+},
+{
+"w": "didn't",
+"s": 49.34,
+"e": 49.68,
+"line": "embarrass"
+},
+{
+"w": "just",
+"s": 49.68,
+"e": 49.84,
+"line": "embarrass"
+},
+{
+"w": "embarrass",
+"s": 49.84,
+"e": 50.2,
+"line": "embarrass"
+},
+{
+"w": "London.",
+"s": 50.2,
+"e": 50.62,
+"line": "embarrass"
+},
+{
+"w": "It",
+"s": 51.06,
+"e": 51.18,
+"line": "rebuild"
+},
+{
+"w": "forced",
+"s": 51.18,
+"e": 51.44,
+"line": "rebuild"
+},
+{
+"w": "an",
+"s": 51.44,
+"e": 51.62,
+"line": "rebuild"
+},
+{
+"w": "entire",
+"s": 51.62,
+"e": 52.0,
+"line": "rebuild"
+},
+{
+"w": "city",
+"s": 52.0,
+"e": 52.34,
+"line": "rebuild"
+},
+{
+"w": "to",
+"s": 52.34,
+"e": 52.6,
+"line": "rebuild"
+},
+{
+"w": "rebuild",
+"s": 52.6,
+"e": 52.94,
+"line": "rebuild"
+},
+{
+"w": "what",
+"s": 52.94,
+"e": 53.18,
+"line": "rebuild"
+},
+{
+"w": "was",
+"s": 53.18,
+"e": 53.3,
+"line": "rebuild"
+},
+{
+"w": "underneath",
+"s": 53.3,
+"e": 53.66,
+"line": "rebuild"
+},
+{
+"w": "it.",
+"s": 53.66,
+"e": 53.9,
+"line": "rebuild"
+}
+]

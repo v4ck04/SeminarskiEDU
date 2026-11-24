@@ -1,0 +1,98 @@
+[
+ {
+  "id": "hook",
+  "start": 0.15,
+  "end": 4.476,
+  "text": "In eighteen fifty eight, London smelled so bad... even Parliament wanted to escape."
+ },
+ {
+  "id": "river",
+  "start": 4.976,
+  "end": 9.235,
+  "text": "Back then, the River Thames wasn't just a river. It was London's giant open sewer."
+ },
+ {
+  "id": "dump",
+  "start": 9.535,
+  "end": 14.11,
+  "text": "For decades, people dumped human waste, dead animals, and industrial garbage straight into it."
+ },
+ {
+  "id": "summer",
+  "start": 14.56,
+  "end": 16.235,
+  "text": "Then came the summer of eighteen fifty eight."
+ },
+ {
+  "id": "heat",
+  "start": 16.535,
+  "end": 21.345,
+  "text": "Temperatures soared above thirty degrees Celsius, and the filthy river began baking in the heat."
+ },
+ {
+  "id": "smell",
+  "start": 21.745,
+  "end": 22.751,
+  "text": "The smell was unbearable."
+ },
+ {
+  "id": "people",
+  "start": 23.001,
+  "end": 25.781,
+  "text": "People couldn't stand near the river. And inside Parliament?"
+ },
+ {
+  "id": "curtains",
+  "start": 26.081,
+  "end": 30.857,
+  "text": "Politicians desperately closed the windows and soaked the curtains in chemicals to block the stench."
+ },
+ {
+  "id": "nope",
+  "start": 31.257,
+  "end": 31.884,
+  "text": "It didn't work."
+ },
+ {
+  "id": "move",
+  "start": 32.234,
+  "end": 33.96,
+  "text": "There was even talk of moving Parliament."
+ },
+ {
+  "id": "enough",
+  "start": 34.41,
+  "end": 35.767,
+  "text": "Finally, the government had enough."
+ },
+ {
+  "id": "law",
+  "start": 36.067,
+  "end": 38.091,
+  "text": "They rushed through a new law in just eighteen days,"
+ },
+ {
+  "id": "baz",
+  "start": 38.391,
+  "end": 43.226,
+  "text": "and gave engineer Joseph Bazalgette the green light to build a massive underground sewer system."
+ },
+ {
+  "id": "years",
+  "start": 43.676,
+  "end": 48.512,
+  "text": "It took years to complete, but by eighteen seventy five, London's new sewer network was in place."
+ },
+ {
+  "id": "embarrass",
+  "start": 48.862,
+  "end": 50.804,
+  "text": "The Great Stink didn't just embarrass London."
+ },
+ {
+  "id": "rebuild",
+  "start": 51.104,
+  "end": 53.931,
+  "text": "It forced an entire city to rebuild what was underneath it."
+ }
+]
