@@ -243,7 +243,7 @@ const inHand = (out: Stage, cam: CamInfo, p: V3, key: string, cw: number, ch: nu
 };
 const bl = (t: number, i: number) => lidAt(t, i);
 /** a handkerchief pressed to the nose of the card standing at p */
-const hanky = (out: Stage, cam: CamInfo, p: V3, s = 1) => fxCard(out, "hanky", 200, 150, fxHanky, toward(cam, onCard(cam, p, 0.06 * s, 1.5 * s), 0.3), 0.3 * s, 0.22 * s, -0.2);
+const hanky = (out: Stage, cam: CamInfo, p: V3, s = 1) => fxCard(out, "hanky", 200, 150, fxHanky, toward(cam, onCard(cam, p, 0.04 * s, 1.36 * s), 0.3), 0.28 * s, 0.21 * s, -0.2);
 /** green stink rising from the water / a spot (t animates) */
 const stink = (out: Stage, f: number, at: V3, size: number, k: number) => {
   const u = ((f / 70 + 0.37 * k) % 1), tq = q(((f / 30 + k * 0.3) % 1), 12);
@@ -274,8 +274,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     if (!relief) hanky(out, cam, POL);
     if (id === 1) { for (let k = 0; k < 6; k++) haze(out, f, [300 + k * 14 + 6 * hsh(k, 1), 0.2, -4 + 22 * hsh(k, 2)], 10, k); for (let k = 0; k < 3; k++) stink(out, f, [343.6 + k * 1.3, D0 + 0.6, 31.0], 0.9, k); flies(out, f, [345, D0 + 1.9, 33.4], 3, 0.35); }
     if (id === 1) st(W_LADY, [349.2, D0, 36.6], { mode: "stand", expr: "pained", look: 0 });
-    if (id === 16) st(W_LADY, [349.2, D0, 36.6], { mode: "stand", expr: "smile", look: 0 });
-    if (id === 15 && f >= 1495) fxCard(out, "hankyDrop", 200, 150, fxHanky, toward(cam, onCard(cam, POL, 0.4, Math.max(0.15, 1.5 - 0.06 * (f - 1495))), 0.3), 0.3, 0.22, 0.6);
+    if (id === 15 && f >= 1495) fxCard(out, "hankyDrop", 200, 150, fxHanky, toward(cam, onCard(cam, POL, 0.4, Math.max(0.15, 1.36 - 0.06 * (f - 1495))), 0.3), 0.3, 0.22, 0.6);
   } else if (id === 2) {
     floating(out, f, 286, 320);
     for (let k = 0; k < 5; k++) haze(out, f, [292 + k * 9, 0.2, 4 + 14 * hsh(k, 3)], 6, k);
@@ -288,9 +287,9 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     st(W_MAN, pM, { mode: "stand", expr: tip > 0.5 ? "grin" : "neutral", look: 0, wave: tip > 0 ? 0.6 : undefined });
     fxCard(out, `bucket${q(tip, 8)}`, 260, 240, (p) => fxBucket(p, q(tip, 8)), toward(cam, onCard(cam, pM, 0.5, 1.6), 0.15), 0.5, 0.46);
     if (f >= 326 && f < 352) { const u = (f - 326) / 26; fxCard(out, "slop", 200, 400, fxSlop, [pM[0] + 0.3, D0 + 1.1 - 6.5 * u * u, 29.6], 0.45, 0.9); }
-    if (f >= 350 && f < 366) fxCard(out, `splash${q((f - 350) / 16, 8)}`, 800, 800, (p) => fxSplash(p, q((f - 350) / 16, 8)), [pM[0] + 0.3, 0.6, 28.5], 2.2, 2.2);
+    if (f >= 350 && f < 366) fxCard(out, `splash${q((f - 350) / 16, 8)}`, 800, 800, (p) => fxSplash(p, q((f - 350) / 16, 8)), [pM[0] + 0.3, D0 + 0.7, 29.6], 1.6, 1.6);
     st(W_LADY, pL, { mode: "stand", expr: f >= 350 ? "shock" : "neutral", look: 0 });
-    if (f >= 350) { const u = clamp01((f - 350) / 14); fxCard(out, "bones", 240, 120, fxBones, arcP([pL[0] + 0.4, D0 + 1.2, 30.8], [pL[0] + 1.0, 0.3, 27.0], u, 0.6), 0.5, 0.25, u * 3); }
+    if (f >= 350) { const u = clamp01((f - 350) / 14); fxCard(out, "bones", 240, 120, fxBones, arcP([pM[0] + 0.3, D0 + 0.8, 29.8], [pL[0] + 0.6, D0 + 0.9, 30.6], u, 1.7), 0.55, 0.27, u * 6); }
     st(W_BOY, pB, { mode: "stand", expr: f >= 386 ? "grin" : "smile", look: 0 });
     flies(out, f, [420.6, D0 + 1.6, 30.6], 4, 0.6);
     for (let k = 0; k < 3; k++) stink(out, f, [418 + k * 2.4, D0 - 1.0, 29.0], 1.4, k);
@@ -299,22 +298,24 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     fxCard(out, `sun${tq}`, 400, 400, (p) => fxSun(p, tq), [392, D0 + 70, -160], 60 * scale01(f, 434, 10), 60 * scale01(f, 434, 10));
   } else if (id === 5) {
     const v = ease([[505, 18], [560, 34]], f);
-    fxCard(out, `thermo${Math.round(v)}`, 220, 600, (p) => fxThermo(p, Math.round(v)), [452.0, D0 + 2.05, 33.2], 0.55, 1.5);
+    fxCard(out, `thermo${Math.round(v)}`, 220, 600, (p) => fxThermo(p, Math.round(v)), [452.0, D0 + 2.3, 33.2], 0.55, 1.5);
   } else if (id === 6) {
     for (let k = 0; k < 7; k++) stink(out, f, [442 + k * 3.2, 0.1, 18 + 8 * hsh(k, 4)], 2.2, k);
     for (let k = 0; k < 4; k++) haze(out, f, [444 + k * 5, 0.2, 20 + 6 * hsh(k, 2)], 7, k);
     floating(out, f, 440, 462);
   } else if (id === 7) {
     const run = (who: Who, a: V3, b: V3, f0: number, k: number) => { const w = walk(f, f0, a, b, 2.2); st(who, w.p, { mode: w.moving ? "march" : "stand", phase: q(((f / FPS) * 2.4 + k * 0.3) % 1, 24), expr: "pained", look: 0 }); if (w.moving) hanky(out, cam, w.p); };
-    run(W_LADY, [474.0, D0, 31.6], [466.6, D0, 37.0], 655, 0);
-    run(W_MAN, [476.0, D0, 32.4], [468.2, D0, 38.6], 668, 1);
-    run(W_BOY, [472.6, D0, 31.2], [465.4, D0, 35.4], 690, 2);
+    run(W_LADY, [472.4, D0, 31.4], [467.8, D0, 37.6], 640, 0);
+    run(W_MAN, [474.0, D0, 32.0], [469.4, D0, 38.4], 652, 1);
+    run(W_BOY, [471.2, D0, 31.2], [466.6, D0, 36.4], 660, 2);
+    run(W_POL3, [475.2, D0, 31.6], [471.0, D0, 37.8], 672, 3);
+    run(W_USH, [470.0, D0, 31.0], [465.8, D0, 34.6], 684, 4);
     for (let k = 0; k < 4; k++) stink(out, f, [469 + k * 1.6, D0 - 0.4, 30.4], 1.3, k);
     flies(out, f, [471, D0 + 1.5, 32.4], 5, 0.8);
   } else if (id === 8) {
     for (let k = 0; k < 5; k++) haze(out, f, [348 + k * 6, D0 + 1, 36], 6, k);
   } else if (id === 9 || id === 10 || id === 11) {
-    const p1: V3 = [567.9, D0, 63.6], p2: V3 = [566.7, D0, 61.8], pU: V3 = [569.4, D0, 61.9], p3: V3 = [569.3, D0, 64.2];
+    const p1: V3 = [567.9, D0, 63.6], p2: V3 = [566.7, D0, 61.8], pU: V3 = [569.4, D0, 61.9], p3: V3 = [569.0, D0, 64.2];
     if (id === 9) {
       st(W_POL2, p2, { mode: "stand", expr: "pained", look: 0, wave: f >= 812 && f < 850 ? 1 : undefined });
       st(W_USH, pU, { mode: "stand", expr: "nervous", look: 0, wave: f >= 848 ? q(0.5 + 0.3 * Math.sin(f * 0.4), 6) : undefined });
@@ -326,7 +327,6 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
       st(W_POL, p1, { mode: "stand", expr: gag ? "shock" : "pained", look: 0 }); if (!gag) hanky(out, cam, p1);
       st(W_POL2, p2, { mode: "stand", expr: gag ? "dazed" : "pained", look: 0 });
       st(W_POL3, p3, { mode: "stand", expr: f >= 993 ? "grin" : "pained", look: 0, wave: f >= 993 ? 1 : undefined });
-      for (let k = 0; k < 4; k++) haze(out, f, [563 + k * 3.2, D0 + 0.4, 61.2], 2.4, k);
       for (let k = 0; k < 3; k++) stink(out, f, [562.5 + k * 5.5, D0 + 0.3, 60.7], 1.0, k);
       if (f >= 972) { const w = walk(f, 972, [569.4, D0, 66.6], [575.4, D0, 68.0], 1.8); st(W_USH, w.p, { mode: w.moving ? "march" : "stand", phase: q(((f / FPS) * 2) % 1, 24), expr: "nervous", look: 0 });
         fxCard(out, "case", 260, 200, fxCase, toward(cam, onCard(cam, w.p, 0.45, 0.75), 0.1), 0.45, 0.35); }
@@ -343,11 +343,11 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     const show = f >= 1182;
     if (show) st(W_BAZ, BAZ, { mode: "stand", expr: f < 1208 ? "grin" : "smile", look: 0, wave: f >= 1185 && f < 1200 ? 1 : undefined });
     pop(out, toward(cam, onCard(cam, BAZ, 0, 1.1), 0.4), f, 1182, 2.4, "#ffe066");
-    if (f >= 1200) { const u = ease([[1200, 0], [1228, 1]], f); fxCard(out, `plan${q(u, 16)}`, 640, 420, (p) => fxPlan(p, q(u, 16)), toward(cam, onCard(cam, BAZ, 0.95, 1.15), 0.35), 1.25, 0.82); }
+    if (f >= 1200) { const u = ease([[1200, 0], [1228, 1]], f); fxCard(out, `plan${q(u, 16)}`, 640, 420, (p) => fxPlan(p, q(u, 16)), toward(cam, onCard(cam, BAZ, 0.72, 1.15), 0.35), 1.05, 0.69); }
     for (let k = 0; k < 3; k++) haze(out, f, [370 + k * 8, 0.3, 14 + 6 * k], 6, k);
   } else if (id === 13) {
     for (let k = 0; k < 3; k++) {
-      const p: V3 = [TUN_A.x + (k % 2 ? 0.7 : -0.7), TUN_FLOOR, 89 + k * 3.0];
+      const p: V3 = [TUN_A.x + (k % 2 ? 0.7 : -0.7), TUN_FLOOR, 88 + k * 2.6];
       st(NAV[k], p, { mode: "stand", expr: k === 1 ? "grin" : "stern", look: 0, prop: ["hammer", q(0.5 + 0.5 * Math.sin(f * 0.35 + k * 2), 6)] });
     }
   } else if (id === 14) {

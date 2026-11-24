@@ -48,7 +48,7 @@ export const Captions: React.FC<{ f: number }> = ({ f }) => {
   if (!g) return null;
   const k = Math.min(1, (t - g.s) / 0.09), sc = 0.88 + 0.12 * k;
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 560 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 380 }}>
       <div style={{ fontFamily: "'Inter Display', Inter, sans-serif", fontWeight: 900, fontSize: 92, lineHeight: 1.05, textAlign: "center", maxWidth: 940,
         color: "#ffffff", WebkitTextStroke: "16px #141016", paintOrder: "stroke fill", textShadow: "0 6px 0 rgba(0,0,0,0.45)", transform: `scale(${sc})`, letterSpacing: "0.01em" }}>
         {g.words.map((w, i) => (

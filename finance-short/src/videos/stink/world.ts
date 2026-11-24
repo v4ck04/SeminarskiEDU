@@ -383,7 +383,7 @@ export class World {
     tube(TUN_A.x, TUN_A.z0, TUN_A.built, brick); tube(TUN_A.x, TUN_A.built, TUN_A.z1, earth); tube(TUN_B.x, TUN_B.z0, TUN_B.z1, brick);
     const halfW = Math.sqrt(TUN_A.r ** 2 - (TUN_A.r - 0.4) ** 2);
     sh.add(quadUp(TUN_A.x - halfW, TUN_A.x + halfW, TUN_A.z0, TUN_A.z1, 2, 20, TUN_FLOOR - D0 + 0.02), lam("mud", () => ({ color: "#4a3a28" })));
-    sh.add(quadUp(TUN_B.x - halfW, TUN_B.x + halfW, TUN_B.z0, TUN_B.z1, 1, 1, TUN_FLOOR - D0 + 0.06), shiny("sewerWater", "#3a4a40", "#b0c4b8", 80));
+    sh.add(quadUp(TUN_B.x - halfW, TUN_B.x + halfW, TUN_B.z0, TUN_B.z1, 1, 1, TUN_FLOOR - D0 + 0.06), shiny("sewerWater", "#4a4536", "#d8d0b0", 90));
     for (let z = TUN_A.built + 1; z < TUN_A.z1; z += 2.2) {
       const rib = new THREE.TorusGeometry(TUN_A.r - 0.15, 0.08, 6, 24, Math.PI);
       fit.add(rib, wood, new THREE.Matrix4().makeTranslation(TUN_A.x, TUN_FLOOR + TUN_A.r - 0.4, z));
@@ -406,7 +406,7 @@ export class World {
     fit.build(this.root);
   }
   private poseSets(_id: number, f: number) {
-    for (const j of this.junk) { j.m.position.set(j.x + 0.004 * f, 0.1 + 0.06 * Math.sin(f * 0.08 + j.k), j.z); j.m.rotation.set(0.08 * Math.sin(f * 0.05 + j.k), j.k * 0.7, 0.06 * Math.cos(f * 0.07 + j.k)); }
+    for (const j of this.junk) { j.m.visible = _id < 15; j.m.position.set(j.x + 0.004 * f, 0.1 + 0.06 * Math.sin(f * 0.08 + j.k), j.z); j.m.rotation.set(0.08 * Math.sin(f * 0.05 + j.k), j.k * 0.7, 0.06 * Math.cos(f * 0.07 + j.k)); }
   }
 
   /** camera-relative sun, frozen per shot: the shot's mean view direction turned by az toward screen right, lifted by el */

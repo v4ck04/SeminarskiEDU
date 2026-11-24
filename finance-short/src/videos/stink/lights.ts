@@ -46,7 +46,7 @@ export const LOOK: Record<"day" | "golden", WorldLook> = {
   day: {
     // depth.md 2.2: horizon #9fb6e6 just above the skyline, upper sky #5e93d9 at ~20 deg (grade: frame top #5997e2)
     sky: { c: ["#d6d2b0", "#c2c8b8", "#94acc8", "#6e94c8", "#5582bf"], e: [0, 3, 8, 16, 40] }, // summer haze over smoky London
-    water: { near: "#5e6a34", mid: "#4f5a2c", far: "#7a7a52", crest: "#8f8f58", trough: "#323a1c", glint: "#d8dcb0", shade: [0.55, 0.58, 0.6] }, // the filthy Thames of 1858
+    water: { near: "#6e5e38", mid: "#5c5030", far: "#8a826a", crest: "#b8aa78", trough: "#2a2216", glint: "#fff6d8", shade: [0.55, 0.56, 0.6] }, // the filthy Thames of 1858
     cloud: { lit: "#fbf8f1", mid: "#e1e5f3", shade: "#c3cbe9" },
     bounce: [0, 0, 0],
     sat: 1.08,

@@ -40,7 +40,7 @@ export const PIPE: V3 = [430, 2.6, -30.2];                               // a fa
 export const ROOM: Room = { x0: 560, x1: 576, z0: 60, z1: 72, h: 6.5 };
 export const TABLE = { x0: 563.5, x1: 572.5, z0: 64.6, z1: 66.4, y: D0 + 0.78 };
 export const DOOR = { x: 575.95, z0: 67.2, z1: 68.8 };
-export const TUN_A = { x: 610, z0: 76, z1: 132, r: 2.4, built: 104 };   // under construction: brick up to z = built
+export const TUN_A = { x: 610, z0: 76, z1: 132, r: 2.4, built: 96 };   // under construction: brick up to z = built
 export const TUN_B = { x: 630, z0: 76, z1: 132, r: 2.4 };               // finished, 1875
 export const TUN_FLOOR = D0 - 4.0;                                       // the sewers lie under the meadow
 export const POL: V3 = [345.0, D0, 33.6];                                // the politician of the hook and the ending
@@ -128,7 +128,7 @@ const H = (p: V3, d: V3) => add(p, d);
 const C1a = (f: number) => ({ pos: [292 + 0.05 * f, D0 + 52 - 0.05 * f, -70 + 0.06 * f] as V3, look: [344, D0 + 4, 40] as V3, fov: 46 });
 const C1b = (f: number) => dolly([345.4, D0 + 1.6, 38.4], [345.0, D0 + 1.45, 33.6], pushK(f, 70, 0.0018, 0.006, 16), { fov: 46 });
 const C2 = (f: number) => ({ pos: [286 + 0.09 * (f - 145), 1.25, -5.5] as V3, look: [300 + 0.09 * (f - 145), 1.0, 22] as V3, fov: 52 });
-const C3 = (f: number) => dolly([417.2, D0 + 1.7, 37.0], [420.6, D0 + 0.4, 29.2], pushK(f, 284, 0.0012), { fov: 54 });
+const C3 = (f: number) => dolly([417.4, D0 + 2.4, 36.6], [420.8, D0 - 0.6, 28.4], pushK(f, 284, 0.0012), { fov: 56 });
 const C4 = (f: number) => ({ pos: [392, D0 + 1.8, 36] as V3, look: [392 + 0.0, D0 + 14 + 0.18 * (f - 432), -60] as V3, fov: 52 });
 const C5 = (f: number) => dolly([451.9, D0 + 2.0, 35.4], [452.0, D0 + 2.05, 33.5], pushK(f, 494, 0.0016, 0.006, 14), { fov: 50 });
 const C6 = (f: number) => dolly([440.0, 0.9, 10.0], [452.0, 2.4, 26.0], pushK(f, 586, 0.002), { fov: 54 });
