@@ -153,8 +153,12 @@ The user wants the world to read as real 3D (shadows, depth), like their referen
   `shiny(key, colour, specular, shininess)` (Phong two-tone) for metal, enamel and glass. Keep specular dim on big
   curved surfaces (tank: #5e584c / 22), or it blows out to a white stripe.
 - Cost: ~15 % slower per frame. Room shells stay `cast=false` (otherwise interiors go dark); AO darkens their corners.
-- Not done yet: real 3D characters (capsule body, sphere head, face drawn on the head) instead of flat cards. That is
-  the next big step toward the reference look; ask the user before starting it.
+- Characters STAY 2D cards (user decision, 24 Nov 2026, after seeing real 3D figures): people and animals are drawn
+  cards that cast real sun shadows (`actorShadow: true`, the painted day shadow strip is off, the contact blob stays);
+  every other object is 3D. The real-3D figure module (`videos/rats/fig3d.ts`) exists but is not used.
+- Animal characters: draw them on the 600 x 1000 character card (feet on y 975) and push them as `places` with a
+  scale (see `drawRat` / `rat()` in `videos/rats`), so they cast shadows like the people; fx cards cast none.
+- New 2D hats in `toon.ts` (rats film): `pith` (colonial sun helmet) and `nonla` (Vietnamese conical hat).
 
 ## Gotchas
 - **Interiors** (learned on "The Bank That Wanted Eight of Everything", `src/videos/eight/`):

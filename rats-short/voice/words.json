@@ -1,0 +1,1262 @@
+[
+{
+"w": "In",
+"s": 0.09999999999999999,
+"e": 0.24,
+"line": "hook"
+},
+{
+"w": "nineteen",
+"s": 0.24,
+"e": 0.513,
+"line": "hook"
+},
+{
+"w": "oh",
+"s": 0.513,
+"e": 0.787,
+"line": "hook"
+},
+{
+"w": "two,",
+"s": 0.787,
+"e": 1.06,
+"line": "hook"
+},
+{
+"w": "a",
+"s": 1.06,
+"e": 1.16,
+"line": "hook"
+},
+{
+"w": "city",
+"s": 1.16,
+"e": 1.32,
+"line": "hook"
+},
+{
+"w": "paid",
+"s": 1.32,
+"e": 1.6,
+"line": "hook"
+},
+{
+"w": "people",
+"s": 1.6,
+"e": 1.92,
+"line": "hook"
+},
+{
+"w": "to",
+"s": 1.92,
+"e": 2.14,
+"line": "hook"
+},
+{
+"w": "kill",
+"s": 2.14,
+"e": 2.38,
+"line": "hook"
+},
+{
+"w": "rats.",
+"s": 2.38,
+"e": 2.68,
+"line": "hook"
+},
+{
+"w": "And",
+"s": 2.98,
+"e": 3.08,
+"line": "hook"
+},
+{
+"w": "ended",
+"s": 3.08,
+"e": 3.36,
+"line": "hook"
+},
+{
+"w": "up",
+"s": 3.36,
+"e": 3.54,
+"line": "hook"
+},
+{
+"w": "with",
+"s": 3.54,
+"e": 3.7,
+"line": "hook"
+},
+{
+"w": "more",
+"s": 3.7,
+"e": 3.92,
+"line": "hook"
+},
+{
+"w": "rats",
+"s": 3.92,
+"e": 4.26,
+"line": "hook"
+},
+{
+"w": "than",
+"s": 4.26,
+"e": 4.46,
+"line": "hook"
+},
+{
+"w": "ever.",
+"s": 4.46,
+"e": 4.68,
+"line": "hook"
+},
+{
+"w": "This",
+"s": 5.224,
+"e": 5.4,
+"line": "hanoi"
+},
+{
+"w": "is",
+"s": 5.4,
+"e": 5.52,
+"line": "hanoi"
+},
+{
+"w": "Hanoi,",
+"s": 5.52,
+"e": 6.06,
+"line": "hanoi"
+},
+{
+"w": "then",
+"s": 6.16,
+"e": 6.22,
+"line": "hanoi"
+},
+{
+"w": "a",
+"s": 6.22,
+"e": 6.36,
+"line": "hanoi"
+},
+{
+"w": "French",
+"s": 6.36,
+"e": 6.56,
+"line": "hanoi"
+},
+{
+"w": "colony.",
+"s": 6.56,
+"e": 7.06,
+"line": "hanoi"
+},
+{
+"w": "The",
+"s": 7.38,
+"e": 7.5,
+"line": "hanoi"
+},
+{
+"w": "French",
+"s": 7.5,
+"e": 7.7,
+"line": "hanoi"
+},
+{
+"w": "built",
+"s": 7.7,
+"e": 7.96,
+"line": "hanoi"
+},
+{
+"w": "a",
+"s": 7.96,
+"e": 8.08,
+"line": "hanoi"
+},
+{
+"w": "brand",
+"s": 8.08,
+"e": 8.34,
+"line": "hanoi"
+},
+{
+"w": "new",
+"s": 8.34,
+"e": 8.58,
+"line": "hanoi"
+},
+{
+"w": "quarter,",
+"s": 8.58,
+"e": 8.92,
+"line": "hanoi"
+},
+{
+"w": "with",
+"s": 8.92,
+"e": 9.14,
+"line": "hanoi"
+},
+{
+"w": "modern",
+"s": 9.14,
+"e": 9.5,
+"line": "hanoi"
+},
+{
+"w": "sewers.",
+"s": 9.5,
+"e": 9.82,
+"line": "hanoi"
+},
+{
+"w": "The",
+"s": 10.4,
+"e": 10.54,
+"line": "highway"
+},
+{
+"w": "sewers",
+"s": 10.54,
+"e": 10.82,
+"line": "highway"
+},
+{
+"w": "turned",
+"s": 10.82,
+"e": 11.12,
+"line": "highway"
+},
+{
+"w": "out",
+"s": 11.12,
+"e": 11.32,
+"line": "highway"
+},
+{
+"w": "to",
+"s": 11.32,
+"e": 11.46,
+"line": "highway"
+},
+{
+"w": "be",
+"s": 11.46,
+"e": 11.58,
+"line": "highway"
+},
+{
+"w": "a",
+"s": 11.58,
+"e": 11.7,
+"line": "highway"
+},
+{
+"w": "perfect",
+"s": 11.7,
+"e": 12.0,
+"line": "highway"
+},
+{
+"w": "highway",
+"s": 12.0,
+"e": 12.38,
+"line": "highway"
+},
+{
+"w": "for",
+"s": 12.38,
+"e": 12.64,
+"line": "highway"
+},
+{
+"w": "rats.",
+"s": 12.64,
+"e": 13.0,
+"line": "highway"
+},
+{
+"w": "Straight",
+"s": 13.28,
+"e": 13.58,
+"line": "highway"
+},
+{
+"w": "into",
+"s": 13.58,
+"e": 13.8,
+"line": "highway"
+},
+{
+"w": "the",
+"s": 13.8,
+"e": 13.98,
+"line": "highway"
+},
+{
+"w": "fanciest",
+"s": 13.98,
+"e": 14.44,
+"line": "highway"
+},
+{
+"w": "houses",
+"s": 14.44,
+"e": 14.72,
+"line": "highway"
+},
+{
+"w": "in",
+"s": 14.72,
+"e": 15.04,
+"line": "highway"
+},
+{
+"w": "town.",
+"s": 15.04,
+"e": 15.34,
+"line": "highway"
+},
+{
+"w": "And",
+"s": 15.748999999999999,
+"e": 15.86,
+"line": "plague"
+},
+{
+"w": "with",
+"s": 15.86,
+"e": 15.98,
+"line": "plague"
+},
+{
+"w": "plague",
+"s": 15.98,
+"e": 16.24,
+"line": "plague"
+},
+{
+"w": "spreading",
+"s": 16.24,
+"e": 16.56,
+"line": "plague"
+},
+{
+"w": "across",
+"s": 16.56,
+"e": 16.82,
+"line": "plague"
+},
+{
+"w": "Asia,",
+"s": 16.82,
+"e": 17.26,
+"line": "plague"
+},
+{
+"w": "rats",
+"s": 17.6,
+"e": 17.78,
+"line": "plague"
+},
+{
+"w": "were",
+"s": 17.78,
+"e": 17.98,
+"line": "plague"
+},
+{
+"w": "the",
+"s": 17.98,
+"e": 18.06,
+"line": "plague"
+},
+{
+"w": "last",
+"s": 18.06,
+"e": 18.34,
+"line": "plague"
+},
+{
+"w": "thing",
+"s": 18.34,
+"e": 18.58,
+"line": "plague"
+},
+{
+"w": "anyone",
+"s": 18.58,
+"e": 18.86,
+"line": "plague"
+},
+{
+"w": "wanted.",
+"s": 18.86,
+"e": 19.34,
+"line": "plague"
+},
+{
+"w": "So",
+"s": 19.816,
+"e": 19.94,
+"line": "hire"
+},
+{
+"w": "the",
+"s": 19.94,
+"e": 20.06,
+"line": "hire"
+},
+{
+"w": "city",
+"s": 20.06,
+"e": 20.22,
+"line": "hire"
+},
+{
+"w": "hired",
+"s": 20.22,
+"e": 20.54,
+"line": "hire"
+},
+{
+"w": "workers",
+"s": 20.54,
+"e": 20.92,
+"line": "hire"
+},
+{
+"w": "to",
+"s": 20.92,
+"e": 21.16,
+"line": "hire"
+},
+{
+"w": "go",
+"s": 21.16,
+"e": 21.3,
+"line": "hire"
+},
+{
+"w": "down",
+"s": 21.3,
+"e": 21.58,
+"line": "hire"
+},
+{
+"w": "into",
+"s": 21.58,
+"e": 21.76,
+"line": "hire"
+},
+{
+"w": "the",
+"s": 21.76,
+"e": 21.92,
+"line": "hire"
+},
+{
+"w": "sewers,",
+"s": 21.92,
+"e": 22.26,
+"line": "hire"
+},
+{
+"w": "and",
+"s": 22.52,
+"e": 22.62,
+"line": "hire"
+},
+{
+"w": "paid",
+"s": 22.62,
+"e": 22.86,
+"line": "hire"
+},
+{
+"w": "them",
+"s": 22.86,
+"e": 23.04,
+"line": "hire"
+},
+{
+"w": "for",
+"s": 23.04,
+"e": 23.22,
+"line": "hire"
+},
+{
+"w": "every",
+"s": 23.22,
+"e": 23.52,
+"line": "hire"
+},
+{
+"w": "rat.",
+"s": 23.52,
+"e": 23.78,
+"line": "hire"
+},
+{
+"w": "It",
+"s": 24.14,
+"e": 24.26,
+"line": "count"
+},
+{
+"w": "worked.",
+"s": 24.26,
+"e": 24.48,
+"line": "count"
+},
+{
+"w": "On",
+"s": 24.68,
+"e": 24.76,
+"line": "count"
+},
+{
+"w": "June",
+"s": 24.76,
+"e": 25.0,
+"line": "count"
+},
+{
+"w": "the",
+"s": 25.0,
+"e": 25.16,
+"line": "count"
+},
+{
+"w": "twelfth",
+"s": 25.16,
+"e": 25.48,
+"line": "count"
+},
+{
+"w": "alone,",
+"s": 25.48,
+"e": 25.72,
+"line": "count"
+},
+{
+"w": "they",
+"s": 25.72,
+"e": 26.02,
+"line": "count"
+},
+{
+"w": "killed",
+"s": 26.02,
+"e": 26.3,
+"line": "count"
+},
+{
+"w": "over",
+"s": 26.3,
+"e": 26.52,
+"line": "count"
+},
+{
+"w": "twenty",
+"s": 26.52,
+"e": 26.88,
+"line": "count"
+},
+{
+"w": "thousand",
+"s": 26.88,
+"e": 27.22,
+"line": "count"
+},
+{
+"w": "rats.",
+"s": 27.22,
+"e": 27.52,
+"line": "count"
+},
+{
+"w": "But",
+"s": 28.0,
+"e": 28.16,
+"line": "tail"
+},
+{
+"w": "counting",
+"s": 28.16,
+"e": 28.46,
+"line": "tail"
+},
+{
+"w": "dead",
+"s": 28.46,
+"e": 28.76,
+"line": "tail"
+},
+{
+"w": "rats",
+"s": 28.76,
+"e": 29.08,
+"line": "tail"
+},
+{
+"w": "was",
+"s": 29.08,
+"e": 29.32,
+"line": "tail"
+},
+{
+"w": "disgusting.",
+"s": 29.32,
+"e": 29.86,
+"line": "tail"
+},
+{
+"w": "So",
+"s": 29.86,
+"e": 30.14,
+"line": "tail"
+},
+{
+"w": "the",
+"s": 30.14,
+"e": 30.28,
+"line": "tail"
+},
+{
+"w": "city",
+"s": 30.28,
+"e": 30.44,
+"line": "tail"
+},
+{
+"w": "made",
+"s": 30.44,
+"e": 30.68,
+"line": "tail"
+},
+{
+"w": "it",
+"s": 30.68,
+"e": 30.82,
+"line": "tail"
+},
+{
+"w": "simple:",
+"s": 30.82,
+"e": 31.14,
+"line": "tail"
+},
+{
+"w": "just",
+"s": 31.14,
+"e": 31.42,
+"line": "tail"
+},
+{
+"w": "bring",
+"s": 31.42,
+"e": 31.66,
+"line": "tail"
+},
+{
+"w": "us",
+"s": 31.66,
+"e": 31.84,
+"line": "tail"
+},
+{
+"w": "the",
+"s": 31.84,
+"e": 31.98,
+"line": "tail"
+},
+{
+"w": "tail.",
+"s": 31.98,
+"e": 32.24,
+"line": "tail"
+},
+{
+"w": "One",
+"s": 32.52,
+"e": 32.66,
+"line": "tail"
+},
+{
+"w": "cent",
+"s": 32.66,
+"e": 32.9,
+"line": "tail"
+},
+{
+"w": "per",
+"s": 32.9,
+"e": 33.12,
+"line": "tail"
+},
+{
+"w": "tail.",
+"s": 33.12,
+"e": 33.4,
+"line": "tail"
+},
+{
+"w": "Then",
+"s": 33.89,
+"e": 34.04,
+"line": "notail"
+},
+{
+"w": "the",
+"s": 34.04,
+"e": 34.16,
+"line": "notail"
+},
+{
+"w": "officials",
+"s": 34.16,
+"e": 34.5,
+"line": "notail"
+},
+{
+"w": "noticed",
+"s": 34.5,
+"e": 34.88,
+"line": "notail"
+},
+{
+"w": "something",
+"s": 34.88,
+"e": 35.22,
+"line": "notail"
+},
+{
+"w": "strange.",
+"s": 35.22,
+"e": 35.66,
+"line": "notail"
+},
+{
+"w": "Rats,",
+"s": 36.1,
+"e": 36.36,
+"line": "notail"
+},
+{
+"w": "all",
+"s": 36.36,
+"e": 36.64,
+"line": "notail"
+},
+{
+"w": "over",
+"s": 36.64,
+"e": 36.84,
+"line": "notail"
+},
+{
+"w": "the",
+"s": 36.84,
+"e": 36.94,
+"line": "notail"
+},
+{
+"w": "city...",
+"s": 36.94,
+"e": 37.2,
+"line": "notail"
+},
+{
+"w": "with",
+"s": 37.2,
+"e": 37.56,
+"line": "notail"
+},
+{
+"w": "no",
+"s": 37.56,
+"e": 37.76,
+"line": "notail"
+},
+{
+"w": "tails.",
+"s": 37.76,
+"e": 38.1,
+"line": "notail"
+},
+{
+"w": "The",
+"s": 38.62,
+"e": 38.74,
+"line": "snip"
+},
+{
+"w": "hunters",
+"s": 38.74,
+"e": 38.94,
+"line": "snip"
+},
+{
+"w": "were",
+"s": 38.94,
+"e": 39.2,
+"line": "snip"
+},
+{
+"w": "catching",
+"s": 39.2,
+"e": 39.44,
+"line": "snip"
+},
+{
+"w": "rats,",
+"s": 39.44,
+"e": 39.9,
+"line": "snip"
+},
+{
+"w": "cutting",
+"s": 40.04,
+"e": 40.22,
+"line": "snip"
+},
+{
+"w": "off",
+"s": 40.22,
+"e": 40.44,
+"line": "snip"
+},
+{
+"w": "the",
+"s": 40.44,
+"e": 40.6,
+"line": "snip"
+},
+{
+"w": "tails,",
+"s": 40.6,
+"e": 40.88,
+"line": "snip"
+},
+{
+"w": "and",
+"s": 40.88,
+"e": 41.08,
+"line": "snip"
+},
+{
+"w": "letting",
+"s": 41.08,
+"e": 41.28,
+"line": "snip"
+},
+{
+"w": "them",
+"s": 41.28,
+"e": 41.48,
+"line": "snip"
+},
+{
+"w": "go.",
+"s": 41.48,
+"e": 41.78,
+"line": "snip"
+},
+{
+"w": "So",
+"s": 42.08,
+"e": 42.22,
+"line": "snip"
+},
+{
+"w": "they",
+"s": 42.22,
+"e": 42.36,
+"line": "snip"
+},
+{
+"w": "could",
+"s": 42.36,
+"e": 42.54,
+"line": "snip"
+},
+{
+"w": "make",
+"s": 42.54,
+"e": 42.76,
+"line": "snip"
+},
+{
+"w": "more",
+"s": 42.76,
+"e": 43.02,
+"line": "snip"
+},
+{
+"w": "rats.",
+"s": 43.02,
+"e": 43.4,
+"line": "snip"
+},
+{
+"w": "Inspectors",
+"s": 43.92,
+"e": 44.44,
+"line": "farm"
+},
+{
+"w": "even",
+"s": 44.44,
+"e": 44.72,
+"line": "farm"
+},
+{
+"w": "found",
+"s": 44.72,
+"e": 45.06,
+"line": "farm"
+},
+{
+"w": "people",
+"s": 45.06,
+"e": 45.36,
+"line": "farm"
+},
+{
+"w": "outside",
+"s": 45.36,
+"e": 45.74,
+"line": "farm"
+},
+{
+"w": "the",
+"s": 45.74,
+"e": 45.98,
+"line": "farm"
+},
+{
+"w": "city...",
+"s": 45.98,
+"e": 46.24,
+"line": "farm"
+},
+{
+"w": "breeding",
+"s": 46.56,
+"e": 46.8,
+"line": "farm"
+},
+{
+"w": "rats.",
+"s": 46.8,
+"e": 47.2,
+"line": "farm"
+},
+{
+"w": "For",
+"s": 47.2,
+"e": 47.4,
+"line": "farm"
+},
+{
+"w": "their",
+"s": 47.4,
+"e": 47.56,
+"line": "farm"
+},
+{
+"w": "tails.",
+"s": 47.56,
+"e": 47.92,
+"line": "farm"
+},
+{
+"w": "The",
+"s": 48.48,
+"e": 48.6,
+"line": "cancel"
+},
+{
+"w": "bounty",
+"s": 48.6,
+"e": 48.78,
+"line": "cancel"
+},
+{
+"w": "was",
+"s": 48.78,
+"e": 49.0,
+"line": "cancel"
+},
+{
+"w": "cancelled.",
+"s": 49.0,
+"e": 49.34,
+"line": "cancel"
+},
+{
+"w": "The",
+"s": 49.64,
+"e": 49.72,
+"line": "cancel"
+},
+{
+"w": "rats",
+"s": 49.72,
+"e": 49.96,
+"line": "cancel"
+},
+{
+"w": "stayed.",
+"s": 49.96,
+"e": 50.28,
+"line": "cancel"
+},
+{
+"w": "And",
+"s": 50.46,
+"e": 50.58,
+"line": "cancel"
+},
+{
+"w": "the",
+"s": 50.58,
+"e": 50.68,
+"line": "cancel"
+},
+{
+"w": "plague",
+"s": 50.68,
+"e": 50.9,
+"line": "cancel"
+},
+{
+"w": "came",
+"s": 50.9,
+"e": 51.12,
+"line": "cancel"
+},
+{
+"w": "anyway.",
+"s": 51.12,
+"e": 51.5,
+"line": "cancel"
+},
+{
+"w": "Economists",
+"s": 52.18,
+"e": 52.62,
+"line": "cobra"
+},
+{
+"w": "have",
+"s": 52.62,
+"e": 52.82,
+"line": "cobra"
+},
+{
+"w": "a",
+"s": 52.82,
+"e": 52.92,
+"line": "cobra"
+},
+{
+"w": "name",
+"s": 52.92,
+"e": 53.14,
+"line": "cobra"
+},
+{
+"w": "for",
+"s": 53.14,
+"e": 53.32,
+"line": "cobra"
+},
+{
+"w": "this:",
+"s": 53.32,
+"e": 53.54,
+"line": "cobra"
+},
+{
+"w": "the",
+"s": 53.9,
+"e": 53.96,
+"line": "cobra"
+},
+{
+"w": "cobra",
+"s": 53.96,
+"e": 54.24,
+"line": "cobra"
+},
+{
+"w": "effect.",
+"s": 54.24,
+"e": 54.62,
+"line": "cobra"
+},
+{
+"w": "Pay",
+"s": 54.96,
+"e": 55.14,
+"line": "cobra"
+},
+{
+"w": "people",
+"s": 55.14,
+"e": 55.48,
+"line": "cobra"
+},
+{
+"w": "for",
+"s": 55.48,
+"e": 55.72,
+"line": "cobra"
+},
+{
+"w": "a",
+"s": 55.72,
+"e": 55.82,
+"line": "cobra"
+},
+{
+"w": "problem,",
+"s": 55.82,
+"e": 56.2,
+"line": "cobra"
+},
+{
+"w": "and",
+"s": 56.2,
+"e": 56.42,
+"line": "cobra"
+},
+{
+"w": "you",
+"s": 56.42,
+"e": 56.54,
+"line": "cobra"
+},
+{
+"w": "get",
+"s": 56.54,
+"e": 56.7,
+"line": "cobra"
+},
+{
+"w": "more",
+"s": 56.7,
+"e": 56.94,
+"line": "cobra"
+},
+{
+"w": "of",
+"s": 56.94,
+"e": 57.04,
+"line": "cobra"
+},
+{
+"w": "the",
+"s": 57.04,
+"e": 57.12,
+"line": "cobra"
+},
+{
+"w": "problem.",
+"s": 57.12,
+"e": 57.5,
+"line": "cobra"
+},
+{
+"w": "Hanoi",
+"s": 57.96,
+"e": 58.3,
+"line": "twist"
+},
+{
+"w": "wanted",
+"s": 58.3,
+"e": 58.52,
+"line": "twist"
+},
+{
+"w": "to",
+"s": 58.52,
+"e": 58.66,
+"line": "twist"
+},
+{
+"w": "get",
+"s": 58.66,
+"e": 58.8,
+"line": "twist"
+},
+{
+"w": "rid",
+"s": 58.8,
+"e": 58.98,
+"line": "twist"
+},
+{
+"w": "of",
+"s": 58.98,
+"e": 59.1,
+"line": "twist"
+},
+{
+"w": "its",
+"s": 59.1,
+"e": 59.22,
+"line": "twist"
+},
+{
+"w": "rats.",
+"s": 59.22,
+"e": 59.52,
+"line": "twist"
+},
+{
+"w": "Instead,",
+"s": 59.82,
+"e": 60.18,
+"line": "twist"
+},
+{
+"w": "it",
+"s": 60.18,
+"e": 60.42,
+"line": "twist"
+},
+{
+"w": "started",
+"s": 60.42,
+"e": 60.7,
+"line": "twist"
+},
+{
+"w": "the",
+"s": 60.7,
+"e": 60.84,
+"line": "twist"
+},
+{
+"w": "rat",
+"s": 60.84,
+"e": 61.04,
+"line": "twist"
+},
+{
+"w": "business.",
+"s": 61.04,
+"e": 61.36,
+"line": "twist"
+}
+]

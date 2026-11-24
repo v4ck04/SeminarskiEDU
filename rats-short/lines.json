@@ -1,0 +1,67 @@
+[
+ {
+  "id": "hook",
+  "gap": 0.45,
+  "text": "In nineteen oh two, a city paid people to kill rats. And ended up with more rats than ever."
+ },
+ {
+  "id": "hanoi",
+  "gap": 0.3,
+  "text": "This is Hanoi, then a French colony. The French built a brand new quarter, with modern sewers."
+ },
+ {
+  "id": "highway",
+  "gap": 0.3,
+  "text": "The sewers turned out to be a perfect highway for rats. Straight into the fanciest houses in town."
+ },
+ {
+  "id": "plague",
+  "gap": 0.4,
+  "text": "And with plague spreading across Asia, rats were the last thing anyone wanted."
+ },
+ {
+  "id": "hire",
+  "gap": 0.3,
+  "text": "So the city hired workers to go down into the sewers, and paid them for every rat."
+ },
+ {
+  "id": "count",
+  "gap": 0.35,
+  "text": "It worked. On June the twelfth alone, they killed over twenty thousand rats."
+ },
+ {
+  "id": "tail",
+  "gap": 0.4,
+  "text": "But counting dead rats was disgusting. So the city made it simple: just bring us the tail. One cent per tail."
+ },
+ {
+  "id": "notail",
+  "gap": 0.35,
+  "text": "Then the officials noticed something strange. Rats, all over the city... with no tails."
+ },
+ {
+  "id": "snip",
+  "gap": 0.35,
+  "text": "The hunters were catching rats, cutting off the tails, and letting them go. So they could make more rats."
+ },
+ {
+  "id": "farm",
+  "gap": 0.4,
+  "text": "Inspectors even found people outside the city... breeding rats. For their tails."
+ },
+ {
+  "id": "cancel",
+  "gap": 0.4,
+  "text": "The bounty was cancelled. The rats stayed. And the plague came anyway."
+ },
+ {
+  "id": "cobra",
+  "gap": 0.35,
+  "text": "Economists have a name for this: the cobra effect. Pay people for a problem, and you get more of the problem."
+ },
+ {
+  "id": "twist",
+  "gap": 0.2,
+  "text": "Hanoi wanted to get rid of its rats. Instead, it started the rat business."
+ }
+]

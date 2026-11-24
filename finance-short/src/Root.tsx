@@ -16,6 +16,7 @@ import { PhonecallShort, PHONECALL_FRAMES } from "./videos/phonecall/Phonecall";
 import { EightShort, EIGHT_FRAMES } from "./videos/eight/Eight";
 import { NvidiaShort, NVIDIA_FRAMES } from "./videos/nvidia/Nvidia";
 import { BatbombShort, BATBOMB_FRAMES } from "./videos/batbomb/Batbomb";
+import { RatsShort, RATS_FRAMES } from "./videos/rats/Rats";
 
 /** look checks: frame k of NewtonPreview shows story frame frames[k] (inputProps { frames: [...] }) */
 const Preview: React.FC = () => {
@@ -56,6 +57,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="GeniusThumb" component={GeniusThumb} durationInFrames={1} fps={30} width={1920} height={1080} />
       <Composition id="Genius2DPreview" component={Genius2DPreview} durationInFrames={Math.max(1, n)} fps={30} width={1920} height={1080} />
       <Composition id="PhonecallShort" component={PhonecallShort} durationInFrames={PHONECALL_FRAMES} fps={30} width={1080} height={1920} />
+      <Composition id="RatsShort" component={RatsShort} durationInFrames={RATS_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="BatbombShort" component={BatbombShort} durationInFrames={BATBOMB_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="BatbombPreview" component={BatbombPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="NvidiaShort" component={NvidiaShort} durationInFrames={NVIDIA_FRAMES} fps={30} width={1080} height={1920} />

@@ -1,7 +1,7 @@
-# The City That Paid for Rat Tails: idea, script, sources (draft, awaiting approval)
+# The City That Paid for Rat Tails: idea, script, sources (approved)
 
-A true story for a ~60 s vertical short, the first one made with REAL 3D characters (rounded bodies, sphere heads,
-faces on the head, real shadows) on top of the realistic pass from the bat-bomb short. Hanoi, 1902: the city paid a
+A true story for a ~60 s vertical short: 2D cartoon characters (people and rats) with real shadows in a fully 3D world
+(the user's choice after a 3D-character test), on top of the realistic pass from the bat-bomb short. Hanoi, 1902: the city paid a
 bounty per rat tail and ended up helping the rats.
 
 ## Why this idea (vidIQ, 23 Nov 2026)
@@ -68,10 +68,20 @@ and wait for more rats. True story.
 weird history, crazy history facts, plans that backfired, history that backfired, french indochina, hanoi history,
 rat bounty, animated history, true story
 
-## Production plan (after approval)
-- First short with real 3D characters: rounded capsule bodies, sphere heads with painted faces, tube arms and legs,
-  hats and props as 3D parts; they cast real shadows and get AO like the world. Rats as small 3D figures too.
-- Realistic pass from the bat-bomb short (AO, day shadows, soft shading, rounded props, specular).
-- Sets: colonial boulevard with villas and manholes, sewer tunnel with lamps, villa bathroom, bounty office with a
-  queue, rat farm at dusk, night street with glowing eyes.
-- Voice Kokoro am_fenrir 1.22, word captions, march score plus `sfx-library/`, -14 LUFS. You render it on the laptop.
+## Production (done)
+- Voice: Kokoro am_fenrir 1.22 (`voice/voice.wav`, 62.1 s), word timings `voice/words.json`.
+- Film: `finance-short/src/videos/rats/` (composition `RatsShort`), 1880 frames (62.7 s), 14 shots: the boulevard of the
+  French quarter (villas with shutters, tile roofs, trees, lamps, the manhole with a sliding lid, the crate with coins,
+  the bounty poster, curb drains), the sewer (brick, ledges, water, pipes, lamps, ladder), the villa bathroom, the
+  bounty office (counter, desk, chalkboard, cabinets, windows, flag), the rat farm (hut, cages, paddies, palms).
+- Characters: 2D cards (people in `toon.ts` with new sun-helmet and conical-hat drawings; rats drawn by `drawRat`)
+  casting real sun shadows; everything else is 3D with AO, soft shading, rounded props and specular.
+  `fig3d.ts` holds the real-3D character test (not used in this film).
+- Sound: `audio/mix.py` -> `finance-short/public/rats/mix.wav`: original score (pizzicato rat theme, colonial march,
+  plague hush) + `sfx-library/` effects and synthesized squeaks, scurrying, lid scrape, drips, stamps, coins, snip,
+  chalk, a cobra hiss. -14.1 LUFS, -1.5 dBTP (measured, not listened to).
+- Subtitles: `rat-tails.en.srt`. Stills: `stills.jpg`.
+
+## Render on your laptop
+`cd /d D:\Projekti\SeminarskiEDU`, `git pull --no-rebase --no-edit`, then `rats-short\render.cmd`
+-> `finance-short\out\the-city-that-paid-for-rat-tails-2k.mp4` (`set SCALE=1` for 1080p, `set GL=swangle` if black).
