@@ -9,8 +9,8 @@ jar shrinks, old debts shrink, and people who own real things (boats, nets) keep
 
 ## Facts in the voice-over (checked 25 November 2026)
 
-- "Since the year 2000, prices in America have almost doubled": CPI-U annual average 2000 = 172.2; September 2026 =
-  336.940 (BLS CPI release). 336.94 / 172.2 = 1.96. Third-party calculators using BLS data give $100 in 2000 = about
+- "If you hid a hundred dollars under your bed in the year 2000, today it buys only half as much": prices almost doubled, CPI-U annual average 2000 = 172.2; September 2026 =
+  336.940 (BLS CPI release). 336.94 / 172.2 = 1.96, so $100 from 2000 buys what about $51 bought then. Third-party calculators using BLS data give $100 in 2000 = about
   $194 today ([officialdata.org](https://www.officialdata.org/us/inflation/2000?amount=100),
   [in2013dollars.com](https://www.in2013dollars.com/2000-dollars-in-2026?amount=100)).
 - "In the last twelve months, American prices rose three point seven percent": CPI-U, 12 months to September 2026,
@@ -20,12 +20,12 @@ jar shrinks, old debts shrink, and people who own real things (boats, nets) keep
 - The rest is the parable. It shows one cause of inflation (more money, same goods). Real inflation also has other
   causes (energy prices, supply shocks); the voice-over makes no claim that money printing is the only one.
 
-## Script (163 words, voice am_fenrir at 1.22, ~48 s)
+## Script (172 words, voice am_fenrir at 1.22, ~48 s)
 
 | # | line | picture |
 |---|---|---|
-| 1 | Since the year 2000, prices in America have almost doubled. | the town price board: "1 basket = 1 egg" flips to "2 eggs", a red arrow up |
-| 2 | Nobody stole your money. So where did it go? | the second man looks into his jar of eggs, puzzled |
+| 1 | If you hid a hundred dollars under your bed in the year 2000, today it buys only half as much. | a $100 note slides under a bed; it comes out torn in half; the price board behind flips "1 basket = 1 egg" to "2 eggs" |
+| 2 | Nobody stole it. So where did the other half go? | the second man looks into his jar of eggs, puzzled |
 | 3 | One golden egg explains it. | flash; a shining golden egg held up to camera |
 | 4 | In the river town, one basket of fish costs one golden egg. | aerial onto the stage; a fisherman swaps a basket for one egg |
 | 5 | Then the mayor finds a goose that lays golden eggs. And he hands them out to everyone. | the mayor with a goose; eggs pop out, he tosses them into the crowd |

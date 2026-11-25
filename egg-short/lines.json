@@ -1,15 +1,67 @@
 [
- {"id": "hook", "gap": 0.2, "text": "Since the year 2000, prices in America have almost doubled."},
- {"id": "hook2", "gap": 0.3, "text": "Nobody stole your money. So where did it go?"},
- {"id": "egg", "gap": 0.45, "text": "One golden egg explains it."},
- {"id": "set", "gap": 0.35, "text": "In the river town, one basket of fish costs one golden egg."},
- {"id": "goose", "gap": 0.3, "text": "Then the mayor finds a goose that lays golden eggs. And he hands them out to everyone."},
- {"id": "rich", "gap": 0.3, "text": "Everyone feels rich. But the river still has the same fish."},
- {"id": "price", "gap": 0.35, "text": "So a basket costs two eggs. Then three."},
- {"id": "p2", "gap": 0.3, "text": "The second man saved a hundred eggs in a jar. Now they buy a third of the fish."},
- {"id": "p1", "gap": 0.3, "text": "The first man owes the lender fifty eggs. Now he pays it back with a few baskets."},
- {"id": "p3", "gap": 0.3, "text": "The third man kept no eggs. He owns boats and nets. His fish just cost three eggs now."},
- {"id": "turn", "gap": 0.35, "text": "The eggs didn't get stolen. There were just more of them."},
- {"id": "fact", "gap": 0.3, "text": "That's inflation. In the last twelve months, American prices rose three point seven percent."},
- {"id": "end", "gap": 0.3, "text": "So where do you keep yours? In a jar, or in a boat?"}
+ {
+  "id": "hook",
+  "gap": 0.2,
+  "text": "If you hid a hundred dollars under your bed in the year 2000, today it buys only half as much."
+ },
+ {
+  "id": "hook2",
+  "gap": 0.3,
+  "text": "Nobody stole it. So where did the other half go?"
+ },
+ {
+  "id": "egg",
+  "gap": 0.45,
+  "text": "One golden egg explains it."
+ },
+ {
+  "id": "set",
+  "gap": 0.35,
+  "text": "In the river town, one basket of fish costs one golden egg."
+ },
+ {
+  "id": "goose",
+  "gap": 0.3,
+  "text": "Then the mayor finds a goose that lays golden eggs. And he hands them out to everyone."
+ },
+ {
+  "id": "rich",
+  "gap": 0.3,
+  "text": "Everyone feels rich. But the river still has the same fish."
+ },
+ {
+  "id": "price",
+  "gap": 0.35,
+  "text": "So a basket costs two eggs. Then three."
+ },
+ {
+  "id": "p2",
+  "gap": 0.3,
+  "text": "The second man saved a hundred eggs in a jar. Now they buy a third of the fish."
+ },
+ {
+  "id": "p1",
+  "gap": 0.3,
+  "text": "The first man owes the lender fifty eggs. Now he pays it back with a few baskets."
+ },
+ {
+  "id": "p3",
+  "gap": 0.3,
+  "text": "The third man kept no eggs. He owns boats and nets. His fish just cost three eggs now."
+ },
+ {
+  "id": "turn",
+  "gap": 0.35,
+  "text": "The eggs didn't get stolen. There were just more of them."
+ },
+ {
+  "id": "fact",
+  "gap": 0.3,
+  "text": "That's inflation. In the last twelve months, American prices rose three point seven percent."
+ },
+ {
+  "id": "end",
+  "gap": 0.3,
+  "text": "So where do you keep yours? In a jar, or in a boat?"
+ }
 ]
