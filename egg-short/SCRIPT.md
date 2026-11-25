@@ -20,7 +20,7 @@ jar shrinks, old debts shrink, and people who own real things (boats, nets) keep
 - The rest is the parable. It shows one cause of inflation (more money, same goods). Real inflation also has other
   causes (energy prices, supply shocks); the voice-over makes no claim that money printing is the only one.
 
-## Script (172 words, voice am_fenrir at 1.22, ~48 s)
+## Script (174 words, voice am_fenrir at 1.22, ~48 s)
 
 | # | line | picture |
 |---|---|---|
