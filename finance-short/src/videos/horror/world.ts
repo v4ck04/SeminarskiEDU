@@ -47,7 +47,7 @@ const SUN_SHOT: Record<number, Key3> = {
   7: { az: 40, el: 25, lit: ORG, card: 0.66 }, 8: { az: 200, el: 18, lit: GRN, card: 0.6 }, 9: { az: 175, el: 16, lit: PHN, card: 0.76 },
   10: { az: 170, el: 20, lit: GRN, card: 0.6 }, 11: { az: 30, el: 30, lit: ORG, card: 0.55 }, 12: { az: 190, el: 14, lit: GRN, card: 0.55 },
   13: { az: 180, el: 15, lit: GRN, card: 0.58 }, 14: { az: 160, el: 12, lit: [0.7, 0.72, 0.75], card: 0.7 }, 15: { az: 180, el: 40, lit: [0.5, 0.5, 0.48], card: 0.6 },
-  16: { az: 0, el: 25, lit: [0.75, 0.75, 0.7], card: 0.55 }, 17: { az: 190, el: 18, lit: GRN, card: 0.55 }, 18: { az: 160, el: 20, lit: PHN, card: 0.5 },
+  16: { az: 0, el: 25, lit: [0.14, 0.16, 0.2], card: 0.55, pract: 3.2 }, 17: { az: 190, el: 18, lit: GRN, card: 0.55 }, 18: { az: 160, el: 20, lit: PHN, card: 0.5 },
   19: { az: 178, el: 12, lit: PHN, card: 0.78 }, 20: { az: 180, el: 10, lit: PHN, card: 0.78 }, 21: { az: 175, el: 12, lit: PHN, card: 0.74 },
   22: { az: 180, el: 14, lit: PHN, card: 0.7 }, 23: { az: 180, el: 14, lit: [0.05, 0.05, 0.08], card: 0.2 },
 };
@@ -122,7 +122,7 @@ const paperTex = (h: number) => ctex("wallpaper", 256, Math.round(h * 96), (g, r
 });
 const paintTex = (key: string, col: string, h: number) => ctex(key, 256, Math.round(h * 96), (g, r) => {
   const H = Math.round(h * 96); g.fillStyle = col; g.fillRect(0, 0, 256, H);
-  for (let i = 0; i < 40; i++) { const x = r() * 256, y = r() * H, rad = 10 + r() * 40; const gr = g.createRadialGradient(x, y, 0, x, y, rad); gr.addColorStop(0, "rgba(0,0,0,0.08)"); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(x - rad, y - rad, 2 * rad, 2 * rad); }
+  for (let i = 0; i < 40; i++) { const x = r() * 256, y = r() * H, rad = 10 + r() * 40; const gr = g.createRadialGradient(x, y, 0, x, y, rad); gr.addColorStop(0, "rgba(0,0,0,0.03)"); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(x - rad, y - rad, 2 * rad, 2 * rad); }
   g.fillStyle = "#e8e2d2"; g.fillRect(0, H - 10, 256, 10);
 });
 const carpetTex = () => ctex("carpet", 256, 256, (g, r) => { g.fillStyle = "#4a3026"; g.fillRect(0, 0, 256, 256); for (let i = 0; i < 2000; i++) { g.fillStyle = r() < 0.5 ? "rgba(255,200,150,0.06)" : "rgba(0,0,0,0.15)"; g.fillRect(r() * 256, r() * 256, 2, 2); } g.strokeStyle = "rgba(120,80,50,0.5)"; g.lineWidth = 6; g.strokeRect(20, 0, 216, 256); });
@@ -463,7 +463,7 @@ export class World {
       const back = new THREE.TorusGeometry(0.19, 0.015, 6, 20, Math.PI); back.rotateY(ry);
       fit.add(back, wood, new THREE.Matrix4().makeTranslation(cx2 + 0.12, F + 0.5, cz));
     }
-    fit.add(new THREE.CylinderGeometry(0.04, 0.035, 0.1, 16), shiny("mug", "#b8262e", "#ffffff", 60), new THREE.Matrix4().makeTranslation(TABLE.x + 0.18, tY + 0.05, TABLE.z + 0.16));
+    fit.add(new THREE.CylinderGeometry(0.04, 0.035, 0.1, 24), shiny("mug", "#6a1a1e", "#888888", 40), new THREE.Matrix4().makeTranslation(TABLE.x - 0.22, tY + 0.05, TABLE.z - 0.18));
     fit.add(rbox(V(TABLE.x - 0.25, tY, TABLE.z + 0.12), V(TABLE.x - 0.17, tY + 0.012, TABLE.z + 0.16), 0.004), brass);
     fit.add(new THREE.CylinderGeometry(0.006, 0.006, 0.5, 6), iron, new THREE.Matrix4().makeTranslation(TABLE.x, F + KIT.h - 0.25, TABLE.z));
     fit.add(new THREE.ConeGeometry(0.22, 0.2, 20, 1, true), shiny("shade", "#2a3a34", "#888888", 30), new THREE.Matrix4().makeTranslation(TABLE.x, F + KIT.h - 0.58, TABLE.z));

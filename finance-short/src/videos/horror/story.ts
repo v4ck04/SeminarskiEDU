@@ -140,13 +140,13 @@ const H = (p: V3, d: V3) => add(p, d);
 
 const F = FLOOR;
 const C1 = (f: number) => { const u = glide(f / 104); return { pos: [300 + 4.1 * u, D0 + 1.2 + (F + 1.75 - D0 - 1.2) * u, 36 + 14.4 * u] as V3, look: [304 + 0.1 * u, D0 + 8 + (F + 1.45 - D0 - 8) * u, 52 + 1.6 * u] as V3, fov: 50 - 8 * u }; };
-const C2a = (f: number) => dolly([305.7, F + 1.55, 55.0], [304.6, F + 1.0, 53.5], pushK(f, 108, 0.002), { fov: 46 });
+const C2a = (f: number) => dolly([305.25, F + 1.6, 55.3], [304.45, F + 1.15, 53.75], pushK(f, 108, 0.002), { fov: 46 });
 const C2b = (f: number) => dolly([305.25, F + 1.12, 53.95], [304.95, F + 0.76, 53.5], pushK(f, 126, 0.004), { fov: 34 });
 const C3 = (f: number) => dolly([304.35, F + 1.5, 55.25], [304.0, F + 1.38, 53.95], pushK(f, 142, 0.0025), { fov: 44 });
-const C4 = (f: number) => { const u = glide((f - 212) / 40); return { pos: [304.55, F + 0.95, 54.85] as V3, look: [304.9 - 0.9 * u, F + 2.35 - 0.85 * u, 53.5 + 0.4 * u] as V3, fov: 42 }; };
+const C4 = (f: number) => { const u = glide((f - 238) / 18); return { pos: [304.6, F + 1.0, 55.1] as V3, look: [304.9 - 0.9 * u, F + 2.0 - 0.55 * u, 53.55 + 0.4 * u] as V3, fov: 46 }; };
 const C5 = (f: number) => dolly([304.45, F + 1.95, 55.2], [304.0, F + 1.15, 53.95], pushK(f, 262, 0.002), { fov: 44 });
 const C6 = (f: number) => dolly([305.12, F + 1.06, 53.75], [304.95, F + 0.76, 53.5], pushK(f, 318, 0.006), { fov: 30 });
-const C7 = (f: number) => { const u = glide((f - 400) / 60); return { pos: [305.9, F + 1.25, 52.6] as V3, look: [304.3 - 1.7 * u, F + 1.4 - 0.4 * u, 54.0 + 5.2 * u] as V3, fov: 50, roll: 0 }; };
+const C7 = (f: number) => { const u = glide((f - 445) / 22); return { pos: [303.3, F + 1.35, 52.7] as V3, look: [304.0 - 1.4 * u, F + 1.4 - 0.4 * u, 54.0 + 5.2 * u] as V3, fov: 48, roll: 0 }; };
 const C8 = (f: number) => { const u = glide((f - 470) / 86); return { pos: [303.0 - 0.3 * u, F + 1.5 - 0.1 * u, 54.3 + 1.2 * u] as V3, look: [302.6, F + 1.1, 59.2] as V3, fov: 46, roll: 0.06 * smooth((f - 505) / 30) }; };
 const C9 = (f: number) => dolly([304.45, F + 1.5, 55.3], [304.2, F + 1.35, 54.0], pushK(f, 556, 0.002), { fov: 44 });
 const C10 = (f: number) => dolly([303.3, F + 0.97, 54.24], [302.62, F + OVEN.clockY, 54.2], pushK(f, 600, 0.0025), { fov: 30 });
@@ -155,9 +155,9 @@ const C12 = (f: number) => { const u = glide((f - 760) / 40); return { pos: [303
 const C13 = (f: number) => { const z = 55.6 + 3.0 * smooth((f - 800) / 62); return { pos: [302.75, F + 1.35, z - 1.4] as V3, look: [302.6, F + 1.2, z + 2.0] as V3, fov: 50 }; };
 const C14 = (f: number) => dolly([302.6, F + 1.56, 59.2], [302.62, F + 1.5, 58.5], pushK(f, 872, 0.004), { fov: 34 });
 const C15 = (f: number) => ({ pos: [302.6, F + 1.55, 59.38] as V3, look: [302.6 + 0.02 * Math.sin(f * 0.3), F + 1.25, 61.2] as V3, fov: 150 });
-const C16 = (f: number) => { const u = glide((f - 918) / 50); return { pos: [302.62, F + 1.6 - 0.6 * u, 57.9 + 0.3 * u] as V3, look: [302.6, F + 0.8 - 0.8 * u, 59.0] as V3, fov: 44 }; };
+const C16 = (f: number) => { const u = glide((f - 918) / 40); return { pos: [302.62, F + 1.5 - 0.4 * u, 58.0 + 0.15 * u] as V3, look: [302.6, F + 0.5 - 0.5 * u, 58.98] as V3, fov: 40 }; };
 const C17 = (f: number) => dolly([302.72, F + 1.3, 58.9], [302.5, F + 0.85, 56.5], pushK(f, 995, 0.0015), { fov: 50 });
-const C18 = (f: number) => dolly([303.9, F + 1.05, 55.2], [304.95, F + 0.76, 53.5], pushK(f, 1056, 0.004), { fov: 40 });
+const C18 = (f: number) => dolly([304.45, F + 1.05, 54.35], [304.95, F + 0.76, 53.5], pushK(f, 1056, 0.004), { fov: 34 });
 const C19 = (f: number) => { const u = glide((f - 1130) / 92); return { pos: [305.2 - 0.9 * u, F + 1.5, 55.25 + 0.1 * u] as V3, look: [304.2, F + 1.38, 54.0] as V3, fov: 44 }; };
 const C20 = (f: number) => { const u = glide((f - 1270) / 40); return { pos: [304.25, F + 1.5, 55.35 - 0.6 * u] as V3, look: [304.2, F + 1.42, 54.0] as V3, fov: 40 + 30 * u }; };
 const C21 = (f: number) => dolly([304.3, F + 1.5, 55.1], [304.1, F + 1.42, 53.6], pushK(f, 1318, 0.003), { fov: 44 });

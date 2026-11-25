@@ -126,7 +126,7 @@ export const HorrorShort: React.FC<{ at?: number[] }> = ({ at }) => {
       {layersAt(f).map((l, i) => <ShotView key={i ? "over" : "base"} id={l.id} kit={kit} alpha={l.alpha} f={f} />)}
       {f >= DARK.a && f < DARK.b && <AbsoluteFill style={{ background: "radial-gradient(ellipse 34% 26% at 53% 60%, rgba(10,8,14,0) 0%, rgba(10,8,14,0.55) 55%, rgba(6,5,9,0.93) 100%)" }} />}
       {flash > 0 && <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} />}
-      {f >= FISHEYE.a && f < FISHEYE.b && <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 45%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 30%, rgba(6,8,10,0.75) 38%, #000 44%)" }} />}
+      {f >= FISHEYE.a && f < FISHEYE.b && <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 30%, rgba(6,8,10,0.75) 38%, #000 44%)" }} />}
       {f >= BLACK.a && f < BLACK.b && <AbsoluteFill style={{ background: "#000", opacity: Math.min(1, (f - BLACK.a + 1) / 3) }} />}
       {!at && (getInputProps() as { mute?: boolean }).mute !== true && <Audio src={staticFile("horror/mix.wav")} />}
     </AbsoluteFill>

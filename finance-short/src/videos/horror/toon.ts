@@ -2163,7 +2163,7 @@ export const drawMara = (p: Pen, o: MaraOpts) => {
   const armR = (el: P2, h: P2) => maraArm(p, [SR, el], h, key > 0);
   const down = () => { armL([cx - 120, sh + 150], [cx - 116, sh + 210]); armR([cx + 120, sh + 150], [cx + 116, sh + 210]); };
   if (pose === "idle" || pose === "back" || pose === "walk") down();
-  else if (pose === "sit") { legs(); armL([cx - 118, sh + 70], [cx - 40, 790]); armR([cx + 118, sh + 70], [cx + 40, 790]); }
+  else if (pose === "sit") { legs(); armL([cx - 118, sh + 70], [cx - 12, 760]); armR([cx + 118, sh + 70], [cx + 12, 772]); }
   const drawPhoneArmEar = () => { armL([cx - 140, sh + 70], [cx - 84, hy + 20]); if (o.phone !== false) maraPhone(p, cx - 82, hy + 18, -0.35, !!o.screen); };
   // ---- head ----
   p.rot = tilt ? [tilt, cx, hy + 90] : null;
@@ -2207,7 +2207,6 @@ export const drawMara = (p: Pen, o: MaraOpts) => {
   // ---- painted light: rim on the lit edge, practical glow from the phone below ----
   if (o.rim) {
     const arc: P2[] = []; for (let i = 0; i <= 10; i++) { const t = -Math.PI / 2 + key * (i / 10) * Math.PI / 2; arc.push([cx + 104 * Math.cos(t) * (key > 0 ? 1 : 1), hy - 10 + 104 * Math.sin(t)]); }
-    p.stroke(arc.map(([x, y]) => [key > 0 ? x : 2 * cx - (2 * cx - x), y] as P2), 4, o.rim);
     p.stroke([[cx + key * 106, hy + 10], [cx + key * 106, hy + 60]], 4, o.rim);
     p.stroke([[cx + key * 98, sh + 20], [cx + key * 112, hem - 6]], 4, o.rim);
   }

@@ -237,7 +237,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 6) {
     mara(out, cam, [304.2, F, 54.25], { pose: "idle", expr: "fear", lookY: 1, glow: 0.6, key: -1 });
   } else if (id === 7) {
-    mara(out, cam, [304.3, F, 54.25], { pose: "chest", expr: f >= 443 ? "fear" : "listen", lookX: f >= 440 ? -1 : -0.3, glow: 1, screen: true, key: 1, rim: RIM, blink: bl(t, 7) });
+    mara(out, cam, [304.0, F, 54.0], { pose: "chest", expr: f >= 405 ? "fear" : "listen", lookX: f >= 440 ? -1 : -0.3, glow: 1, screen: true, key: 1, rim: RIM, blink: bl(t, 7) });
   } else if (id === 8) {
     mara(out, cam, [302.75, F, 56.5], { pose: "backPhone", key: -1, rim: "#5dff8f" });
   } else if (id === 9) {
@@ -256,10 +256,11 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 16) {
     const back = f >= 958 ? 0.22 * smooth((f - 958) / 8) : 0;
     void back;
-    if (f >= 936) for (const dx of [-0.09, 0.09]) out.fx.push({ key: "footShadow", cw: 128, ch: 128, draw: softBlob("0,0,0", 0.95), x: (DOOR.x0 + DOOR.x1) / 2 + dx * 1.3, y: F + 0.008, z: DOOR.z - 0.16, w: 0.14, h: 0.32, flat: true, soft: true });
+    if (f >= 936) for (const dx of [-0.09, 0.09]) out.fx.push({ key: "footShadow", cw: 128, ch: 128, draw: softBlob("0,0,0", 0.95), x: (DOOR.x0 + DOOR.x1) / 2 + dx * 1.3, y: F + 0.008, z: DOOR.z - 0.16, w: 0.18, h: 0.4, flat: true, soft: true });
+    if (f >= 936) for (const dx of [-0.09, 0.09]) out.fx.push({ key: "footShadow2", cw: 128, ch: 128, draw: softBlob("0,0,0", 0.9), x: (DOOR.x0 + DOOR.x1) / 2 + dx * 1.3, y: F + 0.01, z: DOOR.z - 0.12, w: 0.12, h: 0.26, flat: true, soft: true });
   } else if (id === 17) {
     const sit = f >= 1012;
-    mara(out, cam, [302.5, F, 56.6], sit ? { pose: "sit", expr: f >= 1030 ? "tired" : "fear", lookX: 0.2, key: 1 } : { pose: "chest", expr: "fear", lookX: 0.4, key: 1, phone: false });
+    mara(out, cam, [302.5, F, 56.6], sit ? { pose: "sit", expr: "fear", lookX: 0.2, key: 1 } : { pose: "chest", expr: "fear", lookX: 0.4, key: 1, phone: false });
   } else if (id === 19) {
     mara(out, cam, [304.2, F, 54.0], { pose: "twoHands", expr: "cry", tear: q(clamp01((f - 1190) / 30), 6), lookX: -0.2, glow: 1, screen: true, key: -1, rim: lit ? RIM : undefined, blink: bl(t, 19) });
   } else if (id === 20) {
