@@ -1,0 +1,80 @@
+[
+ {
+  "id": "hook",
+  "start": 0.15,
+  "end": 5.194,
+  "text": "If you hid a hundred dollars under your bed in the year 2000, today it buys only half as much."
+ },
+ {
+  "id": "hook2",
+  "start": 5.394,
+  "end": 7.505,
+  "text": "Nobody stole it. So where did the other half go?"
+ },
+ {
+  "id": "egg",
+  "start": 7.805,
+  "end": 9.06,
+  "text": "One golden egg explains it."
+ },
+ {
+  "id": "set",
+  "start": 9.51,
+  "end": 12.447,
+  "text": "In the river town, one basket of fish costs one golden egg."
+ },
+ {
+  "id": "goose",
+  "start": 12.797,
+  "end": 16.937,
+  "text": "Then the mayor finds a goose that lays golden eggs. And he hands them out to everyone."
+ },
+ {
+  "id": "rich",
+  "start": 17.237,
+  "end": 20.123,
+  "text": "Everyone feels rich. But the river still has the same fish."
+ },
+ {
+  "id": "price",
+  "start": 20.423,
+  "end": 22.294,
+  "text": "So a basket costs two eggs. Then three."
+ },
+ {
+  "id": "p2",
+  "start": 22.644,
+  "end": 26.733,
+  "text": "The second man saved a hundred eggs in a jar. Now they buy a third of the fish."
+ },
+ {
+  "id": "p1",
+  "start": 27.033,
+  "end": 31.229,
+  "text": "The first man owes the lender fifty eggs. Now he pays it back with a few baskets."
+ },
+ {
+  "id": "p3",
+  "start": 31.529,
+  "end": 36.29,
+  "text": "The third man kept no eggs. He owns boats and nets. His fish just cost three eggs now."
+ },
+ {
+  "id": "turn",
+  "start": 36.59,
+  "end": 39.066,
+  "text": "The eggs didn't get stolen. There were just more of them."
+ },
+ {
+  "id": "fact",
+  "start": 39.416,
+  "end": 44.047,
+  "text": "That's inflation. In the last twelve months, American prices rose three point seven percent."
+ },
+ {
+  "id": "end",
+  "start": 44.347,
+  "end": 46.76,
+  "text": "So where do you keep yours? In a jar, or in a boat?"
+ }
+]
