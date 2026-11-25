@@ -2273,7 +2273,7 @@ const ccHair = (p: Pen, L: Look, cx: number, hy: number, back: boolean, layer: "
     if (L.hair === "bob" || L.hair === "long") p.poly(dome(102, L.hair === "long" ? 150 : 70), dark, 6);
     if (L.hair === "curly") for (let i = 0; i < 14; i++) { const a = Math.PI + (i / 13) * Math.PI; p.ell(cx + 92 * Math.cos(a), hy - 14 + 92 * Math.sin(a), 30, 30, i % 2 ? col : dark, 4); }
     if (L.hair === "bun") p.ell(cx, hy - 108, 34, 30, col, 5);
-    if (back) { p.poly(dome(96, L.hair === "long" ? 150 : L.hair === "bob" ? 70 : 30), col, 6); }
+    if (back) { const d2 = dome(96, L.hair === "long" ? 150 : L.hair === "bob" ? 70 : 30); p.poly(d2, col, 6); p.clip(d2, () => { for (let k = -4; k <= 4; k++) p.stroke([[cx + k * 6, hy - 106], [cx + k * 22, hy - 30], [cx + k * 24, hy + 40]], 2.2, dark); p.stroke([[cx - 30, hy - 96], [cx - 50, hy - 20]], 6, "rgba(255,255,255,0.4)"); }); }
     return;
   }
   if (back) return;
@@ -2368,6 +2368,6 @@ export const drawChar = (p: Pen, L: Look, o: CharOpts) => {
   else if (pose === "point") { arm([SL, [cx - W - 22, sh + 150]], [cx - W - 18, sh + 220], key < 0, sleeve); arm([SR, [cx + W + 60, sh + 30]], [cx + W + 130, sh + 10], key > 0, sleeve); }
   else if (pose === "bread") { arm([SR, [cx + W + 10, sh + 130]], [cx + 30, sh + 150], key > 0, sleeve); }
   // painted light
-  if (o.rim) { p.stroke([[cx + key * 98, sh + 20], [cx + key * Wh, hem - 6]], 4, o.rim); p.stroke([[cx + key * 82, hy - 40], [cx + key * 86, hy + 50]], 4, o.rim); }
+  void Wh; // (no painted rim lines: they read as stray strokes; the scene's rim comes from the 3D key)
   if (o.glow) { const g = p.g; g.save(); g.globalCompositeOperation = "source-atop"; const gr = g.createRadialGradient(cx, sh + 100, 10, cx, sh + 100, 300); gr.addColorStop(0, o.glow); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(0, 0, 600, 1000); g.restore(); }
 };

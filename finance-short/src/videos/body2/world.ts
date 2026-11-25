@@ -45,7 +45,7 @@ const SUN_SHOT: Record<number, Key3> = {
   1: { az: 120, el: 22, lit: GOLD, card: 0.85 }, 2: { az: 140, el: 30, lit: GOLD, card: 0.9 }, 3: { az: 100, el: 25, lit: COLD, card: 0.85 },
   4: { az: 160, el: 70, lit: [1.1, 1.0, 0.85], card: 0.9 }, 5: { az: 10, el: 18, lit: GOLD, card: 0.85 }, 6: { az: 150, el: 35, lit: [0.9, 0.95, 1.1], card: 0.9 },
   7: { az: 90, el: 35, lit: WARM, card: 0.9 }, 8: { az: 160, el: 50, lit: [1.0, 0.85, 0.6], card: 0.85 }, 9: { az: 150, el: 55, lit: WARM, card: 0.85 },
-  10: { az: 150, el: 25, lit: [0.75, 0.82, 1.0], card: 0.88 }, 11: { az: 120, el: 40, lit: [0.32, 0.42, 0.78], card: 0.7 }, 12: { az: 120, el: 30, lit: [0.38, 0.72, 0.78], card: 0.8 },
+  10: { az: 150, el: 25, lit: [0.75, 0.82, 1.0], card: 0.88 }, 11: { az: 120, el: 40, lit: [0.2, 0.32, 0.85], card: 0.72 }, 12: { az: 120, el: 30, lit: [0.38, 0.72, 0.78], card: 0.8 },
   13: { az: 150, el: 25, lit: [0.42, 0.52, 0.88], card: 0.82 }, 14: { az: 150, el: 40, lit: [0.22, 0.34, 0.5], card: 0.7, pract: 4 }, 15: { az: 170, el: 78, lit: [1.6, 1.6, 1.6], card: 0.95 },
   16: { az: 10, el: 12, card: 0.85 }, 17: { az: 20, el: 10, card: 0.85 }, 18: { az: 140, el: 40, lit: [0.26, 0.32, 0.6], card: 0.75, pract: 4 },
   19: { az: 150, el: 50, lit: WARM, card: 0.85 }, 20: { az: 160, el: 30, lit: [1.3, 1.1, 0.8], card: 0.9 }, 21: { az: 15, el: 9, card: 0.85 },
@@ -394,7 +394,7 @@ export class World {
       const base = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.26, 0.05, 24), new THREE.MeshBasicMaterial({ color: new THREE.Color(0.4, 1.6, 2.0) })); base.position.y = -0.95; base.layers.set(NOINK); this.globe.add(base); }
     // ================= the press room =================
     shell(PRESS, cream(PRESS.h, "pressWall"), pic("pressFloor", () => rep(floorTex("pressFloorT", "#3a2a26", "#342622", 10), 1, 1)), lam("pressCeil", () => ({ color: "#2a2a30" })));
-    zW(fit, lam("backdrop", () => ({ map: ctex("backdrop", 512, 256, (g) => { g.fillStyle = "#1d2a52"; g.fillRect(0, 0, 512, 256); g.fillStyle = "#d9b04a"; g.beginPath(); g.arc(256, 120, 60, 0, 7); g.fill(); g.fillStyle = "#1d2a52"; g.beginPath(); g.arc(256, 120, 48, 0, 7); g.fill(); g.font = "900 30px 'Inter Display', Inter, sans-serif"; g.fillStyle = "#e8e2d2"; g.textAlign = "center"; g.fillText("HOUSING ACT", 256, 220); }) })), 383, 393, D0 + 0.3, D0 + 4.6, PRESS.z1 - 0.03, -1, [0, 0, 1, 1]);
+    zW(fit, lam("backdrop", () => ({ map: ctex("backdrop", 512, 256, (g) => { g.fillStyle = "#1d2a52"; g.fillRect(0, 0, 512, 256); g.fillStyle = "#d9b04a"; g.beginPath(); g.arc(256, 120, 60, 0, 7); g.fill(); g.fillStyle = "#1d2a52"; g.beginPath(); g.arc(256, 120, 48, 0, 7); g.fill(); g.font = "900 34px 'Inter Display', Inter, sans-serif"; g.fillStyle = "#e8e2d2"; g.textAlign = "center"; g.fillText("HOUSING ACT", 256, 40); }) })), 383, 393, D0 + 0.3, D0 + 4.6, PRESS.z1 - 0.03, -1, [0, 0, 1, 1]);
     fit.add(rbox(V(SIGN[0] - 1.1, D0, SIGN[2] - 0.6 - 0.4), V(SIGN[0] + 1.1, D0 + 0.78, SIGN[2] - 0.6 + 0.4), 0.04), maho);
     flag(384.4, 70.6); flag(391.6, 70.6);
     for (let r = 0; r < 3; r++) fit.add(rbox(V(382, D0, 58.6 + r * 1.2), V(394, D0 + 0.45, 59.0 + r * 1.2), 0.05), lam("pressChairs", () => ({ color: "#3a3a44" })));
@@ -467,7 +467,7 @@ export class World {
     this.Lclock.intensity = id === 1 || id === 22 ? 0.8 : 0;
     // office: drawer, notes, lamp, hologram
     const dr = drawerOut(f); this.drawer.position.set(357.5, D0 + 0.6, DESK.z0 + 0.06 - 0.42 * dr);
-    this.Ldraw.position.set(357.5, D0 + 0.75, DESK.z0 - 0.2); this.Ldraw.intensity = id === 8 ? 0.5 * dr : 0;
+    this.Ldraw.position.set(357.5, D0 + 0.75, DESK.z0 - 0.2); this.Ldraw.intensity = id === 8 ? 0.12 * dr : 0;
     this.note.visible = id === 9 || id === 10;
     this.note2.visible = id === 18 || id === 19;
     const rv = id === 19 ? q2(clamp01((f - 926) / 26)) : 1, nm = this.note2.material as THREE.MeshLambertMaterial, nt = noteTex("note2", ["TOMORROW.", "SAME PLACE.", "LEAVE A SIGN."], rv);

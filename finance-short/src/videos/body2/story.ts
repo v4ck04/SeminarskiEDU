@@ -129,15 +129,15 @@ const C5 = (f: number) => dolly([305.0, D0 + 1.45, 68.2], [305.0, D0 + 1.45, 60.
 const C6 = (f: number) => { const w = glide((f - 384) / 8); return { pos: [306.45 - 0.6 * w, D0 + 1.65, 65.0] as V3, look: [305.0 + 2.4 * w, D0 + 1.45 + 0.1 * w, 62.0 + 1.6 * w] as V3, fov: 44 }; };
 const C7 = (f: number) => { const x = 326 + 0.36 * (f - 395); return { pos: [x + 3.0, D0 + 0.35, 63.4] as V3, look: [x - 2, D0 + 1.0, 64.2] as V3, fov: 56 }; };
 const C8 = (f: number) => dolly([357.5, D0 + 0.98, 64.35], [357.5, D0 + 0.6, 65.25], pushK(f, 424, 0.003), { fov: 40 });
-const C9 = (f: number) => dolly([357.45, D0 + 1.25, 65.45], [357.5, D0 + 0.79, 66.02], pushK(f, 480, 0.0015), { fov: 34 });
+const C9 = (f: number) => dolly([357.5, D0 + 1.85, 65.35], [357.5, D0 + 0.79, 66.05], pushK(f, 480, 0.001), { fov: 40 });
 const C10 = (f: number) => { const u = glide((f - 584) / 30); return { pos: [357.5, D0 + 1.6, 64.9 + 0.9 * u] as V3, look: [357.5, D0 + 1.55, 67.3] as V3, fov: 34 + 34 * u }; };
 const C11 = (f: number) => ({ pos: [362.8, D0 + 2.9, 59.0] as V3, look: [357.0, D0 + 0.9, 65.4] as V3, fov: 56 });
-const C12 = (f: number) => orbit([357.7, 0, 65.7], 2.6, -0.55, 0.95, f, 655, 697, D0 + 1.55, [357.7, D0 + 1.4, 65.7], 48);
+const C12 = (f: number) => orbit([357.7, 0, 65.7], 3.7, -0.45, 0.6, f, 655, 697, D0 + 1.7, [357.7, D0 + 1.35, 65.7], 50);
 const C13 = (f: number) => dolly([358.15, D0 + 1.56, 63.95], [358.4, D0 + 1.52, 64.6], pushK(f, 697, 0.005), { fov: 30 });
 const C14 = (f: number) => { const u = glide((f - 750) / 46); return { pos: [GLOBE[0] + 0.15, GLOBE[1] + 0.1, GLOBE[2] - 0.75 - 2.4 * u] as V3, look: GLOBE, fov: 44 }; };
 const C15 = (f: number) => dolly([424.2, D0 + 2.9, 62.6], [424.0, D0 + 1.3, 66.6], pushK(f, 800, 0.003), { fov: 50 });
 const C16 = (f: number) => dolly([442.1, D0 + 1.25, 62.45], [442.0, D0 + 1.15, 60.3], pushK(f, 830, 0.003), { fov: 52 });
-const C17 = (f: number) => dolly([291.5, 0.8, 1.5], [300.0, 1.3, 8.0], pushK(f, 860, 0.0015), { fov: 46 });
+const C17 = (f: number) => dolly([297.0, 1.5, 4.4], [301.4, 1.6, 7.8], pushK(f, 860, 0.0015), { fov: 44 });
 const C18 = (f: number) => { const u = glide((f - 890) / 30); return { pos: [357.5, D0 + 3.9 - 1.8 * u, 64.0 + 0.3 * u] as V3, look: [357.6, D0 + 0.8, 66.0] as V3, fov: 50 }; };
 const C19 = (f: number) => dolly([357.75, D0 + 1.05, 65.55], [357.6, D0 + 0.79, 65.95], pushK(f, 922, 0.003), { fov: 30 });
 const C20 = (f: number) => orbit([SIGN[0], 0, SIGN[2] - 0.2], 2.8, -0.7, 0.4, f, 955, 1021, D0 + 0.9, [SIGN[0], D0 + 1.25, SIGN[2]], 46);
@@ -146,8 +146,8 @@ const C22a = (f: number) => dolly([304.5, D0 + 1.7, 66.5], [305.0, D0 + 1.42, 68
 const C22b = (f: number) => dolly([302.55, D0 + 0.72, 68.15], [302.55, D0 + 0.68, 69.1], pushK(f, 1112, 0.0015), { fov: 36 });
 const C23 = (f: number) => dolly([466.0, D0 + 1.35, 64.6], [468.6, D0 + 0.95, 61.8], pushK(f, 1150, 0.003, 0.006, 12), { fov: 50 });
 const C24 = (f: number) => { const u = glide((f - 1195) / 90); return { pos: [464.6 + 0.02 * Math.sin(f * 0.3), D0 + 1.45 - 0.2 * u + 0.01 * Math.sin(f * 0.21), 63.6 + 0.9 * u] as V3, look: [464.6, D0 + 1.0, 65.6] as V3, fov: 46 }; };
-const C25 = (f: number) => { const u = glide((f - 1295) / 45); return { pos: [464.9, D0 + 1.45, 64.6] as V3, look: [464.6 + 0.4 * u, D0 + 1.0 + 0.6 * u, 65.6 - 7.6 * u] as V3, fov: 46 }; };
-const C26 = (f: number) => { const u = glide((f - 1362) / 140); return { pos: [465.0, D0 + 1.5 + 9 * u, 62.0 - 21 * u] as V3, look: [465.0, D0 + 1.4 + 0.6 * u, 60.0] as V3, fov: 46 + 6 * u }; };
+const C25 = (f: number) => { const u = glide((f - 1295) / 45); return { pos: [465.0, D0 + 1.5, 66.6] as V3, look: [464.6 + 0.4 * u, D0 + 1.0 + 0.6 * u, 65.6 - 7.6 * u] as V3, fov: 46 }; };
+const C26 = (f: number) => { const u = glide((f - 1362) / 140); return { pos: [465.0, D0 + 1.6 + 9 * u, 59.2 - 18 * u] as V3, look: [465.0, D0 + 1.4 + 0.6 * u, 60.0] as V3, fov: 46 + 6 * u }; };
 
 export const CAMS: Record<number, Key[]> = {
   1: [{ f: 0, s: C1 }], 2: [{ f: 100, s: C2 }], 3: [{ f: 172, s: C3 }], 4: [{ f: 240, s: C4 }], 5: [{ f: 292, s: C5 }], 6: [{ f: 350, s: C6 }],
@@ -191,7 +191,7 @@ export const DOF: Dof[] = [
   { f: 424, cInf: 16, focus: () => [357.5, D0 + 0.62, 65.2] }, { f: 480, cInf: 18, focus: () => [357.5, D0 + 0.79, 65.85] }, { f: 540, dur: 30, cInf: 18, focus: () => [357.5, D0 + 0.79, 66.15] },
   { f: 580, cInf: 10, focus: () => [357.5, D0 + 1.55, 67.3] }, { f: 625, cInf: 4, focus: () => [357.2, D0 + 1.0, 65.6] }, { f: 655, cInf: 8, focus: () => [357.7, D0 + 1.4, 65.7] },
   { f: 697, cInf: 18, focus: () => [358.4, D0 + 1.52, 64.6] }, { f: 745, cInf: 8, focus: () => GLOBE }, { f: 800, cInf: 6, focus: () => [424.0, D0 + 1.5, 67.1] },
-  { f: 830, cInf: 8, focus: () => [442.0, D0 + 1.3, 61.6] }, { f: 860, cInf: 4, focus: () => [300, 1.3, 8] }, { f: 890, cInf: 8, focus: () => [357.6, D0 + 1.0, 66.0] },
+  { f: 830, cInf: 8, focus: () => [442.0, D0 + 1.3, 61.6] }, { f: 860, cInf: 6, focus: () => [301.6, 1.6, 7.8] }, { f: 890, cInf: 8, focus: () => [357.6, D0 + 1.0, 66.0] },
   { f: 922, cInf: 20, focus: () => [357.6, D0 + 0.79, 65.95] }, { f: 955, cInf: 8, focus: () => [SIGN[0], D0 + 1.2, SIGN[2]] }, { f: 1021, cInf: 0 },
   { f: 1081, cInf: 14, focus: () => [305.0, D0 + 1.42, 68.9] }, { f: 1112, cInf: 22, focus: () => [302.6, D0 + 0.68, 68.9] }, { f: 1150, cInf: 8, focus: () => [468.7, D0 + 1.0, 61.8] },
   { f: 1195, cInf: 10, focus: () => [464.6, D0 + 1.0, 65.6] }, { f: 1290, cInf: 6, focus: () => [465.0, D0 + 1.2, 57.0] }, { f: 1357, cInf: 4, focus: () => [465.0, D0 + 1.2, 57.0] }, { f: 1420, dur: 60, cInf: 0 },

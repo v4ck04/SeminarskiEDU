@@ -257,16 +257,15 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     who(out, cam, "maya", [305.0, D0, z], { pose: "tablet", expr: f >= 300 ? "determined" : "neutral", key: 1, rim: "#ffe0a0", glow: "rgba(127,240,255,0.35)" });
     who(out, cam, "presPj", [306.2, D0, 66.6], { pose: "back", key: 1 });
   } else if (id === 6) {
-    who(out, cam, "presPj", [306.55, D0, 64.1], { pose: "back", key: -1 });
     who(out, cam, "maya", [305.0, D0, 61.9], { pose: "tablet", expr: "neutral", key: 1, glow: "rgba(127,240,255,0.4)", blink: bl(t, 6) });
-    fxCard(out, "schedule", 420, 270, fxSchedule, [305.0, D0 + 1.62, 62.15], 0.62, 0.4, 0, true);
+    fxCard(out, "schedule", 420, 270, fxSchedule, [305.0, D0 + 1.68, 62.25], 0.86, 0.55, 0, true);
   } else if (id === 7) {
     const camX = 326 + 0.36 * (f - 395) + 3;
     who(out, cam, "pres", [camX - 2.6, D0, 64.0], { pose: "run", expr: "fear", phase: q(((f / 30) * 2.4) % 1, 12), key: 1, rim: GOLDRIM });
   } else if (id === 10) {
     who(out, cam, "pres", [357.5, D0, 67.3], { pose: "idle", expr: "shock", key: 1, rim: BLUE, eyeGlow: 0.3 });
   } else if (id === 11 || id === 12 || id === 13 || id === 18) {
-    if (id === 11) { who(out, cam, "pres", [357.2, D0, 67.0], { pose: "idle", expr: "fear", key: -1, rim: BLUE }); who(out, cam, "maya", [354.0, D0, 61.4], { pose: "tablet", expr: "neutral", key: 1, glow: "rgba(127,240,255,0.3)" }); }
+    if (id === 11) { who(out, cam, "pres", [357.2, D0, 67.0], { pose: "idle", expr: "fear", key: -1, rim: BLUE }); who(out, cam, "maya", [358.6, D0, 62.6], { pose: "tablet", expr: "neutral", key: 1, glow: "rgba(127,240,255,0.3)" }); }
     else if (id === 12) { who(out, cam, "pres", [357.0, D0, 66.9], { pose: "idle", expr: f < 682 ? "whisper" : "fear", key: 1, rim: TEAL }); who(out, cam, "maya", [358.5, D0, 64.55], { pose: "tablet", expr: "shock", key: -1, rim: TEAL, glow: "rgba(127,240,255,0.3)" }); }
     else if (id === 13) who(out, cam, "maya", [358.4, D0, 64.6], { pose: "tablet", expr: "determined", key: 1, glow: "rgba(127,240,255,0.35)", eyeGlow: q(clamp01((f - 705) / 15), 6), blink: bl(t, 13) });
     else { who(out, cam, "pres", [356.9, D0, 66.95], { pose: "write", expr: "determined", key: 1, rim: "#ffd08a" }); who(out, cam, "maya", [358.3, D0, 66.95], { pose: "write", expr: "determined", key: -1, rim: "#ffd08a" }); motes(out, f, [357.6, D0 + 1.2, 66], 20, 1.0); }
@@ -275,15 +274,15 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
   } else if (id === 16) {
     who(out, cam, "pilot", [442.0, D0, 61.25], { pose: "idle", expr: "smile", eyeGlow: 0.8, key: 1, rim: "#ffa050", lookX: 0.4 });
   } else if (id === 17) {
-    who(out, cam, "fisher", [BOAT[0] + 0.7, BOAT[1] + 0.7 + 0.06 * Math.sin(f * 0.08), BOAT[2] - 0.2], { pose: "idle", expr: "determined", lookY: q(ease([[862, 0.8], [878, -0.3]], f), 6), eyeGlow: 0.8, key: -1, rim: "#ffb070" });
+    who(out, cam, "fisher", [BOAT[0] + 1.6, BOAT[1] + 0.7 + 0.06 * Math.sin(f * 0.08), BOAT[2] - 0.2], { pose: "idle", expr: "determined", lookY: q(ease([[862, 0.8], [878, -0.3]], f), 6), eyeGlow: 0.8, key: -1, rim: "#ffb070" });
     for (let k = 0; k < 6; k++) { const u = ((f * 0.004 + hsh(k, 4)) % 1); fxCard(out, "mist", 128, 128, soft("235,225,240", 0.35), [292 + 16 * hsh(k, 5) + u * 4, 0.8, 4 + 10 * hsh(k, 6)], 6, 2.2, 0, true); }
   } else if (id === 19) {
     const u = clamp01((f - 926) / 26);
     for (let k = 0; k < 8; k++) { const kk = (k / 8) * u; fxCard(out, "spark", 64, 64, fxSpark, [357.45 - 0.17 + 0.34 * ((kk * 3) % 1), DESK.y + 0.02 + 0.03 * hsh(k, 1), 65.85 + 0.25 * kk], 0.03, 0.03, 0, true); }
   } else if (id === 20) {
     who(out, cam, "pres", [SIGN[0], D0, SIGN[2] - 0.05], { pose: "write", expr: "determined", key: 1, rim: "#ffe0a0" });
-    REP.forEach((L, i) => { const row = Math.floor(i / 3), x = 383.5 + (i % 3) * 4.3 + (row % 2) * 1.4; who(out, cam, L, [x, D0, 59.0 + row * 1.25], { pose: f >= 990 && i % 2 ? "armsUp" : "idle", expr: f >= 990 ? "joy" : "smile", key: 1 }, 0.95); });
-    for (const k of [960, 972, 985, 991, 1003, 1012]) if (f >= k && f < k + 3) { const i = k % 9; burst(out, [383.5 + (i % 3) * 4.3, D0 + 1.7, 59.3 + Math.floor(i / 3) * 1.25], 0.4, 0.9, "#ffffff"); }
+    REP.forEach((L, i) => { const side = i % 2 ? 1 : -1, k = Math.floor(i / 2), x = SIGN[0] + side * (2.6 + 0.9 * k), z = 66.4 + 0.9 * (k % 2); who(out, cam, L, [x, D0, z], { pose: f >= 990 && i % 2 ? "armsUp" : "idle", expr: f >= 990 ? "joy" : "smile", key: 1 }, 0.95); });
+    for (const k of [960, 972, 985, 991, 1003, 1012]) if (f >= k && f < k + 3) { const i = k % 9, side = i % 2 ? 1 : -1; burst(out, [SIGN[0] + side * (2.6 + 0.9 * Math.floor(i / 2)), D0 + 1.75, 66.2], 0.4, 0.9, "#ffffff"); }
     for (let k = 0; k < 24; k++) { const u = ((f * 0.003 + hsh(k, 7)) % 1); fxCard(out, "confetti", 64, 64, fxSpark, [SIGN[0] - 3 + 6 * hsh(k, 8), D0 + 3.6 - 3.2 * u, SIGN[2] - 3 + 3 * hsh(k, 9)], 0.05, 0.05, 0, true); }
   } else if (id === 21) {
     who(out, cam, "pres", [BALC[0] - 0.8, BALC[1], BALC[2]], { pose: "back", key: -1, rim: GOLDRIM });
@@ -298,7 +297,7 @@ const shotStage = (out: Stage, cam: CamInfo, id: number, f: number) => {
     if (f >= 1232) { const s = Math.min(1, (f - 1232) / 10); fxCard(out, "note2b", 400, 300, fxNote2, toward(cam, [464.6, D0 + 1.12 + 0.28 * s, 65.6], 0.25), 0.46 * s, 0.35 * s); }
     motes(out, f, [464.6, D0 + 1.4, 65], 30, 3, "255,240,220");
   } else if (id === 25 || id === 26) {
-    ELEVEN.forEach((k, i) => who(out, cam, k, [461.3 + i * 0.82, D0, 56.9 - 0.25 * (i % 2)], { pose: f >= 1300 + i * 3 && (i % 3 !== 1) ? "wave" : "idle", expr: "joy", phase: q(((f / 30) * 1.2 + i * 0.2) % 1, 12), key: 1, rim: GOLDRIM, eyeGlow: 0.5 }));
+    ELEVEN.forEach((k, i) => who(out, cam, k, [462.4 + i * 0.58, D0, 57.0 - 0.3 * (i % 2)], { pose: f >= 1300 + i * 3 && (i % 3 !== 1) ? "wave" : "idle", expr: "smile", phase: q(((f / 30) * 1.2 + i * 0.2) % 1, 12), key: 1, rim: GOLDRIM, eyeGlow: 0.5 }));
     if (id === 26) who(out, cam, "baker", [465.4, D0, 62.3], { pose: "wave", expr: "joy", phase: q(((f / 30) * 1.2) % 1, 12), key: 1 });
   }
 };
