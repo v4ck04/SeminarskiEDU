@@ -1,0 +1,86 @@
+[
+ {
+  "id": "vo1",
+  "voice": "am_onyx",
+  "speed": 1.05,
+  "gap": 0.35,
+  "text": "Every morning, I wake up inside someone else's body."
+ },
+ {
+  "id": "vo2",
+  "voice": "am_onyx",
+  "speed": 1.0,
+  "gap": 0.9,
+  "text": "Today... it's the President."
+ },
+ {
+  "id": "vo3",
+  "voice": "am_onyx",
+  "speed": 0.95,
+  "gap": 2.6,
+  "text": "Okay. Breathe."
+ },
+ {
+  "id": "maya1",
+  "voice": "af_bella",
+  "speed": 1.05,
+  "gap": 3.6,
+  "text": "Sir, you're late."
+ },
+ {
+  "id": "vo4",
+  "voice": "am_onyx",
+  "speed": 1.0,
+  "gap": 0.3,
+  "text": "In the desk drawer... a note."
+ },
+ {
+  "id": "note",
+  "voice": "am_onyx",
+  "speed": 0.92,
+  "gap": 2.6,
+  "text": "If you're reading this, you're one of us. Say the word: Lasta."
+ },
+ {
+  "id": "lasta",
+  "voice": "am_onyx",
+  "speed": 0.85,
+  "gap": 0.5,
+  "text": "Lasta."
+ },
+ {
+  "id": "maya2",
+  "voice": "af_bella",
+  "speed": 0.95,
+  "gap": 6.4,
+  "text": "There are eleven of us."
+ },
+ {
+  "id": "vo5",
+  "voice": "am_onyx",
+  "speed": 1.02,
+  "gap": 2.0,
+  "text": "First thing I did with all that power? I gave people homes."
+ },
+ {
+  "id": "vo6",
+  "voice": "am_onyx",
+  "speed": 0.98,
+  "gap": 1.6,
+  "text": "Midnight. Tomorrow, I'm someone else."
+ },
+ {
+  "id": "note2",
+  "voice": "af_bella",
+  "speed": 0.98,
+  "gap": 2.4,
+  "text": "Housing Act signed. Eleven of us. You're not alone."
+ },
+ {
+  "id": "vo7",
+  "voice": "am_onyx",
+  "speed": 0.95,
+  "gap": 1.0,
+  "text": "Tomorrow, you could be anyone."
+ }
+]
