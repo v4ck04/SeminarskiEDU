@@ -69,8 +69,11 @@ Note in the description: "Not financial advice."
 - `blender/compose.py` frames + soundtrack + captions -> `out/secretary-short.mp4` (Blender's Video Sequencer)
 - `render.cmd` runs all three steps on Windows
 
-Status: the build script ran here up to saving `secretary.blend`, but no frame was looked at (rendering was moved
-to the laptop), so the first test render on the laptop is also the first visual check.
+Status: test stills of every shot were rendered here (EEVEE on CPU, low resolution) and fixed: tunnel walls cutting
+through the boss's office, mirrored wall text, sun behind the street facade, gold number too wide, boss hidden by his
+chair, Sylvia behind the typewriter paper, a pink fringe around the sprites, and two expressions showing at once on
+expression changes. Not checked here: the full film in motion and at full resolution (a CPU frame takes ~80 s at
+1080p, so the final render is done on the laptop GPU). Defaults: EEVEE 64 samples; Cycles 48 samples + denoiser.
 
 ## Render on your laptop
 

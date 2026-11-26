@@ -14,6 +14,13 @@ for f in sorted(glob.glob(os.path.join(SRC, "*.png"))):
     bb = im.getchannel("A").point(lambda v: 255 if v > 16 else 0).getbbox()
     pad = 6
     im = im.crop((max(0, bb[0] - pad), max(0, bb[1] - pad), min(im.width, bb[2] + pad), bb[3]))
+    # de-fringe: transparent and edge pixels carry the ink colour, so filtering never bleeds the generator's key colour
+    px = im.load()
+    for y in range(im.height):
+        for x in range(im.width):
+            r, g, b, a = px[x, y]
+            if a < 250:
+                px[x, y] = (36, 23, 38, a)
     if im.height > 1600:
         im = im.resize((round(im.width * 1600 / im.height), 1600), Image.LANCZOS)
     im.save(os.path.join(DST, name + ".png"), optimize=True)

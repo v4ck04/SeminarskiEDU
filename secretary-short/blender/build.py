@@ -153,10 +153,30 @@ def text(name, body, loc, size, m, extrude=0.0, bevel=0.0, rot=(math.pi / 2, 0, 
     o.location = loc; o.rotation_euler = rot; o.data.materials.append(m)
     return o
 
+ACTOR_CARDS = {}  # actor root name -> [(plane, [(a, b), ...])]: when each card of the actor is on screen
+
+def _clip(spans, ranges):
+    out = []
+    for a, b in spans:
+        for c, d in ranges:
+            lo, hi = max(a, c), min(b, d)
+            if lo < hi:
+                out.append((lo, hi))
+    return out
+
 def show(o, frames_on):
-    """keyframe visibility: frames_on = list of (a, b) story-frame ranges where the object is visible"""
-    objs = [o] + list(o.children_recursive)
-    for ob in objs:
+    """keyframe visibility: frames_on = list of (a, b) story-frame ranges where the object is visible.
+    For an actor, each card keeps its own timeline, clipped to these ranges (only one card is ever visible)."""
+    if o.name in ACTOR_CARDS:
+        for p, spans in ACTOR_CARDS[o.name]:
+            p.animation_data_clear()
+            _show_one(p, _clip(spans, frames_on))
+        return
+    for ob in [o] + list(o.children_recursive):
+        _show_one(ob, frames_on)
+
+def _show_one(ob, frames_on):
+    if True:
         ob.hide_render = True; ob.hide_viewport = True
         ob.keyframe_insert("hide_render", frame=0); ob.keyframe_insert("hide_viewport", frame=0)
         for a, b in frames_on:
@@ -209,10 +229,10 @@ def camera(name, shot_a, shot_b, keys, lens=35, shake=0.0):
 # ------------------------------------------------------------------ character cards
 # character sprites (sprites/*.png, cropped by prep_sprites.py: feet on the bottom edge); height in metres per sprite
 SPRITES = json.load(open(os.path.join(HERE, "sprites", "sprites.json")))
-HEIGHT = {"stand": 1.95, "sit": 1.45}
+HEIGHT = {"stand": 1.95, "sit": 1.6}
 HEIGHT_OF = {"boss_sit_holding_paper": 1.75, "neco_sit_neutral_paper": 1.55, "huab_stand_confused": 2.0,
              "rider_stand_holding_pole": 2.2, "rider_sit_neutral_green": 1.9, "st1_happy_diploma": 2.1,
-             "st2_laugh_diploma": 2.1, "st3_happy_diploma": 2.1, "st4_happy": 2.05, "syl_sit_typing": 1.5,
+             "st2_laugh_diploma": 2.1, "st3_happy_diploma": 2.1, "st4_happy": 2.05, "syl_sit_typing": 1.65,
              "sj_sit_holding_paper": 1.5, "boss_sit_phone": 1.5, "boss_sit_neutral": 1.5, "boss_sit_happy": 1.5}
 def sprite_h(n):
     return HEIGHT_OF.get(n, HEIGHT["sit"] if "_sit_" in n else HEIGHT["stand"])
@@ -266,8 +286,9 @@ def actor(name, loc, timeline, cam_face=None, scale=1.0, sway=1.0, blink=None):
             on[c].append((cur, b))
         else:
             on[c].append((a, b))
+    ACTOR_CARDS[root.name] = [(p, on[n]) for n, p in planes.items()]
     for n, p in planes.items():
-        show(p, on[n])
+        _show_one(p, on[n])
     return root
 
 # =================================================================== THE SETS
@@ -357,7 +378,7 @@ for s in (-1, 1):
 DRAWER = box("drawer", (0.6, 0.5, 0.1), (DESK.x, DESK.y - 0.2, 0.67), PANEL, bevel=0.005)
 cyl("drawer_knob", 0.018, 0.03, (0, -0.26, 0), BRASS, rot=(math.pi / 2, 0, 0)).parent = DRAWER
 # typewriter
-TW = Vector((DESK.x - 0.15, DESK.y - 0.05, 0.79))
+TW = Vector((DESK.x - 0.48, DESK.y - 0.05, 0.79))
 box("tw_body", (0.46, 0.36, 0.12), (TW.x, TW.y, TW.z + 0.06), BLACK, bevel=0.03)
 box("tw_carriage", (0.56, 0.1, 0.07), (TW.x, TW.y + 0.13, TW.z + 0.16), BLACK, bevel=0.02)
 cyl("tw_roll", 0.035, 0.6, (TW.x, TW.y + 0.13, TW.z + 0.2), mat("rubber", "#222", 0.6), rot=(0, math.pi / 2, 0))
@@ -366,7 +387,7 @@ for r in range(3):
     for c in range(9):
         cyl(f"tw_key{r}{c}", 0.016, 0.02, (TW.x - 0.17 + c * 0.042 + r * 0.01, TW.y - 0.12 + r * 0.045, TW.z + 0.13 + r * 0.01), mat("keycap", "#e9e4d8", 0.4), verts=12)
 # banker's lamp
-LAMP = Vector((DESK.x + 0.55, DESK.y + 0.15, 0.79))
+LAMP = Vector((DESK.x + 0.66, DESK.y + 0.28, 0.79))
 cyl("lamp_base", 0.08, 0.03, (LAMP.x, LAMP.y, LAMP.z + 0.015), BRASS)
 cyl("lamp_stem", 0.01, 0.3, (LAMP.x, LAMP.y, LAMP.z + 0.16), BRASS, verts=10)
 cyl("lamp_shade", 0.1, 0.22, (LAMP.x, LAMP.y, LAMP.z + 0.33), GREEN_SHADE, rot=(0, math.pi / 2, 0), verts=24)
@@ -379,7 +400,7 @@ for i in range(4):
 CERT_MAT = mat("cert", "#efe3c2", 0.7, tex="noise", tmix=0.1)
 CERTS = []
 for i in range(12):
-    o = box(f"cert{i}", (0.3, 0.21, 0.012), (DESK.x - 0.55, DESK.y - 0.05, 0.8 + i * 0.013), CERT_MAT, bevel=0.002, rot=(0, 0, 0.06 * math.sin(i * 2.1)))
+    o = box(f"cert{i}", (0.3, 0.21, 0.012), (DESK.x + 0.4, DESK.y - 0.12, 0.8 + i * 0.013), CERT_MAT, bevel=0.002, rot=(0, 0, 0.06 * math.sin(i * 2.1)))
     CERTS.append(o)
 # chair behind the desk
 box("chair_seat", (0.5, 0.48, 0.06), (DESK.x, DESK.y + 0.55, 0.47), mat("leather", "#5a2620", 0.35), bevel=0.02)
@@ -408,14 +429,14 @@ plane("cal_page", 0.6, 0.62, (CAL.x + 0.02, CAL.y, CAL.z - 0.08), PAPER, rot=(ma
 CAL_TXT_M = mat("ink", "#241726", 0.6)
 CAL_NUMS = {}
 for yrs in (1, 5, 12, 20, 31, 44, 58, 67):
-    t = text(f"cal_{yrs}", str(yrs), (CAL.x + 0.035, CAL.y, CAL.z - 0.04), 0.34, CAL_TXT_M, rot=(math.pi / 2, 0, -math.pi / 2))
+    t = text(f"cal_{yrs}", str(yrs), (CAL.x + 0.035, CAL.y, CAL.z - 0.04), 0.34, CAL_TXT_M, rot=(math.pi / 2, 0, math.pi / 2))
     CAL_NUMS[yrs] = t
-text("cal_lbl", "YEARS", (CAL.x + 0.035, CAL.y, CAL.z - 0.3), 0.09, CAL_TXT_M, rot=(math.pi / 2, 0, -math.pi / 2), font=FONT_BOLD)
-text("cal_hd", "CLEARY", (CAL.x + 0.03, CAL.y, CAL.z + 0.3), 0.07, mat("white_ink", "#ffffff", 0.6), rot=(math.pi / 2, 0, -math.pi / 2), font=FONT_BOLD)
+text("cal_lbl", "YEARS", (CAL.x + 0.035, CAL.y, CAL.z - 0.3), 0.09, CAL_TXT_M, rot=(math.pi / 2, 0, math.pi / 2), font=FONT_BOLD)
+text("cal_hd", "CLEARY", (CAL.x + 0.03, CAL.y, CAL.z + 0.3), 0.07, mat("white_ink", "#ffffff", 0.6), rot=(math.pi / 2, 0, math.pi / 2), font=FONT_BOLD)
 # the boss's door (right wall) with a frosted pane
 box("door", (0.08, 1.0, 2.15), (OX + 3.94, 0.2, 1.075), PANEL, bevel=0.01)
 plane("door_glass", 0.7, 0.8, (OX + 3.89, 0.2, 1.55), GLASS_FROST, rot=(math.pi / 2, 0, math.pi / 2))
-text("door_txt", "PARTNER", (OX + 3.88, 0.2, 1.55), 0.12, BLACK, rot=(math.pi / 2, 0, math.pi / 2), font=FONT_BOLD)
+text("door_txt", "PARTNER", (OX + 3.88, 0.2, 1.55), 0.12, BLACK, rot=(math.pi / 2, 0, -math.pi / 2), font=FONT_BOLD)
 # office lights: window daylight + ceiling globes
 area("A_office_win", (OX, 4.2, 1.9), (math.radians(-90), 0, 0), 900, size=2.4, col="#dcebff")
 for x in (-2.0, 2.0):
@@ -433,7 +454,7 @@ PHONE = Vector((BD.x + 0.7, BD.y - 0.1, 0.82))
 box("phone_base", (0.24, 0.2, 0.08), (PHONE.x, PHONE.y, PHONE.z + 0.04), BLACK, bevel=0.03)
 cyl("phone_dial", 0.06, 0.012, (PHONE.x, PHONE.y - 0.06, PHONE.z + 0.085), mat("dial", "#e8e2d2", 0.3), rot=(math.radians(-30), 0, 0))
 box("phone_hand", (0.26, 0.06, 0.05), (PHONE.x, PHONE.y + 0.02, PHONE.z + 0.12), BLACK, bevel=0.02)
-box("bchair_back", (0.7, 0.08, 0.8), (BD.x, BD.y + 0.95, 0.95), mat("leather_b", "#3a2018", 0.35), bevel=0.03)
+box("bchair_back", (0.7, 0.08, 0.8), (BD.x, BD.y + 1.25, 1.0), mat("leather_b", "#3a2018", 0.35), bevel=0.03)
 for i in range(5):
     box(f"books{i}", (0.06, 0.25, 0.3), (BX - 3.2 + i * 0.07, 2.7, 1.2), mat(f"book{i}", ["#7a2e2e", "#2e4a7a", "#2e6a4a", "#6a5a2e", "#4a2e6a"][i], 0.6), bevel=0.004)
 box("bshelf", (1.4, 0.3, 0.04), (BX - 2.9, 2.7, 1.03), DESK_WOOD, bevel=0.005)
@@ -461,24 +482,26 @@ for i in range(6):
     cyl(f"pole{i}", 0.025, 2.4, (SX - 5 + i * 2.0, 0, 1.2), METAL, verts=12)
 point("L_car1", (SX - 3, 0, 2.1), 300, "#fff4dc", 0.5, 7)
 point("L_car2", (SX + 3, 0, 2.1), 300, "#fff4dc", 0.5, 7)
+ld_ = bpy.data.lights.new("A_car", "AREA"); ld_.shape = "RECTANGLE"; ld_.size = 10; ld_.size_y = 1.6; ld_.energy = 1400; ld_.color = hexc("#fff1d8")[:3]
+link(bpy.data.objects.new("A_car", ld_)).location = (SX, 0, 2.25)
 # tunnel outside both sides: dark walls with lights streaking past (animated X loop)
 for s in (-1, 1):
-    box(f"tunnel{s}", (40, 0.2, 4), (SX, s * 2.6, 1.2), mat("tunnel", "#24221f", 0.9), bevel=0)
+    box(f"tunnel{s}", (16, 0.2, 4), (SX, s * 2.6, 1.2), mat("tunnel", "#24221f", 0.9), bevel=0)
     for i in range(10):
-        o = box(f"tl{s}{i}", (0.35, 0.05, 0.1), (SX + 22, s * 2.45, 1.55), emissive("tunnel_light", "#ffcf7a", 12), bevel=0)
+        o = box(f"tl{s}{i}", (0.35, 0.05, 0.1), (SX + 8, s * 2.45, 1.55), emissive("tunnel_light", "#ffcf7a", 12), bevel=0)
         # lights run from x = SX+22 to SX-18 at 0.9 m/frame, then jump back: one linear segment per pass
-        speed, span = 0.9, 40.0
+        speed, span = 0.6, 16.0
         period = span / speed
-        f = -(i * 4.0) / speed
+        f = -(i * 1.6) / speed
         while f < TOTAL:
             fa = max(0.0, f)
-            o.location.x = SX + 22 - (fa - f) * speed; o.keyframe_insert("location", frame=fa + 1, index=0)
+            o.location.x = SX + 8 - (fa - f) * speed; o.keyframe_insert("location", frame=fa + 1, index=0)
             fb = f + period - 0.05
-            o.location.x = SX - 18; o.keyframe_insert("location", frame=fb + 1, index=0)
+            o.location.x = SX - 8; o.keyframe_insert("location", frame=fb + 1, index=0)
             f += period
         fc = o.animation_data.action.fcurves.find("location", index=0)
         for k in fc.keyframe_points:
-            k.interpolation = "CONSTANT" if abs(k.co[1] - (SX - 18)) < 1e-3 else "LINEAR"
+            k.interpolation = "CONSTANT" if abs(k.co[1] - (SX - 8)) < 1e-3 else "LINEAR"
 
 # ---------------- 4. home (x = 60): kitchen table, lamp, 14 bank books (2016) / the husband in the doorway
 HX = 60.0
@@ -497,13 +520,13 @@ for i in range(14):
     x = TB.x + 0.62 * math.sin(a); y = TB.y - 0.05 + 0.25 * math.cos(a) - 0.25
     o = box(f"bankbook{i}", (0.13, 0.19, 0.015), (x, y, 0.8 + i * 0.004), mat(f"bb{i % 7}", cols[i % 7], 0.5), bevel=0.003, rot=(0, 0, -a))
     BOOKS.append(o)
-L_HOME = point("L_home", (TB.x, TB.y, 1.9), 160, "#ffd29a", 0.25, 6)
+L_HOME = point("L_home", (TB.x, TB.y, 1.9), 260, "#ffd29a", 0.25, 6)
 cyl("home_shade", 0.28, 0.22, (TB.x, TB.y, 2.05), mat("shade_cloth", "#e8c98a", 0.8, emit="#ffd29a", estr=1.5), verts=24)
 cyl("home_cord", 0.008, 1.0, (TB.x, TB.y, 2.65), BLACK, verts=6)
 box("home_door", (0.9, 0.08, 2.1), (HX + 2.6, 2.9, 1.05), PANEL, bevel=0.01)
 for i in range(6):  # envelopes
     plane(f"env{i}", 0.22, 0.12, (TB.x - 0.5 + i * 0.07, TB.y + 0.32 - i * 0.01, 0.79 + i * 0.002), mat("envelope", "#efe2c6", 0.8), rot=(0, 0, 0.3 - i * 0.1))
-area("A_home_win", (HX, 4.2, 1.9), (math.radians(-90), 0, 0), 500, size=2.4, col="#ffc8a0")
+area("A_home_win", (HX, 4.2, 1.9), (math.radians(-90), 0, 0), 900, size=2.4, col="#ffc8a0")
 
 # ---------------- 5. the street (x = 80): brick building, steps, sign, lamp posts, sky
 EX = 80.0
@@ -548,7 +571,8 @@ GIFT2 = text("gift_lbl", "SCHOLARSHIPS", (EX, 3.4, 3.6), 0.34, mat("white_ink", 
 GX = 100.0
 box("stage_floor", (30, 30, 0.1), (GX, 0, -0.05), mat("stage", "#14121a", 0.35), bevel=0)
 plane("stage_back", 40, 20, (GX, 12, 6), mat("stage_back", "#1b1826", 0.9, tex="noise", tmix=0.3))
-BIG = text("big_num", "$9,000,000", (GX, 0, 1.6), 0.95, GOLD, extrude=0.12, bevel=0.025)
+BIG = text("big_num", "$9,000,000", (GX, 0, 2.75), 0.5, GOLD, extrude=0.08, bevel=0.018)
+area("A_gold_front", (GX, -4.5, 2.6), (math.radians(80), 0, 0), 900, size=4.0, col="#fff0d8")
 spot("S_gold_key", (GX - 2.5, -4, 4.5), (math.radians(50), 0, math.radians(-30)), 2500, 0.7, "#fff1d0")
 spot("S_gold_rim", (GX + 3, 3, 3.5), (math.radians(-60), 0, math.radians(140)), 1800, 0.8, "#9fc0ff")
 point("L_gold_fill", (GX, -3, 1.2), 120, "#ffd9a0", 0.5, 8)
@@ -561,19 +585,19 @@ for i in range(40):
 wd = bpy.data.worlds.new("world"); sc.world = wd; wd.use_nodes = True
 bg = wd.node_tree.nodes["Background"]; bg.inputs["Color"].default_value = hexc("#2a2c3a"); bg.inputs["Strength"].default_value = 0.35
 sd = bpy.data.lights.new("sun", "SUN"); sd.energy = 3.5; sd.angle = math.radians(2.0); sd.color = hexc("#fff0d8")[:3]
-SUN = link(bpy.data.objects.new("sun", sd)); SUN.rotation_euler = (math.radians(50), math.radians(10), math.radians(150))
+SUN = link(bpy.data.objects.new("sun", sd)); SUN.rotation_euler = (math.radians(55), 0, math.radians(-25))
 
 # =================================================================== SHOTS
 # story-frame boundaries from the voice
 S = [0, 78, 141, 216, 333, 365, 432, 490, 563, 664, 705, 890, 940, 1097, 1262, TOTAL]
 
 # ---- shot 1 (0-78): gold stage: "$9,000,000" rises into frame, slams on "nine", pulses; old Sylvia beside it
-c1 = camera("C01", S[0], S[1], [(0, (GX - 0.4, -6.2, 1.9), (GX, 0, 1.55)), (78, (GX - 0.2, -4.6, 1.75), (GX, 0, 1.55))], lens=40)
-key(BIG, "location", [(0, (GX, 0, -0.8)), (10, (GX, 0, 1.7)), (14, (GX, 0, 1.6))])
+c1 = camera("C01", S[0], S[1], [(0, (GX - 0.3, -6.4, 1.9), (GX, 0, 1.75)), (78, (GX - 0.15, -5.4, 1.85), (GX, 0, 1.75))], lens=40)
+key(BIG, "location", [(0, (GX, 0, 0.6)), (10, (GX, 0, 2.85)), (14, (GX, 0, 2.75))])
 pulse(BIG, 14, 78, 1.0, 0.035, 20)
 key(BIG, "scale", [(W("nine") - 2, (1.0,) * 3), (W("nine") + 2, (1.22,) * 3), (W("nine") + 8, (1.0,) * 3)])
 key(BIG, "rotation_euler", [(0, (math.pi / 2, 0, -0.18)), (78, (math.pi / 2, 0, 0.12)), (890, (math.pi / 2, 0, -0.1)), (940, (math.pi / 2, 0, 0.1))])
-syl_gold = actor("syl_gold", (GX - 1.9, 0.6, 0), [(0, "sj_stand_happy")], cam_face=c1, blink="sj_stand_happy_blink")
+syl_gold = actor("syl_gold", (GX + 0.1, 0.5, 0), [(0, "sj_stand_happy")], cam_face=c1, blink="sj_stand_happy_blink")
 show(syl_gold, [(0, 78)])
 
 # ---- shot 2 (78-141): home doorway: the husband, puzzled
@@ -583,14 +607,14 @@ show(husb, [(78, 141)])
 
 # ---- shot 3 (141-216): the boss's office: boss at his desk, Sylvia at the door "without stealing a cent"
 c3 = camera("C03", S[2], S[3], [(141, (BX - 1.2, -3.2, 1.6), (BX - 0.3, 1.5, 1.2)), (216, (BX - 0.8, -2.5, 1.55), (BX - 0.3, 1.5, 1.2))], lens=32)
-boss3 = actor("boss3", (BX, 2.15, 0), [(141, "boss_sit_neutral")], cam_face=c3, blink=None)
-syl3 = actor("syl3", (BX - 1.6, 0.2, 0), [(141, "syl_stand_happy"), (W("without"), "syl_stand_innocent")], cam_face=c3)
+boss3 = actor("boss3", (BX, 1.8, 0), [(141, "boss_sit_neutral")], cam_face=c3, blink=None)
+syl3 = actor("syl3", (BX - 1.25, 1.0, 0), [(141, "syl_stand_happy"), (W("without"), "syl_stand_innocent")], cam_face=c3)
 show(boss3, [(141, 216)]); show(syl3, [(141, 216)])
 
 # ---- shot 4 (216-333): the office: Sylvia types at her desk; the calendar counts the years; young -> old on "sixty-seven"
-c4 = camera("C04", S[3], S[4], [(216, (OX + 1.6, -3.6, 1.7), (OX - 0.3, 1.0, 1.15)), (300, (OX + 0.9, -2.6, 1.6), (OX - 0.5, 0.9, 1.2)), (333, (OX + 0.7, -2.3, 1.55), (OX - 0.6, 0.9, 1.2))], lens=30)
+c4 = camera("C04", S[3], S[4], [(216, (OX - 1.5, -3.6, 1.7), (OX + 0.3, 1.0, 1.15)), (300, (OX - 0.8, -2.6, 1.6), (OX + 0.3, 0.9, 1.2)), (333, (OX - 0.6, -2.3, 1.55), (OX + 0.3, 0.9, 1.2))], lens=30)
 T67 = W("sixty-seven", line="who")
-syl4 = actor("syl4", (DESK.x, DESK.y + 0.5, 0), [(216, "syl_sit_typing"), (T67, "sj_sit_neutral_lookside")], cam_face=c4)
+syl4 = actor("syl4", (DESK.x + 0.02, DESK.y + 0.5, 0), [(216, "syl_sit_typing"), (T67, "sj_sit_neutral_lookside")], cam_face=c4)
 show(syl4, [(216, 333)])
 steps = [1, 5, 12, 20, 31, 44, 58, 67]
 for i, yrs in enumerate(steps):
@@ -615,7 +639,7 @@ for o in (syl6, r1, r2, r3):
 
 # ---- shot 6 (432-563): the boss on the phone "BUY 100" -> Sylvia at her desk "BUY 5" -> the 5 shrinks on "less"
 c7 = camera("C07", S[6], S[7], [(432, (BX + 0.9, -1.9, 1.55), (BX + 0.2, 1.6, 1.3)), (490, (BX + 0.6, -1.5, 1.5), (BX + 0.2, 1.6, 1.3))], lens=32)
-boss7 = actor("boss7", (BX, 2.15, 0), [(432, "boss_sit_phone"), (W("bought", line="trick"), "boss_sit_holding_paper")], cam_face=c7)
+boss7 = actor("boss7", (BX, 1.8, 0), [(432, "boss_sit_phone"), (W("bought", line="trick"), "boss_sit_holding_paper")], cam_face=c7)
 show(boss7, [(432, 490)])
 def bubble(name, txt, loc, f0, f1, s=1.0):
     root = link(bpy.data.objects.new(name, None)); root.location = loc
@@ -626,13 +650,13 @@ def bubble(name, txt, loc, f0, f1, s=1.0):
     return root
 bubble("b100", "BUY 100", (BX + 0.55, 2.0, 2.25), W("bought", line="trick"), 490, 1.0)
 c8 = camera("C08", S[7], S[8], [(490, (OX - 0.9, -1.9, 1.5), (OX - 0.1, 1.2, 1.2)), (563, (OX - 0.6, -1.5, 1.45), (OX - 0.1, 1.2, 1.2))], lens=32)
-syl8 = actor("syl8", (DESK.x, DESK.y + 0.5, 0), [(490, "syl_sit_happy"), (W("same", line="trick"), "syl_sit_holding_paper")], cam_face=c8)
+syl8 = actor("syl8", (DESK.x + 0.02, DESK.y + 0.5, 0), [(490, "syl_sit_happy"), (W("same", line="trick"), "syl_sit_holding_paper")], cam_face=c8)
 show(syl8, [(490, 563)])
 b5 = bubble("b5", "BUY 5", (OX - 0.55, 1.6, 2.15), W("bought", 1, line="trick"), 563, 0.85)
 key(b5, "scale", [(W("less") - 2, (0.85,) * 3), (W("less") + 6, (0.55,) * 3)])
 
 # ---- shot 7 (563-664): the certificates pile up; daylight turns from spring to autumn to winter outside the window
-c9 = camera("C09", S[8], S[9], [(563, (DESK.x - 1.3, DESK.y - 1.2, 1.25), (DESK.x - 0.55, DESK.y - 0.05, 0.9)), (664, (DESK.x - 0.8, DESK.y - 1.4, 1.5), (DESK.x - 0.55, DESK.y - 0.05, 0.95))], lens=40)
+c9 = camera("C09", S[8], S[9], [(563, (DESK.x + 1.5, DESK.y - 1.7, 1.3), (DESK.x + 0.35, DESK.y - 0.12, 0.95)), (664, (DESK.x + 1.0, DESK.y - 1.5, 1.5), (DESK.x + 0.3, DESK.y - 0.12, 1.0))], lens=36)
 for i, o in enumerate(CERTS):
     f0 = 570 + i * 7
     show(o, ([(0, 333)] if i < 2 else []) + [(f0, TOTAL)])  # a low stack (2) in the early office shots
@@ -659,7 +683,7 @@ for i, o in enumerate(BOOKS):
     show(o, [(f0, 890)]); pop_in(o, f0, 1.0, 5)
 
 # ---- shot 10 (890-940): back on the gold stage: "around nine million dollars"
-c12 = camera("C12", S[11], S[12], [(890, (GX + 0.6, -3.2, 1.3), (GX, 0, 1.6)), (940, (GX + 0.3, -4.4, 1.6), (GX, 0, 1.6))], lens=32)
+c12 = camera("C12", S[11], S[12], [(890, (GX + 0.4, -3.6, 2.4), (GX, 0, 2.7)), (940, (GX + 0.2, -4.6, 2.4), (GX, 0, 2.7))], lens=32)
 key(BIG, "scale", [(889, (1.0,) * 3), (W("nine", line="total") - 1, (1.0,) * 3), (W("nine", line="total") + 3, (1.25,) * 3), (W("nine", line="total") + 9, (1.0,) * 3)])
 
 # ---- shot 11 (940-1097): the street: students with diplomas in front of the Settlement; "$6.2M" pops on "six"
@@ -669,7 +693,7 @@ show(GIFT2, [(W("scholarships"), 1097)]); pop_in(GIFT2, W("scholarships"), 1.0, 
 for i, (n, x) in enumerate((("st1_happy_diploma", -1.8), ("st2_laugh_diploma", -0.6), ("st3_happy_diploma", 0.6), ("st4_happy", 1.8))):
     a = actor(n[:3], (EX + x, 3.6 - (i % 2) * 0.4, 0.11), [(940, n)], cam_face=c13)
     show(a, [(940, 1097)])
-key(SUN.data, "energy", [(0, 0.0), (939, 0.0), (940, 4.0), (1096, 4.0), (1097, 0.0)], "CONSTANT")
+key(SUN.data, "energy", [(0, 0.0), (939, 0.0), (940, 5.0), (1096, 5.0), (1097, 0.0)], "CONSTANT")
 
 # ---- shot 12 (1097-1262): the empty desk at dusk, the clock; slow push
 c14 = camera("C14", S[13], S[14], [(1097, (OX + 0.3, -3.6, 1.5), (OX - 0.1, 1.2, 1.1)), (1262, (OX + 0.1, -1.4, 1.25), (OX - 0.1, 1.2, 1.0))], lens=32)
@@ -687,7 +711,8 @@ sc.camera = c1
 # =================================================================== render settings
 if CYCLES:
     sc.render.engine = "CYCLES"
-    sc.cycles.samples = int(arg("--samples", 64)); sc.cycles.use_denoising = True
+    sc.cycles.samples = int(arg("--samples", 48)); sc.cycles.use_denoising = True
+    sc.cycles.use_adaptive_sampling = True; sc.cycles.max_bounces = 4
     try:
         prefs = bpy.context.preferences.addons["cycles"].preferences
         for t in ("OPTIX", "CUDA", "HIP", "ONEAPI", "METAL"):
@@ -707,7 +732,7 @@ else:
     except TypeError:
         sc.render.engine = "BLENDER_EEVEE"
     ee = sc.eevee
-    ee.taa_render_samples = int(arg("--samples", 32))
+    ee.taa_render_samples = int(arg("--samples", 64))
     ee.use_raytracing = True
     ee.use_shadows = True
     ee.fast_gi_method = "GLOBAL_ILLUMINATION"
