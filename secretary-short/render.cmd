@@ -14,6 +14,7 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0blender" || exit /b 1
 if "%BLENDER%"=="" (
   for %%V in (4.5 4.4 4.3 4.2) do if exist "C:\Program Files\Blender Foundation\Blender %%V\blender.exe" if "!BLENDER!"=="" set "BLENDER=C:\Program Files\Blender Foundation\Blender %%V\blender.exe"
+  for %%V in (4.5 4.4 4.3 4.2) do if exist "D:\Blender Foundation\Blender %%V\blender.exe" if "!BLENDER!"=="" set "BLENDER=D:\Blender Foundation\Blender %%V\blender.exe"
 )
 if "%BLENDER%"=="" set "BLENDER=C:\Program Files\Blender Foundation\Blender 4.2\blender.exe"
 if not exist "%BLENDER%" (
