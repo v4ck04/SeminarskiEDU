@@ -1,0 +1,14 @@
+[
+ {"id": "hook", "gap": 0.25, "text": "A secretary died with nine million dollars. Even her husband may never have known."},
+ {"id": "hook2", "gap": 0.35, "text": "And she got it from her boss, without stealing a cent."},
+ {"id": "who", "gap": 0.3, "text": "Sylvia Bloom worked at one New York law firm for sixty-seven years."},
+ {"id": "plain", "gap": 0.3, "text": "Secretary's salary. Took the subway to work, into her nineties."},
+ {"id": "trick", "gap": 0.3, "text": "But every time her boss bought a stock, she bought the same one. Just a lot less of it."},
+ {"id": "wait", "gap": 0.35, "text": "No tips. No tricks. She copied, and she waited. For decades."},
+ {"id": "quiet", "gap": 0.3, "text": "She never told anyone."},
+ {"id": "found", "gap": 0.3, "text": "When she died in twenty sixteen, at ninety-six, her family found accounts at three brokerages and eleven banks."},
+ {"id": "total", "gap": 0.45, "text": "Around nine million dollars."},
+ {"id": "gave", "gap": 0.3, "text": "And she gave it away. Six point two million became scholarships for New York students in need."},
+ {"id": "lesson", "gap": 0.3, "text": "She never earned a big salary. What made her rich wasn't how much she made. It was how long she waited."},
+ {"id": "end", "gap": 0.3, "text": "Could you wait sixty-seven years?"}
+]
