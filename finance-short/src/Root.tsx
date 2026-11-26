@@ -13,6 +13,7 @@ import { BasketShort, BASKET_FRAMES } from "./videos/basket/Basket";
 import { GoldfishShort, GOLDFISH_FRAMES } from "./videos/goldfish/Goldfish";
 import { EggShort, EGG_FRAMES } from "./videos/egg/Egg";
 import { SecCard } from "./videos/secretary/Cards";
+import { Test5, TEST5_FRAMES } from "./videos/test5/Test5";
 import { PoyaisShort, POYAIS_FRAMES } from "./videos/poyais/Poyais";
 import { PhonecallShort, PHONECALL_FRAMES } from "./videos/phonecall/Phonecall";
 import { EightShort, EIGHT_FRAMES } from "./videos/eight/Eight";
@@ -36,6 +37,7 @@ const Genius3DPreview: React.FC = () => { const p = getInputProps() as { frames?
 const Tenk3DPreview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <Tenk3D at={p.frames ?? [0]} />; };
 const Tenk2DPreview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <Tenk2D at={p.frames ?? [0]} />; };
 const Genius2DPreview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <Genius2D at={p.frames ?? [0]} />; };
+const Test5Preview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <Test5 at={p.frames ?? [0]} />; };
 const EggPreview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <EggShort at={p.frames ?? [0]} />; };
 const GoldfishPreview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <GoldfishShort at={p.frames ?? [0]} />; };
 const BasketPreview: React.FC = () => { const p = getInputProps() as { frames?: number[] }; return <BasketShort at={p.frames ?? [0]} />; };
@@ -74,6 +76,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="EightShort" component={EightShort} durationInFrames={EIGHT_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="EightPreview" component={EightPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="PoyaisShort" component={PoyaisShort} durationInFrames={POYAIS_FRAMES} fps={30} width={1080} height={1920} />
+      <Composition id="Test5" component={Test5} durationInFrames={TEST5_FRAMES} fps={30} width={1080} height={1920} />
+      <Composition id="Test5Preview" component={Test5Preview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="SecCard" component={SecCard} durationInFrames={1} fps={30} width={1200} height={2000} />
       <Composition id="EggShort" component={EggShort} durationInFrames={EGG_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="EggPreview" component={EggPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
