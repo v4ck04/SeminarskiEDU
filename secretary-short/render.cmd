@@ -9,7 +9,7 @@ rem Options (set before running):
 rem   set BLENDER=D:\Blender\blender.exe     if Blender is not in the default folder
 rem   set ENGINE=cycles                      Cycles instead of EEVEE (nicer light, much slower; needs a good GPU)
 rem   set SCALE=50                           half resolution test (540x960), fast
-rem   set CAPS=no                            video without captions
+rem   set CAPS=yes                           video WITH burned-in captions (default: none)
 setlocal EnableDelayedExpansion
 cd /d "%~dp0blender" || exit /b 1
 if "%BLENDER%"=="" (
@@ -31,7 +31,7 @@ echo [2/3] Rendering 1335 frames (this is the long part)...
 "%BLENDER%" -b secretary.blend -a || goto fail
 echo [3/3] Making the MP4...
 set "COPTS="
-if /i "%CAPS%"=="no" set "COPTS=--nocaps"
+if /i "%CAPS%"=="yes" set "COPTS=--caps"
 "%BLENDER%" -b -P compose.py -- %COPTS% || goto fail
 echo.
 echo Done: %~dp0out\secretary-short.mp4

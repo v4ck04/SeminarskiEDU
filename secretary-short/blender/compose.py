@@ -1,7 +1,7 @@
 # Step 3: the finished Short. Puts the rendered frames (render/frames/####.png), the soundtrack (audio/mix.wav) and the
 # word-group captions together in Blender's Video Sequencer and writes an H.264 MP4 with AAC sound.
-#   blender -b -P compose.py                    -> ../out/secretary-short.mp4
-#   blender -b -P compose.py -- --nocaps        -> without captions
+#   blender -b -P compose.py                    -> ../out/secretary-short.mp4 (no captions, picture fills 1080x1920)
+#   blender -b -P compose.py -- --caps          -> with burned-in captions
 import bpy, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +25,10 @@ img = se.sequences.new_image("frames", os.path.join(FRAMES, files[0]), channel=1
 for f in files[1:]:
     img.elements.append(f)
 img.blend_type = "REPLACE"
+# frames rendered at a smaller size (SCALE=50 test) are scaled up so the picture always fills the whole Short
+fw, fh = bpy.data.images.load(os.path.join(FRAMES, files[0])).size
+img.transform.scale_x = 1080 / fw
+img.transform.scale_y = 1920 / fh
 snd = se.sequences.new_sound("mix", os.path.join(HERE, "audio", "mix.wav"), channel=2, frame_start=1)
 
 # fade to black over the last 0.6 s
@@ -33,7 +37,7 @@ col.color = (0, 0, 0); col.blend_type = "ALPHA_OVER"
 col.blend_alpha = 0.0; col.keyframe_insert("blend_alpha", frame=TOTAL - 18)
 col.blend_alpha = 1.0; col.keyframe_insert("blend_alpha", frame=TOTAL)
 
-if "--nocaps" not in ARGS:
+if "--caps" in ARGS:
     words = json.load(open(os.path.join(HERE, "..", "voice", "words.json")))
     GOLD = {"nine", "million", "husband", "boss", "stealing", "sixty-seven", "subway", "nineties", "same", "less", "copied",
             "waited", "decades", "never", "anyone", "three", "eleven", "banks", "gave", "six", "scholarships", "long", "years"}
