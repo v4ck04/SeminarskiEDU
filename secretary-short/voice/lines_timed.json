@@ -1,0 +1,74 @@
+[
+ {
+  "id": "hook",
+  "start": 0.15,
+  "end": 4.551,
+  "text": "A secretary died with nine million dollars. Even her husband may never have known."
+ },
+ {
+  "id": "hook2",
+  "start": 4.801,
+  "end": 7.01,
+  "text": "And she got it from her boss, without stealing a cent."
+ },
+ {
+  "id": "who",
+  "start": 7.36,
+  "end": 10.937,
+  "text": "Sylvia Bloom worked at one New York law firm for sixty-seven years."
+ },
+ {
+  "id": "plain",
+  "start": 11.237,
+  "end": 14.321,
+  "text": "Secretary's salary. Took the subway to work, into her nineties."
+ },
+ {
+  "id": "trick",
+  "start": 14.621,
+  "end": 18.617,
+  "text": "But every time her boss bought a stock, she bought the same one. Just a lot less of it."
+ },
+ {
+  "id": "wait",
+  "start": 18.917,
+  "end": 21.956,
+  "text": "No tips. No tricks. She copied, and she waited. For decades."
+ },
+ {
+  "id": "quiet",
+  "start": 22.306,
+  "end": 23.336,
+  "text": "She never told anyone."
+ },
+ {
+  "id": "found",
+  "start": 23.636,
+  "end": 29.546,
+  "text": "When she died in twenty sixteen, at ninety-six, her family found accounts at three brokerages and eleven banks."
+ },
+ {
+  "id": "total",
+  "start": 29.846,
+  "end": 31.087,
+  "text": "Around nine million dollars."
+ },
+ {
+  "id": "gave",
+  "start": 31.537,
+  "end": 36.46,
+  "text": "And she gave it away. Six point two million became scholarships for New York students in need."
+ },
+ {
+  "id": "lesson",
+  "start": 36.76,
+  "end": 41.965,
+  "text": "She never earned a big salary. What made her rich wasn't how much she made. It was how long she waited."
+ },
+ {
+  "id": "end",
+  "start": 42.265,
+  "end": 43.767,
+  "text": "Could you wait sixty-seven years?"
+ }
+]

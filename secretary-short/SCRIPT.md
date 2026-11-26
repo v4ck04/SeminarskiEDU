@@ -1,4 +1,4 @@
-# A Secretary Died With $9 Million — script draft (for approval)
+# A Secretary Died With $9 Million — script, sources, Blender build and posting
 
 True money story for **Vacko | Money Stories**, follow-up to "A Janitor Died With $8 Million". Vertical 1080x1920,
 30 fps, target ~45 s. 2D characters in a 3D world (1950s-2010s New York: law office, subway, Brooklyn street, bank
@@ -53,3 +53,66 @@ Note in the description: "Not financial advice."
 - https://forward.com/news/400551/sylvia-bloom-henry-street-settlement-hunter-college-millions-donated/
 - https://www.sbs.com.au/news/how-a-legal-secretary-amassed-a-fortune-donated-millions-to-community-group
 - https://theweek.com/speedreads/771770/legal-secretary-who-kept-wealth-secret-donates-millions-college-scholarship-funds
+
+## Blender project (first test of the Blender pipeline)
+
+- `voice/` voice-over (am_fenrir 1.2, 44.4 s) and word timings; `audio/mix.py` -> `blender/audio/mix.wav` (-14.2 LUFS,
+  -1.5 dBTP, measured, not listened to)
+- `blender/cards/` 30 transparent PNG character cards, drawn by `finance-short/src/videos/secretary/Cards.tsx`
+  (`node scripts/cards.mjs ../secretary-short/blender/cards` from finance-short re-draws them)
+- `blender/build.py` builds the whole film in Blender from code: 6 sets (office, boss's office, subway car, home, street
+  with the Henry Street Settlement facade, gold stage with an extruded "$9,000,000"), 15 cameras bound to timeline
+  markers, cards that face the camera, sway and blink, real lights and shadows, EEVEE (or Cycles), glow in the compositor
+- `blender/compose.py` frames + soundtrack + captions -> `out/secretary-short.mp4` (Blender's Video Sequencer)
+- `render.cmd` runs all three steps on Windows
+
+Status: the build script ran here up to saving `secretary.blend`, but no frame was looked at (rendering was moved
+to the laptop), so the first test render on the laptop is also the first visual check.
+
+## Render on your laptop
+
+1. Install **Blender 4.2 LTS**: https://www.blender.org/download/lts/4-2/ (Windows installer, default folder).
+2. Get the project:
+   ```
+   cd /d D:\Projekti\SeminarskiEDU
+   git pull --no-rebase --no-edit
+   ```
+3. **Quick test first** (half size, a few minutes):
+   ```
+   set SCALE=50
+   secretary-short\render.cmd
+   ```
+   Open `secretary-short\out\secretary-short.mp4` and check it. Then delete `secretary-short\blender\render` and run
+   the full size:
+   ```
+   set SCALE=
+   secretary-short\render.cmd
+   ```
+4. Stopped half way? Run `render.cmd` again: finished frames are skipped.
+5. Nicer light with a strong NVIDIA card: `set ENGINE=cycles` before step 3 (much slower).
+6. Open `secretary-short\blender\secretary.blend` in Blender to look around the sets, move a camera, change a light,
+   then render again from the open file (Render > Render Animation) and run only the last step:
+   `"C:\Program Files\Blender Foundation\Blender 4.2\blender.exe" -b -P secretary-short\blender\compose.py`
+
+## Posting
+
+**Title:** A Secretary Died With $9 Million. Nobody Knew How.
+
+**Description:**
+```
+A secretary died with nine million dollars. Even her husband may never have known.
+Sylvia Bloom worked at one New York law firm for 67 years, took the subway into her nineties, and quietly copied her
+boss's stock picks, just a lot smaller. Then she gave most of it away.
+
+Could you wait 67 years? Tell me in the comments.
+
+Facts: Wikipedia, CBS New York, Forward, SBS (links in the pinned comment). Not financial advice.
+
+#shorts #moneystories #investing #compoundinterest #personalfinance
+```
+
+**Tags:** secretary 9 million, sylvia bloom, secret millionaire, frugal millionaire, how to get rich slowly, compound
+interest, long term investing, copy stock trades, money story, true story, personal finance, financial literacy,
+janitor millionaire, vacko money
+
+**Pinned comment:** Could you wait 67 years? What would you do with $9 million?

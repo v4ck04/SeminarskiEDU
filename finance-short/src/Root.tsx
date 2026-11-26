@@ -12,6 +12,7 @@ import { NetShort, NET_FRAMES } from "./videos/net/Net";
 import { BasketShort, BASKET_FRAMES } from "./videos/basket/Basket";
 import { GoldfishShort, GOLDFISH_FRAMES } from "./videos/goldfish/Goldfish";
 import { EggShort, EGG_FRAMES } from "./videos/egg/Egg";
+import { SecCard } from "./videos/secretary/Cards";
 import { PoyaisShort, POYAIS_FRAMES } from "./videos/poyais/Poyais";
 import { PhonecallShort, PHONECALL_FRAMES } from "./videos/phonecall/Phonecall";
 import { EightShort, EIGHT_FRAMES } from "./videos/eight/Eight";
@@ -73,6 +74,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="EightShort" component={EightShort} durationInFrames={EIGHT_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="EightPreview" component={EightPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="PoyaisShort" component={PoyaisShort} durationInFrames={POYAIS_FRAMES} fps={30} width={1080} height={1920} />
+      <Composition id="SecCard" component={SecCard} durationInFrames={1} fps={30} width={1200} height={2000} />
       <Composition id="EggShort" component={EggShort} durationInFrames={EGG_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="EggPreview" component={EggPreview} durationInFrames={Math.max(1, n)} fps={30} width={1080} height={1920} />
       <Composition id="GoldfishShort" component={GoldfishShort} durationInFrames={GOLDFISH_FRAMES} fps={30} width={1080} height={1920} />
