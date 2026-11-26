@@ -1,0 +1,162 @@
+[
+  {
+    "id": "goldman",
+    "role": "Store owner / inventor hero",
+    "age": "adult man",
+    "costume": "fedora, round glasses, navy suit, apron, red tie",
+    "shape": "proud dumpling-shaped ball head",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['goldman'], SHAPES['goldman']"
+  },
+  {
+    "id": "woman",
+    "role": "Shopper",
+    "age": "adult woman",
+    "costume": "teal cloche hat, orange dress with cream dots",
+    "shape": "round egg head, pert hat",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['woman'], SHAPES['woman']"
+  },
+  {
+    "id": "man",
+    "role": "Strong worker",
+    "age": "adult man",
+    "costume": "grey flat cap, cream shirt, blue overalls, big arms, mustache",
+    "shape": "square ball head, wide",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['man'], SHAPES['man']"
+  },
+  {
+    "id": "grandma",
+    "role": "Grandma",
+    "age": "elderly woman",
+    "costume": "white bun, glasses, purple dress with lace",
+    "shape": "soft pear, a bit smaller",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['grandma'], SHAPES['grandma']"
+  },
+  {
+    "id": "youngman",
+    "role": "Young man",
+    "age": "young man",
+    "costume": "straw boater, slick hair, mustard vest, navy trousers",
+    "shape": "ball head, rakish hat",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['youngman'], SHAPES['youngman']"
+  },
+  {
+    "id": "youngwoman",
+    "role": "Young woman",
+    "age": "young woman",
+    "costume": "wavy blond hair, teal dress with light dots",
+    "shape": "round egg",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['youngwoman'], SHAPES['youngwoman']"
+  },
+  {
+    "id": "shopper",
+    "role": "Tired shopper",
+    "age": "adult woman",
+    "costume": "orange cloche, blue dress with dots",
+    "shape": "round",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['shopper'], SHAPES['shopper']"
+  },
+  {
+    "id": "shopper2",
+    "role": "Gentleman shopper",
+    "age": "adult man",
+    "costume": "grey fedora, brick-red suit, mustache",
+    "shape": "squarish",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['shopper2'], SHAPES['shopper2']"
+  },
+  {
+    "id": "kid",
+    "role": "Kid",
+    "age": "child",
+    "costume": "teal cap, mustard shirt, blue shorts",
+    "shape": "round, big head, small body",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['kid'], SHAPES['kid']"
+  },
+  {
+    "id": "magee",
+    "role": "Old inventor",
+    "age": "elderly man",
+    "costume": "tan fedora, grey hair, brown suit, glasses, mustache",
+    "shape": "ball head, slight forward lean",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['magee'], SHAPES['magee']"
+  },
+  {
+    "id": "preacher",
+    "role": "Stern preacher",
+    "age": "adult man",
+    "costume": "black fedora, black suit, white collar",
+    "shape": "narrow, stiff",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['preacher'], SHAPES['preacher']"
+  },
+  {
+    "id": "rancher",
+    "role": "Rancher",
+    "age": "adult man",
+    "costume": "wide tan hat, brown vest, blue trousers, mustache",
+    "shape": "wide square jaw",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['rancher'], SHAPES['rancher']"
+  },
+  {
+    "id": "cop",
+    "role": "Policeman",
+    "age": "adult man",
+    "costume": "navy police cap, navy uniform, gold buttons, mustache",
+    "shape": "square jaw, upright",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['cop'], SHAPES['cop']"
+  },
+  {
+    "id": "nurse",
+    "role": "Nurse",
+    "age": "adult woman",
+    "costume": "white cloche with teal band, white dress, teal trim",
+    "shape": "round egg",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['nurse'], SHAPES['nurse']"
+  },
+  {
+    "id": "teacher",
+    "role": "Teacher",
+    "age": "adult woman",
+    "costume": "hair bun, glasses, mustard dress",
+    "shape": "soft round",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['teacher'], SHAPES['teacher']"
+  },
+  {
+    "id": "banker",
+    "role": "Banker",
+    "age": "adult man",
+    "costume": "black fedora, grey suit, red tie, mustache",
+    "shape": "squarish, leans back",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['banker'], SHAPES['banker']"
+  },
+  {
+    "id": "oldman",
+    "role": "Old man",
+    "age": "elderly man",
+    "costume": "brown flat cap, white hair, glasses, brown vest",
+    "shape": "soft, leans forward, a bit smaller",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['oldman'], SHAPES['oldman']"
+  },
+  {
+    "id": "paperboy",
+    "role": "Paperboy",
+    "age": "child",
+    "costume": "red cap, cream shirt, grey shorts",
+    "shape": "round, big head",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['paperboy'], SHAPES['paperboy']"
+  },
+  {
+    "id": "mechanic",
+    "role": "Mechanic",
+    "age": "adult man",
+    "costume": "blue cap, blue overalls over cream shirt, big arms",
+    "shape": "wide square jaw",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['mechanic'], SHAPES['mechanic']"
+  },
+  {
+    "id": "baker",
+    "role": "Baker",
+    "age": "adult woman",
+    "costume": "wavy hair, pink dress with dots, apron",
+    "shape": "round",
+    "code": "code/engine/chars/charparts.ts \u2192 LOOKS['baker'], SHAPES['baker']"
+  }
+]
