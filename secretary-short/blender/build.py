@@ -207,14 +207,22 @@ def camera(name, shot_a, shot_b, keys, lens=35, shake=0.0):
     return cam
 
 # ------------------------------------------------------------------ character cards
-CARD_W, CARD_H, FOOT = 1.296, 2.16, 0.054  # metres, as the money series (600 x 1000 design units, feet at 975)
+# character sprites (sprites/*.png, cropped by prep_sprites.py: feet on the bottom edge); height in metres per sprite
+SPRITES = json.load(open(os.path.join(HERE, "sprites", "sprites.json")))
+HEIGHT = {"stand": 1.95, "sit": 1.45}
+HEIGHT_OF = {"boss_sit_holding_paper": 1.75, "neco_sit_neutral_paper": 1.55, "huab_stand_confused": 2.0,
+             "rider_stand_holding_pole": 2.2, "rider_sit_neutral_green": 1.9, "st1_happy_diploma": 2.1,
+             "st2_laugh_diploma": 2.1, "st3_happy_diploma": 2.1, "st4_happy": 2.05, "syl_sit_typing": 1.5,
+             "sj_sit_holding_paper": 1.5, "boss_sit_phone": 1.5, "boss_sit_neutral": 1.5, "boss_sit_happy": 1.5}
+def sprite_h(n):
+    return HEIGHT_OF.get(n, HEIGHT["sit"] if "_sit_" in n else HEIGHT["stand"])
 CARD_MATS = {}
 def card_mat(name):
     if name in CARD_MATS:
         return CARD_MATS[name]
     m = bpy.data.materials.new("card_" + name); m.use_nodes = True
     nt = m.node_tree; bsdf = nt.nodes["Principled BSDF"]
-    im = nt.nodes.new("ShaderNodeTexImage"); im.image = bpy.data.images.load(os.path.join(HERE, "cards", name + ".png"))
+    im = nt.nodes.new("ShaderNodeTexImage"); im.image = bpy.data.images.load(os.path.join(HERE, "sprites", name + ".png"))
     im.interpolation = "Cubic"
     nt.links.new(im.outputs["Color"], bsdf.inputs["Base Color"])
     nt.links.new(im.outputs["Alpha"], bsdf.inputs["Alpha"])
@@ -241,7 +249,8 @@ def actor(name, loc, timeline, cam_face=None, scale=1.0, sway=1.0, blink=None):
     names = sorted({c for _, c in timeline} | ({blink} if blink else set()))
     planes = {}
     for n in names:
-        p = plane(f"{name}_{n}", CARD_W * scale, CARD_H * scale, (0, 0, (CARD_H / 2 - FOOT) * scale), card_mat(n))
+        h = sprite_h(n) * scale; w = h * SPRITES[n]["aspect"]
+        p = plane(f"{name}_{n}", w, h, (0, 0, h / 2), card_mat(n))
         p.parent = pivot; planes[n] = p
     spans = []
     for i, (f, c) in enumerate(timeline):
@@ -260,10 +269,6 @@ def actor(name, loc, timeline, cam_face=None, scale=1.0, sway=1.0, blink=None):
     for n, p in planes.items():
         show(p, on[n])
     return root
-
-def face_cams(objs):
-    """every actor faces whichever shot camera is active: drive the LOCKED_TRACK target per shot via its influence"""
-    pass
 
 # =================================================================== THE SETS
 # common materials
@@ -568,24 +573,24 @@ key(BIG, "location", [(0, (GX, 0, -0.8)), (10, (GX, 0, 1.7)), (14, (GX, 0, 1.6))
 pulse(BIG, 14, 78, 1.0, 0.035, 20)
 key(BIG, "scale", [(W("nine") - 2, (1.0,) * 3), (W("nine") + 2, (1.22,) * 3), (W("nine") + 8, (1.0,) * 3)])
 key(BIG, "rotation_euler", [(0, (math.pi / 2, 0, -0.18)), (78, (math.pi / 2, 0, 0.12)), (890, (math.pi / 2, 0, -0.1)), (940, (math.pi / 2, 0, 0.1))])
-syl_gold = actor("syl_gold", (GX - 1.9, 0.6, 0), [(0, "syl_o")], cam_face=c1, blink="syl_o_blink")
+syl_gold = actor("syl_gold", (GX - 1.9, 0.6, 0), [(0, "sj_stand_happy")], cam_face=c1, blink="sj_stand_happy_blink")
 show(syl_gold, [(0, 78)])
 
 # ---- shot 2 (78-141): home doorway: the husband, puzzled
 c2 = camera("C02", S[1], S[2], [(78, (HX + 1.2, -2.4, 1.55), (HX + 2.3, 2.2, 1.35)), (141, (HX + 1.5, -1.6, 1.5), (HX + 2.3, 2.2, 1.35))], lens=35)
-husb = actor("husb", (HX + 2.2, 2.3, 0), [(78, "husb"), (W("husband"), "husb_puzzled")], cam_face=c2)
+husb = actor("husb", (HX + 2.2, 2.3, 0), [(78, "huab_stand_neutral"), (W("husband"), "huab_stand_confused")], cam_face=c2)
 show(husb, [(78, 141)])
 
 # ---- shot 3 (141-216): the boss's office: boss at his desk, Sylvia at the door "without stealing a cent"
 c3 = camera("C03", S[2], S[3], [(141, (BX - 1.2, -3.2, 1.6), (BX - 0.3, 1.5, 1.2)), (216, (BX - 0.8, -2.5, 1.55), (BX - 0.3, 1.5, 1.2))], lens=32)
-boss3 = actor("boss3", (BX, 2.15, 0), [(141, "boss_sit")], cam_face=c3, blink=None)
-syl3 = actor("syl3", (BX - 1.6, 0.2, 0), [(141, "syl_y"), (W("without"), "syl_y_no")], cam_face=c3, blink="syl_y_blink")
+boss3 = actor("boss3", (BX, 2.15, 0), [(141, "boss_sit_neutral")], cam_face=c3, blink=None)
+syl3 = actor("syl3", (BX - 1.6, 0.2, 0), [(141, "syl_stand_happy"), (W("without"), "syl_stand_innocent")], cam_face=c3)
 show(boss3, [(141, 216)]); show(syl3, [(141, 216)])
 
 # ---- shot 4 (216-333): the office: Sylvia types at her desk; the calendar counts the years; young -> old on "sixty-seven"
 c4 = camera("C04", S[3], S[4], [(216, (OX + 1.6, -3.6, 1.7), (OX - 0.3, 1.0, 1.15)), (300, (OX + 0.9, -2.6, 1.6), (OX - 0.5, 0.9, 1.2)), (333, (OX + 0.7, -2.3, 1.55), (OX - 0.6, 0.9, 1.2))], lens=30)
 T67 = W("sixty-seven", line="who")
-syl4 = actor("syl4", (DESK.x, DESK.y + 0.5, 0), [(216, "syl_y_sit"), (T67, "syl_o_sit")], cam_face=c4)
+syl4 = actor("syl4", (DESK.x, DESK.y + 0.5, 0), [(216, "syl_sit_typing"), (T67, "sj_sit_neutral_lookside")], cam_face=c4)
 show(syl4, [(216, 333)])
 steps = [1, 5, 12, 20, 31, 44, 58, 67]
 for i, yrs in enumerate(steps):
@@ -601,16 +606,16 @@ show(ENV, [(333, 365)])
 
 # ---- shot 5b (365-432): the subway car: old Sylvia on the bench with riders; lights streak past
 c6 = camera("C06", S[5], S[6], [(365, (SX - 1.6, -0.6, 1.35), (SX, 1.2, 0.95)), (432, (SX - 0.9, -0.5, 1.3), (SX, 1.2, 0.95))], lens=28, shake=0.012)
-syl6 = actor("syl6", (SX, 0.95, 0), [(365, "syl_o_sit")], cam_face=c6, blink="syl_o_sit_blink")
-r1 = actor("rider1", (SX - 1.1, 0.95, 0), [(365, "rider1")], cam_face=c6)
-r2 = actor("rider2", (SX + 1.1, 0.95, 0), [(365, "rider2")], cam_face=c6)
-r3 = actor("rider3", (SX + 0.6, -0.1, 0), [(365, "rider3")], cam_face=c6)
+syl6 = actor("syl6", (SX, 0.95, 0), [(365, "sj_sit_handbag")], cam_face=c6)
+r1 = actor("rider1", (SX - 1.15, 0.95, 0), [(365, "rider_sit_neutral_red")], cam_face=c6)
+r2 = actor("rider2", (SX + 1.3, 0.3, 0), [(365, "rider_sit_neutral_green")], cam_face=c6)
+r3 = actor("rider3", (SX + 0.75, -0.25, 0), [(365, "rider_stand_holding_pole")], cam_face=c6)
 for o in (syl6, r1, r2, r3):
     show(o, [(365, 432)])
 
 # ---- shot 6 (432-563): the boss on the phone "BUY 100" -> Sylvia at her desk "BUY 5" -> the 5 shrinks on "less"
 c7 = camera("C07", S[6], S[7], [(432, (BX + 0.9, -1.9, 1.55), (BX + 0.2, 1.6, 1.3)), (490, (BX + 0.6, -1.5, 1.5), (BX + 0.2, 1.6, 1.3))], lens=32)
-boss7 = actor("boss7", (BX, 2.15, 0), [(432, "boss_sit"), (W("bought", line="trick"), "boss_sit_grin")], cam_face=c7)
+boss7 = actor("boss7", (BX, 2.15, 0), [(432, "boss_sit_phone"), (W("bought", line="trick"), "boss_sit_holding_paper")], cam_face=c7)
 show(boss7, [(432, 490)])
 def bubble(name, txt, loc, f0, f1, s=1.0):
     root = link(bpy.data.objects.new(name, None)); root.location = loc
@@ -621,7 +626,7 @@ def bubble(name, txt, loc, f0, f1, s=1.0):
     return root
 bubble("b100", "BUY 100", (BX + 0.55, 2.0, 2.25), W("bought", line="trick"), 490, 1.0)
 c8 = camera("C08", S[7], S[8], [(490, (OX - 0.9, -1.9, 1.5), (OX - 0.1, 1.2, 1.2)), (563, (OX - 0.6, -1.5, 1.45), (OX - 0.1, 1.2, 1.2))], lens=32)
-syl8 = actor("syl8", (DESK.x, DESK.y + 0.5, 0), [(490, "syl_y_sit_smile"), (W("same", line="trick"), "syl_y_sit_paper")], cam_face=c8)
+syl8 = actor("syl8", (DESK.x, DESK.y + 0.5, 0), [(490, "syl_sit_happy"), (W("same", line="trick"), "syl_sit_holding_paper")], cam_face=c8)
 show(syl8, [(490, 563)])
 b5 = bubble("b5", "BUY 5", (OX - 0.55, 1.6, 2.15), W("bought", 1, line="trick"), 563, 0.85)
 key(b5, "scale", [(W("less") - 2, (0.85,) * 3), (W("less") + 6, (0.55,) * 3)])
@@ -632,7 +637,7 @@ for i, o in enumerate(CERTS):
     f0 = 570 + i * 7
     show(o, ([(0, 333)] if i < 2 else []) + [(f0, TOTAL)])  # a low stack (2) in the early office shots
     pop_in(o, f0, 1.0, 5)
-syl9 = actor("syl9", (DESK.x + 0.1, DESK.y + 0.5, 0), [(563, "syl_y_sit")], cam_face=c9)
+syl9 = actor("syl9", (DESK.x + 0.1, DESK.y + 0.5, 0), [(563, "syl_sit_neutral")], cam_face=c9)
 show(syl9, [(563, 664)])
 win_a = bpy.data.objects["A_office_win"]
 key(win_a.data, "color", [(563, (1.0, 0.95, 0.85)), (600, (1.0, 0.75, 0.5)), (630, (0.75, 0.85, 1.0)), (664, (1.0, 0.95, 0.85))])
@@ -640,13 +645,13 @@ key(win_a.data, "energy", [(563, 900), (600, 650), (630, 1100), (664, 900)])
 
 # ---- shot 8 (664-705): old Sylvia, a knowing smile; the drawer slides shut
 c10 = camera("C10", S[9], S[10], [(664, (DESK.x + 0.8, DESK.y - 1.4, 1.3), (DESK.x, DESK.y + 0.3, 1.05)), (705, (DESK.x + 0.6, DESK.y - 1.15, 1.28), (DESK.x, DESK.y + 0.3, 1.05))], lens=34)
-syl10 = actor("syl10", (DESK.x + 0.25, DESK.y + 0.5, 0), [(664, "syl_o_sit_look"), (W("told"), "syl_o_sit")], cam_face=c10)
+syl10 = actor("syl10", (DESK.x + 0.25, DESK.y + 0.5, 0), [(664, "sj_sit_neutral_lookside"), (W("told"), "sj_sit_holding_paper")], cam_face=c10)
 show(syl10, [(664, 705)])
 key(DRAWER, "location", [(0, (DESK.x, DESK.y - 0.2, 0.67)), (664, (DESK.x, DESK.y - 0.55, 0.67)), (W("anyone"), (DESK.x, DESK.y - 0.2, 0.67))])
 
 # ---- shot 9 (705-890): home, 2016: the niece at the table; envelopes, then 3 + 11 books fan out
 c11 = camera("C11", S[10], S[11], [(705, (HX - 1.6, -2.2, 1.75), (HX, 0.9, 0.95)), (800, (HX - 0.9, -1.7, 1.75), (HX, 0.7, 0.85)), (890, (HX - 0.2, -1.25, 1.85), (HX, 0.6, 0.8))], lens=30)
-niece = actor("niece", (TB.x, TB.y + 0.75, 0), [(705, "niece"), (W("three", line="found"), "niece_shock")], cam_face=c11)
+niece = actor("niece", (TB.x, TB.y + 0.75, 0), [(705, "neco_sit_neutral_paper"), (W("three", line="found"), "neco_sit_shocked_paper")], cam_face=c11)
 show(niece, [(705, 890)])
 t3, t11 = W("three", line="found"), W("eleven")
 for i, o in enumerate(BOOKS):
@@ -661,8 +666,8 @@ key(BIG, "scale", [(889, (1.0,) * 3), (W("nine", line="total") - 1, (1.0,) * 3),
 c13 = camera("C13", S[12], S[13], [(940, (EX - 3.5, -5.5, 1.6), (EX, 4.5, 2.6)), (1030, (EX - 1.2, -4.6, 1.7), (EX, 4.5, 2.6)), (1097, (EX + 0.8, -4.0, 1.7), (EX, 4.5, 2.4))], lens=26)
 show(GIFT, [(W("Six"), 1097)]); pop_in(GIFT, W("Six"), 1.0, 9)
 show(GIFT2, [(W("scholarships"), 1097)]); pop_in(GIFT2, W("scholarships"), 1.0, 9)
-for i, (n, x) in enumerate((("st1", -1.8), ("st2", -0.6), ("st3", 0.6), ("st4", 1.8))):
-    a = actor(n, (EX + x, 3.6 - (i % 2) * 0.4, 0.11), [(940, n)], cam_face=c13)
+for i, (n, x) in enumerate((("st1_happy_diploma", -1.8), ("st2_laugh_diploma", -0.6), ("st3_happy_diploma", 0.6), ("st4_happy", 1.8))):
+    a = actor(n[:3], (EX + x, 3.6 - (i % 2) * 0.4, 0.11), [(940, n)], cam_face=c13)
     show(a, [(940, 1097)])
 key(SUN.data, "energy", [(0, 0.0), (939, 0.0), (940, 4.0), (1096, 4.0), (1097, 0.0)], "CONSTANT")
 

@@ -1,0 +1,162 @@
+{
+ "boss_sit_happy": {
+  "w": 572,
+  "h": 928,
+  "aspect": 0.6164
+ },
+ "boss_sit_holding_paper": {
+  "w": 1047,
+  "h": 1364,
+  "aspect": 0.7676
+ },
+ "boss_sit_neutral": {
+  "w": 460,
+  "h": 1008,
+  "aspect": 0.4563
+ },
+ "boss_sit_phone": {
+  "w": 747,
+  "h": 983,
+  "aspect": 0.7599
+ },
+ "huab_stand_confused": {
+  "w": 427,
+  "h": 950,
+  "aspect": 0.4495
+ },
+ "huab_stand_neutral": {
+  "w": 535,
+  "h": 1600,
+  "aspect": 0.3344
+ },
+ "huab_stand_neutral_blink": {
+  "w": 343,
+  "h": 924,
+  "aspect": 0.3712
+ },
+ "neco_sit_neutral_paper": {
+  "w": 931,
+  "h": 1600,
+  "aspect": 0.5819
+ },
+ "neco_sit_shocked_paper": {
+  "w": 769,
+  "h": 910,
+  "aspect": 0.8451
+ },
+ "neco_sit_surprised": {
+  "w": 813,
+  "h": 937,
+  "aspect": 0.8677
+ },
+ "rider_sit_neutral_green": {
+  "w": 372,
+  "h": 977,
+  "aspect": 0.3808
+ },
+ "rider_sit_neutral_red": {
+  "w": 692,
+  "h": 1600,
+  "aspect": 0.4325
+ },
+ "rider_stand_holding_pole": {
+  "w": 590,
+  "h": 1600,
+  "aspect": 0.3688
+ },
+ "sj_sit_handbag": {
+  "w": 407,
+  "h": 985,
+  "aspect": 0.4132
+ },
+ "sj_sit_happy": {
+  "w": 631,
+  "h": 1529,
+  "aspect": 0.4127
+ },
+ "sj_sit_happy_blink": {
+  "w": 378,
+  "h": 983,
+  "aspect": 0.3845
+ },
+ "sj_sit_holding_paper": {
+  "w": 552,
+  "h": 983,
+  "aspect": 0.5615
+ },
+ "sj_sit_neutral_lookside": {
+  "w": 580,
+  "h": 1007,
+  "aspect": 0.576
+ },
+ "sj_stand_happy": {
+  "w": 428,
+  "h": 939,
+  "aspect": 0.4558
+ },
+ "sj_stand_happy_blink": {
+  "w": 437,
+  "h": 972,
+  "aspect": 0.4496
+ },
+ "sj_stand_suspicion": {
+  "w": 686,
+  "h": 1600,
+  "aspect": 0.4288
+ },
+ "st1_happy_diploma": {
+  "w": 663,
+  "h": 1017,
+  "aspect": 0.6519
+ },
+ "st2_laugh_diploma": {
+  "w": 589,
+  "h": 1015,
+  "aspect": 0.5803
+ },
+ "st3_happy_diploma": {
+  "w": 576,
+  "h": 1015,
+  "aspect": 0.5675
+ },
+ "st4_happy": {
+  "w": 413,
+  "h": 1016,
+  "aspect": 0.4065
+ },
+ "syl_sit_happy": {
+  "w": 565,
+  "h": 946,
+  "aspect": 0.5973
+ },
+ "syl_sit_holding_paper": {
+  "w": 718,
+  "h": 969,
+  "aspect": 0.741
+ },
+ "syl_sit_neutral": {
+  "w": 454,
+  "h": 917,
+  "aspect": 0.4951
+ },
+ "syl_sit_typing": {
+  "w": 854,
+  "h": 1600,
+  "aspect": 0.5337
+ },
+ "syl_stand_happy": {
+  "w": 418,
+  "h": 942,
+  "aspect": 0.4437
+ },
+ "syl_stand_happy_blink": {
+  "w": 618,
+  "h": 1600,
+  "aspect": 0.3862
+ },
+ "syl_stand_innocent": {
+  "w": 893,
+  "h": 966,
+  "aspect": 0.9244
+ }
+}

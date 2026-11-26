@@ -58,8 +58,11 @@ Note in the description: "Not financial advice."
 
 - `voice/` voice-over (am_fenrir 1.2, 44.4 s) and word timings; `audio/mix.py` -> `blender/audio/mix.wav` (-14.2 LUFS,
   -1.5 dBTP, measured, not listened to)
-- `blender/cards/` 30 transparent PNG character cards, drawn by `finance-short/src/videos/secretary/Cards.tsx`
-  (`node scripts/cards.mjs ../secretary-short/blender/cards` from finance-short re-draws them)
+- `blender/sprites_raw/` the 32 character sprites (transparent PNG) made from the character library;
+  `blender/prep_sprites.py` crops them (feet on the bottom edge) into `blender/sprites/` + `sprites.json`.
+  Heights in metres per sprite are set in build.py (`HEIGHT`, `HEIGHT_OF`). Blink pairs that don't match
+  (syl_stand_happy_blink, sj_sit_happy_blink, huab_stand_neutral_blink) are not used; sj_stand_happy_blink is.
+- `blender/library_batch1/` the reference sheets (style reference only, not used in the render)
 - `blender/build.py` builds the whole film in Blender from code: 6 sets (office, boss's office, subway car, home, street
   with the Henry Street Settlement facade, gold stage with an extruded "$9,000,000"), 15 cameras bound to timeline
   markers, cards that face the camera, sway and blink, real lights and shadows, EEVEE (or Cycles), glow in the compositor
