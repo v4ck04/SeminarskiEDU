@@ -61,7 +61,6 @@ export function stage(f: number): Stage {
       C.push({p: [x, 0, -0.55], len: 6.6, cans: 3});
       const gx = -3.65 + Math.min(x, 1.4);
       P.push({who: 'goldman', p: [gx, 0, -0.55], ...(lf < r0 - 4 ? {act: 'idle', expr: 'smug'} : x < 1.4 ? {act: 'push', expr: 'rage'} : seq(lf - r0, [[0, 'push', 'rage'], [22, 'proud', 'proud']])), view: lf >= r0 - 4 && x < 1.4 ? 'side' : 'front', dir: 1});
-      P.push({who: 'clerk', p: [0.9, 0, -1.6], ...seq(lf, [[0, 'idle', 'neutral'], [r0 + 6, 'idle', 'shock']]), gaze: [gx, 1, -0.55]});
       break;
     }
     case 'open': {   // open shelves / a price on every can: browsing in the aisle

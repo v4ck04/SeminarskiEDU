@@ -11,7 +11,8 @@ import {stage, velocities} from '../core/staging';
 import {camAt, applyCam, flashAt, Cam} from '../camera/camera';
 import {Character} from '../chars/rig';
 import {WORDS, CAPS} from '@story/timeline';
-import {AUDIO, SetBefore, SetAfter, useSetData} from '@story/set';
+import {AUDIO, SetBefore, SetAfter, useSetData, POPUPS} from '@story/set';
+import {SubscribePopup} from './SubscribePopup';
 export {TOTAL};
 
 const Rig: React.FC<{c: Cam}> = ({c}) => { const {camera} = useThree(); camera.layers.enableAll(); applyCam(camera as THREE.PerspectiveCamera, c); return null; };   // characters live on a separate layer (NOINK)
@@ -58,6 +59,7 @@ export const Video: React.FC = () => {
       </ThreeCanvas>
       {fl > 0 && <AbsoluteFill style={{backgroundColor: '#fff', opacity: fl}} />}
       <Caption f={fr} width={width} height={height} />
+      {(POPUPS ?? []).map((p, i) => <SubscribePopup key={i} p={p} t={rt} width={width} height={height} />)}
     </AbsoluteFill>
   );
 };

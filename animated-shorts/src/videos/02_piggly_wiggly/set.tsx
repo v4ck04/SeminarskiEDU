@@ -7,7 +7,9 @@ import {Town, StreetClock} from '../../engine/kits/downtown/town';
 import {Car} from '../../engine/kits/downtown/street';
 import {ServiceCounter, Turnstile, UnitSign, PWStoreSign, Palace, StockBoard, Ropes, Plaque, BasketStack, signMat, pwSmall} from '../../engine/kits/piggly/props';
 import type {Stage} from './stage';
-export const AUDIO: {voice: string | null; bed: string | null} = {voice: null, bed: null};
+export const AUDIO: {voice: string | null; bed: string | null} = {voice: '02_piggly_wiggly/voice.wav', bed: null};
+/** like + subscribe reminder during the growth montage (engine/render/SubscribePopup.tsx) */
+export const POPUPS: {t: number}[] = [{t: 32.35}];
 export const useSetData = () => useMats();
 export const TURNSTILE: [number, number, number] = [-0.3, 0, 3.4];
 export const ROPE_POSTS: [number, number, number][] = [[-3.3, 0, 2.1], [-1.9, 0, 2.1], [-0.5, 0, 2.1], [0.9, 0, 2.1], [2.3, 0, 2.1], [3.6, 0, 2.1]];

@@ -24,9 +24,11 @@ export const TAKES: Take[] = [
     K(T('hook', 'wanted'), 'goldman', 'MCU', 5, 3, 40, {move: 'arc', dur: 0.6, push: 1.05})]},
   {name: 'before', why: 'counter service: the counter blocks the shelves, the queue waits', keys: [
     K(R.before, ['grandma', 'clerk'], 'FS', -10, 14, 52, {push: 1.04}),
-    K(T('before', 'clerk'), 'clerk', 'MS', -8, 6, 40, {move: 'arc', dur: 0.7}),
-    K(T('before', 'waited'), ['shopper2', 'shopper', 'man'], 'FS', 180, 8, 50, {move: 'pullpush', bump: 0.1, dur: 0.8}),
-    K(T('before', 'One'), ['clerk', 'prop:cans'], 'MS', 192, 12, 44, {move: 'arc', dur: 0.5, push: 1.06})]},
+    K(T('before', 'clerk'), 'clerk', 'MS', -8, 6, 40, {move: 'arc', dur: 0.7})]},
+  {name: 'before_q', why: 'cut to the clerk side: the queue waits', keys: [
+    K(T('before', 'waited'), ['shopper2', 'shopper', 'man'], 'FS', 172, 8, 50, {push: 1.04})]},
+  {name: 'before_c', why: 'cut behind the counter: one item at a time', keys: [
+    K(T('before', 'One'), ['clerk', 'prop:cans'], 'MS', 180, 12, 50, {push: 1.06})]},
   {name: 'rip', why: 'hard cut: he shoves the whole counter out of frame', keys: [
     K(R.rip, 'goldman', 'FS', 28, 6, 56, {push: 1.0, track: 2}),
     K(T('rip', 'counter'), 'goldman', 'MS', 5, 4, 40, {move: 'arc', dur: 0.6})]},
