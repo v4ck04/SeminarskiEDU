@@ -92,8 +92,8 @@ export function stage(f: number): Stage {
       street();
       const a = w('laugh', "They'll"), b = w('laugh', 'Nobody');
       P.push({who: 'goldman', p: [0.0, 0, 5.2], ...seq(lf, [[0, 'proud', 'proud'], [b + 10, 'shrug', 'smug']])});
-      P.push({who: 'grocer1', p: [-4.7, 0, 5.6], ...seq(lf, [[0, 'idle', 'grin'], [a - 4, 'point', 'grin']]), talk: lf >= a && lf < b, gaze: [0, 1, 5.2]});
-      P.push({who: 'grocer2', p: [4.8, 0, 5.6], ...seq(lf, [[0, 'idle', 'smug'], [b - 4, 'talk', 'grin']]), talk: lf >= b, gaze: [0, 1, 5.2]});
+      P.push({who: 'grocer1', p: [-1.45, 0, 5.75], ...seq(lf, [[0, 'idle', 'grin'], [a - 4, 'point', 'grin']]), talk: lf >= a && lf < b, gaze: [0, 1, 5.2]});
+      P.push({who: 'grocer2', p: [1.5, 0, 5.8], ...seq(lf, [[0, 'shrug', 'grin'], [b - 4, 'talk', 'grin']]), talk: lf >= b, gaze: [0, 1, 5.2]});
       break;
     }
     case 'name': {
@@ -106,9 +106,9 @@ export function stage(f: number): Stage {
     case 'grow': {
       street(); st.rivals = false;
       const h = w('grow', 'hundred'), t = w('grow', 'thousand');
-      ['HATS', 'DRUG', 'BARBER', 'BOOKS', 'LAUNDRY', 'MUSIC'].forEach((n, i) => { sg[n] = cl((lf - h - i * 2) / 8); });
+      ['HATS', 'DRUG', 'BARBER', 'BOOKS', 'LAUNDRY', 'MUSIC'].forEach((n, i) => { sg[n] = cl((lf - h - i * 1.5) / 6); });
       ['HARDWARE', 'FIVE', 'SHOES', 'CAFE', 'TAILOR', 'DINER', 'TOYS', 'FLORIST', 'JEWELER', 'RADIO', "MEN'S", 'OFFICE', 'BAKERY', 'NEWS', 'FURNITURE', 'INSURANCE', 'DEPARTMENT', 'GARAGE', 'RIALTO', 'BANK', 'HOTEL LEE', 'KINGKADE']
-        .forEach((n, i) => { sg[n] = cl((lf - t - i * 1.2) / 8); });
+        .forEach((n, i) => { sg[n] = cl((lf - t - i * 0.5) / 6); });
       P.push({who: 'goldman', p: [0.0, 0, 5.3], ...seq(lf, [[0, 'proud', 'proud'], [h, 'cheer', 'grin']]), gaze: 'cam'});
       P.push(walker('woman', lf, [[0, -3, 6.8], [90, 3.5, 6.9]], [[0, 'idle', 'happy']], {basket: true, expr: 'happy'}));
       P.push(walker('youngman', lf, [[0, 7, 7.7], [90, 1.2, 7.7]], [[0, 'idle', 'happy']], {expr: 'happy'}));
@@ -119,8 +119,8 @@ export function stage(f: number): Stage {
       const r = w('copy', 'Ripped'), u1 = cl(lf / 60), u2 = cl((lf - r + 6) / 40);
       const z1 = 5.2 + 1.5 * sm01(u1), z2 = 5.2 + 1.5 * sm01(u2);
       C.push({p: [-7.35, 0, z1], len: 1.5}, {p: [7.25, 0, z2], len: 1.5});
-      P.push({who: 'grocer1', p: [-7.35, 0, z1 - 0.62], act: u1 > 0 && u1 < 1 ? 'push' : 'slump', expr: 'sad', view: 'front'});
-      P.push({who: 'grocer2', p: [7.25, 0, z2 - 0.62], act: u2 > 0 && u2 < 1 ? 'push' : lf < r ? 'idle' : 'slump', expr: lf < r ? 'worried' : 'angry', view: 'front'});
+      P.push({who: 'grocer1', p: [-7.35, 0, z1 - 0.62], act: u1 > 0 && u1 < 1 ? 'push' : 'slump', expr: 'sad'});
+      P.push({who: 'grocer2', p: [7.25, 0, z2 - 0.62], act: u2 > 0 && u2 < 1 ? 'push' : lf < r ? 'idle' : 'slump', expr: lf < r ? 'worried' : 'angry'});
       break;
     }
     case 'wall': {

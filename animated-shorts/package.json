@@ -5,7 +5,7 @@
     "studio": "remotion studio src/index.ts",
     "still": "remotion still src/index.ts Preview out/still.png --frame=60",
     "preview": "remotion render src/index.ts Preview out/preview.mp4",
-    "gates": "tsx --tsconfig src/videos/${VIDEO:-01_example}/tsconfig.json src/engine/check/gates.ts"
+    "gates": "tsx --tsconfig src/videos/02_piggly_wiggly/tsconfig.json src/engine/check/gates.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^8.18.0",
