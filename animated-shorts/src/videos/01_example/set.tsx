@@ -8,6 +8,8 @@ import {Car} from '../../engine/kits/downtown/street';
 import type {Stage} from './stage';
 export const AUDIO: {voice: string | null; bed: string | null} = {voice: null, bed: null};
 export const POPUPS: {t: number}[] = [];
+/** optional 2D overlay drawn over the 3D (under the captions) */
+export const HUD: React.FC<{t: number; width: number; height: number}> | null = null;
 export const useSetData = () => useMats();
 type P = {d: Mats; f: number; st: Stage; cam: THREE.Vector3; vel: (THREE.Vector3 | null)[]; tod: Tod};
 export const SetBefore: React.FC<P> = ({d, f, st, tod}) => (<>

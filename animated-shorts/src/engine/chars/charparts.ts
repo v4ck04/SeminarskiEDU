@@ -27,7 +27,8 @@ const LIMB_INK = 0.0105;                // limb/hand/foot outline (was 9 mm)
 
 export type Who = 'goldman' | 'woman' | 'man' | 'grandma' | 'youngman' | 'youngwoman' | 'shopper' | 'shopper2' | 'kid' | 'magee' | 'preacher' | 'rancher' | 'cop'
   | 'nurse' | 'teacher' | 'banker' | 'oldman' | 'paperboy' | 'mechanic' | 'baker'
-  | 'clerk' | 'grocer1' | 'grocer2' | 'banker2' | 'banker3';   // + 5 added for 02_piggly_wiggly   // + 7 added for the free kit (20 total)
+  | 'clerk' | 'grocer1' | 'grocer2' | 'banker2' | 'banker3'
+  | 'wallace' | 'hampden' | 'mrswallace';   // + 3 added for 03_flat_earth_bet   // + 5 added for 02_piggly_wiggly   // + 7 added for the free kit (20 total)
 export type View = 'front' | 'side' | 'back';
 type HairStyle = 'part' | 'bob' | 'bun' | 'slick' | 'kid' | 'wave';
 type HatKind = 'fedora' | 'cloche' | 'cap' | 'boater';
@@ -35,7 +36,7 @@ type Outfit = 'suit' | 'vest' | 'overalls' | 'dress' | 'kid';
 export type Look = {
   skin: string; hair: string; hairStyle: HairStyle; hat?: HatKind; hatCol?: string; hatBand?: string;
   outfit: Outfit; main: string; second: string; accent: string; pants?: string; apron?: boolean; dots?: string; lace?: boolean;
-  glasses?: boolean; mustache?: boolean; bigArms?: boolean; scale?: number; headK?: number; wide?: number; shoe?: string;
+  glasses?: boolean; mustache?: boolean; beard?: boolean; bigArms?: boolean; scale?: number; headK?: number; wide?: number; shoe?: string;
 };
 // 1930s Oklahoma cast, palette kept to the set's oranges / teals / creams
 export const LOOKS: Record<Who, Look> = {
@@ -66,6 +67,10 @@ export const LOOKS: Record<Who, Look> = {
   grocer2: {skin: '#e2b48e', hair: '#3a2a22', hairStyle: 'part', hat: 'fedora', hatCol: '#7a3b22', hatBand: '#2a1f1a', outfit: 'vest', main: '#8a3a5a', second: '#f4ead6', accent: '#f2b234', pants: '#3a3a48', apron: true, glasses: true, shoe: '#2a1d1a'},
   banker2: {skin: '#f4dcc6', hair: '#b8b4b0', hairStyle: 'part', hat: 'fedora', hatCol: '#2a2a34', hatBand: '#8a8a98', outfit: 'suit', main: '#2b2a33', second: '#f8f4ea', accent: '#2f6f73', pants: '#24232a', glasses: true, wide: 1.12, shoe: '#16161c'},
   banker3: {skin: '#e8c4a4', hair: '#2a2024', hairStyle: 'slick', hat: 'fedora', hatCol: '#3d4a66', hatBand: '#1e1e26', outfit: 'suit', main: '#5a5a6a', second: '#f8f4ea', accent: '#f2b234', pants: '#3a3a46', shoe: '#16161c'},
+  // ---- 03_flat_earth_bet ----
+  wallace: {skin: '#f4dcc6', hair: '#7a6450', hairStyle: 'part', outfit: 'suit', main: '#5a4a3a', second: '#f4ead6', accent: '#2f6f73', pants: '#3a3028', glasses: true, mustache: true, beard: true, shoe: '#2a1d1a'},
+  hampden: {skin: '#f2d4b8', hair: '#2a2024', hairStyle: 'slick', hat: 'fedora', hatCol: '#1a1820', hatBand: '#8a2a2a', outfit: 'suit', main: '#2b2a33', second: '#f8f4ea', accent: '#8a2a2a', pants: '#24232a', mustache: true, wide: 1.1, shoe: '#16161c'},
+  mrswallace: {skin: '#f8e6d6', hair: '#5a3a26', hairStyle: 'bun', outfit: 'dress', main: '#3d6a5a', second: '#f4ead6', accent: '#2f6f73', lace: true, shoe: '#2a1d1a'},
 };
 
 // ---------- SHAPE language per character (see review_shape/SHAPE_GUIDE.md) ----------
@@ -99,6 +104,9 @@ export const SHAPES: Record<Who, Shape> = {   // FACES: all heads are balls now 
   grocer2:    {w: 1.0, h: 0.99, jaw: -0.02, sq: 2.2, sk: 0.04, lean: -0.015, tilt: 0.12},
   banker2:    {w: 1.04, h: 0.97, jaw: 0.1, sq: 2.35, sk: -0.02, lean: -0.02, tilt: 0.0},
   banker3:    {w: 0.99, h: 1.0, jaw: -0.03, sq: 2.25, sk: 0.03, lean: -0.018, tilt: 0.1},
+  wallace:    {w: 1.0, h: 1.0, jaw: 0.04, sq: 2.2, sk: -0.02, lean: 0.015, tilt: 0.0},
+  hampden:    {w: 1.04, h: 0.98, jaw: 0.1, sq: 2.4, sk: 0.03, lean: -0.02, tilt: 0.12},
+  mrswallace: {w: 1.0, h: 0.98, jaw: -0.04, sq: 2.05, sk: 0.02, lean: 0.0, tilt: 0.0},
 };
 type Pt = [number, number];
 /** filled brush stroke along a quadratic curve p0-c-p1 with width w0 -> wm (middle) -> w1 (pointed or blunt ends) */
@@ -735,7 +743,13 @@ export function mouthTex(m: MouthK, v: Vis): PartTex {
 /** per-character face accessories that move with the face: glasses, mustache, blush (anchor = head centre) */
 export function accTex(who: Who): PartTex {
   const L = LOOKS[who];
-  return mk(`acc2:${who}`, 0.44, 0.32, 0.22, 0.16, 1200, (g) => {
+  return mk(`acc2:${who}`, 0.44, L.beard ? 0.62 : 0.32, 0.22, 0.16, 1200, (g) => {
+    if (L.beard) {   // full Victorian beard from the cheeks to below the chin, with a hole for the mouth (mustache on top)
+      const P = () => { g.moveTo(-0.205, 0.02); g.bezierCurveTo(-0.22, 0.2, -0.16, 0.36, -0.06, 0.43); g.quadraticCurveTo(0, 0.47, 0.06, 0.43); g.bezierCurveTo(0.16, 0.36, 0.22, 0.2, 0.205, 0.02);
+        g.quadraticCurveTo(0.16, 0.1, 0.1, 0.1); g.lineTo(-0.1, 0.1); g.quadraticCurveTo(-0.16, 0.1, -0.205, 0.02); g.closePath(); };
+      g.beginPath(); P(); g.moveTo(0.055, 0.112); ell(g, 0.0, 0.112, 0.055, 0.038); g.fillStyle = L.hair; g.fill('evenodd'); g.lineWidth = 0.008; g.strokeStyle = INK; g.stroke();
+      g.strokeStyle = 'rgba(255,255,255,.18)'; g.lineWidth = 0.006; for (let i = -3; i <= 3; i++) { g.beginPath(); g.moveTo(i * 0.04, 0.2 + Math.abs(i) * 0.01); g.quadraticCurveTo(i * 0.045, 0.3, i * 0.03, 0.38 - Math.abs(i) * 0.03); g.stroke(); }
+    }
     g.fillStyle = 'rgba(232,110,100,.14)'; for (const s of [-1, 1]) { g.beginPath(); ell(g, s * 0.128, 0.058, 0.03, 0.018); g.fill(); }
     if (L.mustache) { const P = () => { g.moveTo(0, 0.045); g.bezierCurveTo(-0.02, 0.03, -0.065, 0.03, -0.07, 0.065); g.quadraticCurveTo(-0.035, 0.062, 0, 0.07); g.quadraticCurveTo(0.035, 0.062, 0.07, 0.065); g.bezierCurveTo(0.065, 0.03, 0.02, 0.03, 0, 0.045); g.closePath(); };
       g.beginPath(); P(); fillInk(g, L.hair === '#dedbe4' ? '#bfbac6' : L.hair, 0.007); }

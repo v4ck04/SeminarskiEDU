@@ -10,6 +10,8 @@ import type {Stage} from './stage';
 export const AUDIO: {voice: string | null; bed: string | null} = {voice: '02_piggly_wiggly/voice.wav', bed: null};
 /** like + subscribe reminder during the growth montage (engine/render/SubscribePopup.tsx) */
 export const POPUPS: {t: number}[] = [{t: 32.35}];
+/** optional 2D overlay drawn over the 3D (under the captions) */
+export const HUD: React.FC<{t: number; width: number; height: number}> | null = null;
 export const useSetData = () => useMats();
 export const TURNSTILE: [number, number, number] = [-0.3, 0, 3.4];
 export const ROPE_POSTS: [number, number, number][] = [[-3.3, 0, 2.1], [-1.9, 0, 2.1], [-0.5, 0, 2.1], [0.9, 0, 2.1], [2.3, 0, 2.1], [3.6, 0, 2.1]];

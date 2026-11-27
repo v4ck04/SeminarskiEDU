@@ -11,7 +11,7 @@ import {stage, velocities} from '../core/staging';
 import {camAt, applyCam, flashAt, Cam} from '../camera/camera';
 import {Character} from '../chars/rig';
 import {WORDS, CAPS} from '@story/timeline';
-import {AUDIO, SetBefore, SetAfter, useSetData, POPUPS} from '@story/set';
+import {AUDIO, SetBefore, SetAfter, useSetData, POPUPS, HUD} from '@story/set';
 import {SubscribePopup} from './SubscribePopup';
 export {TOTAL};
 
@@ -58,6 +58,7 @@ export const Video: React.FC = () => {
         <SetAfter d={d} f={f} st={st} cam={cam} vel={vel} tod="day" />
       </ThreeCanvas>
       {fl > 0 && <AbsoluteFill style={{backgroundColor: '#fff', opacity: fl}} />}
+      {HUD && <HUD t={rt} width={width} height={height} />}
       <Caption f={fr} width={width} height={height} />
       {(POPUPS ?? []).map((p, i) => <SubscribePopup key={i} p={p} t={rt} width={width} height={height} />)}
     </AbsoluteFill>
