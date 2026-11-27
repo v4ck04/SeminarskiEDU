@@ -1,0 +1,13 @@
+[hook] He let strangers walk into his store and take whatever they wanted.
+[before] In 1916, you didn't shop. You stood at a counter, read your list to a clerk, and waited. One. Item. At a time.
+[rip] Clarence Saunders ripped out the counter.
+[open] Open shelves. A price on every can. [turn] A turnstile at the door. [grab] Grab a basket, serve yourself, [pay] pay on the way out.
+[laugh] The other grocers laughed. "They'll rob you blind!" "Nobody wants to do the clerk's job!"
+[name] And the name on the sign? Piggly Wiggly. Why? "So people will ask that very question."
+[grow] One store. Then a hundred. Then over a thousand.
+[copy] And every grocer who laughed? Ripped out his own counter.
+[palace] Saunders got so rich he started building a pink marble palace.
+[wall] Then Wall Street bet against his company. He bet everything back. And when he was winning, they changed the rules.
+[lost] He lost the company. He lost the palace before it was even finished.
+[today] Today that pink palace is a museum.
+[replica] And inside it, a full-size copy of his first store. Turnstile included.
